@@ -4,6 +4,7 @@ import { Activity, ShieldCheck, Heart, Sparkles, ArrowRight, CheckCircle2, Chevr
 import { PULSE_DATA } from '../data/pulseData';
 import SectionCinematicVideo from './SectionCinematicVideo';
 import SectionBackgroundMotion from './SectionBackgroundMotion';
+import { useLanguage } from '../context/LanguageContext';
 
 /**
  * TreatmentStorytellingSection
@@ -17,108 +18,109 @@ import SectionBackgroundMotion from './SectionBackgroundMotion';
  */
 export default function TreatmentStorytellingSection() {
   const [activeProcedure, setActiveProcedure] = useState('peripheral-angioplasty');
+  const { t } = useLanguage();
 
   const storyboards = {
     'peripheral-angioplasty': {
-      title: 'Heart & Artery Stenting',
-      badge: 'Painless Wrist Procedure',
-      tagline: 'Opening blocked arteries gently to restore smooth blood flow.',
-      recovery: 'Go home in 24–48 Hours',
-      stats: '99.4% Success Rate',
+      title: t('Heart & Artery Stenting', 'हार्ट और आर्टरी स्टेंटिंग'),
+      badge: t('Painless Wrist Procedure', 'बिना दर्द कलाई प्रोसीजर'),
+      tagline: t('Opening blocked arteries gently to restore smooth blood flow.', 'सही ब्लड फ्लो वापस लाने के लिए बंद आर्टरीज़ को आराम से खोलना।'),
+      recovery: t('Go home in 24–48 Hours', '24–48 घंटे में घर जाएं'),
+      stats: t('99.4% Success Rate', '99.4% सफलता दर'),
       steps: [
         {
           num: '01',
-          phase: 'Small Wrist Entry',
-          detail: 'Tiny, painless wrist opening with minimal discomfort.',
+          phase: t('Small Wrist Entry', 'कलाई में छोटा पॉइंट'),
+          detail: t('Tiny, painless wrist opening with minimal discomfort.', 'कलाई में बिना दर्द का बेहद छोटा पॉइंट।'),
         },
         {
           num: '02',
-          phase: 'Reaching the Blockage',
-          detail: 'Thin flexible tube safely reaches the blocked spot.',
+          phase: t('Reaching the Blockage', 'ब्लॉकेज तक पहुंचना'),
+          detail: t('Thin flexible tube safely reaches the blocked spot.', 'पतली लचीली ट्यूब सुरक्षित तरीके से ब्लॉकेज तक पहुंचती है।'),
         },
         {
           num: '03',
-          phase: 'Gentle Balloon Opening',
-          detail: 'Soft balloon widens the narrowed artery smoothly.',
+          phase: t('Gentle Balloon Opening', 'बैलून से आर्टरी खोलना'),
+          detail: t('Soft balloon widens the narrowed artery smoothly.', 'सॉफ्ट बैलून सिकुड़ी हुई आर्टरी को आराम से चौड़ा करता है।'),
         },
         {
           num: '04',
-          phase: 'Placing the Safe Stent',
-          detail: 'Coated stent keeps blood flowing freely long-term.',
+          phase: t('Placing the Safe Stent', 'सुरक्षित स्टेंट लगाना'),
+          detail: t('Coated stent keeps blood flowing freely long-term.', 'कोटेड स्टेंट लंबे समय तक ब्लड फ्लो को सुचारू रखता है।'),
         },
       ],
       indications: [
-        'Leg pain while walking',
-        'Slow-healing foot wounds',
-        'Blocked leg or kidney arteries',
+        t('Leg pain while walking', 'चलते समय पैरों में दर्द'),
+        t('Slow-healing foot wounds', 'पैर के घाव धीरे भरना'),
+        t('Blocked leg or kidney arteries', 'पैर या किडनी की बंद आर्टरीज़'),
       ],
     },
     'coronary-angiogram': {
-      title: 'Heart Blockage Check (Angiogram)',
-      badge: '15-Minute Heart Test',
-      tagline: 'A quick, clear test to check if any heart arteries are blocked.',
-      recovery: 'Same-Day Discharge (2 Hrs)',
-      stats: '15-Min Painless Test',
+      title: t('Heart Blockage Check (Angiogram)', 'हार्ट ब्लॉकेज जांच (एंजियोग्राम)'),
+      badge: t('15-Minute Heart Test', '15-मिनट हार्ट टेस्ट'),
+      tagline: t('A quick, clear test to check if any heart arteries are blocked.', 'यह जांचने के लिए तेज़ और साफ टेस्ट कि हार्ट की कोई आर्टरी बंद तो नहीं है।'),
+      recovery: t('Same-Day Discharge (2 Hrs)', 'उसी दिन डिस्चार्ज (2 घंटे)'),
+      stats: t('15-Min Painless Test', '15-मिनट बिना दर्द टेस्ट'),
       steps: [
         {
           num: '01',
-          phase: 'Painless Wrist Numbing',
-          detail: 'Gentle numbing medicine on the wrist — no pain.',
+          phase: t('Painless Wrist Numbing', 'कलाई को सुन्न करना'),
+          detail: t('Gentle numbing medicine on the wrist — no pain.', 'कलाई पर हल्की सुन्न करने की दवा — कोई दर्द नहीं।'),
         },
         {
           num: '02',
-          phase: 'Gentle Tube Entry',
-          detail: 'Ultra-thin tube checks the heart arteries safely.',
+          phase: t('Gentle Tube Entry', 'पतली ट्यूब से जांच'),
+          detail: t('Ultra-thin tube checks the heart arteries safely.', 'बेहद पतली ट्यूब हार्ट आर्टरीज़ की सुरक्षित जांच करती है।'),
         },
         {
           num: '03',
-          phase: 'Clear Artery Scan',
-          detail: 'Safe dye shows exact blood flow on the live screen.',
+          phase: t('Clear Artery Scan', 'साफ आर्टरी स्कैन'),
+          detail: t('Safe dye shows exact blood flow on the live screen.', 'सुरक्षित डाई लाइव स्क्रीन पर सटीक ब्लड फ्लो दिखाती है।'),
         },
         {
           num: '04',
-          phase: 'Full Report Check',
-          detail: 'Dr. Shahi explains your full report and CD clearly.',
+          phase: t('Full Report Check', 'पूरी रिपोर्ट की जांच'),
+          detail: t('Dr. Shahi explains your full report and CD clearly.', 'डॉ. शाही आपकी पूरी रिपोर्ट और सीडी साफ शब्दों में समझाते हैं।'),
         },
       ],
       indications: [
-        'Chest pain or tightness',
-        'Abnormal ECG or TMT test',
-        'Follow-up heart checkup',
+        t('Chest pain or tightness', 'सीने में दर्द या जकड़न'),
+        t('Abnormal ECG or TMT test', 'एबनॉर्मल ईसीजी या टीएमटी टेस्ट'),
+        t('Follow-up heart checkup', 'फॉलो-अप हार्ट चेकअप'),
       ],
     },
     'pacemaker-implantation': {
-      title: 'Permanent Pacemaker',
-      badge: 'Heartbeat Support',
-      tagline: 'Small, safe device that keeps a slow heartbeat steady.',
-      recovery: 'Overnight Stay • Quick Recovery',
-      stats: '10–14 Year Battery Life',
+      title: t('Permanent Pacemaker', 'परमानेंट पेसमेकर'),
+      badge: t('Heartbeat Support', 'हार्टबीट सपोर्ट'),
+      tagline: t('Small, safe device that keeps a slow heartbeat steady.', 'छोटा और सुरक्षित डिवाइस जो धीमी हार्टबीट को स्थिर रखता है।'),
+      recovery: t('Overnight Stay • Quick Recovery', 'एक रात का स्टे • तेज़ रिकवरी'),
+      stats: t('10–14 Year Battery Life', '10–14 साल बैटरी लाइफ'),
       steps: [
         {
           num: '01',
-          phase: 'Small Collarbone Entry',
-          detail: 'Tiny opening made gently under local numbing.',
+          phase: t('Small Collarbone Entry', 'कॉलरबोन के पास छोटा पॉइंट'),
+          detail: t('Tiny opening made gently under local numbing.', 'लोकल नंबिंग के साथ हल्का और छोटा पॉइंट बनाया जाता है।'),
         },
         {
           num: '02',
-          phase: 'Safe Wire Placement',
-          detail: 'Soft pacemaker wires guided safely to the heart.',
+          phase: t('Safe Wire Placement', 'सुरक्षित वायर प्लेसमेंट'),
+          detail: t('Soft pacemaker wires guided safely to the heart.', 'सॉफ्ट पेसमेकर वायर्स सुरक्षित रूप से हार्ट तक पहुंचाए जाते हैं।'),
         },
         {
           num: '03',
-          phase: 'Heartbeat Testing',
-          detail: 'Device checked to ensure steady, natural rhythm.',
+          phase: t('Heartbeat Testing', 'हार्टबीट टेस्टिंग'),
+          detail: t('Device checked to ensure steady, natural rhythm.', 'स्थिर और सामान्य धड़कन सुनिश्चित करने के लिए डिवाइस चेक किया जाता है।'),
         },
         {
           num: '04',
-          phase: 'Device Placement',
-          detail: 'Small battery unit placed comfortably under skin.',
+          phase: t('Device Placement', 'डिवाइस प्लेसमेंट'),
+          detail: t('Small battery unit placed comfortably under skin.', 'छोटा बैटरी यूनिट त्वचा के नीचे आराम से लगाया जाता है।'),
         },
       ],
       indications: [
-        'Complete AV heart block',
-        'Symptomatic Sinus Dysfunction',
-        'Recurrent syncopal bradycardia',
+        t('Complete AV heart block', 'कम्प्लीट एवी हार्ट ब्लॉक'),
+        t('Symptomatic Sinus Dysfunction', 'साइनस डिसफंक्शन के लक्षण'),
+        t('Recurrent syncopal bradycardia', 'बार-बार चक्कर आना या धीमी धड़कन'),
       ],
     },
   };
@@ -137,18 +139,18 @@ export default function TreatmentStorytellingSection() {
         <div className="mb-10 text-center max-w-3xl mx-auto space-y-2">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-[#0A1128] via-[#1E293B] to-[#BE123C] text-white text-xs font-mono font-bold shadow-md shadow-navy/20 border border-rose-300/30">
             <Target className="w-4 h-4 text-rose-300" />
-            <span className="uppercase tracking-[0.2em]">Step-by-Step Treatment Guide</span>
+            <span className="uppercase tracking-[0.2em]">{t('Step-by-Step Treatment Guide', 'स्टेप-बाय-स्टेप ट्रीटमेंट गाइड')}</span>
           </div>
 
           <h2 className="text-3xl sm:text-5xl font-extrabold text-[#0A1128] tracking-tight">
-            How Your <span className="font-serif italic font-normal text-[#BE123C]">Treatment Works</span>
+            {t('How Your', 'आपका')} <span className="font-serif italic font-normal text-[#BE123C]">{t('Treatment Works', 'ट्रीटमेंट कैसे होता है')}</span>
           </h2>
 
           <div className="flex flex-wrap items-center justify-center gap-2 pt-1 font-mono text-[11px] font-bold">
-            <span className="bg-rose-50 text-[#BE123C] px-3 py-0.5 rounded-full border border-rose-200">Simple Checkup</span>
-            <span className="bg-slate-100 text-[#0A1128] px-3 py-0.5 rounded-full border border-slate-200">Through Wrist</span>
-            <span className="bg-rose-50 text-[#BE123C] px-3 py-0.5 rounded-full border border-rose-200">Safe Stent</span>
-            <span className="bg-slate-100 text-[#0A1128] px-3 py-0.5 rounded-full border border-slate-200">Fast Recovery</span>
+            <span className="bg-rose-50 text-[#BE123C] px-3 py-0.5 rounded-full border border-rose-200">{t('Simple Checkup', 'आसान चेकअप')}</span>
+            <span className="bg-slate-100 text-[#0A1128] px-3 py-0.5 rounded-full border border-slate-200">{t('Through Wrist', 'कलाई के रास्ते')}</span>
+            <span className="bg-rose-50 text-[#BE123C] px-3 py-0.5 rounded-full border border-rose-200">{t('Safe Stent', 'सेफ स्टेंट')}</span>
+            <span className="bg-slate-100 text-[#0A1128] px-3 py-0.5 rounded-full border border-slate-200">{t('Fast Recovery', 'तेज़ रिकवरी')}</span>
           </div>
         </div>
 
@@ -214,7 +216,7 @@ export default function TreatmentStorytellingSection() {
                   ? '/images/pacemaker-tech.jpg'
                   : '/images/heart-stent-angioplasty.jpg'
               }
-              title={`${currentStory.title} • Live Procedural Cine`}
+              title={`${currentStory.title} • ${t('Live Procedural Cine', 'लाइव प्रोसीजरल सिने')}`}
               subtitle={currentStory.badge}
               specs={currentStory.stats}
               aspectRatio="aspect-[16/8] sm:aspect-[21/9]"
@@ -272,7 +274,7 @@ export default function TreatmentStorytellingSection() {
               />
               <div className="space-y-1 text-left">
                 <span className="text-[10px] font-mono text-[#BE123C] font-bold uppercase tracking-wider block">
-                  Primary Clinical Indications • Supervised by Dr. Prakash Chand Shahi
+                  {t('Primary Clinical Indications • Supervised by Dr. Prakash Chand Shahi', 'प्राइमरी क्लिनिकल इंडिकेशंस • सुपरवाइज्ड बाय डॉ. प्रकाश चंद शाही')}
                 </span>
                 <div className="flex flex-wrap gap-2 pt-1">
                   {currentStory.indications.map((ind, i) => (
@@ -292,7 +294,7 @@ export default function TreatmentStorytellingSection() {
               to="/contact"
               className="luxury-btn-primary shrink-0"
             >
-              <span>Discuss with Dr. Shahi</span>
+              <span>{t('Discuss with Dr. Shahi', 'डॉ. शाही से बात करें')}</span>
               <ArrowRight className="w-4 h-4 text-white" />
             </Link>
           </div>

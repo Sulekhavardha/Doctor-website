@@ -10,8 +10,10 @@ import SectionCinematicVideo from '../components/SectionCinematicVideo';
 import SectionBackgroundMotion from '../components/SectionBackgroundMotion';
 import Interactive3DTilt from '../components/Interactive3DTilt';
 import ScrollReveal from '../components/ScrollReveal';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function TreatmentsPage() {
+  const { t } = useLanguage();
   return (
     <div className="relative pt-24 pb-24 select-none bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9] overflow-hidden">
 
@@ -26,14 +28,14 @@ export default function TreatmentsPage() {
           <ScrollReveal animation="fade-down">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#0A1128] via-[#1E293B] to-[#BE123C] text-white text-xs font-mono font-medium shadow-md shadow-navy/20 border border-rose-300/30">
               <Activity className="w-4 h-4 text-rose-300 animate-pulse" />
-              <span className="uppercase tracking-[0.2em]">Heart &amp; Artery Treatments</span>
+              <span className="uppercase tracking-[0.2em]">{t('Heart & Artery Treatments', 'हार्ट एंड आर्टरी ट्रीटमेंट्स')}</span>
             </div>
           </ScrollReveal>
 
           <ScrollReveal animation="fade-up" delay={0.1}>
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-[#0A1128] tracking-tight leading-[1.05]">
-              Simple, Safe &amp; Modern <br />
-              <span className="font-serif italic font-normal text-[#BE123C]">Heart Treatments</span>
+              {t('Simple, Safe & Modern', 'आसान, सुरक्षित और मॉडर्न')} <br />
+              <span className="font-serif italic font-normal text-[#BE123C]">{t('Heart Treatments', 'हार्ट ट्रीटमेंट्स')}</span>
             </h1>
           </ScrollReveal>
 
@@ -48,10 +50,10 @@ export default function TreatmentsPage() {
                 />
                 <div className="text-left">
                   <span className="text-xs font-extrabold text-[#0A1128] block">
-                    Lead Interventionalist: Dr. Prakash Chand Shahi
+                    {t('Lead Interventionalist: Dr. Prakash Chand Shahi', 'लीड इंटरवेंशनलिस्ट: डॉ. प्रकाश चंद शाही')}
                   </span>
                   <span className="text-[10px] font-mono text-[#BE123C] font-bold block">
-                    DM Cardiology (PGIMER) • MD (KGMU Lucknow) • 15,000+ Procedures
+                    {t('DM Cardiology (PGIMER) • MD (KGMU Lucknow) • 15,000+ Procedures', 'डीएम कार्डियोलॉजी (पीजीआईएमईआर) • एमडी (केजीएमयू लखनऊ) • 15,000+ प्रोसीजर्स')}
                   </span>
                 </div>
               </div>
@@ -60,7 +62,10 @@ export default function TreatmentsPage() {
 
           <ScrollReveal animation="fade-up" delay={0.2}>
             <p className="text-sm sm:text-base font-normal text-slate-600 max-w-2xl mx-auto leading-relaxed">
-              Painless heart stenting through the wrist, heart blockage check (angiogram), and pacemaker care with clear live imaging.
+              {t(
+                'Painless heart stenting through the wrist, heart blockage check (angiogram), and pacemaker care with clear live imaging.',
+                'कलाई के रास्ते बिना दर्द हार्ट स्टेंटिंग, हार्ट ब्लॉकेज जांच (एंजियोग्राम) और साफ लाइव इमेजिंग के साथ पेसमेकर केयर।'
+              )}
             </p>
           </ScrollReveal>
 
@@ -73,9 +78,9 @@ export default function TreatmentsPage() {
                 showControls={false}
                 styleVariant="panoramic-stage"
                 posterImage="/images/cardiac-stent-procedure.jpg"
-                title="Heart Blockage Check &amp; Stent Care"
-                subtitle="Clear Live Heart Imaging"
-                specs="Gentle Wrist Procedure • Quick Recovery"
+                title={t('Heart Blockage Check & Stent Care', 'हार्ट ब्लॉकेज चेक एंड स्टेंट केयर')}
+                subtitle={t('Clear Live Heart Imaging', 'क्लियर लाइव हार्ट इमेजिंग')}
+                specs={t('Gentle Wrist Procedure • Quick Recovery', 'जेंटल रिस्ट प्रोसीजर • क्विक रिकवरी')}
                 aspectRatio="aspect-[16/8] sm:aspect-[21/9]"
               />
             </Interactive3DTilt>
@@ -126,13 +131,16 @@ export default function TreatmentsPage() {
             <Interactive3DTilt maxTilt={4} scale={1.01}>
               <div className="p-8 sm:p-14 rounded-[2.5rem] bg-gradient-to-br from-white via-slate-50 to-white text-slate-900 shadow-2xl border-2 border-slate-200/90 space-y-6 backdrop-blur-xl">
                 <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#BE123C] font-bold block">
-                  Honest Second Opinion • Betiahata, Gorakhpur
+                  {t('Honest Second Opinion • Betiahata, Gorakhpur', 'ऑनेस्ट सेकंड ओपिनियन • बेतियाहाता, गोरखपुर')}
                 </span>
                 <h3 className="text-3xl sm:text-5xl font-extrabold text-[#0A1128] tracking-tight">
-                  Bring Your Heart Report or CD for a <span className="font-serif italic font-normal text-[#BE123C]">Doctor Review</span>
+                  {t('Bring Your Heart Report or CD for a', 'अपनी हार्ट रिपोर्ट या सीडी लाएं')} <span className="font-serif italic font-normal text-[#BE123C]">{t('Doctor Review', 'डॉक्टर रिव्यू के लिए')}</span>
                 </h3>
                 <p className="text-sm sm:text-base text-slate-600 max-w-xl mx-auto font-normal leading-relaxed">
-                  Get clear, honest advice from Dr. Shahi on whether simple medicines or a stent is best for your heart.
+                  {t(
+                    'Get clear, honest advice from Dr. Shahi on whether simple medicines or a stent is best for your heart.',
+                    'डॉ. शाही से साफ और ईमानदार सलाह लें कि आपके हार्ट के लिए सिर्फ दवाइयां बेहतर हैं या स्टेंट।'
+                  )}
                 </p>
                 <div className="pt-2 flex items-center justify-center gap-4">
                   <Link
@@ -140,7 +148,7 @@ export default function TreatmentsPage() {
                     className="luxury-btn-primary"
                   >
                     <Calendar className="w-4 h-4 text-white" />
-                    <span>Schedule Second Opinion Session</span>
+                    <span>{t('Schedule Second Opinion Session', 'सेकंड ओपिनियन सेशन बुक करें')}</span>
                     <ArrowRight className="w-4 h-4 text-white" />
                   </Link>
                 </div>

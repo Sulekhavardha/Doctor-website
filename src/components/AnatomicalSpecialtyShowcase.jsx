@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle2, Clock, ShieldCheck } from 'lucide-react';
 import SectionBackgroundMotion from './SectionBackgroundMotion';
+import { useLanguage } from '../context/LanguageContext';
 
 /**
  * AnatomicalSpecialtyShowcase
@@ -12,66 +13,67 @@ import SectionBackgroundMotion from './SectionBackgroundMotion';
  */
 export default function AnatomicalSpecialtyShowcase({ variant = 'home-specialties' }) {
   const [activeIndex, setActiveIndex] = useState(0);
+  const { t } = useLanguage();
 
   const specialties = [
     {
       id: 'angioplasty',
       num: '01',
-      title: 'Heart Stenting & Blockage Care',
-      category: 'Painless Wrist Procedure',
-      desc: 'Opening blocked heart arteries gently through the wrist using safe, medicine-coated stents with quick recovery.',
+      title: t('Heart Stenting & Blockage Care', 'हार्ट स्टेंटिंग और ब्लॉकेज केयर'),
+      category: t('Painless Wrist Procedure', 'बिना दर्द कलाई प्रोसीजर'),
+      desc: t('Opening blocked heart arteries gently through the wrist using safe, medicine-coated stents with quick recovery.', 'कलाई के रास्ते सेफ मेडिसिन-कोटेड स्टेंट्स के ज़रिए बंद हार्ट आर्टरीज़ को आराम से खोलना और तेज़ रिकवरी।'),
       image: '/images/cathlab-control-review.jpg',
-      stat: '99.4% Success Rate',
-      recovery: 'Walk in 2 Hours',
+      stat: t('99.4% Success Rate', '99.4% सफलता दर'),
+      recovery: t('Walk in 2 Hours', '2 घंटे में चलें'),
       points: [
-        'Done gently through the wrist — no leg pain or long bed rest',
-        'Safe medicine-coated stents to keep arteries open',
-        'Clear live heart imaging for accurate placement',
+        t('Done gently through the wrist — no leg pain or long bed rest', 'कलाई के रास्ते आसानी से — पैर में दर्द या लंबा बेड रेस्ट नहीं'),
+        t('Safe medicine-coated stents to keep arteries open', 'आर्टरीज़ को खुला रखने के लिए सेफ मेडिसिन-कोटेड स्टेंट्स'),
+        t('Clear live heart imaging for accurate placement', 'सटीक प्लेसमेंट के लिए साफ लाइव हार्ट इमेजिंग'),
       ],
     },
     {
       id: 'angiogram',
       num: '02',
-      title: 'Heart Blockage Check (Angiogram)',
-      category: '15-Minute Heart Test',
-      desc: 'A quick, painless heart test through the wrist to clearly see if any arteries are blocked.',
+      title: t('Heart Blockage Check (Angiogram)', 'हार्ट ब्लॉकेज जांच (एंजियोग्राम)'),
+      category: t('15-Minute Heart Test', '15-मिनट हार्ट टेस्ट'),
+      desc: t('A quick, painless heart test through the wrist to clearly see if any arteries are blocked.', 'कलाई के रास्ते एक तेज़ और बिना दर्द का हार्ट टेस्ट, जिससे साफ पता चलता है कि कोई आर्टरी बंद तो नहीं है।'),
       image: '/images/cardiac-tmt-stress.jpg',
-      stat: '15-Min Quick Check',
-      recovery: 'Same-Day Discharge',
+      stat: t('15-Min Quick Check', '15-मिनट तेज़ जांच'),
+      recovery: t('Same-Day Discharge', 'उसी दिन डिस्चार्ज'),
       points: [
-        'Simple outpatient wrist test — go home the same day',
-        'Dr. Shahi explains your full report and CD clearly to family',
-        'Honest advice on whether medicines or a stent is needed',
+        t('Simple outpatient wrist test — go home the same day', 'आसान ओपीडी रिस्ट टेस्ट — उसी दिन घर जाएं'),
+        t('Dr. Shahi explains your full report and CD clearly to family', 'डॉ. शाही परिवार को आपकी पूरी रिपोर्ट और सीडी साफ समझाते हैं'),
+        t('Honest advice on whether medicines or a stent is needed', 'दवाइयां या स्टेंट किसकी ज़रूरत है, इस पर ईमानदार सलाह'),
       ],
     },
     {
       id: 'pacemakers',
       num: '03',
-      title: 'Pacemaker for Slow Heartbeat',
-      category: 'Heartbeat Support',
-      desc: 'Safe small heart device that keeps a slow or irregular heartbeat steady and prevents dizziness.',
+      title: t('Pacemaker for Slow Heartbeat', 'धीमी हार्टबीट के लिए पेसमेकर'),
+      category: t('Heartbeat Support', 'हार्टबीट सपोर्ट'),
+      desc: t('Safe small heart device that keeps a slow or irregular heartbeat steady and prevents dizziness.', 'छोटा और सुरक्षित हार्ट डिवाइस जो धीमी या अनियमित हार्टबीट को स्थिर रखता है और चक्कर आने से बचाता है।'),
       image: '/images/pacemaker-tech.jpg',
-      stat: '10–14 Yr Battery',
-      recovery: '24–48 Hr Recovery',
+      stat: t('10–14 Yr Battery', '10–14 साल बैटरी'),
+      recovery: t('24–48 Hr Recovery', '24–48 घंटे रिकवरी'),
       points: [
-        'Supports natural, steady heartbeat day and night',
-        'Easy regular checkups and battery monitoring',
-        'Small, comfortable placement with fast healing',
+        t('Supports natural, steady heartbeat day and night', 'दिन-रात सामान्य और स्थिर हार्टबीट में मदद करता है'),
+        t('Easy regular checkups and battery monitoring', 'आसान रेगुलर चेकअप और बैटरी मॉनिटरिंग'),
+        t('Small, comfortable placement with fast healing', 'छोटा, आरामदायक प्लेसमेंट और तेज़ हीलिंग'),
       ],
     },
     {
       id: 'icu-emergency',
       num: '04',
-      title: '24/7 Heart Attack Emergency',
-      category: 'Round-the-Clock Care',
-      desc: 'Immediate emergency heart care and 24/7 cardiac ICU support at Pulse Heart Centre, Betiahata.',
+      title: t('24/7 Heart Attack Emergency', '24/7 हार्ट अटैक इमरजेंसी'),
+      category: t('Round-the-Clock Care', '24 घंटे देखभाल'),
+      desc: t('Immediate emergency heart care and 24/7 cardiac ICU support at Pulse Heart Centre, Betiahata.', 'पल्स हार्ट सेंटर, बेतियाहाता में तुरंत इमरजेंसी हार्ट केयर और 24/7 कार्डियक आईसीयू सपोर्ट।'),
       image: '/images/ambulance-cardiac-care.jpg',
-      stat: 'Under 45 Min Care',
-      recovery: '24/7 Emergency Team',
+      stat: t('Under 45 Min Care', '45 मिनट से कम में केयर'),
+      recovery: t('24/7 Emergency Team', '24/7 इमरजेंसी टीम'),
       points: [
-        'Fast emergency checkup the moment you arrive',
-        'Dedicated clean cath lab and heart ICU beds',
-        'Direct care and supervision by Dr. Prakash Chand Shahi',
+        t('Fast emergency checkup the moment you arrive', 'पहुंचते ही तुरंत इमरजेंसी चेकअप'),
+        t('Dedicated clean cath lab and heart ICU beds', 'समर्पित साफ कैथ लैब और हार्ट आईसीयू बेड्स'),
+        t('Direct care and supervision by Dr. Prakash Chand Shahi', 'डॉ. प्रकाश चंद शाही की सीधी देखरेख और इलाज'),
       ],
     },
   ];
@@ -88,15 +90,15 @@ export default function AnatomicalSpecialtyShowcase({ variant = 'home-specialtie
         <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6 text-left">
           <div className="max-w-2xl space-y-2">
             <span className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-[#BE123C] block">
-              Simple &amp; Safe Heart Care
+              {t('Simple & Safe Heart Care', 'आसान और सुरक्षित हार्ट केयर')}
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0A1128] tracking-tight leading-tight">
-              Our Heart Treatments
+              {t('Our Heart Treatments', 'हमारे हार्ट ट्रीटमेंट्स')}
             </h2>
           </div>
 
           <Link to="/treatments" className="luxury-btn-secondary shrink-0 w-fit">
-            <span>All Treatments</span>
+            <span>{t('All Treatments', 'सभी ट्रीटमेंट्स')}</span>
             <ArrowRight className="w-4 h-4 text-[#BE123C]" />
           </Link>
         </div>
@@ -193,17 +195,17 @@ export default function AnatomicalSpecialtyShowcase({ variant = 'home-specialtie
                   />
                   <div>
                     <span className="text-xs font-extrabold text-[#0A1128] flex items-center gap-1.5">
-                      <span>Dr. Prakash Chand Shahi</span>
+                      <span>{t('Dr. Prakash Chand Shahi', 'डॉ. प्रकाश चंद शाही')}</span>
                       <ShieldCheck className="w-3.5 h-3.5 text-[#BE123C]" />
                     </span>
                     <span className="text-[11px] text-slate-500 block">
-                      DM Cardiology (PGIMER) • MD (KGMU)
+                      {t('DM Cardiology (PGIMER) • MD (KGMU)', 'डीएम कार्डियोलॉजी (पीजीआईएमईआर) • एमडी (केजीएमयू)')}
                     </span>
                   </div>
                 </div>
 
                 <Link to="/contact" className="luxury-btn-primary !py-2.5 !px-5 !text-xs w-fit">
-                  <span>Book Consultation</span>
+                  <span>{t('Book Consultation', 'बुक कंसल्टेशन')}</span>
                   <ArrowRight className="w-3.5 h-3.5 text-white" />
                 </Link>
               </div>

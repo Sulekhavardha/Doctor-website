@@ -4,9 +4,11 @@ import { Link } from 'react-router-dom';
 import { PULSE_DATA } from '../data/pulseData';
 import SectionCinematicVideo from './SectionCinematicVideo';
 import SectionBackgroundMotion from './SectionBackgroundMotion';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function PulseCentreSection({ onBookClick }) {
   const { clinic, doctor } = PULSE_DATA;
+  const { t } = useLanguage();
 
   return (
     <section id="centre" className="relative py-16 lg:py-24 overflow-hidden select-none bg-gradient-to-b from-[#FFF8F5] via-[#FAF5F0] to-[#FFF3EE] rounded-[3rem] border border-orange-200/60 shadow-lg my-12">
@@ -29,15 +31,15 @@ export default function PulseCentreSection({ onBookClick }) {
               <div className="space-y-4 max-w-xl text-left">
                 <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-orange-200 text-xs font-mono font-medium text-[#C2410C] shadow-xs">
                   <img src="/images/p.webp" alt="Pulse Logo" className="w-5 h-5 object-contain rounded-md bg-white p-0.5 border border-orange-200" />
-                  <span className="font-bold">Pulse Heart Centre • Betiahata, Gorakhpur</span>
+                  <span className="font-bold">{t('Pulse Heart Centre • Betiahata, Gorakhpur', 'पल्स हार्ट सेंटर • बेतियाहाता, गोरखपुर')}</span>
                 </div>
 
                 <h3 className="text-3xl sm:text-5xl font-semibold text-slate-950 leading-tight tracking-tight">
-                  Modern Heart Clinic &amp; OPD Care
+                  {t('Modern Heart Clinic & OPD Care', 'मॉडर्न हार्ट क्लिनिक और ओपीडी केयर')}
                 </h3>
 
                 <p className="text-sm sm:text-base text-slate-700 font-medium leading-relaxed">
-                  Led by <strong className="text-[#BE123C] font-bold">Dr. Prakash Chand Shahi</strong> (Heart Specialist). Here you can easily get your ECG, Echo heart scan, report checkup, and regular follow-up care.
+                  {t('Led by', 'लीड बाय')} <strong className="text-[#BE123C] font-bold">{t('Dr. Prakash Chand Shahi', 'डॉ. प्रकाश चंद शाही')}</strong> {t('(Heart Specialist). Here you can easily get your ECG, Echo heart scan, report checkup, and regular follow-up care.', '(हार्ट स्पेशलिस्ट)। यहां आप आसानी से अपना ईसीजी, इको हार्ट स्कैन, रिपोर्ट चेकअप और रेगुलर फॉलो-अप केयर करवा सकते हैं।')}
                 </p>
 
                 <div className="pt-2 flex flex-wrap items-center gap-3">
@@ -45,7 +47,7 @@ export default function PulseCentreSection({ onBookClick }) {
                     to="/contact"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#BE123C] via-[#E11D48] to-[#FB923C] hover:from-[#9F1239] hover:to-[#BE123C] text-white text-xs font-semibold uppercase tracking-wider shadow-md shadow-rose-600/20 hover:shadow-xl transition-all"
                   >
-                    <span>Book OPD Appointment</span>
+                    <span>{t('Book OPD Appointment', 'ओपीडी अपॉइंटमेंट बुक करें')}</span>
                     <ArrowRight className="w-3.5 h-3.5 text-amber-200" />
                   </Link>
 
@@ -54,7 +56,7 @@ export default function PulseCentreSection({ onBookClick }) {
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white hover:bg-orange-50 text-[#BE123C] border-2 border-orange-200 text-xs font-semibold uppercase tracking-wider transition-all shadow-xs"
                   >
                     <Phone className="w-3.5 h-3.5 text-[#EA580C]" />
-                    <span>Call +91 98765 43210</span>
+                    <span>{t('Call +91 98765 43210', 'कॉल करें +91 98765 43210')}</span>
                   </a>
                 </div>
               </div>
@@ -66,9 +68,9 @@ export default function PulseCentreSection({ onBookClick }) {
                   videoUrl="/videos/about-hospital.mp4"
                   styleVariant="video-card"
                   posterImage="/images/hospital-facility.jpg"
-                  title="Pulse Heart Centre Campus"
-                  subtitle="Betiahata, Gorakhpur"
-                  specs="OPD Clinic • Heart Care Wing"
+                  title={t('Pulse Heart Centre Campus', 'पल्स हार्ट सेंटर कैंपस')}
+                  subtitle={t('Betiahata, Gorakhpur', 'बेतियाहाता, गोरखपुर')}
+                  specs={t('OPD Clinic • Heart Care Wing', 'ओपीडी क्लिनिक • हार्ट केयर विंग')}
                   aspectRatio="aspect-[16/11]"
                 />
               </div>
@@ -87,22 +89,22 @@ export default function PulseCentreSection({ onBookClick }) {
                     <MapPin className="w-5 h-5" />
                   </div>
                   <span className="text-xs font-mono uppercase tracking-wider text-[#C2410C] font-bold">
-                    Clinic Location
+                    {t('Clinic Location', 'क्लिनिक लोकेशन')}
                   </span>
                 </div>
                 <div className="h-28 rounded-2xl overflow-hidden mb-3 border border-orange-200/80 relative">
                   <img src="/images/hospital-opd-lounge.jpg" alt="Pulse Heart Centre Betiahata" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-2.5">
-                    <span className="text-[11px] font-bold text-white">Easy to Reach in Betiahata</span>
+                    <span className="text-[11px] font-bold text-white">{t('Easy to Reach in Betiahata', 'बेतियाहाता में पहुंचना आसान')}</span>
                   </div>
                 </div>
                 <p className="text-xs text-slate-700 font-medium leading-relaxed">
-                  {clinic.name}, {clinic.address}
+                  {t(`${clinic.name}, ${clinic.address}`, 'पल्स मल्टीस्पेशियलिटी हॉस्पिटल एंड हार्ट सेंटर, बेतियाहाता, गोरखपुर, उत्तर प्रदेश, भारत')}
                 </p>
               </div>
               <div className="mt-4 pt-3 border-t border-orange-200/60 text-xs text-slate-900 font-bold flex items-center justify-between">
-                <span>Gorakhpur Central Access</span>
-                <span className="font-mono text-[#EA580C]">PIN 273001</span>
+                <span>{t('Gorakhpur Central Access', 'गोरखपुर सेंट्रल एक्सेस')}</span>
+                <span className="font-mono text-[#EA580C]">{t('PIN 273001', 'पिन 273001')}</span>
               </div>
             </div>
 
@@ -114,7 +116,7 @@ export default function PulseCentreSection({ onBookClick }) {
                     <Clock className="w-5 h-5" />
                   </div>
                   <span className="text-xs font-mono uppercase tracking-wider text-[#C2410C] font-bold">
-                    OPD Timings
+                    {t('OPD Timings', 'ओपीडी टाइमिंग्स')}
                   </span>
                 </div>
                 <div className="flex items-center gap-2.5 p-2 rounded-xl bg-white/90 border border-orange-200 mb-3">
@@ -122,23 +124,23 @@ export default function PulseCentreSection({ onBookClick }) {
                     <Clock className="w-5 h-5" />
                   </div>
                   <div>
-                    <span className="text-xs font-bold text-slate-900 block">Dr. Prakash Chand Shahi</span>
-                    <span className="text-[10px] text-[#C2410C] font-semibold block">Mon–Sat • 10 AM – 8 PM</span>
+                    <span className="text-xs font-bold text-slate-900 block">{t('Dr. Prakash Chand Shahi', 'डॉ. प्रकाश चंद शाही')}</span>
+                    <span className="text-[10px] text-[#C2410C] font-semibold block">{t('Mon–Sat • 10 AM – 8 PM', 'सोम–शनि • 10 एएम – 8 पीएम')}</span>
                   </div>
                 </div>
                 <div className="space-y-1.5 text-xs">
                   <div className="flex justify-between py-1 border-b border-orange-200/60">
-                    <span className="text-slate-600 font-medium">Mon — Sat</span>
-                    <span className="text-slate-900 font-bold font-mono">10:00 AM – 8:00 PM</span>
+                    <span className="text-slate-600 font-medium">{t('Mon — Sat', 'सोम — शनि')}</span>
+                    <span className="text-slate-900 font-bold font-mono">{t('10:00 AM – 8:00 PM', '10:00 एएम – 8:00 पीएम')}</span>
                   </div>
                   <div className="flex justify-between py-1 text-slate-500">
-                    <span>Sunday</span>
-                    <span className="text-[#EA580C] font-bold font-mono">Emergencies Prioritized</span>
+                    <span>{t('Sunday', 'रविवार')}</span>
+                    <span className="text-[#EA580C] font-bold font-mono">{t('Emergencies Prioritized', 'इमरजेंसी प्राथमिकता')}</span>
                   </div>
                 </div>
               </div>
               <div className="mt-4 pt-3 border-t border-orange-200/60 text-xs text-slate-900 font-bold">
-                Walk-In &amp; Scheduled Visits
+                {t('Walk-In & Scheduled Visits', 'वॉक-इन और शेड्यूल्ड विज़िट्स')}
               </div>
             </div>
 
@@ -150,23 +152,23 @@ export default function PulseCentreSection({ onBookClick }) {
                     <ShieldCheck className="w-5 h-5" />
                   </div>
                   <span className="text-xs font-mono uppercase tracking-wider text-[#C2410C] font-bold">
-                    Heart Tests Available
+                    {t('Heart Tests Available', 'उपलब्ध हार्ट टेस्ट्स')}
                   </span>
                 </div>
                 <div className="h-28 rounded-2xl overflow-hidden mb-3 border border-orange-200/80 relative">
                   <img src="/images/echo-machine-suite.jpg" alt="2D Echo Machine Suite" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-2.5">
-                    <span className="text-[11px] font-bold text-white">2D Echo &amp; Report Check</span>
+                    <span className="text-[11px] font-bold text-white">{t('2D Echo & Report Check', '2डी इको और रिपोर्ट चेक')}</span>
                   </div>
                 </div>
                 <div className="flex flex-wrap gap-1">
-                  <span className="text-[10px] font-bold bg-orange-50 text-[#C2410C] px-2 py-0.5 rounded border border-orange-200">ECG Heart Test</span>
-                  <span className="text-[10px] font-bold bg-orange-50 text-[#C2410C] px-2 py-0.5 rounded border border-orange-200">2D Echo Scan</span>
-                  <span className="text-[10px] font-bold bg-orange-50 text-[#C2410C] px-2 py-0.5 rounded border border-orange-200">Report &amp; CD Check</span>
+                  <span className="text-[10px] font-bold bg-orange-50 text-[#C2410C] px-2 py-0.5 rounded border border-orange-200">{t('ECG Heart Test', 'ईसीजी हार्ट टेस्ट')}</span>
+                  <span className="text-[10px] font-bold bg-orange-50 text-[#C2410C] px-2 py-0.5 rounded border border-orange-200">{t('2D Echo Scan', '2डी इको स्कैन')}</span>
+                  <span className="text-[10px] font-bold bg-orange-50 text-[#C2410C] px-2 py-0.5 rounded border border-orange-200">{t('Report & CD Check', 'रिपोर्ट और सीडी चेक')}</span>
                 </div>
               </div>
               <div className="mt-4 pt-3 border-t border-orange-200/60 text-xs text-slate-900 font-bold">
-                Fast &amp; Accurate Heart Tests
+                {t('Fast & Accurate Heart Tests', 'तेज़ और सटीक हार्ट टेस्ट्स')}
               </div>
             </div>
 

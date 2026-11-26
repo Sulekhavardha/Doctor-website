@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Play, Pause, Volume2, VolumeX, Maximize, X, Sparkles, ShieldCheck, HeartPulse, Film, CheckCircle2 } from 'lucide-react';
 import { pulseAudio } from '../utils/soundEffects';
+import { useLanguage } from '../context/LanguageContext';
 
 /**
  * CinematicVideoPlayerModal
@@ -14,6 +15,7 @@ import { pulseAudio } from '../utils/soundEffects';
  *   5. Advanced Technology: 3.0T MRI & 128-Slice CT
  */
 export default function CinematicVideoPlayerModal({ isOpen, onClose, initialClip = 0 }) {
+  const { t } = useLanguage();
   const [isPlaying, setIsPlaying] = useState(true);
   const [activeClip, setActiveClip] = useState(initialClip);
   const [progress, setProgress] = useState(15);
@@ -24,58 +26,58 @@ export default function CinematicVideoPlayerModal({ isOpen, onClose, initialClip
   const videoClips = [
     {
       id: 'tour',
-      title: 'NABH Tertiary Hospital & Atrium Tour',
-      tagline: '4K Drone Architecture & HEPA-14 Cleanroom Suites',
+      title: t('NABH Tertiary Hospital & Atrium Tour', 'एनएबीएच टर्शियरी हॉस्पिटल एंड एट्रियम टूर'),
+      tagline: t('4K Drone Architecture & HEPA-14 Cleanroom Suites', '4के ड्रोन आर्किटेक्चर एंड हेपा-14 क्लीनरूम सूट्स'),
       image: '/images/hospital-facility.jpg',
       videoUrl: '/videos/hero-architecture.mp4',
-      badge: 'ARCHITECTURAL TOUR',
+      badge: t('ARCHITECTURAL TOUR', 'आर्किटेक्चरल टूर'),
       duration: '01:30',
       resolution: '4K UHD • 60 FPS',
-      specs: '14,000 Sq. Ft. Atrium · Class-100 Laminar Flow OTs',
+      specs: t('14,000 Sq. Ft. Atrium · Class-100 Laminar Flow OTs', '14,000 स्क्वायर फीट एट्रियम · क्लास-100 लैमिनार फ्लो ओटीज'),
     },
     {
       id: 'cathlab',
-      title: 'Siemens Artis Zee Fluoroscopy Suite',
-      tagline: 'Emergency STEMI Primary Angioplasty Feed',
+      title: t('Siemens Artis Zee Fluoroscopy Suite', 'सीमेंस आर्टिस जी फ्लोरोस्कोपी सूट'),
+      tagline: t('Emergency STEMI Primary Angioplasty Feed', 'इमरजेंसी स्टेमी प्राइमरी एंजियोप्लास्टी फीड'),
       image: '/images/cath-lab.jpg',
       videoUrl: '/videos/cardiac-catheterization.mp4',
-      badge: 'LIVE CATH-LAB STREAM',
+      badge: t('LIVE CATH-LAB STREAM', 'लाइव कैथ-लैब स्ट्रीम'),
       duration: '02:15',
       resolution: '1080p FLUORO • 30 FPS',
-      specs: 'Flat-Panel Digital Detector · Ultra-Low Radiation Protocol',
+      specs: t('Flat-Panel Digital Detector · Ultra-Low Radiation Protocol', 'फ्लैट-पैनल डिजिटल डिटेक्टर · अल्ट्रा-लो रेडिएशन प्रोटोकॉल'),
     },
     {
       id: 'heart',
-      title: '3D Beating Heart & Coronary Flow',
-      tagline: 'Anatomical Coronary Tree & Ventricular Rhythm',
+      title: t('3D Beating Heart & Coronary Flow', '3डी बीटिंग हार्ट एंड कोरोनरी फ्लो'),
+      tagline: t('Anatomical Coronary Tree & Ventricular Rhythm', 'एनाटॉमिकल कोरोनरी ट्री एंड वेंट्रिकुलर रिदम'),
       image: '/images/heart-anatomy.jpg',
       videoUrl: '/videos/cardiology-heart.mp4',
-      badge: 'CARDIOLOGY 3D',
+      badge: t('CARDIOLOGY 3D', 'कार्डियोलॉजी 3डी'),
       duration: '01:50',
       resolution: '4K CINE • 60 FPS',
-      specs: 'Coronary Perfusion · 72 BPM Sinus Rhythm Synchronization',
+      specs: t('Coronary Perfusion · 72 BPM Sinus Rhythm Synchronization', 'कोरोनरी परफ्यूजन · 72 बीपीएम साइनस रिदम सिंक्रोनाइजेशन'),
     },
     {
       id: 'consult',
-      title: 'Dr. Prakash Chand Shahi Clinical Dialogue',
-      tagline: 'Executive Angiogram CD Review & Bedside Ethics',
+      title: t('Dr. Prakash Chand Shahi Clinical Dialogue', 'डॉ. प्रकाश चंद शाही क्लिनिकल डायलॉग'),
+      tagline: t('Executive Angiogram CD Review & Bedside Ethics', 'एग्जीक्यूटिव एंजियोग्राम सीडी रिव्यू एंड बेडसाइड एथिक्स'),
       image: '/images/cath-lab.jpg',
       videoUrl: '/videos/doctors-procedure.mp4',
-      badge: 'CLINICIAN MONOGRAPH',
+      badge: t('CLINICIAN MONOGRAPH', 'क्लिनिशियन मोनोग्राफ'),
       duration: '01:45',
       resolution: '4K PRORES • 24 FPS',
-      specs: 'PGIMER & KGMU Pedigree · 22+ Years in Gorakhpur',
+      specs: t('PGIMER & KGMU Pedigree · 22+ Years in Gorakhpur', 'पीजीआईएमईआर एंड केजीएमयू पेडिग्री · 22+ इयर्स इन गोरखपुर'),
     },
     {
       id: 'tech',
-      title: 'Advanced Volumetric MRI / CT Radiology',
-      tagline: '3.0 Tesla Whisper-Quiet MRI & 128-Slice Cardiac CT',
+      title: t('Advanced Volumetric MRI / CT Radiology', 'एडवांस्ड वॉल्यूमेट्रिक एमआरआई / सीटी रेडियोलॉजी'),
+      tagline: t('3.0 Tesla Whisper-Quiet MRI & 128-Slice Cardiac CT', '3.0 टेस्ला व्हिस्पर-क्वाइट एमआरआई एंड 128-स्लाइस कार्डियक सीटी'),
       image: '/images/cath-lab.jpg',
       videoUrl: '/videos/advanced-tech.mp4',
-      badge: 'DIAGNOSTIC RADIOLOGY',
+      badge: t('DIAGNOSTIC RADIOLOGY', 'डायग्नोस्टिक रेडियोलॉजी'),
       duration: '02:00',
       resolution: '3.0T MATRIX • 60 FPS',
-      specs: 'Sub-Millimeter Reconstructions · Laser Tomography Plane',
+      specs: t('Sub-Millimeter Reconstructions · Laser Tomography Plane', 'सब-मिलीमीटर रिकंस्ट्रक्शंस · लेजर टोमोग्राफी प्लेन'),
     },
   ];
 
@@ -132,7 +134,7 @@ export default function CinematicVideoPlayerModal({ isOpen, onClose, initialClip
           <div className="flex items-center gap-3">
             <span className="flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-600/20 border border-emerald-500/40 text-emerald-400 font-mono text-[11px] font-bold">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
-              <span>LIVE BROADCAST • {currentClip.badge}</span>
+              <span>{t('LIVE BROADCAST', 'लाइव ब्रॉडकास्ट')} • {currentClip.badge}</span>
             </span>
             <span className="text-xs text-[#059669] font-mono hidden sm:inline-block">
               {currentClip.resolution}
@@ -184,9 +186,9 @@ export default function CinematicVideoPlayerModal({ isOpen, onClose, initialClip
 
           {/* Top Left OSD HUD Stamp */}
           <div className="absolute top-5 left-5 z-20 font-mono text-[11px] text-[#A7F3D0]/90 space-y-0.5 pointer-events-none drop-shadow-md">
-            <div>PULSE HOSPITAL • BETIAHATA GORAKHPUR</div>
-            <div>CAM-01 • SIEMENS DIGITAL MATRIX 1024×1024</div>
-            <div className="text-amber-400">LEAD CLINICIAN: DR. PRAKASH CHAND SHAHI</div>
+            <div>{t('PULSE HOSPITAL • BETIAHATA GORAKHPUR', 'पल्स हॉस्पिटल • बेतियाहाता गोरखपुर')}</div>
+            <div>{t('CAM-01 • SIEMENS DIGITAL MATRIX 1024×1024', 'कैम-01 • सीमेंस डिजिटल मैट्रिक्स 1024×1024')}</div>
+            <div className="text-amber-400">{t('LEAD CLINICIAN: DR. PRAKASH CHAND SHAHI', 'लीड क्लिनिशियन: डॉ. प्रकाश चंद शाही')}</div>
           </div>
 
           {/* Top Right Live Timecode */}
@@ -254,7 +256,7 @@ export default function CinematicVideoPlayerModal({ isOpen, onClose, initialClip
                 className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#10B981 hover:bg-[#059669] text-slate-950 font-bold text-xs transition-colors cursor-pointer"
               >
                 {isPlaying ? <Pause className="w-3.5 h-3.5 fill-current" /> : <Play className="w-3.5 h-3.5 fill-current" />}
-                <span>{isPlaying ? 'PAUSE FEED' : 'RESUME PLAY'}</span>
+                <span>{isPlaying ? t('PAUSE FEED', 'पॉज फीड') : t('RESUME PLAY', 'रिज्यूम प्ले')}</span>
               </button>
 
               <span className="text-xs font-mono text-[#A7F3D0]/80">

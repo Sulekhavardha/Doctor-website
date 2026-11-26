@@ -5,6 +5,7 @@ import {
   ChevronLeft, ChevronRight, Play, Pause, Calendar, ArrowRight
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '../context/LanguageContext';
 
 /**
  * CylinderCarouselMilestones
@@ -17,6 +18,7 @@ export default function CylinderCarouselMilestones({
   items,
   className = ""
 }) {
+  const { t } = useLanguage();
   const defaultMilestones = [
     {
       year: "2002",
@@ -213,7 +215,7 @@ export default function CylinderCarouselMilestones({
       <div className="flex items-center justify-between max-w-5xl mx-auto px-4 mb-6">
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-rose-200 text-xs font-mono font-bold text-[#BE123C] shadow-sm">
           <span className="w-2 h-2 rounded-full bg-[#BE123C] animate-ping" />
-          <span>3D CYLINDER CAROUSEL • 360° CLINICAL TIMELINE</span>
+          <span>{t('3D CYLINDER CAROUSEL • 360° CLINICAL TIMELINE', '3डी सिलेंडर कैराउसेल • 360° क्लिनिकल टाइमलाइन')}</span>
         </div>
 
         <div className="flex items-center gap-2">
@@ -225,12 +227,12 @@ export default function CylinderCarouselMilestones({
             {isAutoPlaying ? (
               <>
                 <Pause className="w-3.5 h-3.5 text-[#BE123C]" />
-                <span className="hidden sm:inline">Pause</span>
+                <span className="hidden sm:inline">{t('Pause', 'पॉज')}</span>
               </>
             ) : (
               <>
                 <Play className="w-3.5 h-3.5 text-[#0A1128]" />
-                <span className="hidden sm:inline">Play</span>
+                <span className="hidden sm:inline">{t('Play', 'प्ले')}</span>
               </>
             )}
           </button>
@@ -327,7 +329,7 @@ export default function CylinderCarouselMilestones({
                         {m.year}
                       </span>
                       <span className="text-[10px] font-mono font-bold text-slate-500 block uppercase tracking-wider mt-0.5">
-                        Clinical Epoch #{m.num}
+                        {t('Clinical Epoch', 'क्लिनिकल एपक')} #{m.num}
                       </span>
                     </div>
                   </div>
@@ -406,7 +408,7 @@ export default function CylinderCarouselMilestones({
 
         <div className="text-center mt-3">
           <span className="text-[11px] font-mono text-slate-500">
-            Drag horizontally or click years to rotate 3D Cylinder
+            {t('Drag horizontally or click years to rotate 3D Cylinder', 'ड्रैग हॉरिजॉन्टली ऑर क्लिक इयर्स टू रोटेट 3डी सिलेंडर')}
           </span>
         </div>
       </div>

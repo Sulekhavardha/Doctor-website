@@ -11,20 +11,22 @@ import DoctorPlaceholder from '../components/DoctorPlaceholder';
 import ThreeDImageCard from '../components/ThreeDImageCard';
 import SectionBackgroundMotion from '../components/SectionBackgroundMotion';
 import DoctorHeroMedicalCanvas from '../components/DoctorHeroMedicalCanvas';
+import { useLanguage } from '../context/LanguageContext';
 
 const CylinderCarouselMilestones = lazy(() => import('../components/CylinderCarouselMilestones'));
 
 export default function AboutPage() {
   const [timelineMode, setTimelineMode] = useState('cylinder'); // 'cylinder' | 'expanded'
+  const { t } = useLanguage();
   const milestones = [
     {
       year: "2002",
-      phase: "STEP 01",
-      badge: "Starting Point",
-      institution: "Betiahata, Gorakhpur",
-      title: "Starting Heart Care in Betiahata",
-      desc: "Started dedicated heart care in Betiahata, Gorakhpur, with a promise to listen patiently and put every patient first.",
-      tags: ["Betiahata, Gorakhpur", "Patient-First Care", "Day 1 Promise"],
+      phase: t('STEP 01', 'स्टेप 01'),
+      badge: t('Starting Point', 'स्टार्टिंग पॉइंट'),
+      institution: t('Betiahata, Gorakhpur', 'बेतियाहाता, गोरखपुर'),
+      title: t('Starting Heart Care in Betiahata', 'स्टार्टिंग हार्ट केयर इन बेतियाहाता'),
+      desc: t('Started dedicated heart care in Betiahata, Gorakhpur, with a promise to listen patiently and put every patient first.', 'स्टार्टेड डेडिकेटेड हार्ट केयर इन बेतियाहाता, गोरखपुर, विद अ प्रॉमिस टू लिसन पेशेंटली एंड पुट एवरी पेशेंट फर्स्ट।'),
+      tags: [t('Betiahata, Gorakhpur', 'बेतियाहाता, गोरखपुर'), t('Patient-First Care', 'पेशेंट-फर्स्ट केयर'), t('Day 1 Promise', 'डे 1 प्रॉमिस')],
       icon: HeartPulse,
       accent: "from-[#0A1128] to-[#1E293B]",
       borderAccent: "border-slate-300",
@@ -32,12 +34,12 @@ export default function AboutPage() {
     },
     {
       year: "2007",
-      phase: "STEP 02",
-      badge: "Medical Degree",
-      institution: "KGMU Lucknow",
-      title: "MD Medicine at KGMU Lucknow",
-      desc: "Completed MD General Medicine at King George's Medical University, Lucknow, building strong experience in treating complex heart and BP cases.",
-      tags: ["KGMU Lucknow", "Strong Diagnosis", "Trusted Care"],
+      phase: t('STEP 02', 'स्टेप 02'),
+      badge: t('Medical Degree', 'मेडिकल डिग्री'),
+      institution: t('KGMU Lucknow', 'केजीएमयू लखनऊ'),
+      title: t('MD Medicine at KGMU Lucknow', 'एमडी मेडिसिन एट केजीएमयू लखनऊ'),
+      desc: t("Completed MD General Medicine at King George's Medical University, Lucknow, building strong experience in treating complex heart and BP cases.", "कम्प्लीटेड एमडी जनरल मेडिसिन एट किंग जॉर्ज मेडिकल यूनिवर्सिटी, लखनऊ, बिल्डिंग स्ट्रॉन्ग एक्सपीरियंस इन ट्रीटिंग कॉम्प्लेक्स हार्ट एंड बीपी केसेस।"),
+      tags: [t('KGMU Lucknow', 'केजीएमयू लखनऊ'), t('Strong Diagnosis', 'स्ट्रॉन्ग डायग्नोसिस'), t('Trusted Care', 'ट्रस्टेड केयर')],
       icon: Award,
       accent: "from-[#1E293B] to-[#334155]",
       borderAccent: "border-slate-300",
@@ -45,12 +47,12 @@ export default function AboutPage() {
     },
     {
       year: "2013",
-      phase: "STEP 03",
-      badge: "Heart Specialist",
-      institution: "PGIMER Chandigarh",
-      title: "DM Cardiology at PGIMER Chandigarh",
-      desc: "Completed super-specialty DM Cardiology at PGIMER Chandigarh, bringing painless heart checkups and stenting through the wrist to eastern UP.",
-      tags: ["PGIMER Chandigarh", "Safe Wrist Care", "Eastern UP"],
+      phase: t('STEP 03', 'स्टेप 03'),
+      badge: t('Heart Specialist', 'हार्ट स्पेशलिस्ट'),
+      institution: t('PGIMER Chandigarh', 'पीजीआईएमईआर चंडीगढ़'),
+      title: t('DM Cardiology at PGIMER Chandigarh', 'डीएम कार्डियोलॉजी एट पीजीआईएमईआर चंडीगढ़'),
+      desc: t('Completed super-specialty DM Cardiology at PGIMER Chandigarh, bringing painless heart checkups and stenting through the wrist to eastern UP.', 'कम्प्लीटेड सुपर-स्पेशियलिटी डीएम कार्डियोलॉजी एट पीजीआईएमईआर चंडीगढ़, ब्रिंगिंग पेनलेस हार्ट चेकअप्स एंड स्टेंटिंग थ्रू द रिस्ट टू ईस्टर्न यूपी।'),
+      tags: [t('PGIMER Chandigarh', 'पीजीआईएमईआर चंडीगढ़'), t('Safe Wrist Care', 'सेफ रिस्ट केयर'), t('Eastern UP', 'ईस्टर्न यूपी')],
       icon: Sparkles,
       accent: "from-[#BE123C] to-[#E11D48]",
       borderAccent: "border-rose-300",
@@ -58,12 +60,12 @@ export default function AboutPage() {
     },
     {
       year: "2018",
-      phase: "STEP 04",
-      badge: "Modern Cath Lab",
-      institution: "Siemens Artis Zee Cath Lab",
-      title: "Digital Heart Cath Lab Opened",
-      desc: "Set up the modern Siemens Artis Zee Cath Lab in Betiahata to provide 24/7 emergency heart attack care with clear live imaging.",
-      tags: ["Siemens Cath Lab", "Clear Heart Stents", "24/7 Emergency"],
+      phase: t('STEP 04', 'स्टेप 04'),
+      badge: t('Modern Cath Lab', 'मॉडर्न कैथ लैब'),
+      institution: t('Siemens Artis Zee Cath Lab', 'सीमेंस आर्टिस जी कैथ लैब'),
+      title: t('Digital Heart Cath Lab Opened', 'डिजिटल हार्ट कैथ लैब ओपन्ड'),
+      desc: t('Set up the modern Siemens Artis Zee Cath Lab in Betiahata to provide 24/7 emergency heart attack care with clear live imaging.', 'सेट अप द मॉडर्न सीमेंस आर्टिस जी कैथ लैब इन बेतियाहाता टू प्रोवाइड 24/7 इमरजेंसी हार्ट अटैक केयर विद क्लियर लाइव इमेजिंग।'),
+      tags: [t('Siemens Cath Lab', 'सीमेंस कैथ लैब'), t('Clear Heart Stents', 'क्लियर हार्ट स्टेंट्स'), t('24/7 Emergency', '24/7 इमरजेंसी')],
       icon: ShieldCheck,
       accent: "from-[#0A1128] to-[#BE123C]",
       borderAccent: "border-rose-300",
@@ -71,12 +73,12 @@ export default function AboutPage() {
     },
     {
       year: "2023",
-      phase: "STEP 05",
-      badge: "24/7 Heart ICU",
-      institution: "Emergency • Heart ICU",
-      title: "Expanded Emergency & Heart ICU",
-      desc: "Expanded 24/7 emergency heart care, modern artery imaging, and a dedicated Heart ICU — crossing 15,000+ successful procedures.",
-      tags: ["Modern Imaging", "Dedicated Heart ICU", "15,000+ Procedures"],
+      phase: t('STEP 05', 'स्टेप 05'),
+      badge: t('24/7 Heart ICU', '24/7 हार्ट आईसीयू'),
+      institution: t('Emergency • Heart ICU', 'इमरजेंसी • हार्ट आईसीयू'),
+      title: t('Expanded Emergency & Heart ICU', 'एक्सपैंडेड इमरजेंसी एंड हार्ट आईसीयू'),
+      desc: t('Expanded 24/7 emergency heart care, modern artery imaging, and a dedicated Heart ICU — crossing 15,000+ successful procedures.', 'एक्सपैंडेड 24/7 इमरजेंसी हार्ट केयर, मॉडर्न आर्टरी इमेजिंग, एंड अ डेडिकेटेड हार्ट आईसीयू — क्रॉसिंग 15,000+ सक्सेसफुल प्रोसीजर्स।'),
+      tags: [t('Modern Imaging', 'मॉडर्न इमेजिंग'), t('Dedicated Heart ICU', 'डेडिकेटेड हार्ट आईसीयू'), t('15,000+ Procedures', '15,000+ प्रोसीजर्स')],
       icon: Activity,
       accent: "from-[#881337] to-[#BE123C]",
       borderAccent: "border-rose-300",
@@ -102,20 +104,20 @@ export default function AboutPage() {
             <div className="lg:col-span-7 space-y-5 text-left">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-rose-200 text-[#BE123C] text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] shadow-xs">
                 <Sparkles className="w-3.5 h-3.5 text-[#BE123C]" />
-                <span>Institutional Founder &amp; Chief Cardiologist</span>
+                <span>{t('Institutional Founder & Chief Cardiologist', 'इंस्टीट्यूशनल फाउंडर एंड चीफ कार्डियोलॉजिस्ट')}</span>
               </div>
 
               <div className="space-y-2">
                 <h1 className="text-3xl sm:text-5xl lg:text-[3.4rem] font-extrabold text-[#0A1128] tracking-tight leading-[1.06]">
-                  Dr. Prakash Chand Shahi
+                  {t('Dr. Prakash Chand Shahi', 'डॉ. प्रकाश चंद शाही')}
                 </h1>
                 <p className="font-serif italic font-normal text-[#BE123C] text-xl sm:text-3xl leading-snug">
-                  22+ Years of Trusted Heart Care &amp; Dedication.
+                  {t('22+ Years of Trusted Heart Care & Dedication.', '22+ सालों का भरोसेमंद हार्ट केयर और समर्पण।')}
                 </p>
               </div>
 
               <p className="text-sm sm:text-base text-slate-600 max-w-2xl font-normal leading-relaxed">
-                Consultant Cardiologist at Pulse Heart Centre, Betiahata, trained at <span className="font-semibold text-[#0A1128]">PGIMER Chandigarh</span> (DM), <span className="font-semibold text-[#0A1128]">KGMU Lucknow</span> (MD), and <span className="font-semibold text-[#0A1128]">GSVM Kanpur</span> (MBBS) — <span className="font-semibold text-[#0A1128]">UP Medical Council Reg. No. 47395</span>. Dedicated to honest advice, gentle heart stenting through the wrist, and 24/7 heart emergency care.
+                {t('Consultant Cardiologist at Pulse Heart Centre, Betiahata, trained at', 'पल्स हार्ट सेंटर, बेतियाहाता में कंसल्टेंट कार्डियोलॉजिस्ट, जिन्होंने')} <span className="font-semibold text-[#0A1128]">{t('PGIMER Chandigarh', 'पीजीआईएमईआर चंडीगढ़')}</span> ({t('DM', 'डीएम')}), <span className="font-semibold text-[#0A1128]">{t('KGMU Lucknow', 'केजीएमयू लखनऊ')}</span> ({t('MD', 'एमडी')}), {t('and', 'और')} <span className="font-semibold text-[#0A1128]">{t('GSVM Kanpur', 'जीएसवीएम कानपुर')}</span> ({t('MBBS', 'एमबीबीएस')}) {t('—', 'से प्रशिक्षण प्राप्त किया —')} <span className="font-semibold text-[#0A1128]">{t('UP Medical Council Reg. No. 47395', 'यूपी मेडिकल काउंसिल रजि. नं. 47395')}</span>। {t('Dedicated to honest advice, gentle heart stenting through the wrist, and 24/7 heart emergency care.', 'ईमानदार सलाह, कलाई के रास्ते आरामदायक हार्ट स्टेंटिंग और 24/7 हार्ट इमरजेंसी केयर के लिए समर्पित।')}
               </p>
 
               {/* 3-Column Academic & Clinical Pedigree Strip */}
@@ -125,10 +127,10 @@ export default function AboutPage() {
                     <div className="w-7 h-7 rounded-lg bg-rose-50 border border-rose-200 flex items-center justify-center text-[#BE123C] shrink-0">
                       <Award className="w-3.5 h-3.5" />
                     </div>
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#BE123C]">Super-Specialty</span>
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#BE123C]">{t('Super-Specialty', 'सुपर-स्पेशियलिटी')}</span>
                   </div>
-                  <p className="text-sm font-extrabold text-[#0A1128]">DM Cardiology</p>
-                  <p className="text-[11px] text-slate-500 mt-0.5">PGIMER Chandigarh</p>
+                  <p className="text-sm font-extrabold text-[#0A1128]">{t('DM Cardiology', 'डीएम कार्डियोलॉजी')}</p>
+                  <p className="text-[11px] text-slate-500 mt-0.5">{t('PGIMER Chandigarh', 'पीजीआईएमईआर चंडीगढ़')}</p>
                 </div>
 
                 <div className="p-3.5 rounded-2xl bg-white border border-slate-200 shadow-xs hover:border-slate-300 transition-colors">
@@ -136,10 +138,10 @@ export default function AboutPage() {
                     <div className="w-7 h-7 rounded-lg bg-slate-100 border border-slate-200 flex items-center justify-center text-[#0A1128] shrink-0">
                       <Building2 className="w-3.5 h-3.5" />
                     </div>
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-slate-600">Gold Standard</span>
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-slate-600">{t('Gold Standard', 'गोल्ड स्टैंडर्ड')}</span>
                   </div>
-                  <p className="text-sm font-extrabold text-[#0A1128]">MD Medicine</p>
-                  <p className="text-[11px] text-slate-500 mt-0.5">KGMU Lucknow</p>
+                  <p className="text-sm font-extrabold text-[#0A1128]">{t('MD Medicine', 'एमडी मेडिसिन')}</p>
+                  <p className="text-[11px] text-slate-500 mt-0.5">{t('KGMU Lucknow', 'केजीएमयू लखनऊ')}</p>
                 </div>
 
                 <div className="p-3.5 rounded-2xl bg-white border border-slate-200 shadow-xs hover:border-rose-300 transition-colors">
@@ -147,30 +149,30 @@ export default function AboutPage() {
                     <div className="w-7 h-7 rounded-lg bg-rose-50 border border-rose-200 flex items-center justify-center text-[#BE123C] shrink-0">
                       <Stethoscope className="w-3.5 h-3.5" />
                     </div>
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#BE123C]">Betiahata, GKP</span>
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-[#BE123C]">{t('Betiahata, GKP', 'बेतियाहाता, जीकेपी')}</span>
                   </div>
-                  <p className="text-sm font-extrabold text-[#0A1128]">Artis Zee Cath Lab</p>
-                  <p className="text-[11px] text-slate-500 mt-0.5">24/7 Heart Attack Care</p>
+                  <p className="text-sm font-extrabold text-[#0A1128]">{t('Artis Zee Cath Lab', 'आर्टिस जी कैथ लैब')}</p>
+                  <p className="text-[11px] text-slate-500 mt-0.5">{t('24/7 Heart Attack Care', '24/7 हार्ट अटैक केयर')}</p>
                 </div>
               </div>
 
               {/* 4 Impact Micro-Metrics */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
                 <div className="p-3 rounded-xl bg-white border border-slate-200/90 shadow-xs">
-                  <span className="text-lg sm:text-xl font-extrabold text-[#0A1128] block">22+ Yrs</span>
-                  <span className="text-[10px] font-bold text-slate-600 uppercase tracking-tight block">Clinical Legacy</span>
+                  <span className="text-lg sm:text-xl font-extrabold text-[#0A1128] block">{t('22+ Yrs', '22+ इयर्स')}</span>
+                  <span className="text-[10px] font-bold text-slate-600 uppercase tracking-tight block">{t('Clinical Legacy', 'क्लिनिकल लिगेसी')}</span>
                 </div>
                 <div className="p-3 rounded-xl bg-white border border-slate-200/90 shadow-xs">
                   <span className="text-lg sm:text-xl font-extrabold text-[#BE123C] block">15,000+</span>
-                  <span className="text-[10px] font-bold text-slate-600 uppercase tracking-tight block">Cath Procedures</span>
+                  <span className="text-[10px] font-bold text-slate-600 uppercase tracking-tight block">{t('Cath Procedures', 'कैथ प्रोसीजर्स')}</span>
                 </div>
                 <div className="p-3 rounded-xl bg-white border border-slate-200/90 shadow-xs">
-                  <span className="text-lg sm:text-xl font-extrabold text-[#0A1128] block">&lt; 45 Min</span>
-                  <span className="text-[10px] font-bold text-slate-600 uppercase tracking-tight block">Door-To-Balloon</span>
+                  <span className="text-lg sm:text-xl font-extrabold text-[#0A1128] block">{t('< 45 Min', '< 45 मिन')}</span>
+                  <span className="text-[10px] font-bold text-slate-600 uppercase tracking-tight block">{t('Door-To-Balloon', 'डोर-टू-बैलून')}</span>
                 </div>
                 <div className="p-3 rounded-xl bg-white border border-slate-200/90 shadow-xs">
                   <span className="text-lg sm:text-xl font-extrabold text-[#BE123C] block">99.4%</span>
-                  <span className="text-[10px] font-bold text-slate-600 uppercase tracking-tight block">Radial Patency</span>
+                  <span className="text-[10px] font-bold text-slate-600 uppercase tracking-tight block">{t('Radial Patency', 'रेडियल पेटेंसी')}</span>
                 </div>
               </div>
 
@@ -181,7 +183,7 @@ export default function AboutPage() {
                   className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full bg-[#0A1128] hover:bg-[#BE123C] text-white font-bold text-xs uppercase tracking-wider shadow-lg transition-all duration-300 hover:-translate-y-0.5 group text-center"
                 >
                   <Calendar className="w-4 h-4 text-rose-300 group-hover:scale-110 transition-transform" />
-                  <span>Book Priority OPD Pass</span>
+                  <span>{t('Book Priority OPD Pass', 'बुक प्रायोरिटी ओपीडी पास')}</span>
                   <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform" />
                 </Link>
 
@@ -190,7 +192,7 @@ export default function AboutPage() {
                   className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-white hover:bg-slate-50 text-[#0A1128] font-bold text-xs uppercase tracking-wider border border-slate-300 hover:border-[#BE123C] hover:text-[#BE123C] shadow-xs transition-all duration-300 text-center"
                 >
                   <Phone className="w-4 h-4 text-[#BE123C]" />
-                  <span>24/7 Emergency Helpline</span>
+                  <span>{t('24/7 Emergency Helpline', '24/7 इमरजेंसी हेल्पलाइन')}</span>
                 </a>
               </div>
             </div>
@@ -208,11 +210,11 @@ export default function AboutPage() {
                   <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#0A1128] via-[#0A1128]/70 to-transparent" />
                   <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between gap-2">
                     <div>
-                      <p className="text-white font-extrabold text-sm leading-tight">Dr. Prakash Chand Shahi</p>
-                      <p className="text-rose-300 text-[11px] font-semibold">DM (PGIMER) • MD (KGMU)</p>
+                      <p className="text-white font-extrabold text-sm leading-tight">{t('Dr. Prakash Chand Shahi', 'डॉ. प्रकाश चंद शाही')}</p>
+                      <p className="text-rose-300 text-[11px] font-semibold">{t('DM (PGIMER) • MD (KGMU)', 'डीएम (पीजीआईएमईआर) • एमडी (केजीएमयू)')}</p>
                     </div>
                     <span className="px-2.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[10px] font-bold uppercase tracking-wider text-white">
-                      Lead Clinician
+                      {t('Lead Clinician', 'लीड क्लिनिशियन')}
                     </span>
                   </div>
                 </div>
@@ -229,7 +231,7 @@ export default function AboutPage() {
                     />
                   </div>
                   <div className="px-3 py-2 flex items-center justify-between">
-                    <span className="text-[11px] font-bold text-[#0A1128]">Direct OPD Care</span>
+                    <span className="text-[11px] font-bold text-[#0A1128]">{t('Direct OPD Care', 'डायरेक्ट ओपीडी केयर')}</span>
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
                   </div>
                 </div>
@@ -243,7 +245,7 @@ export default function AboutPage() {
                     />
                   </div>
                   <div className="px-3 py-2 flex items-center justify-between">
-                    <span className="text-[11px] font-bold text-[#0A1128]">Radial Cath Lab</span>
+                    <span className="text-[11px] font-bold text-[#0A1128]">{t('Radial Cath Lab', 'रेडियल कैथ लैब')}</span>
                     <span className="w-1.5 h-1.5 rounded-full bg-[#BE123C]" />
                   </div>
                 </div>
@@ -257,20 +259,20 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto w-full pt-6 border-t border-slate-200 relative z-10">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 text-left">
             <div className="p-3.5 rounded-2xl bg-white/90 border border-slate-200/90 shadow-sm hover:shadow-md transition-shadow">
-              <span className="text-xs font-extrabold text-[#0A1128] block">Honest Patient Care</span>
-              <span className="text-[11px] text-slate-600 block mt-0.5">We listen carefully and give clear, caring advice to every heart patient.</span>
+              <span className="text-xs font-extrabold text-[#0A1128] block">{t('Honest Patient Care', 'ईमानदार पेशेंट केयर')}</span>
+              <span className="text-[11px] text-slate-600 block mt-0.5">{t('We listen carefully and give clear, caring advice to every heart patient.', 'हम हर हार्ट मरीज़ की बात ध्यान से सुनते हैं और साफ व सही सलाह देते हैं।')}</span>
             </div>
             <div className="p-3.5 rounded-2xl bg-white/90 border border-slate-200/90 shadow-sm hover:shadow-md transition-shadow">
-              <span className="text-xs font-extrabold text-[#BE123C] block">Gentle Wrist Care</span>
-              <span className="text-[11px] text-slate-600 block mt-0.5">Walk comfortably within 2 hours after your procedure with no leg pain.</span>
+              <span className="text-xs font-extrabold text-[#BE123C] block">{t('Gentle Wrist Care', 'आरामदायक रिस्ट केयर')}</span>
+              <span className="text-[11px] text-slate-600 block mt-0.5">{t('Walk comfortably within 2 hours after your procedure with no leg pain.', 'प्रोसीजर के 2 घंटे के अंदर बिना पैर दर्द के आराम से चलें।')}</span>
             </div>
             <div className="p-3.5 rounded-2xl bg-white/90 border border-slate-200/90 shadow-sm hover:shadow-md transition-shadow">
-              <span className="text-xs font-extrabold text-[#0A1128] block">Honest Report &amp; CD Review</span>
-              <span className="text-[11px] text-slate-600 block mt-0.5">Clear second opinions with no unnecessary stents or procedures.</span>
+              <span className="text-xs font-extrabold text-[#0A1128] block">{t('Honest Report & CD Review', 'ईमानदार रिपोर्ट और सीडी रिव्यू')}</span>
+              <span className="text-[11px] text-slate-600 block mt-0.5">{t('Clear second opinions with no unnecessary stents or procedures.', 'बिना किसी गैर-ज़रूरी स्टेंट या प्रोसीजर के साफ सेकंड ओपिनियन।')}</span>
             </div>
             <div className="p-3.5 rounded-2xl bg-white/90 border border-slate-200/90 shadow-sm hover:shadow-md transition-shadow">
-              <span className="text-xs font-extrabold text-[#BE123C] block">24/7 Heart Attack Care</span>
-              <span className="text-[11px] text-slate-600 block mt-0.5">Modern heart procedure room ready day and night for emergencies.</span>
+              <span className="text-xs font-extrabold text-[#BE123C] block">{t('24/7 Heart Attack Care', '24/7 हार्ट अटैक केयर')}</span>
+              <span className="text-[11px] text-slate-600 block mt-0.5">{t('Modern heart procedure room ready day and night for emergencies.', 'इमरजेंसी के लिए मॉडर्न हार्ट प्रोसीजर रूम दिन-रात तैयार।')}</span>
             </div>
           </div>
         </div>
@@ -294,9 +296,9 @@ export default function AboutPage() {
             videoUrl="/videos/about-hospital.mp4"
             styleVariant="panoramic-stage"
             posterImage="/images/hospital-facility.jpg"
-            title="Hospital Interior &amp; Clinical Ward Walkthrough"
-            subtitle="4K Interior Steady-Cam • 60 FPS"
-            specs="14,000 Sq. Ft. Clinical Facility • Zero Particulate HEPA Filtered"
+            title={t('Hospital Interior & Clinical Ward Walkthrough', 'हॉस्पिटल इंटीरियर एंड क्लिनिकल वार्ड वॉकथ्रू')}
+            subtitle={t('4K Interior Steady-Cam • 60 FPS', '4के इंटीरियर स्टेडी-कैम • 60 एफपीएस')}
+            specs={t('14,000 Sq. Ft. Clinical Facility • Zero Particulate HEPA Filtered', '14,000 स्क्वायर फीट क्लिनिकल फैसिलिटी • जीरो पार्टिकुलेट हेपा फिल्टर्ड')}
             aspectRatio="aspect-[16/8] sm:aspect-[21/9]"
           />
         </motion.div>
@@ -309,9 +311,9 @@ export default function AboutPage() {
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center max-w-xl mx-auto mb-10 space-y-2">
-              <span className="text-[11px] font-bold uppercase tracking-widest text-[#BE123C] bg-rose-50 border border-rose-200 px-3.5 py-1 rounded-full">Our Promise</span>
+              <span className="text-[11px] font-bold uppercase tracking-widest text-[#BE123C] bg-rose-50 border border-rose-200 px-3.5 py-1 rounded-full">{t('Our Promise', 'आवर प्रॉमिस')}</span>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0A1128]">
-                How We Care for <span className="font-serif italic font-normal text-[#BE123C]">Your Heart</span>
+                {t('How We Care for', 'हम आपके हार्ट की')} <span className="font-serif italic font-normal text-[#BE123C]">{t('Your Heart', 'देखभाल कैसे करते हैं')}</span>
               </h2>
             </div>
 
@@ -322,16 +324,16 @@ export default function AboutPage() {
                   src="/images/doctor-angiogram-explain.jpg"
                   image="/images/doctor-angiogram-explain.jpg"
                   alt="Safe Heart Treatment"
-                  badge="STEP 01"
-                  title="Safe Heart Treatment"
-                  stat="Always Putting You First"
-                  substat="Gentle Wrist Care"
+                  badge={t('STEP 01', 'स्टेप 01')}
+                  title={t('Safe Heart Treatment', 'सेफ हार्ट ट्रीटमेंट')}
+                  stat={t('Always Putting You First', 'ऑलवेज पुटिंग यू फर्स्ट')}
+                  substat={t('Gentle Wrist Care', 'जेंटल रिस्ट केयर')}
                   aspectRatio="aspect-[16/10]"
                   laserBeam={false}
                 />
                 <div className="flex flex-wrap gap-1.5 justify-center">
-                  <span className="text-[10px] font-semibold bg-white border border-slate-200 text-[#0A1128] px-2.5 py-1 rounded-md">Painless Heart Stenting</span>
-                  <span className="text-[10px] font-semibold bg-rose-50 text-[#BE123C] px-2.5 py-1 rounded-md">Report &amp; CD Check</span>
+                  <span className="text-[10px] font-semibold bg-white border border-slate-200 text-[#0A1128] px-2.5 py-1 rounded-md">{t('Painless Heart Stenting', 'पेनलेस हार्ट स्टेंटिंग')}</span>
+                  <span className="text-[10px] font-semibold bg-rose-50 text-[#BE123C] px-2.5 py-1 rounded-md">{t('Report & CD Check', 'रिपोर्ट एंड सीडी चेक')}</span>
                 </div>
               </div>
 
@@ -340,16 +342,16 @@ export default function AboutPage() {
                   src="/images/doctor-recovery-discharge.jpg"
                   image="/images/doctor-recovery-discharge.jpg"
                   alt="Honest Family Talk"
-                  badge="STEP 02"
-                  title="Honest Family Talk"
-                  stat="Calm & Clear Advice"
-                  substat="No Unnecessary Stents"
+                  badge={t('STEP 02', 'स्टेप 02')}
+                  title={t('Honest Family Talk', 'ऑनेस्ट फैमिली टॉक')}
+                  stat={t('Calm & Clear Advice', 'काम एंड क्लियर एडवाइस')}
+                  substat={t('No Unnecessary Stents', 'नो अननेसेसरी स्टेंट्स')}
                   aspectRatio="aspect-[16/10]"
                   laserBeam={false}
                 />
                 <div className="flex flex-wrap gap-1.5 justify-center">
-                  <span className="text-[10px] font-semibold bg-white border border-slate-200 text-[#0A1128] px-2.5 py-1 rounded-md">Talk Directly with Doctor</span>
-                  <span className="text-[10px] font-semibold bg-rose-50 text-[#BE123C] px-2.5 py-1 rounded-md">Easy Explanations</span>
+                  <span className="text-[10px] font-semibold bg-white border border-slate-200 text-[#0A1128] px-2.5 py-1 rounded-md">{t('Talk Directly with Doctor', 'टॉक डायरेक्टली विद डॉक्टर')}</span>
+                  <span className="text-[10px] font-semibold bg-rose-50 text-[#BE123C] px-2.5 py-1 rounded-md">{t('Easy Explanations', 'ईजी एक्सप्लेनेशंस')}</span>
                 </div>
               </div>
 
@@ -358,16 +360,16 @@ export default function AboutPage() {
                   src="/images/operation-theatre-laminar.jpg"
                   image="/images/operation-theatre-laminar.jpg"
                   alt="Clean & Safe Rooms"
-                  badge="STEP 03"
-                  title="Clean & Safe Rooms"
-                  stat="Hospital-Grade Hygiene"
-                  substat="Trusted Heart Rules"
+                  badge={t('STEP 03', 'स्टेप 03')}
+                  title={t('Clean & Safe Rooms', 'क्लीन एंड सेफ रूम्स')}
+                  stat={t('Hospital-Grade Hygiene', 'हॉस्पिटल-ग्रेड हाइजीन')}
+                  substat={t('Trusted Heart Rules', 'ट्रस्टेड हार्ट रूल्स')}
                   aspectRatio="aspect-[16/10]"
                   laserBeam={false}
                 />
                 <div className="flex flex-wrap gap-1.5 justify-center">
-                  <span className="text-[10px] font-semibold bg-white border border-slate-200 text-[#0A1128] px-2.5 py-1 rounded-md">Clean Fresh Air</span>
-                  <span className="text-[10px] font-semibold bg-rose-50 text-[#BE123C] px-2.5 py-1 rounded-md">Safe Low-Dose Scan</span>
+                  <span className="text-[10px] font-semibold bg-white border border-slate-200 text-[#0A1128] px-2.5 py-1 rounded-md">{t('Clean Fresh Air', 'क्लीन फ्रेश एयर')}</span>
+                  <span className="text-[10px] font-semibold bg-rose-50 text-[#BE123C] px-2.5 py-1 rounded-md">{t('Safe Low-Dose Scan', 'सेफ लो-डोज स्कैन')}</span>
                 </div>
               </div>
 
@@ -386,14 +388,17 @@ export default function AboutPage() {
             <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16 space-y-3">
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-rose-50 text-[#BE123C] border border-rose-200/90 text-xs font-bold uppercase tracking-[0.24em] shadow-xs">
                 <Sparkles className="w-3.5 h-3.5 text-[#BE123C]" />
-                <span>Two Decades of Clinical Leadership</span>
+                <span>{t('Two Decades of Clinical Leadership', 'टू डिकेड्स ऑफ क्लिनिकल लीडरशिप')}</span>
               </div>
               <h2 className="text-3xl sm:text-5xl font-extrabold text-[#0A1128] tracking-tight leading-tight">
-                22-Year Journey of <br />
-                <span className="font-serif italic font-normal text-[#BE123C]">Trusted Heart Care</span>
+                {t('22-Year Journey of', '22 साल का सफर')} <br />
+                <span className="font-serif italic font-normal text-[#BE123C]">{t('Trusted Heart Care', 'भरोसेमंद हार्ट केयर का')}</span>
               </h2>
               <p className="text-sm text-slate-600 max-w-xl mx-auto font-normal leading-relaxed">
-                From starting in Betiahata to advanced medical training at KGMU &amp; PGIMER, bringing safe and modern heart treatment to Gorakhpur.
+                {t(
+                  'From starting in Betiahata to advanced medical training at KGMU & PGIMER, bringing safe and modern heart treatment to Gorakhpur.',
+                  'बेतियाहाता में शुरुआत से लेकर केजीएमयू और पीजीआईएमईआर में एडवांस्ड मेडिकल ट्रेनिंग तक — गोरखपुर में सुरक्षित और मॉडर्न हार्ट ट्रीटमेंट लाते हुए।'
+                )}
               </p>
 
               {/* View Switcher Pill */}
@@ -407,7 +412,7 @@ export default function AboutPage() {
                       }`}
                   >
                     <RefreshCw className="w-3.5 h-3.5" />
-                    <span>Card Slider View</span>
+                    <span>{t('Card Slider View', 'कार्ड स्लाइडर व्यू')}</span>
                   </button>
                   <button
                     onClick={() => setTimelineMode('expanded')}
@@ -417,7 +422,7 @@ export default function AboutPage() {
                       }`}
                   >
                     <Layers className="w-3.5 h-3.5" />
-                    <span>Full Timeline View</span>
+                    <span>{t('Full Timeline View', 'फुल टाइमलाइन व्यू')}</span>
                   </button>
                 </div>
               </div>
@@ -522,7 +527,7 @@ export default function AboutPage() {
                           <div className={`flex items-center gap-3 ${isLeft ? 'justify-start' : 'justify-end'}`}>
                             <div className="px-5 py-3 rounded-2xl bg-white/90 backdrop-blur-xl border border-slate-200/90 shadow-md text-left">
                               <span className="text-[10px] font-mono font-bold uppercase tracking-[0.24em] text-[#BE123C] block">
-                                CLINICAL RECORD #{m.num}
+                                {t('CLINICAL RECORD', 'क्लिनिकल रिकॉर्ड')} #{m.num}
                               </span>
                               <span className="text-xs font-extrabold text-slate-900 block mt-0.5">
                                 {m.institution}
@@ -569,37 +574,40 @@ export default function AboutPage() {
                         <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
                       </span>
                       <span className="text-[11px] font-mono uppercase tracking-[0.2em] text-[#BE123C] font-bold">
-                        OPD Consultations Active Today
+                        {t('OPD Consultations Active Today', 'ओपीडी कंसल्टेशंस एक्टिव टुडे')}
                       </span>
                     </div>
                     <span className="text-base font-extrabold text-[#0A1128] block">
-                      Dr. Prakash Chand Shahi • DM (PGIMER) • MD (KGMU)
+                      {t('Dr. Prakash Chand Shahi • DM (PGIMER) • MD (KGMU)', 'डॉ. प्रकाश चंद शाही • डीएम (पीजीआईएमईआर) • एमडी (केजीएमयू)')}
                     </span>
                   </div>
                 </div>
 
                 <div className="space-y-2">
                   <h3 className="text-2xl sm:text-4xl font-extrabold text-[#0A1128] tracking-tight leading-tight">
-                    Book Your <span className="font-serif italic font-normal text-[#BE123C]">Heart Checkup</span>
+                    {t('Book Your', 'अपना')} <span className="font-serif italic font-normal text-[#BE123C]">{t('Heart Checkup', 'हार्ट चेकअप बुक करें')}</span>
                   </h3>
                   <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-                    Meet Gorakhpur's trusted heart specialist for a calm, caring consultation. Get honest advice, no unnecessary treatments, and clear second opinions.
+                    {t(
+                      "Meet Gorakhpur's trusted heart specialist for a calm, caring consultation. Get honest advice, no unnecessary treatments, and clear second opinions.",
+                      'गोरखपुर के भरोसेमंद हार्ट स्पेशलिस्ट से शांत और केयरिंग कंसल्टेशन के लिए मिलें। ईमानदार सलाह, बिना किसी गैर-ज़रूरी ट्रीटमेंट के और साफ सेकंड ओपिनियन पाएं।'
+                    )}
                   </p>
                 </div>
 
                 {/* 3 Clinical Guarantees */}
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-1">
                   <div className="p-3 rounded-xl bg-slate-50 border border-slate-200">
-                    <span className="text-[10px] font-bold uppercase text-[#BE123C] block">Personal OPD</span>
-                    <span className="text-xs font-bold text-slate-800">1-on-1 Doctor Care</span>
+                    <span className="text-[10px] font-bold uppercase text-[#BE123C] block">{t('Personal OPD', 'पर्सनल ओपीडी')}</span>
+                    <span className="text-xs font-bold text-slate-800">{t('1-on-1 Doctor Care', '1-ऑन-1 डॉक्टर केयर')}</span>
                   </div>
                   <div className="p-3 rounded-xl bg-slate-50 border border-slate-200">
-                    <span className="text-[10px] font-bold uppercase text-[#BE123C] block">Honest Review</span>
-                    <span className="text-xs font-bold text-slate-800">Clear Report &amp; CD Check</span>
+                    <span className="text-[10px] font-bold uppercase text-[#BE123C] block">{t('Honest Review', 'ऑनेस्ट रिव्यू')}</span>
+                    <span className="text-xs font-bold text-slate-800">{t('Clear Report & CD Check', 'क्लियर रिपोर्ट एंड सीडी चेक')}</span>
                   </div>
                   <div className="p-3 rounded-xl bg-slate-50 border border-slate-200">
-                    <span className="text-[10px] font-bold uppercase text-[#BE123C] block">24/7 Emergency</span>
-                    <span className="text-xs font-bold text-slate-800">Fast Heart Attack Care</span>
+                    <span className="text-[10px] font-bold uppercase text-[#BE123C] block">{t('24/7 Emergency', '24/7 इमरजेंसी')}</span>
+                    <span className="text-xs font-bold text-slate-800">{t('Fast Heart Attack Care', 'फास्ट हार्ट अटैक केयर')}</span>
                   </div>
                 </div>
 
@@ -610,13 +618,13 @@ export default function AboutPage() {
 
                 <div className="space-y-1">
                   <span className="text-[10px] font-mono uppercase tracking-widest text-slate-500 font-bold block">
-                    OPD TIMINGS &amp; LOCATION
+                    {t('OPD TIMINGS & LOCATION', 'ओपीडी टाइमिंग्स एंड लोकेशन')}
                   </span>
                   <div className="text-sm font-extrabold text-slate-900">
-                    Mon — Sat • 10:00 AM – 8:00 PM
+                    {t('Mon — Sat • 10:00 AM – 8:00 PM', 'मंडे — सैटरडे • 10:00 एएम – 8:00 पीएम')}
                   </div>
                   <div className="text-xs text-slate-600 font-medium">
-                    Pulse Heart Centre, Betiahata, Gorakhpur
+                    {t('Pulse Heart Centre, Betiahata, Gorakhpur', 'पल्स हार्ट सेंटर, बेतियाहाता, गोरखपुर')}
                   </div>
                 </div>
 
@@ -626,7 +634,7 @@ export default function AboutPage() {
                     className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-gradient-to-r from-[#0A1128] via-[#1E293B] to-[#BE123C] hover:from-[#BE123C] hover:to-[#0A1128] text-white text-xs font-bold uppercase tracking-wider shadow-lg shadow-navy/25 transition-all hover:-translate-y-0.5 border border-rose-300/40 text-center"
                   >
                     <Calendar className="w-4 h-4 text-white" />
-                    <span>Book OPD Appointment</span>
+                    <span>{t('Book OPD Appointment', 'बुक ओपीडी अपॉइंटमेंट')}</span>
                     <ArrowRight className="w-4 h-4 text-white" />
                   </Link>
 
@@ -635,13 +643,13 @@ export default function AboutPage() {
                     className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-white hover:bg-slate-50 text-[#0A1128] text-xs font-bold uppercase tracking-wider border-2 border-slate-300 hover:border-[#BE123C] hover:text-[#BE123C] shadow-sm transition-all text-center"
                   >
                     <Phone className="w-4 h-4 text-[#BE123C]" />
-                    <span>Emergency: +91 98765 43210</span>
+                    <span>{t('Emergency: +91 98765 43210', 'इमरजेंसी: +91 98765 43210')}</span>
                   </a>
                 </div>
 
                 <div className="pt-2 border-t border-slate-200 flex items-center justify-between text-[11px] text-slate-500 font-medium">
-                  <span>Fast-Track OPD Entry</span>
-                  <span className="font-mono text-[#BE123C] font-bold">&lt; 15 Min Triage</span>
+                  <span>{t('Fast-Track OPD Entry', 'फास्ट-ट्रैक ओपीडी एंट्री')}</span>
+                  <span className="font-mono text-[#BE123C] font-bold">{t('< 15 Min Triage', '< 15 मिन ट्राइएज')}</span>
                 </div>
 
               </div>

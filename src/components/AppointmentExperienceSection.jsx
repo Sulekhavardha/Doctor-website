@@ -6,6 +6,7 @@ import { PULSE_DATA } from '../data/pulseData';
 import { pulseAudio } from '../utils/soundEffects';
 import SectionBackgroundMotion from './SectionBackgroundMotion';
 import SectionCinematicVideo from './SectionCinematicVideo';
+import { useLanguage } from '../context/LanguageContext';
 
 /**
  * AppointmentExperienceSection
@@ -19,6 +20,7 @@ import SectionCinematicVideo from './SectionCinematicVideo';
  */
 export default function AppointmentExperienceSection({ variant = 'home-appointment' }) {
   const { clinic, doctor } = PULSE_DATA;
+  const { t } = useLanguage();
 
   const [triageCategory, setTriageCategory] = useState('angiogram-review');
   const [patientName, setPatientName] = useState('');
@@ -30,27 +32,27 @@ export default function AppointmentExperienceSection({ variant = 'home-appointme
   const triageOptions = [
     {
       id: 'angiogram-review',
-      label: 'Angiogram & Stent Review',
-      sub: 'Second opinion or post-revascularization check',
-      badge: 'HIGH PRIORITY',
+      label: t('Angiogram & Stent Review', 'एंजियोग्राम एंड स्टेंट रिव्यू'),
+      sub: t('Second opinion or post-revascularization check', 'सेकंड ओपिनियन ऑर पोस्ट-रीवास्कुलराइजेशन चेक'),
+      badge: t('HIGH PRIORITY', 'हाई प्रायोरिटी'),
     },
     {
       id: 'routine-evaluation',
-      label: 'Comprehensive Cardiac OPD',
-      sub: 'Hypertension, lipid control, breathlessness',
-      badge: 'CONSULTATION',
+      label: t('Comprehensive Cardiac OPD', 'कॉम्प्रिहेंसिव कार्डियक ओपीडी'),
+      sub: t('Hypertension, lipid control, breathlessness', 'हाइपरटेंशन, लिपिड कंट्रोल, ब्रेथलेसनेस'),
+      badge: t('CONSULTATION', 'कंसल्टेशन'),
     },
     {
       id: 'chest-pain',
-      label: 'Chest Tightness / ECG Check',
-      sub: 'Same-day evaluation for exertional discomfort',
-      badge: 'CLINICAL TRIAGE',
+      label: t('Chest Tightness / ECG Check', 'चेस्ट टाइटनेस / ईसीजी चेक'),
+      sub: t('Same-day evaluation for exertional discomfort', 'सेम-डे इवैल्यूएशन फॉर एग्जर्शनल डिस्कम्फर्ट'),
+      badge: t('CLINICAL TRIAGE', 'क्लिनिकल ट्राइएज'),
     },
     {
       id: 'pacemaker-check',
-      label: 'Pacemaker Follow-up',
-      sub: 'Telemetry check & pacing optimization',
-      badge: 'ELECTROPHYSIOLOGY',
+      label: t('Pacemaker Follow-up', 'पेसमेकर फॉलो-अप'),
+      sub: t('Telemetry check & pacing optimization', 'टेलीमेट्री चेक एंड पेसिंग ऑप्टिमाइजेशन'),
+      badge: t('ELECTROPHYSIOLOGY', 'इलेक्ट्रोफिजियोलॉजी'),
     },
   ];
 
@@ -84,12 +86,12 @@ export default function AppointmentExperienceSection({ variant = 'home-appointme
         <div className="mb-12 text-center max-w-3xl mx-auto space-y-3">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-rose-200 text-xs font-mono font-bold text-[#BE123C] shadow-xs">
             <Calendar className="w-4 h-4 text-[#BE123C]" />
-            <span className="uppercase tracking-[0.2em]">Priority Consultation &amp; Direct Triage</span>
+            <span className="uppercase tracking-[0.2em]">{t('Priority Consultation & Direct Triage', 'प्रायोरिटी कंसल्टेशन एंड डायरेक्ट ट्राइएज')}</span>
           </div>
 
           <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-950 tracking-[-0.03em] leading-[1.08]">
-            Direct Consultation with <br />
-            <span className="font-serif italic font-normal text-[#BE123C]">Dr. Prakash Chand Shahi</span>
+            {t('Direct Consultation with', 'सीधा परामर्श')} <br />
+            <span className="font-serif italic font-normal text-[#BE123C]">{t('Dr. Prakash Chand Shahi', 'डॉ. प्रकाश चंद शाही के साथ')}</span>
           </h2>
 
           <div className="inline-flex items-center gap-3 p-2.5 px-4 rounded-2xl bg-white border-2 border-rose-200 shadow-sm text-slate-900 text-xs font-medium">
@@ -97,8 +99,8 @@ export default function AppointmentExperienceSection({ variant = 'home-appointme
               <Stethoscope className="w-4 h-4 stroke-[1.8]" />
             </div>
             <div className="text-left">
-              <span className="font-bold block text-slate-900">Dr. Prakash Chand Shahi • OPD Room 101</span>
-              <span className="text-[10px] text-[#C2410C] font-mono font-bold">DM Cardiology (PGIMER) • Mon–Sat, 10 AM – 8 PM</span>
+              <span className="font-bold block text-slate-900">{t('Dr. Prakash Chand Shahi • OPD Room 101', 'डॉ. प्रकाश चंद शाही • ओपीडी रूम 101')}</span>
+              <span className="text-[10px] text-[#C2410C] font-mono font-bold">{t('DM Cardiology (PGIMER) • Mon–Sat, 10 AM – 8 PM', 'डीएम कार्डियोलॉजी (पीजीआईएमईआर) • मंडे–सैटरडे, 10 एएम – 8 पीएम')}</span>
             </div>
           </div>
         </div>
@@ -115,9 +117,9 @@ export default function AppointmentExperienceSection({ variant = 'home-appointme
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-mono uppercase tracking-wider text-[#C2410C] font-bold flex items-center gap-2">
                     <span className="w-5 h-5 rounded-full bg-orange-100 text-[#C2410C] flex items-center justify-center text-[10px]">1</span>
-                    Select Consultation Domain
+                    {t('Select Consultation Domain', 'कंसल्टेशन का कारण चुनें')}
                   </span>
-                  <span className="text-[10px] font-mono text-slate-400 font-bold">Step 1 of 3</span>
+                  <span className="text-[10px] font-mono text-slate-400 font-bold">{t('Step 1 of 3', 'स्टेप 1 / 3')}</span>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -158,17 +160,17 @@ export default function AppointmentExperienceSection({ variant = 'home-appointme
                 <div className="flex flex-wrap items-center justify-between gap-1">
                   <span className="text-xs font-mono uppercase tracking-wider text-[#C2410C] font-bold flex items-center gap-2">
                     <span className="w-5 h-5 rounded-full bg-[#FFF7ED] border border-orange-200 text-[#C2410C] flex items-center justify-center text-[10px]">2</span>
-                    Select Consultation Slot
+                    {t('Select Consultation Slot', 'कंसल्टेशन स्लॉट चुनें')}
                   </span>
                   <span className="text-[10px] font-mono text-[#EA580C] font-bold">
-                    Mon – Sat (10 AM – 8 PM)
+                    {t('Mon – Sat (10 AM – 8 PM)', 'सोम – शनि (सुबह 10 – रात 8 बजे)')}
                   </span>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <div>
                     <label className="text-[11px] text-slate-700 font-bold block mb-1">
-                      Preferred Date
+                      {t('Preferred Date', 'पसंदीदा तारीख')}
                     </label>
                     <input
                       type="date"
@@ -180,7 +182,7 @@ export default function AppointmentExperienceSection({ variant = 'home-appointme
 
                   <div>
                     <label className="text-[11px] text-slate-700 font-bold block mb-1">
-                      Available OPD Slots
+                      {t('Available OPD Slots', 'उपलब्ध ओपीडी स्लॉट्स')}
                     </label>
                     <div className="grid grid-cols-3 gap-1.5">
                       {timeSlots.map((slot) => (
@@ -205,18 +207,18 @@ export default function AppointmentExperienceSection({ variant = 'home-appointme
               <form onSubmit={handleSubmit} className="space-y-4 pt-4 border-t border-slate-100">
                 <span className="text-xs font-mono uppercase tracking-wider text-[#C2410C] font-bold flex items-center gap-2">
                   <span className="w-5 h-5 rounded-full bg-[#FFF7ED] border border-orange-200 text-[#C2410C] flex items-center justify-center text-[10px]">3</span>
-                  Patient Identification
+                  {t('Patient Identification', 'मरीज़ की जानकारी')}
                 </span>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <div>
                     <label className="text-[11px] text-slate-700 font-bold block mb-1">
-                      Patient Full Name *
+                      {t('Patient Full Name *', 'मरीज़ का पूरा नाम *')}
                     </label>
                     <input
                       type="text"
                       required
-                      placeholder="e.g. Ramesh Kumar"
+                      placeholder={t('e.g. Ramesh Kumar', 'जैसे रमेश कुमार')}
                       value={patientName}
                       onChange={(e) => setPatientName(e.target.value)}
                       className="w-full px-4 py-3 rounded-2xl bg-white border border-slate-200 text-xs text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#EA580C] font-medium"
@@ -225,7 +227,7 @@ export default function AppointmentExperienceSection({ variant = 'home-appointme
 
                   <div>
                     <label className="text-[11px] text-slate-700 font-bold block mb-1">
-                      Phone Number (WhatsApp Active) *
+                      {t('Phone Number (WhatsApp Active) *', 'फोन नंबर (व्हाट्सएप एक्टिव) *')}
                     </label>
                     <input
                       type="tel"
@@ -244,7 +246,7 @@ export default function AppointmentExperienceSection({ variant = 'home-appointme
                     className="w-full py-4 rounded-full bg-gradient-to-r from-[#BE123C] via-[#EA580C] to-[#FB923C] hover:from-[#9F1239] hover:to-[#EA580C] text-white font-bold text-xs tracking-wider uppercase shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center justify-center gap-2 hover:scale-102"
                   >
                     <Calendar className="w-4 h-4 text-amber-200" />
-                    <span>Confirm Priority Consultation Request</span>
+                    <span>{t('Confirm Priority Consultation Request', 'प्रायोरिटी कंसल्टेशन रिक्वेस्ट कन्फर्म करें')}</span>
                     <ArrowRight className="w-3.5 h-3.5 text-white ml-1" />
                   </button>
                 </div>
@@ -262,9 +264,9 @@ export default function AppointmentExperienceSection({ variant = 'home-appointme
               videoUrl="/videos/appointment-suite.mp4"
               styleVariant="video-card"
               posterImage="/images/hospital-helpdesk.jpg"
-              title="Priority OPD Consultation"
-              subtitle="Direct Appointment with Dr. Shahi"
-              specs="Pulse Heart Centre • Betiahata, Gorakhpur"
+              title={t('Priority OPD Consultation', 'प्रायोरिटी ओपीडी कंसल्टेशन')}
+              subtitle={t('Direct Appointment with Dr. Shahi', 'डायरेक्ट अपॉइंटमेंट विद डॉ. शाही')}
+              specs={t('Pulse Heart Centre • Betiahata, Gorakhpur', 'पल्स हार्ट सेंटर • बेतियाहाता, गोरखपुर')}
               aspectRatio="aspect-[16/8]"
             />
 
@@ -277,16 +279,16 @@ export default function AppointmentExperienceSection({ variant = 'home-appointme
                   <img src="/images/p.webp" alt="Pulse Logo" className="w-6 h-6 object-contain rounded-md bg-white p-0.5 border border-slate-200" />
                   <div>
                     <span className="font-bold text-sm tracking-widest uppercase block leading-none text-[#0A1128]">
-                      PULSE
+                      {t('PULSE', 'पल्स')}
                     </span>
                     <span className="text-[9px] font-mono text-[#BE123C] tracking-wider uppercase block mt-0.5 font-bold">
-                      Consultation Pass
+                      {t('Consultation Pass', 'कंसल्टेशन पास')}
                     </span>
                   </div>
                 </div>
 
                 <span className="px-2.5 py-1 rounded-full bg-rose-50 text-[#BE123C] border border-rose-200 text-[10px] font-mono font-bold">
-                  OPD TOKEN
+                  {t('OPD TOKEN', 'ओपीडी टोकन')}
                 </span>
               </div>
 
@@ -299,13 +301,13 @@ export default function AppointmentExperienceSection({ variant = 'home-appointme
                 />
                 <div className="space-y-0.5 text-left">
                   <span className="text-[10px] font-mono uppercase tracking-wider text-[#BE123C] font-bold block">
-                    ATTENDING CARDIOLOGIST
+                    {t('ATTENDING CARDIOLOGIST', 'अटेंडिंग कार्डियोलॉजिस्ट')}
                   </span>
                   <h4 className="text-sm font-extrabold text-[#0A1128] tracking-tight leading-tight">
-                    {doctor.name}
+                    {t(doctor.name, 'डॉ. प्रकाश चंद शाही')}
                   </h4>
                   <p className="text-[10px] font-mono text-slate-600 font-semibold">
-                    DM Cardiology (PGIMER) • MD (KGMU Lucknow)
+                    {t('DM Cardiology (PGIMER) • MD (KGMU Lucknow)', 'डीएम कार्डियोलॉजी (पीजीआईएमईआर) • एमडी (केजीएमयू लखनऊ)')}
                   </p>
                 </div>
               </div>
@@ -313,37 +315,37 @@ export default function AppointmentExperienceSection({ variant = 'home-appointme
               {/* Patient Dynamic Ticket Card */}
               <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
                 <div className="flex justify-between items-center text-xs">
-                  <span className="text-slate-600 font-medium">Patient:</span>
+                  <span className="text-slate-600 font-medium">{t('Patient:', 'पेशेंट:')}</span>
                   <span className="font-semibold text-[#0A1128] font-mono">
-                    {patientName || 'Patient Name'}
+                    {patientName || t('Patient Name', 'पेशेंट नेम')}
                   </span>
                 </div>
                 <div className="flex justify-between items-center text-xs">
-                  <span className="text-slate-600 font-medium">Date &amp; Slot:</span>
+                  <span className="text-slate-600 font-medium">{t('Date & Slot:', 'डेट एंड स्लॉट:')}</span>
                   <span className="font-bold text-[#BE123C] font-mono">
                     {preferredDate} • {preferredSlot}
                   </span>
                 </div>
                 <div className="flex justify-between items-center text-xs">
-                  <span className="text-slate-600 font-medium">Category:</span>
+                  <span className="text-slate-600 font-medium">{t('Category:', 'कैटेगरी:')}</span>
                   <span className="font-bold text-[#0A1128] font-mono uppercase text-[10px]">
-                    {triageCategory.replace('-', ' ')}
+                    {triageOptions.find((o) => o.id === triageCategory)?.label || triageCategory.replace('-', ' ')}
                   </span>
                 </div>
                 <div className="flex justify-between items-center text-xs">
-                  <span className="text-slate-600 font-medium">Location:</span>
+                  <span className="text-slate-600 font-medium">{t('Location:', 'लोकेशन:')}</span>
                   <span className="font-bold text-slate-800 font-mono text-[10px]">
-                    Pulse Heart Centre, Betiahata
+                    {t('Pulse Heart Centre, Betiahata', 'पल्स हार्ट सेंटर, बेतियाहाता')}
                   </span>
                 </div>
               </div>
 
               {/* Verification */}
               <div className="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono">
-                <span className="text-slate-500">PASS-ID: PHC-2026-9812</span>
+                <span className="text-slate-500">{t('PASS-ID: PHC-2026-9812', 'पास-आईडी: पीएचसी-2026-9812')}</span>
                 <span className="text-[#BE123C] font-bold flex items-center gap-1">
                   <ShieldCheck className="w-3.5 h-3.5" />
-                  <span>OPD PRIORITY PASS</span>
+                  <span>{t('OPD PRIORITY PASS', 'ओपीडी प्रायोरिटी पास')}</span>
                 </span>
               </div>
 
@@ -353,17 +355,17 @@ export default function AppointmentExperienceSection({ variant = 'home-appointme
             <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-center justify-between">
               <div className="space-y-0.5 text-left">
                 <span className="text-xs font-bold text-[#0A1128] block">
-                  Need Immediate Guidance?
+                  {t('Need Immediate Guidance?', 'नीड इमीडिएट गाइडेंस?')}
                 </span>
                 <span className="text-[11px] text-slate-500 font-medium block">
-                  OPD Desk: +91 98765 43210
+                  {t('OPD Desk: +91 98765 43210', 'ओपीडी डेस्क: +91 98765 43210')}
                 </span>
               </div>
               <a
                 href="tel:+919876543210"
                 className="px-4 py-2 rounded-xl bg-rose-50 text-[#BE123C] text-xs font-bold hover:bg-rose-100 transition-colors border border-rose-200"
               >
-                Call OPD
+                {t('Call OPD', 'कॉल ओपीडी')}
               </a>
             </div>
 

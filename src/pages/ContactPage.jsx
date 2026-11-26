@@ -12,28 +12,39 @@ import DoctorPlaceholder from '../components/DoctorPlaceholder';
 import SectionBackgroundMotion from '../components/SectionBackgroundMotion';
 import Interactive3DTilt from '../components/Interactive3DTilt';
 import ScrollReveal from '../components/ScrollReveal';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function ContactPage() {
   const { clinic, doctor } = PULSE_DATA;
+  const { t } = useLanguage();
 
   const infoCards = [
     {
       icon: Navigation,
       color: 'bg-rose-50 text-[#BE123C] border-rose-200',
-      title: 'How to Reach Us',
-      text: 'In central Betiahata, Gorakhpur — just 10 minutes from Gorakhpur Railway Station and Golghar.',
+      title: t('How to Reach Us', 'हम तक कैसे पहुंचें'),
+      text: t(
+        'In central Betiahata, Gorakhpur — just 10 minutes from Gorakhpur Railway Station and Golghar.',
+        'सेंट्रल बेतियाहाता, गोरखपुर में — गोरखपुर रेलवे स्टेशन और गोलघर से सिर्फ 10 मिनट की दूरी पर।'
+      ),
     },
     {
       icon: Clock,
       color: 'bg-slate-100 text-[#0A1128] border-slate-200',
-      title: 'When You Arrive',
-      text: 'Please arrive 15 minutes before your appointment time. Bring your old ECG, Echo reports, and heart CDs if available.',
+      title: t('When You Arrive', 'जब आप आएं'),
+      text: t(
+        'Please arrive 15 minutes before your appointment time. Bring your old ECG, Echo reports, and heart CDs if available.',
+        'कृपया अपने अपॉइंटमेंट टाइम से 15 मिनट पहले आएं। अगर उपलब्ध हो तो अपनी पुरानी ईसीजी, इको रिपोर्ट्स और हार्ट सीडी साथ लाएं।'
+      ),
     },
     {
       icon: Phone,
       color: 'bg-rose-50 text-[#E11D48] border-rose-200',
-      title: '24/7 Heart Emergency',
-      text: 'Patients with sudden chest pain, heavy sweating, or fainting are seen immediately without any waiting.',
+      title: t('24/7 Heart Emergency', '24/7 हार्ट इमरजेंसी'),
+      text: t(
+        'Patients with sudden chest pain, heavy sweating, or fainting are seen immediately without any waiting.',
+        'अचानक सीने में दर्द, तेज़ पसीना या चक्कर आने वाले मरीज़ों को बिना किसी इंतज़ार के तुरंत देखा जाता है।'
+      ),
     },
   ];
 
@@ -56,12 +67,12 @@ export default function ContactPage() {
             <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-xs font-semibold text-slate-700 bg-white/95 backdrop-blur-md px-3.5 sm:px-4 py-1.5 rounded-full border border-slate-200 shadow-xs">
               <span className="flex items-center gap-1.5">
                 <Clock className="w-3.5 h-3.5 text-[#BE123C]" />
-                <span>OPD: 10:00 AM – 08:00 PM</span>
+                <span>{t('OPD: 10:00 AM – 08:00 PM', 'ओपीडी: सुबह 10:00 – रात 08:00 बजे')}</span>
               </span>
               <span className="text-slate-300 hidden sm:inline">•</span>
               <a href="tel:+919876543210" className="flex items-center gap-1.5 text-[#BE123C] font-bold hover:underline">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#E11D48] animate-ping" />
-                <span>24/7 Helpline: +91 98765 43210</span>
+                <span>{t('24/7 Helpline: +91 98765 43210', '24/7 हेल्पलाइन: +91 98765 43210')}</span>
               </a>
             </div>
           </div>
@@ -75,15 +86,15 @@ export default function ContactPage() {
               <ScrollReveal animation="fade-down">
                 <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rose-50 text-[#BE123C] border border-rose-200 text-xs font-bold uppercase tracking-[0.22em] shadow-xs">
                   <Sparkles className="w-3.5 h-3.5 text-[#BE123C]" />
-                  <span>Book Appointment • Betiahata, Gorakhpur</span>
+                  <span>{t('Book Appointment • Betiahata, Gorakhpur', 'अपॉइंटमेंट बुक करें • बेतियाहाता, गोरखपुर')}</span>
                 </div>
               </ScrollReveal>
 
               <ScrollReveal animation="fade-up" delay={0.1}>
                 <div className="space-y-3">
                   <h1 className="text-3xl sm:text-5xl lg:text-7xl font-extrabold text-[#0A1128] tracking-tight leading-[1.04]">
-                    Direct Consultation. <br />
-                    <span className="font-serif italic font-normal text-[#BE123C]">With Dr. Prakash Chand Shahi.</span>
+                    {t('Direct Consultation.', 'डायरेक्ट कंसल्टेशन।')} <br />
+                    <span className="font-serif italic font-normal text-[#BE123C]">{t('With Dr. Prakash Chand Shahi.', 'डॉ. प्रकाश चंद शाही के साथ।')}</span>
                   </h1>
                 </div>
               </ScrollReveal>
@@ -106,17 +117,17 @@ export default function ContactPage() {
                       </div>
                       <div className="text-left">
                         <div className="flex items-center gap-1.5">
-                          <span className="text-sm font-extrabold text-[#0A1128]">Dr. Prakash Chand Shahi</span>
+                          <span className="text-sm font-extrabold text-[#0A1128]">{t('Dr. Prakash Chand Shahi', 'डॉ. प्रकाश चंद शाही')}</span>
                           <ShieldCheck className="w-4 h-4 text-[#BE123C]" />
                         </div>
                         <span className="text-[11px] font-mono font-bold text-[#BE123C] block">
-                          DM Cardiology (PGIMER) • MD (KGMU Lucknow)
+                          {t('DM Cardiology (PGIMER) • MD (KGMU Lucknow)', 'डीएम कार्डियोलॉजी (पीजीआईएमईआर) • एमडी (केजीएमयू लखनऊ)')}
                         </span>
                       </div>
                     </div>
 
                     <span className="px-3.5 py-2 rounded-xl bg-rose-50 border border-rose-200 text-[#BE123C] text-xs font-bold font-mono">
-                      OPD Mon–Sat • 10 AM – 8 PM
+                      {t('OPD Mon–Sat • 10 AM – 8 PM', 'ओपीडी सोम–शनि • 10 एएम – 8 पीएम')}
                     </span>
                   </div>
                 </ScrollReveal>
@@ -124,9 +135,9 @@ export default function ContactPage() {
                 {/* Minimal Summary Status Chips */}
                 <ScrollReveal animation="fade-up" delay={0.2}>
                   <div className="flex flex-wrap items-center gap-2 pt-1 font-mono text-xs font-bold">
-                    <span className="bg-slate-100 text-[#0A1128] px-3.5 py-1.5 rounded-full border border-slate-200">Betiahata, Gorakhpur</span>
-                    <span className="bg-white text-slate-900 px-3.5 py-1.5 rounded-full border border-slate-200 shadow-xs">Same-Day Report &amp; CD Check</span>
-                    <span className="bg-rose-50 text-[#BE123C] px-3.5 py-1.5 rounded-full border border-rose-200">24/7 Heart Emergency</span>
+                    <span className="bg-slate-100 text-[#0A1128] px-3.5 py-1.5 rounded-full border border-slate-200">{t('Betiahata, Gorakhpur', 'बेतियाहाता, गोरखपुर')}</span>
+                    <span className="bg-white text-slate-900 px-3.5 py-1.5 rounded-full border border-slate-200 shadow-xs">{t('Same-Day Report & CD Check', 'सेम-डे रिपोर्ट और सीडी चेक')}</span>
+                    <span className="bg-rose-50 text-[#BE123C] px-3.5 py-1.5 rounded-full border border-rose-200">{t('24/7 Heart Emergency', '24/7 हार्ट इमरजेंसी')}</span>
                   </div>
                 </ScrollReveal>
 
@@ -134,20 +145,20 @@ export default function ContactPage() {
                 <ScrollReveal animation="fade-up" delay={0.25}>
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1">
                     <div className="p-2.5 rounded-xl bg-white border border-slate-200 shadow-xs text-left">
-                      <span className="text-xs font-mono font-bold text-[#BE123C] block">OPD Room 101</span>
-                      <span className="text-[10px] font-bold text-slate-800 uppercase tracking-tight block">Consultation Wing</span>
+                      <span className="text-xs font-mono font-bold text-[#BE123C] block">{t('OPD Room 101', 'ओपीडी रूम 101')}</span>
+                      <span className="text-[10px] font-bold text-slate-800 uppercase tracking-tight block">{t('Consultation Wing', 'कंसल्टेशन विंग')}</span>
                     </div>
                     <div className="p-2.5 rounded-xl bg-white border border-slate-200 shadow-xs text-left">
-                      <span className="text-xs font-mono font-bold text-[#0A1128] block">Mon — Sat</span>
-                      <span className="text-[10px] font-bold text-slate-800 uppercase tracking-tight block">10:00 AM – 8:00 PM</span>
+                      <span className="text-xs font-mono font-bold text-[#0A1128] block">{t('Mon — Sat', 'सोम — शनि')}</span>
+                      <span className="text-[10px] font-bold text-slate-800 uppercase tracking-tight block">{t('10:00 AM – 8:00 PM', '10:00 एएम – 8:00 पीएम')}</span>
                     </div>
                     <div className="p-2.5 rounded-xl bg-white border border-rose-200 shadow-xs text-left">
-                      <span className="text-xs font-mono font-bold text-[#BE123C] block">Betiahata</span>
-                      <span className="text-[10px] font-bold text-slate-800 uppercase tracking-tight block">Central Gorakhpur</span>
+                      <span className="text-xs font-mono font-bold text-[#BE123C] block">{t('Betiahata', 'बेतियाहाता')}</span>
+                      <span className="text-[10px] font-bold text-slate-800 uppercase tracking-tight block">{t('Central Gorakhpur', 'सेंट्रल गोरखपुर')}</span>
                     </div>
                     <div className="p-2.5 rounded-xl bg-white border border-slate-200 shadow-xs text-left">
-                      <span className="text-xs font-mono font-bold text-[#0A1128] block">&lt; 45 Min</span>
-                      <span className="text-[10px] font-bold text-slate-800 uppercase tracking-tight block">Door-To-Balloon</span>
+                      <span className="text-xs font-mono font-bold text-[#0A1128] block">{t('< 45 Min', '< 45 मिनट')}</span>
+                      <span className="text-[10px] font-bold text-slate-800 uppercase tracking-tight block">{t('Door-To-Balloon', 'डोर-टू-बैलून')}</span>
                     </div>
                   </div>
                 </ScrollReveal>
@@ -160,7 +171,7 @@ export default function ContactPage() {
                       className="luxury-btn-primary"
                     >
                       <Calendar className="w-4 h-4 text-white" />
-                      <span>Book Priority OPD Pass</span>
+                      <span>{t('Book Priority OPD Pass', 'प्रायोरिटी ओपीडी पास बुक करें')}</span>
                       <ArrowRight className="w-4 h-4 text-white" />
                     </a>
 
@@ -169,7 +180,7 @@ export default function ContactPage() {
                       className="luxury-btn-secondary"
                     >
                       <Phone className="w-4 h-4 text-[#BE123C]" />
-                      <span>Emergency 24/7 Helpline</span>
+                      <span>{t('Emergency 24/7 Helpline', 'इमरजेंसी 24/7 हेल्पलाइन')}</span>
                     </a>
                   </div>
                 </ScrollReveal>
@@ -178,15 +189,15 @@ export default function ContactPage() {
                 <div className="pt-3 flex flex-wrap items-center gap-4 sm:gap-6 text-xs text-slate-700 font-medium border-t border-slate-200/80">
                   <div className="flex items-center gap-1.5">
                     <CheckCircle2 className="w-4 h-4 text-[#BE123C]" />
-                    <span>22+ Years in Gorakhpur</span>
+                    <span>{t('22+ Years in Gorakhpur', 'गोरखपुर में 22+ साल का अनुभव')}</span>
                   </div>
                   <div className="flex items-center gap-1.5">
                     <CheckCircle2 className="w-4 h-4 text-[#0A1128]" />
-                    <span>Siemens Flat-Panel Cath Lab</span>
+                    <span>{t('Siemens Flat-Panel Cath Lab', 'सीमेंस फ्लैट-पैनल कैथ लैब')}</span>
                   </div>
                   <div className="flex items-center gap-1.5">
                     <CheckCircle2 className="w-4 h-4 text-[#BE123C]" />
-                    <span>NABH Accredited Safety</span>
+                    <span>{t('NABH Accredited Safety', 'एनएबीएच एक्रेडिटेड सेफ्टी')}</span>
                   </div>
                 </div>
               </div>
@@ -206,14 +217,14 @@ export default function ContactPage() {
                 <div className="p-4 text-left flex items-center justify-between gap-3">
                   <div>
                     <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#BE123C] block">
-                      Direct OPD Consultation
+                      {t('Direct OPD Consultation', 'डायरेक्ट ओपीडी कंसल्टेशन')}
                     </span>
                     <span className="text-base font-extrabold text-[#0A1128] block">
-                      Dr. Prakash Chand Shahi
+                      {t('Dr. Prakash Chand Shahi', 'डॉ. प्रकाश चंद शाही')}
                     </span>
                   </div>
                   <span className="px-3 py-1 rounded-full bg-rose-50 text-[#BE123C] border border-rose-200 text-[10px] font-mono font-bold">
-                    PGIMER &amp; KGMU
+                    {t('PGIMER & KGMU', 'पीजीआईएमईआर और केजीएमयू')}
                   </span>
                 </div>
               </div>
@@ -227,10 +238,10 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto w-full pt-8 border-t border-slate-200/90 relative z-10">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { metric: '22+', label: 'Years of Dedication', sub: 'Unbroken leadership in eastern UP', img: '/images/hero-architecture-entrance.jpg', pos: 'object-center' },
-              { metric: '15,000+', label: 'Cath Interventions', sub: 'Opening blocked arteries, stents & pacemakers', img: '/images/radial-catheter-sheath.jpg', pos: 'object-center' },
-              { metric: '99.4%', label: 'Radial Patency Rate', sub: 'Wrist-first access & rapid walking', img: '/images/doctor-angiogram-explain.jpg', pos: 'object-center' },
-              { metric: '< 45 Min', label: 'STEMI Door-To-Balloon', sub: '24/7 emergency Code-Blue triage', img: '/images/doctor-icu-rounds.jpg', pos: 'object-center' },
+              { metric: '22+', label: t('Years of Dedication', 'सालों की सेवा'), sub: t('Unbroken leadership in eastern UP', 'पूर्वी यूपी में भरोसेमंद नेतृत्व'), img: '/images/hero-architecture-entrance.jpg', pos: 'object-center' },
+              { metric: '15,000+', label: t('Cath Interventions', 'कैथ इंटरवेंशंस'), sub: t('Opening blocked arteries, stents & pacemakers', 'बंद आर्टरीज़ खोलना, स्टेंट्स और पेसमेकर'), img: '/images/radial-catheter-sheath.jpg', pos: 'object-center' },
+              { metric: '99.4%', label: t('Radial Patency Rate', 'रेडियल पेटेंसी रेट'), sub: t('Wrist-first access & rapid walking', 'कलाई के रास्ते प्रोसीजर और जल्दी चलना'), img: '/images/doctor-angiogram-explain.jpg', pos: 'object-center' },
+              { metric: t('< 45 Min', '< 45 मिनट'), label: t('STEMI Door-To-Balloon', 'स्टेमी डोर-टू-बैलून'), sub: t('24/7 emergency Code-Blue triage', '24/7 इमरजेंसी कोड-ब्लू ट्राइएज'), img: '/images/doctor-icu-rounds.jpg', pos: 'object-center' },
             ].map((item, i) => (
               <div key={i} className="group relative h-36 rounded-2xl overflow-hidden bg-[#0A1128] border border-slate-200 shadow-md text-left">
                 <img src={item.img} alt={item.label} loading="lazy" className={`absolute inset-0 w-full h-full object-cover ${item.pos} opacity-75 group-hover:scale-110 transition-transform duration-700`} />
@@ -259,9 +270,9 @@ export default function ContactPage() {
               videoUrl="/videos/contact-location.mp4"
               styleVariant="panoramic-stage"
               posterImage="/images/hospital-facility.jpg"
-              title="Pulse Heart Centre Betiahata Campus"
-              subtitle="GPS Navigation • 26.7606° N, 83.3732° E"
-              specs="Centrally Located in Gorakhpur • 10 Min from Railway Station"
+              title={t('Pulse Heart Centre Betiahata Campus', 'पल्स हार्ट सेंटर बेतियाहाता कैंपस')}
+              subtitle={t('GPS Navigation • 26.7606° N, 83.3732° E', 'जीपीएस नेविगेशन • 26.7606° N, 83.3732° E')}
+              specs={t('Centrally Located in Gorakhpur • 10 Min from Railway Station', 'गोरखपुर के बीचों-बीच स्थित • रेलवे स्टेशन से 10 मिनट')}
               aspectRatio="aspect-[16/8] sm:aspect-[21/9]"
             />
           </Interactive3DTilt>
@@ -324,7 +335,7 @@ export default function ContactPage() {
           <ScrollReveal animation="fade-up" delay={0.2} className="mt-10 text-center">
             <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r from-[#0A1128] via-[#1E293B] to-[#BE123C] text-white text-xs font-semibold shadow-lg shadow-navy/20 border border-rose-300/30">
               <div className="w-2 h-2 rounded-full bg-[#E11D48] animate-ping" />
-              <span>Pulse Heart Centre • Betiahata, Gorakhpur — Open Mon–Sat, 10 AM – 8 PM</span>
+              <span>{t('Pulse Heart Centre • Betiahata, Gorakhpur — Open Mon–Sat, 10 AM – 8 PM', 'पल्स हार्ट सेंटर • बेतियाहाता, गोरखपुर — सोम–शनि, सुबह 10 से रात 8 बजे तक खुला')}</span>
             </div>
           </ScrollReveal>
 

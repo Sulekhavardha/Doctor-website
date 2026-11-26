@@ -1,50 +1,50 @@
 import React, { useState } from 'react';
 import { Activity, ShieldCheck, Heart, ArrowRight, Eye, Sparkles, Layers, Maximize2, CheckCircle2 } from 'lucide-react';
 import { PULSE_DATA } from '../data/pulseData';
-
-const DEFAULT_HOTSPOTS = [
-  {
-    id: 'coronary',
-    label: 'Main Heart Artery',
-    x: '52%',
-    y: '38%',
-    domain: 'Stent & Blockage Care',
-    detail: 'Main artery supplying fresh blood to the front of your heart.',
-    chamber: 'Front Heart Wall',
-    clinicalInsight: 'Opened gently through the wrist using a safe, medicine-coated stent.',
-  },
-  {
-    id: 'interventional',
-    label: 'Safe Wrist Entry',
-    x: '46%',
-    y: '22%',
-    domain: 'Painless Wrist Path',
-    detail: 'Safe pathway used to guide a tiny tube to the heart without any leg cut.',
-    chamber: 'Main Heart Gateway',
-    clinicalInsight: 'Lets patients sit up and walk comfortably soon after the procedure.',
-  },
-  {
-    id: 'pacemaker',
-    label: 'Heartbeat Control Spot',
-    x: '38%',
-    y: '48%',
-    domain: 'Pacemaker Support',
-    detail: 'Natural rhythm center that keeps your heart beating steadily.',
-    chamber: 'Upper Heart Chamber',
-    clinicalInsight: 'Supported by a small pacemaker if your heartbeat becomes too slow.',
-  },
-];
+import { useLanguage } from '../context/LanguageContext';
 
 /**
  * InteractiveCardiacExplorer: Simple Interactive Heart Guide
  */
 export default function InteractiveCardiacExplorer({ onBookClick }) {
-  const explorerHotspots = DEFAULT_HOTSPOTS;
+  const { t } = useLanguage();
+  const explorerHotspots = [
+    {
+      id: 'coronary',
+      label: t('Main Heart Artery', 'मेन हार्ट आर्टरी'),
+      x: '52%',
+      y: '38%',
+      domain: t('Stent & Blockage Care', 'स्टेंट एंड ब्लॉकेज केयर'),
+      detail: t('Main artery supplying fresh blood to the front of your heart.', 'मेन आर्टरी सप्लाइंग फ्रेश ब्लड टू द फ्रंट ऑफ योर हार्ट।'),
+      chamber: t('Front Heart Wall', 'फ्रंट हार्ट वॉल'),
+      clinicalInsight: t('Opened gently through the wrist using a safe, medicine-coated stent.', 'ओपन्ड जेंटली थ्रू द रिस्ट यूजिंग अ सेफ, मेडिसिन-कोटेड स्टेंट।'),
+    },
+    {
+      id: 'interventional',
+      label: t('Safe Wrist Entry', 'सेफ रिस्ट एंट्री'),
+      x: '46%',
+      y: '22%',
+      domain: t('Painless Wrist Path', 'पेनलेस रिस्ट पाथ'),
+      detail: t('Safe pathway used to guide a tiny tube to the heart without any leg cut.', 'सेफ पाथवे यूज्ड टू गाइड अ टाइनी ट्यूब टू द हार्ट विदाउट एनी लेग कट।'),
+      chamber: t('Main Heart Gateway', 'मेन हार्ट गेटवे'),
+      clinicalInsight: t('Lets patients sit up and walk comfortably soon after the procedure.', 'लेट्स पेशेंट्स सिट अप एंड वॉक कम्फर्टेबली सून आफ्टर द प्रोसीजर।'),
+    },
+    {
+      id: 'pacemaker',
+      label: t('Heartbeat Control Spot', 'हार्टबीट कंट्रोल स्पॉट'),
+      x: '38%',
+      y: '48%',
+      domain: t('Pacemaker Support', 'पेसमेकर सपोर्ट'),
+      detail: t('Natural rhythm center that keeps your heart beating steadily.', 'नेचुरल रिदम सेंटर दैट कीप्स योर हार्ट बीटिंग स्टेडीली।'),
+      chamber: t('Upper Heart Chamber', 'अपर हार्ट चैंबर'),
+      clinicalInsight: t('Supported by a small pacemaker if your heartbeat becomes too slow.', 'सपोर्टेड बाय अ स्मॉल पेसमेकर इफ योर हार्टबीट बिकम्स टू स्लो।'),
+    },
+  ];
 
   const [activeId, setActiveId] = useState(explorerHotspots[0]?.id || 'coronary');
   const [viewMode, setViewMode] = useState('anatomy'); // 'anatomy' or 'angiogram'
 
-  const activeData = explorerHotspots.find((h) => h.id === activeId) || explorerHotspots[0] || DEFAULT_HOTSPOTS[0];
+  const activeData = explorerHotspots.find((h) => h.id === activeId) || explorerHotspots[0];
 
   return (
     <section className="relative py-16 lg:py-24 overflow-hidden select-none bg-gradient-to-b from-[#FAFBF9] via-[#F0FDF4]/30 to-[#FAFBF9] rounded-[3rem] my-8 border-2 border-[#A7F3D0]/80 shadow-lg">
@@ -75,16 +75,19 @@ export default function InteractiveCardiacExplorer({ onBookClick }) {
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#F0FDF4] border border-[#A7F3D0] shadow-xs">
             <Sparkles className="w-3.5 h-3.5 text-[#047857]" />
             <span className="text-xs font-bold text-[#064E3B] uppercase tracking-wider">
-              Interactive Heart Guide
+              {t('Interactive Heart Guide', 'इंटरैक्टिव हार्ट गाइड')}
             </span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#064E3B] tracking-tight leading-tight">
-            How Your Heart <span className="font-serif italic font-normal text-[#047857]">Works &amp; Heals</span>
+            {t('How Your Heart', 'हाउ योर हार्ट')} <span className="font-serif italic font-normal text-[#047857]">{t('Works & Heals', 'वर्क्स एंड हील्स')}</span>
           </h2>
 
           <p className="text-xs sm:text-sm text-slate-600 font-medium max-w-xl mx-auto leading-relaxed">
-            Click any part of the heart below to see how Dr. Shahi checks blockages, opens arteries, and keeps your heartbeat steady.
+            {t(
+              'Click any part of the heart below to see how Dr. Shahi checks blockages, opens arteries, and keeps your heartbeat steady.',
+              'क्लिक एनी पार्ट ऑफ द हार्ट बिलो टू सी हाउ डॉ. शाही चेक्स ब्लॉकेजेस, ओपन्स आर्टरीज, एंड कीप्स योर हार्टबीट स्टेडी।'
+            )}
           </p>
         </div>
 
@@ -104,7 +107,7 @@ export default function InteractiveCardiacExplorer({ onBookClick }) {
                     : 'text-slate-700 hover:text-[#064E3B]'
                 }`}
               >
-                Heart View
+                {t('Heart View', 'हार्ट व्यू')}
               </button>
               <button
                 onClick={() => setViewMode('angiogram')}
@@ -114,7 +117,7 @@ export default function InteractiveCardiacExplorer({ onBookClick }) {
                     : 'text-slate-700 hover:text-[#064E3B]'
                 }`}
               >
-                Angiogram View
+                {t('Angiogram View', 'एंजियोग्राम व्यू')}
               </button>
             </div>
 
@@ -156,13 +159,13 @@ export default function InteractiveCardiacExplorer({ onBookClick }) {
             <div className="absolute top-4 left-4 flex items-center gap-2 pointer-events-none">
               <div className="px-3.5 py-1.5 rounded-full bg-slate-900/80 backdrop-blur-md border border-white/20 text-white text-[11px] font-medium flex items-center gap-2 shadow-md">
                 <span className="w-2 h-2 rounded-full bg-[#059669] animate-ping" />
-                <span>{viewMode === 'anatomy' ? 'Heart View: Clear Artery Guide' : 'Angiogram View: Live Blood Flow Check'}</span>
+                <span>{viewMode === 'anatomy' ? t('Heart View: Clear Artery Guide', 'हार्ट व्यू: क्लियर आर्टरी गाइड') : t('Angiogram View: Live Blood Flow Check', 'एंजियोग्राम व्यू: लाइव ब्लड फ्लो चेक')}</span>
               </div>
             </div>
 
             <div className="absolute top-4 right-4 pointer-events-none">
               <div className="px-3.5 py-1.5 rounded-full bg-slate-900/80 backdrop-blur-md border border-white/20 text-amber-300 text-[11px] font-mono shadow-md font-bold">
-                72 BPM · Healthy Heartbeat
+                {t('72 BPM · Healthy Heartbeat', '72 बीपीएम · हेल्दी हार्टबीट')}
               </div>
             </div>
 
@@ -207,7 +210,7 @@ export default function InteractiveCardiacExplorer({ onBookClick }) {
             <div className="absolute bottom-4 left-4 right-4 p-4 rounded-2xl bg-slate-950/90 backdrop-blur-md border border-white/15 text-white flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-xl">
               <div className="space-y-0.5">
                 <span className="text-[10px] font-mono uppercase tracking-wider text-[#059669] font-bold block">
-                  SELECTED HEART PART
+                  {t('SELECTED HEART PART', 'चुना गया हार्ट हिस्सा')}
                 </span>
                 <span className="text-sm sm:text-base font-bold text-white block">
                   {activeData.label} · {activeData.chamber}
@@ -219,14 +222,14 @@ export default function InteractiveCardiacExplorer({ onBookClick }) {
 
               <div className="flex items-center gap-3 shrink-0">
                 <div className="hidden sm:block text-right">
-                  <span className="text-[10px] text-slate-400 block">Treatment Result</span>
-                  <span className="text-sm font-bold text-amber-300 font-mono">99.4% Success</span>
+                  <span className="text-[10px] text-slate-400 block">{t('Treatment Result', 'ट्रीटमेंट रिज़ल्ट')}</span>
+                  <span className="text-sm font-bold text-amber-300 font-mono">{t('99.4% Success', '99.4% सफलता')}</span>
                 </div>
                 <button
                   onClick={onBookClick}
                   className="px-5 py-2.5 rounded-full bg-[#10B981 hover:bg-[#059669] text-slate-950 text-xs font-bold shadow transition-all"
                 >
-                  Consult on {activeData.label}
+                  {t('Consult on', 'परामर्श लें:')} {activeData.label}
                 </button>
               </div>
             </div>
@@ -236,16 +239,16 @@ export default function InteractiveCardiacExplorer({ onBookClick }) {
           {/* Bottom Simple Highlights */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 text-xs">
             <div className="p-3.5 rounded-2xl bg-[#F0FDF4]/70 border border-[#A7F3D0]/60">
-              <span className="font-bold text-[#064E3B] block">Heart Stenting Through Wrist</span>
-              <span className="text-slate-600 text-[11px] block mt-0.5 font-medium">Gentle wrist procedure so patients recover fast and walk sooner.</span>
+              <span className="font-bold text-[#064E3B] block">{t('Heart Stenting Through Wrist', 'कलाई के रास्ते हार्ट स्टेंटिंग')}</span>
+              <span className="text-slate-600 text-[11px] block mt-0.5 font-medium">{t('Gentle wrist procedure so patients recover fast and walk sooner.', 'आरामदायक रिस्ट प्रोसीजर जिससे मरीज़ जल्दी ठीक होते हैं और जल्द चल सकते हैं।')}</span>
             </div>
             <div className="p-3.5 rounded-2xl bg-slate-50 border border-slate-200">
-              <span className="font-bold text-[#064E3B] block">Clear Blockage Check</span>
-              <span className="text-slate-600 text-[11px] block mt-0.5 font-medium">Live scan shows the exact location and percentage of any blockage.</span>
+              <span className="font-bold text-[#064E3B] block">{t('Clear Blockage Check', 'साफ ब्लॉकेज जांच')}</span>
+              <span className="text-slate-600 text-[11px] block mt-0.5 font-medium">{t('Live scan shows the exact location and percentage of any blockage.', 'लाइव स्कैन किसी भी ब्लॉकेज की सही जगह और प्रतिशत दिखाता है।')}</span>
             </div>
             <div className="p-3.5 rounded-2xl bg-amber-50/70 border border-amber-100">
-              <span className="font-bold text-amber-900 block">Safe Pacemaker Care</span>
-              <span className="text-slate-600 text-[11px] block mt-0.5 font-medium">Small heart device that keeps a slow or weak pulse steady.</span>
+              <span className="font-bold text-amber-900 block">{t('Safe Pacemaker Care', 'सेफ पेसमेकर केयर')}</span>
+              <span className="text-slate-600 text-[11px] block mt-0.5 font-medium">{t('Small heart device that keeps a slow or weak pulse steady.', 'एक छोटा हार्ट डिवाइस जो धीमी या कमज़ोर धड़कन को स्थिर रखता है।')}</span>
             </div>
           </div>
 

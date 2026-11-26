@@ -5,17 +5,62 @@ import SectionCinematicVideo from './SectionCinematicVideo';
 import SectionBackgroundMotion from './SectionBackgroundMotion';
 import Interactive3DTilt from './Interactive3DTilt';
 import ScrollReveal, { ScrollStagger, StaggerItem } from './ScrollReveal';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function PatientExperienceSection({ onBookClick }) {
-  const { patientJourney } = PULSE_DATA;
+  const { patientJourney: rawJourney } = PULSE_DATA;
+  const { t } = useLanguage();
+
+  const journeyTranslations = {
+    '01': {
+      title: t('Book Appointment', 'अपॉइंटमेंट बुक करें'),
+      description: t(
+        'Seamlessly schedule your consultation online or via our dedicated priority helpline. Select your preferred specialist, clinical department, and time slot without waiting queues.',
+        'बिना लंबी लाइन के, ऑनलाइन या हमारी प्रायोरिटी हेल्पलाइन के ज़रिए आसानी से अपना कंसल्टेशन और टाइम स्लॉट बुक करें।'
+      ),
+    },
+    '02': {
+      title: t('Doctor Consultation', 'डॉक्टर कंसल्टेशन'),
+      description: t(
+        'Meet your senior heart doctor for a calm, clear discussion. We carefully check your past reports, symptoms, and overall heart health.',
+        'अपने सीनियर हार्ट डॉक्टर से शांत और साफ बातचीत के लिए मिलें। हम आपकी पुरानी रिपोर्ट्स, लक्षण और हार्ट हेल्थ को ध्यान से देखते हैं।'
+      ),
+    },
+    '03': {
+      title: t('Diagnosis & Tests', 'डायग्नोसिस और टेस्ट्स'),
+      description: t(
+        'Undergo recommended diagnostics—such as Flat-Panel Angiography, 3T MRI, 128-Slice CT, or automated pathology—with transparent, fast turnaround reporting.',
+        'जरूरत के अनुसार फ्लैट-पैनल एंजियोग्राफी, 3T एमआरआई, 128-स्लाइस सीटी या पैथोलॉजी जैसे सटीक डायग्नोस्टिक्स और तेज़ रिपोर्ट प्राप्त करें।'
+      ),
+    },
+    '04': {
+      title: t('Personalized Treatment', 'पर्सनलाइज़्ड ट्रीटमेंट'),
+      description: t(
+        'From wrist-first transradial stenting and robotic joint replacement to targeted medical therapy, your care plan is customized with zero unnecessary procedures.',
+        'कलाई के रास्ते ट्रांसरेडियल स्टेंटिंग से लेकर सटीक मेडिकल थेरेपी तक, आपका ट्रीटमेंट प्लान बिना किसी गैर-जरूरी प्रोसीजर के तैयार किया जाता है।'
+      ),
+    },
+    '05': {
+      title: t('Recovery & Follow-up', 'रिकवरी और फॉलो-अप'),
+      description: t(
+        'Step-down rehabilitation, post-discharge medication guidance, and tele-consultation follow-ups ensure your recovery is sustained, safe, and empowering.',
+        'डिस्चार्ज के बाद दवाइयों की सही जानकारी, रिहैबिलिटेशन और फॉलो-अप के साथ आपकी सुरक्षित और स्थायी रिकवरी सुनिश्चित की जाती है।'
+      ),
+    },
+  };
+
+  const patientJourney = rawJourney.map((step) => ({
+    ...step,
+    ...(journeyTranslations[step.step] || {}),
+  }));
 
   const preVisitDocuments = [
-    "Old ECG reports",
-    "Past heart scan (Angiogram or CT) CD and reports",
-    "Current doctor prescriptions and daily medicines",
-    "Recent blood test reports (Sugar, Cholesterol, Kidney)",
-    "Echo heart scan reports, if you have them",
-    "Old hospital discharge papers or stent records"
+    t('Old ECG reports', 'पुरानी ईसीजी रिपोर्ट्स'),
+    t('Past heart scan (Angiogram or CT) CD and reports', 'पिछले हार्ट स्कैन (एंजियोग्राम या सीटी) की सीडी और रिपोर्ट्स'),
+    t('Current doctor prescriptions and daily medicines', 'मौजूदा डॉक्टर की पर्चियां और रोज़ाना की दवाइयां'),
+    t('Recent blood test reports (Sugar, Cholesterol, Kidney)', 'हाल की ब्लड टेस्ट रिपोर्ट्स (शुगर, कोलेस्ट्रॉल, किडनी)'),
+    t('Echo heart scan reports, if you have them', 'इको हार्ट स्कैन रिपोर्ट्स, अगर आपके पास हों'),
+    t('Old hospital discharge papers or stent records', 'पुराने हॉस्पिटल डिस्चार्ज पेपर्स या स्टेंट रिकॉर्ड्स'),
   ];
 
   return (
@@ -30,25 +75,28 @@ export default function PatientExperienceSection({ onBookClick }) {
           <div className="mb-12">
             <div className="flex items-center gap-3 mb-3">
               <span className="text-xs font-semibold text-white bg-gradient-to-r from-[#0A1128] via-[#1E293B] to-[#BE123C] px-3.5 py-1 rounded-full shadow-sm border border-rose-300/30">
-                Patient Care Guide
+                {t('Patient Care Guide', 'पेशेंट केयर गाइड')}
               </span>
               <div className="w-10 h-0.5 bg-gradient-to-r from-[#0A1128] to-[#BE123C]" />
               <span className="text-xs font-medium tracking-wider text-[#BE123C] uppercase font-mono">
-                Step-by-Step Visit
+                {t('Step-by-Step Visit', 'स्टेप-बाय-स्टेप विज़िट')}
               </span>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end">
               <div className="lg:col-span-8">
                 <span className="text-[#0A1128] font-semibold text-xs uppercase tracking-widest block mb-1">
-                  Simple &amp; Honest Heart Care
+                  {t('Simple & Honest Heart Care', 'आसान और ईमानदार हार्ट केयर')}
                 </span>
                 <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0A1128] tracking-tight leading-tight">
-                  Your Visit <span className="font-serif italic font-normal text-[#BE123C]">Step by Step</span>
+                  {t('Your Visit', 'आपकी विज़िट')} <span className="font-serif italic font-normal text-[#BE123C]">{t('Step by Step', 'स्टेप बाय स्टेप')}</span>
                 </h2>
               </div>
               <div className="lg:col-span-4 text-slate-600 text-xs sm:text-sm font-normal leading-relaxed">
-                Clear and honest doctor consultation from checking your old reports to your regular follow-up care.
+                {t(
+                  'Clear and honest doctor consultation from checking your old reports to your regular follow-up care.',
+                  'आपकी पुरानी रिपोर्ट्स की जांच से लेकर रेगुलर फॉलो-अप केयर तक साफ और ईमानदार डॉक्टर कंसल्टेशन।'
+                )}
               </div>
             </div>
           </div>
@@ -80,7 +128,7 @@ export default function PatientExperienceSection({ onBookClick }) {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#0A1128]/80 via-transparent to-transparent" />
                       <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-[#0A1128]/80 border border-white/20 text-[10px] font-mono font-bold text-white">
-                        PHASE {step.step}
+                        {t('PHASE', 'फेज़')} {step.step}
                       </span>
                       <span className="absolute bottom-2.5 right-3 font-serif font-bold text-2xl text-white/95 drop-shadow-md">
                         {step.step}
@@ -99,7 +147,7 @@ export default function PatientExperienceSection({ onBookClick }) {
 
                       <div className={`mt-5 pt-3 border-t border-slate-100 flex items-center justify-between`}>
                         <span className={`text-[10px] font-mono tracking-widest uppercase font-bold ${a.pill} px-2.5 py-1 rounded-full`}>
-                          Dr. Shahi Protocol
+                          {t('Dr. Shahi Protocol', 'डॉ. शाही प्रोटोकॉल')}
                         </span>
                       </div>
                     </div>
@@ -121,15 +169,18 @@ export default function PatientExperienceSection({ onBookClick }) {
               <div className="lg:col-span-5 space-y-4">
                 <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 text-xs font-mono text-rose-200 border border-rose-300/30">
                   <ClipboardList className="w-3.5 h-3.5" />
-                  <span>Before Your Visit</span>
+                  <span>{t('Before Your Visit', 'विज़िट से पहले')}</span>
                 </div>
 
                 <h3 className="font-extrabold text-2xl sm:text-3xl text-white leading-snug">
-                  Reports to Bring for Your Checkup
+                  {t('Reports to Bring for Your Checkup', 'चेकअप के लिए ये रिपोर्ट्स साथ लाएं')}
                 </h3>
 
                 <p className="text-slate-300 text-xs sm:text-sm font-normal leading-relaxed">
-                  Bringing your old ECGs, heart scan CDs, and current medicines helps Dr. Prakash Chand Shahi understand your heart health clearly and give you the right advice.
+                  {t(
+                    'Bringing your old ECGs, heart scan CDs, and current medicines helps Dr. Prakash Chand Shahi understand your heart health clearly and give you the right advice.',
+                    'अपनी पुरानी ईसीजी, हार्ट स्कैन की सीडी और मौजूदा दवाइयां साथ लाने से डॉ. प्रकाश चंद शाही को आपके हार्ट की स्थिति को बेहतर समझने और सही सलाह देने में मदद मिलती है।'
+                  )}
                 </p>
 
                 <div className="pt-2">
@@ -137,7 +188,7 @@ export default function PatientExperienceSection({ onBookClick }) {
                     onClick={onBookClick}
                     className="luxury-btn-ruby group"
                   >
-                    <span>Book Your Checkup</span>
+                    <span>{t('Book Your Checkup', 'अपना चेकअप बुक करें')}</span>
                     <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1.5 transition-transform" />
                   </button>
                 </div>
@@ -166,9 +217,9 @@ export default function PatientExperienceSection({ onBookClick }) {
                     showControls={false}
                     styleVariant="video-card"
                     posterImage="/images/p3.jpeg"
-                    title="Heart Scan CD & Report Checkup"
-                    subtitle="Pulse Heart Centre • Patient Care"
-                    specs="Doctor: Dr. Prakash Chand Shahi"
+                    title={t('Heart Scan CD & Report Checkup', 'हार्ट स्कैन सीडी और रिपोर्ट चेकअप')}
+                    subtitle={t('Pulse Heart Centre • Patient Care', 'पल्स हार्ट सेंटर • पेशेंट केयर')}
+                    specs={t('Doctor: Dr. Prakash Chand Shahi', 'डॉक्टर: डॉ. प्रकाश चंद शाही')}
                     aspectRatio="aspect-[16/8]"
                   />
                 </div>

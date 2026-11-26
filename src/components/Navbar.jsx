@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { Menu, X, Calendar, ArrowRight, Stethoscope } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const { language, setLanguage, t } = useLanguage();
 
   useEffect(() => {
     setMobileMenuOpen(false);
@@ -21,12 +24,49 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { label: 'Home', path: '/' },
-    { label: 'About', path: '/about' },
-    { label: 'Treatments', path: '/treatments' },
-    { label: 'Hospital', path: '/hospital' },
-    { label: 'Contact', path: '/contact' },
+    { label: t('Home', 'होम'), path: '/' },
+    { label: t('About', 'अबाउट'), path: '/about' },
+    { label: t('Treatments', 'ट्रीटमेंट्स'), path: '/treatments' },
+    { label: t('Hospital', 'हॉस्पिटल'), path: '/hospital' },
+    { label: t('Contact', 'कॉन्टैक्ट'), path: '/contact' },
   ];
+
+  const renderLanguageToggle = (layoutSuffix) => (
+    <div
+      role="group"
+      aria-label="Language switcher"
+      className="relative inline-flex items-center p-0.5 rounded-full bg-slate-100/95 border border-slate-200/90 hover:border-rose-300/80 shadow-2xs hover:shadow-sm transition-all duration-300 shrink-0"
+    >
+      {[
+        { code: 'en', label: 'English' },
+        { code: 'hi', label: 'हिंदी' },
+      ].map((opt) => {
+        const isActive = language === opt.code;
+        return (
+          <button
+            key={opt.code}
+            type="button"
+            onClick={() => setLanguage(opt.code)}
+            aria-pressed={isActive}
+            className={`relative z-10 px-2.5 sm:px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-bold tracking-wide transition-colors duration-300 cursor-pointer ${
+              isActive
+                ? 'text-white'
+                : 'text-slate-700 hover:text-[#BE123C]'
+            }`}
+          >
+            {isActive && (
+              <motion.span
+                layoutId={`nav-lang-pill-${layoutSuffix}`}
+                transition={{ type: 'spring', stiffness: 420, damping: 32 }}
+                className="absolute inset-0 rounded-full bg-gradient-to-r from-[#0A1128] via-[#1E293B] to-[#BE123C] shadow-sm -z-10"
+              />
+            )}
+            <span>{opt.label}</span>
+          </button>
+        );
+      })}
+    </div>
+  );
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-2.5 sm:py-3.5 px-3 sm:px-8 select-none">
@@ -51,10 +91,10 @@ export default function Navbar() {
             </div>
             <div className="flex flex-col text-left">
               <span className="font-extrabold text-base sm:text-xl tracking-[0.14em] sm:tracking-[0.2em] text-[#0A1128] group-hover:text-[#BE123C] transition-colors uppercase leading-none">
-                PULSE
+                {t('PULSE', 'पल्स')}
               </span>
               <span className="text-[9px] sm:text-[10px] tracking-[0.16em] sm:tracking-[0.26em] uppercase font-bold text-[#BE123C] font-mono mt-0.5">
-                Heart Centre
+                {t('Heart Centre', 'हार्ट सेंटर')}
               </span>
             </div>
           </Link>
@@ -67,14 +107,14 @@ export default function Navbar() {
             <div className="w-5 h-5 rounded-full bg-gradient-to-br from-[#0A1128] to-[#BE123C] flex items-center justify-center text-white">
               <Stethoscope className="w-3 h-3" />
             </div>
-            <span>Dr. Prakash Chand Shahi • DM (PGIMER)</span>
+            <span>{t('Dr. Prakash Chand Shahi • DM (PGIMER)', 'डॉ. प्रकाश चंद शाही • डीएम (पीजीआईएमईआर)')}</span>
           </Link>
 
           {/* Desktop Navigation Links */}
           <div className="hidden md:flex items-center gap-1 px-3 py-1.5 rounded-full bg-slate-100/90 border border-slate-200/90 backdrop-blur-md">
             {navLinks.map((item) => (
               <NavLink
-                key={item.label}
+                key={item.path}
                 to={item.path}
                 className={({ isActive }) => `relative px-4 py-1.5 rounded-full text-xs font-bold tracking-wider transition-all duration-300 ${
                   isActive
@@ -87,20 +127,22 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Actions: Prominent Book Appointment CTA */}
-          <div className="hidden md:flex items-center gap-3 shrink-0">
+          {/* Actions: Language Toggle & Prominent Book Appointment CTA */}
+          <div className="hidden md:flex items-center gap-2.5 shrink-0">
+            {renderLanguageToggle('desktop')}
             <Link
               to="/book-appointment"
               className="luxury-btn-primary !px-5 !py-2 !text-xs group"
             >
               <Calendar className="w-3.5 h-3.5 text-rose-200 group-hover:scale-110 transition-transform" />
-              <span>Book Appointment</span>
+              <span>{t('Book Appointment', 'बुक अपॉइंटमेंट')}</span>
               <ArrowRight className="w-3.5 h-3.5 text-rose-300 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="flex md:hidden items-center shrink-0">
+          {/* Mobile Language Toggle & Menu Button */}
+          <div className="flex md:hidden items-center gap-2 shrink-0">
+            {renderLanguageToggle('mobile')}
             <button
               type="button"
               onClick={() => setMobileMenuOpen((prev) => !prev)}
@@ -123,14 +165,14 @@ export default function Navbar() {
                 <Stethoscope className="w-4 h-4" />
               </div>
               <div className="text-left">
-                <span className="text-xs font-bold text-[#0A1128] block leading-tight">Dr. Prakash Chand Shahi</span>
-                <span className="text-[10px] text-[#BE123C] font-mono font-semibold block">DM Cardiology (PGIMER)</span>
+                <span className="text-xs font-bold text-[#0A1128] block leading-tight">{t('Dr. Prakash Chand Shahi', 'डॉ. प्रकाश चंद शाही')}</span>
+                <span className="text-[10px] text-[#BE123C] font-mono font-semibold block">{t('DM Cardiology (PGIMER)', 'डीएम कार्डियोलॉजी (पीजीआईएमईआर)')}</span>
               </div>
             </div>
 
             {navLinks.map((item) => (
               <NavLink
-                key={item.label}
+                key={item.path}
                 to={item.path}
                 onClick={() => setMobileMenuOpen(false)}
                 className={({ isActive }) => `block px-4 py-2.5 rounded-2xl text-xs font-bold uppercase tracking-wider transition-all text-left ${
@@ -150,7 +192,7 @@ export default function Navbar() {
                 className="w-full py-3 rounded-full bg-gradient-to-r from-[#0A1128] via-[#1E293B] to-[#BE123C] text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-md shadow-navy/20"
               >
                 <Calendar className="w-4 h-4 text-rose-200" />
-                <span>Book Priority Appointment</span>
+                <span>{t('Book Priority Appointment', 'बुक प्रायोरिटी अपॉइंटमेंट')}</span>
               </Link>
 
               <a
@@ -159,7 +201,7 @@ export default function Navbar() {
                 className="w-full py-2.5 rounded-full bg-slate-50 hover:bg-rose-50 text-[#0A1128] hover:text-[#BE123C] font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 border border-slate-200"
               >
                 <span className="w-2 h-2 rounded-full bg-[#BE123C] animate-ping" />
-                <span>24/7 Helpline: +91 98765 43210</span>
+                <span>{t('24/7 Helpline: +91 98765 43210', '24/7 हेल्पलाइन: +91 98765 43210')}</span>
               </a>
             </div>
           </div>

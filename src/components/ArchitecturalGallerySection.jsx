@@ -3,6 +3,7 @@ import { Eye, X, Building2, ShieldCheck, Play, MapPin } from 'lucide-react';
 import { PULSE_DATA } from '../data/pulseData';
 import CinematicVideoPlayerModal from './CinematicVideoPlayerModal';
 import SectionBackgroundMotion from './SectionBackgroundMotion';
+import { useLanguage } from '../context/LanguageContext';
 
 /**
  * ArchitecturalGallerySection
@@ -11,7 +12,39 @@ import SectionBackgroundMotion from './SectionBackgroundMotion';
  * - Real photography of hospital entrance, cath lab, Doctor consultations, and recovery ICU
  */
 export default function ArchitecturalGallerySection() {
-  const { hospitalTour } = PULSE_DATA;
+  const { t } = useLanguage();
+  const { hospitalTour: rawTour } = PULSE_DATA;
+  const tourTranslations = {
+    'tour-1': {
+      title: t('Grand Architectural Atrium & Reception', 'ग्रैंड आर्किटेक्चरल एट्रियम और रिसेप्शन'),
+      category: t('Patient Welcome & Triage', 'पेशेंट वेलकम और ट्राइएज'),
+      description: t('Designed with generous natural light, acoustic dampening, and streamlined digital registration kiosks for zero-wait patient admission.', 'बिना किसी इंतज़ार के आसान एडमिशन के लिए प्राकृतिक रोशनी, शांत माहौल और डिजिटल रजिस्ट्रेशन की सुविधा के साथ डिज़ाइन किया गया।'),
+    },
+    'tour-2': {
+      title: t('Siemens Artis Zee Flat-Panel Digital Cath Lab', 'सीमेंस आर्टिस जी फ्लैट-पैनल डिजिटल कैथ लैब'),
+      category: t('Vascular Interventions', 'वैस्कुलर इंटरवेंशंस'),
+      description: t('State-of-the-art sterile catheterization theater with Dr. Prakash Chand Shahi performing radial angioplasty and real-time hemodynamic monitoring.', 'अत्याधुनिक स्टराइल कैथेटराइजेशन थिएटर जहां डॉ. प्रकाश चंद शाही रेडियल एंजियोप्लास्टी और रियल-टाइम मॉनिटरिंग करते हैं।'),
+    },
+    'tour-3': {
+      title: t('Executive Outpatient Consultation Suites', 'एग्जीक्यूटिव ओपीडी कंसल्टेशन सूट्स'),
+      category: t('Clinical Consultations', 'क्लिनिकल कंसल्टेशंस'),
+      description: t('Calm, private consultation rooms where Dr. Shahi personally explains ECG and heart scan reports with families.', 'शांत और प्राइवेट कंसल्टेशन रूम्स जहां डॉ. शाही खुद परिवारों को ईसीजी और हार्ट स्कैन रिपोर्ट्स समझाते हैं।'),
+    },
+    'tour-4': {
+      title: t('Class-100 Laminar Flow Modular OT & Pacing Suite', 'क्लास-100 लैमिनार फ्लो मॉड्यूलर ओटी और पेसिंग सूट'),
+      category: t('Surgical Care', 'सर्जिकल केयर'),
+      description: t('Ultra-clean cardiac & pacing theatres with positive-pressure HEPA filtration and continuous hemodynamic telemetry.', 'पॉजिटिव-प्रेशर हेपा फिल्ट्रेशन और लगातार हेमोडायनामिक टेलीमेट्री के साथ अल्ट्रा-क्लीन कार्डियक और पेसिंग थिएटर।'),
+    },
+    'tour-5': {
+      title: t('Post-Procedure Cardiac Recovery & ICU Rounds', 'पोस्ट-प्रोसीजर कार्डियक रिकवरी और आईसीयू राउंड्स'),
+      category: t('Bedside Recovery', 'बेडसाइड रिकवरी'),
+      description: t('Daily bedside follow-up rounds by Dr. Shahi ensuring rapid ambulation and safe recovery after stenting.', 'स्टेंटिंग के बाद तेज़ और सुरक्षित रिकवरी सुनिश्चित करने के लिए डॉ. शाही के डेली बेडसाइड फॉलो-अप राउंड्स।'),
+    },
+  };
+  const hospitalTour = rawTour.map((item) => ({
+    ...item,
+    ...(tourTranslations[item.id] || {}),
+  }));
   const [activeIndex, setActiveIndex] = useState(0);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
@@ -29,16 +62,16 @@ export default function ArchitecturalGallerySection() {
           <div className="space-y-2">
             <div className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-[0.2em] text-[#BE123C]">
               <Building2 className="w-4 h-4" />
-              <span>Campus &amp; Clinical Suites</span>
+              <span>{t('Campus & Clinical Suites', 'कैंपस एंड क्लिनिकल सूट्स')}</span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0A1128] tracking-tight leading-tight">
-              Inside Pulse Heart Centre
+              {t('Inside Pulse Heart Centre', 'इनसाइड पल्स हार्ट सेंटर')}
             </h2>
           </div>
 
           <div className="flex items-center gap-2 text-xs font-semibold text-slate-600">
             <MapPin className="w-4 h-4 text-[#BE123C]" />
-            <span>Betiahata Medical Hub • Gorakhpur, UP</span>
+            <span>{t('Betiahata Medical Hub • Gorakhpur, UP', 'बेतियाहाता मेडिकल हब • गोरखपुर, यूपी')}</span>
           </div>
         </div>
 
@@ -60,14 +93,14 @@ export default function ArchitecturalGallerySection() {
               className="px-3.5 py-2 rounded-full bg-[#0A1128]/80 hover:bg-[#0A1128] text-white text-xs font-semibold flex items-center gap-1.5 border border-white/20 transition-colors"
             >
               <Eye className="w-3.5 h-3.5" />
-              <span>Expand Photo</span>
+              <span>{t('Expand Photo', 'एक्सपैंड फोटो')}</span>
             </button>
             <button
               onClick={() => setIsVideoModalOpen(true)}
               className="px-3.5 py-2 rounded-full bg-[#BE123C] hover:bg-[#9F1239] text-white text-xs font-semibold flex items-center gap-1.5 shadow-md transition-colors"
             >
               <Play className="w-3.5 h-3.5 fill-white" />
-              <span>Virtual Tour</span>
+              <span>{t('Virtual Tour', 'वर्चुअल टूर')}</span>
             </button>
           </div>
 
@@ -124,23 +157,23 @@ export default function ArchitecturalGallerySection() {
         <div className="mt-10 pt-8 border-t border-slate-200 grid grid-cols-2 lg:grid-cols-4 gap-6 text-left">
           <div>
             <span className="text-2xl sm:text-3xl font-extrabold text-[#0A1128] block">14,000+</span>
-            <span className="text-xs font-bold uppercase tracking-wider text-[#BE123C] block mt-0.5">Sq. Ft. Campus</span>
-            <span className="text-xs text-slate-500 block mt-0.5">NABH clinical layout</span>
+            <span className="text-xs font-bold uppercase tracking-wider text-[#BE123C] block mt-0.5">{t('Sq. Ft. Campus', 'स्क्वायर फीट कैंपस')}</span>
+            <span className="text-xs text-slate-500 block mt-0.5">{t('NABH clinical layout', 'एनएबीएच क्लिनिकल लेआउट')}</span>
           </div>
           <div>
-            <span className="text-2xl sm:text-3xl font-extrabold text-[#BE123C] block">Class-100</span>
-            <span className="text-xs font-bold uppercase tracking-wider text-[#0A1128] block mt-0.5">Sterile Suites</span>
-            <span className="text-xs text-slate-500 block mt-0.5">Laminar airflow cath &amp; OT</span>
+            <span className="text-2xl sm:text-3xl font-extrabold text-[#BE123C] block">{t('Class-100', 'क्लास-100')}</span>
+            <span className="text-xs font-bold uppercase tracking-wider text-[#0A1128] block mt-0.5">{t('Sterile Suites', 'स्टराइल सूट्स')}</span>
+            <span className="text-xs text-slate-500 block mt-0.5">{t('Laminar airflow cath & OT', 'लैमिनार एयरफ्लो कैथ एंड ओटी')}</span>
           </div>
           <div>
-            <span className="text-2xl sm:text-3xl font-extrabold text-[#0A1128] block">HEPA-14</span>
-            <span className="text-xs font-bold uppercase tracking-wider text-[#BE123C] block mt-0.5">Air Filtration</span>
-            <span className="text-xs text-slate-500 block mt-0.5">35 sterile exchanges/hr</span>
+            <span className="text-2xl sm:text-3xl font-extrabold text-[#0A1128] block">{t('HEPA-14', 'हेपा-14')}</span>
+            <span className="text-xs font-bold uppercase tracking-wider text-[#BE123C] block mt-0.5">{t('Air Filtration', 'एयर फिल्ट्रेशन')}</span>
+            <span className="text-xs text-slate-500 block mt-0.5">{t('35 sterile exchanges/hr', '35 स्टराइल एक्सचेंजेस/आवर')}</span>
           </div>
           <div>
             <span className="text-2xl sm:text-3xl font-extrabold text-[#BE123C] block">24/7</span>
-            <span className="text-xs font-bold uppercase tracking-wider text-[#0A1128] block mt-0.5">Emergency ICU</span>
-            <span className="text-xs text-slate-500 block mt-0.5">Redundant power &amp; O2</span>
+            <span className="text-xs font-bold uppercase tracking-wider text-[#0A1128] block mt-0.5">{t('Emergency ICU', 'इमरजेंसी आईसीयू')}</span>
+            <span className="text-xs text-slate-500 block mt-0.5">{t('Redundant power & O2', 'रिडंडेंट पावर एंड ओ2')}</span>
           </div>
         </div>
 
@@ -171,7 +204,7 @@ export default function ArchitecturalGallerySection() {
                 onClick={() => setIsLightboxOpen(false)}
                 className="px-6 py-2.5 rounded-full bg-[#BE123C] hover:bg-[#9F1239] text-white text-xs font-bold uppercase tracking-wider shrink-0"
               >
-                Close
+                {t('Close', 'क्लोज')}
               </button>
             </div>
           </div>

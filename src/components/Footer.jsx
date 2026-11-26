@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom';
 import { Activity, MapPin, Clock, ArrowUp, Calendar, Heart, Facebook, Instagram, ShieldCheck, Stethoscope } from 'lucide-react';
 import { PULSE_DATA } from '../data/pulseData';
 import SectionBackgroundMotion from './SectionBackgroundMotion';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Footer() {
   const { clinic, doctor, socials } = PULSE_DATA;
+  const { t } = useLanguage();
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -33,16 +35,19 @@ export default function Footer() {
               </div>
               <div className="flex flex-col text-left">
                 <span className="font-display font-bold text-xl tracking-[0.2em] text-white uppercase leading-none">
-                  PULSE
+                  {t('PULSE', 'पल्स')}
                 </span>
                 <span className="text-[9px] tracking-[0.25em] uppercase font-bold text-[#E11D48] font-mono mt-0.5">
-                  Heart Centre
+                  {t('Heart Centre', 'हार्ट सेंटर')}
                 </span>
               </div>
             </div>
 
             <p className="text-slate-400 text-xs sm:text-sm font-light leading-relaxed max-w-sm text-left">
-              Safe and caring heart treatment led by Dr. Prakash Chand Shahi in Gorakhpur.
+              {t(
+                'Safe and caring heart treatment led by Dr. Prakash Chand Shahi in Gorakhpur.',
+                'गोरखपुर में डॉ. प्रकाश चंद शाही के नेतृत्व में सुरक्षित और भरोसेमंद हार्ट ट्रीटमेंट।'
+              )}
             </p>
 
             <div className="pt-2 flex items-center gap-3 text-xs text-left p-2.5 rounded-2xl bg-white/5 border border-rose-300/30 w-fit max-w-full">
@@ -51,10 +56,10 @@ export default function Footer() {
               </div>
               <div>
                 <span className="font-bold text-white block text-sm">
-                  {doctor.name}
+                  {t(doctor.name, 'डॉ. प्रकाश चंद शाही')}
                 </span>
                 <span className="text-rose-300 block font-mono text-[10px]">
-                  DM Cardiology (PGIMER) • MD (KGMU) • 22+ Yrs
+                  {t('DM Cardiology (PGIMER) • MD (KGMU) • 22+ Yrs', 'डीएम कार्डियोलॉजी (पीजीआईएमईआर) • एमडी (केजीएमयू) • 22+ साल')}
                 </span>
               </div>
             </div>
@@ -62,7 +67,7 @@ export default function Footer() {
             {/* Official Social Media Channels */}
             <div className="pt-3 text-left">
               <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-rose-300 block mb-2 font-bold">
-                Connect With Dr. Shahi
+                {t('Connect With Dr. Shahi', 'डॉ. शाही से जुड़ें')}
               </span>
               <div className="flex flex-wrap items-center gap-2.5">
                 <a
@@ -73,7 +78,7 @@ export default function Footer() {
                   className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/10 hover:bg-[#1877F2] text-white text-xs font-medium border border-white/15 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/30"
                 >
                   <Facebook className="w-4 h-4 text-blue-400 group-hover:text-white" />
-                  <span>Facebook</span>
+                  <span>{t('Facebook', 'फेसबुक')}</span>
                 </a>
 
                 <a
@@ -84,7 +89,7 @@ export default function Footer() {
                   className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white/10 hover:bg-gradient-to-r hover:from-[#833AB4] hover:via-[#FD1D1D] hover:to-[#F77737] text-white text-xs font-medium border border-white/15 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-pink-500/30"
                 >
                   <Instagram className="w-4 h-4 text-pink-400 group-hover:text-white" />
-                  <span>Instagram</span>
+                  <span>{t('Instagram', 'इंस्टाग्राम')}</span>
                 </a>
               </div>
             </div>
@@ -93,23 +98,23 @@ export default function Footer() {
           {/* Quick Navigation Links to Separate Pages */}
           <div className="lg:col-span-3 space-y-3 text-left">
             <span className="text-xs uppercase tracking-wider text-rose-300 font-bold block font-mono">
-              Pages
+              {t('Pages', 'पेजेस')}
             </span>
             <ul className="space-y-2.5 text-xs font-light text-slate-300">
               <li>
-                <Link to="/" className="hover:text-rose-300 transition-colors">Home</Link>
+                <Link to="/" className="hover:text-rose-300 transition-colors">{t('Home', 'होम')}</Link>
               </li>
               <li>
-                <Link to="/about" className="hover:text-rose-300 transition-colors">About Dr. P. C. Shahi</Link>
+                <Link to="/about" className="hover:text-rose-300 transition-colors">{t('About Dr. P. C. Shahi', 'अबाउट डॉ. पी. सी. शाही')}</Link>
               </li>
               <li>
-                <Link to="/treatments" className="hover:text-rose-300 transition-colors">Heart Treatments</Link>
+                <Link to="/treatments" className="hover:text-rose-300 transition-colors">{t('Heart Treatments', 'हार्ट ट्रीटमेंट्स')}</Link>
               </li>
               <li>
-                <Link to="/hospital" className="hover:text-rose-300 transition-colors">Pulse Heart Centre, Betiahata</Link>
+                <Link to="/hospital" className="hover:text-rose-300 transition-colors">{t('Pulse Heart Centre, Betiahata', 'पल्स हार्ट सेंटर, बेतियाहाता')}</Link>
               </li>
               <li>
-                <Link to="/contact" className="hover:text-rose-300 transition-colors">Book Appointment</Link>
+                <Link to="/contact" className="hover:text-rose-300 transition-colors">{t('Book Appointment', 'बुक अपॉइंटमेंट')}</Link>
               </li>
             </ul>
           </div>
@@ -117,21 +122,21 @@ export default function Footer() {
           {/* Clinic Information */}
           <div className="lg:col-span-5 space-y-3 text-left">
             <span className="text-xs uppercase tracking-wider text-rose-300 font-bold block font-mono">
-              Pulse Heart Centre
+              {t('Pulse Heart Centre', 'पल्स हार्ट सेंटर')}
             </span>
 
             <div className="space-y-2.5 text-xs text-slate-300 font-light">
               <div className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
-                <span>{clinic.name}, {clinic.address}</span>
+                <span>{t(`${clinic.name}, ${clinic.address}`, 'पल्स मल्टीस्पेशियलिटी हॉस्पिटल एंड हार्ट सेंटर, बेतियाहाता, गोरखपुर, उत्तर प्रदेश, इंडिया')}</span>
               </div>
               <div className="flex items-start gap-2.5">
                 <Clock className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                <span>{clinic.hours} ({clinic.sunday})</span>
+                <span>{t(`${clinic.hours} (${clinic.sunday})`, 'मंडे – सैटरडे: 08:30 एएम – 08:30 पीएम (संडे: इमरजेंसी एंड इनपेशेंट सर्विसेस ओपन 24/7)')}</span>
               </div>
               <div className="flex items-center gap-2.5">
                 <Calendar className="w-4 h-4 text-rose-400 shrink-0" />
-                <span>Gorakhpur, Uttar Pradesh — PIN 273001</span>
+                <span>{t('Gorakhpur, Uttar Pradesh — PIN 273001', 'गोरखपुर, उत्तर प्रदेश — पिन 273001')}</span>
               </div>
             </div>
           </div>
@@ -140,7 +145,7 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400 font-light">
-          <p>© {new Date().getFullYear()} Pulse Heart Centre, Gorakhpur. Trusted Heart Care.</p>
+          <p>© {new Date().getFullYear()} {t('Pulse Heart Centre, Gorakhpur. Trusted Heart Care.', 'पल्स हार्ट सेंटर, गोरखपुर। ट्रस्टेड हार्ट केयर।')}</p>
 
           <div className="flex items-center gap-4">
             <a

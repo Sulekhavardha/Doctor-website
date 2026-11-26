@@ -21,6 +21,7 @@ import SectionBackgroundMotion from './SectionBackgroundMotion';
 import Interactive3DTilt from './Interactive3DTilt';
 import ScrollReveal from './ScrollReveal';
 import { PULSE_DATA } from '../data/pulseData';
+import { useLanguage } from '../context/LanguageContext';
 
 /**
  * DoctorMonographSection
@@ -29,6 +30,7 @@ import { PULSE_DATA } from '../data/pulseData';
  * Layout: Clean, un-cramped side-by-side architecture with authentic editorial hierarchy
  */
 export default function DoctorMonographSection() {
+  const { t } = useLanguage();
   const doctor = PULSE_DATA?.doctor || {
     name: "Dr. Prakash Chand Shahi",
     experienceYears: "22+",
@@ -44,35 +46,44 @@ export default function DoctorMonographSection() {
     {
       id: 'transradial',
       num: '01',
-      tabLabel: 'Wrist Care',
-      title: 'Gentle Care Through the Wrist',
-      subtitle: 'Safe Wrist Heart Procedure',
+      tabLabel: t('Wrist Care', 'रिस्ट केयर'),
+      title: t('Gentle Care Through the Wrist', 'कलाई के रास्ते आसान और सुरक्षित इलाज'),
+      subtitle: t('Safe Wrist Heart Procedure', 'सेफ रिस्ट हार्ट प्रोसीजर'),
       image: '/images/doctor-cathlab-procedure.jpg',
-      desc: 'Over 98% of heart checks and stent procedures are done safely through the wrist instead of the leg, avoiding pain and letting you walk the same day.',
-      badge: '99.4% Smooth Flow',
-      metric: 'Walk in 2 Hours'
+      desc: t(
+        'Over 98% of heart checks and stent procedures are done safely through the wrist instead of the leg, avoiding pain and letting you walk the same day.',
+        '98% से ज़्यादा हार्ट चेकअप और स्टेंट प्रोसीजर पैर के बजाय कलाई के रास्ते किए जाते हैं, जिससे दर्द नहीं होता और आप उसी दिन चल सकते हैं।'
+      ),
+      badge: t('99.4% Smooth Flow', '99.4% स्मूथ फ्लो'),
+      metric: t('Walk in 2 Hours', '2 घंटे में चलें')
     },
     {
       id: 'evidence',
       num: '02',
-      tabLabel: 'Honest Advice',
-      title: 'Honest Treatment Advice',
-      subtitle: 'Trusted Global Heart Guidelines',
+      tabLabel: t('Honest Advice', 'ईमानदार सलाह'),
+      title: t('Honest Treatment Advice', 'ईमानदार ट्रीटमेंट सलाह'),
+      subtitle: t('Trusted Global Heart Guidelines', 'ग्लोबल हार्ट गाइडलाइंस पर आधारित'),
       image: '/images/doctor-patient-consult.jpg',
-      desc: 'Stents are advised only when truly needed to protect your heart. Every heart scan is checked carefully so you never get unnecessary treatment.',
-      badge: 'Zero Unnecessary Stents',
-      metric: '100% Honest Care'
+      desc: t(
+        'Stents are advised only when truly needed to protect your heart. Every heart scan is checked carefully so you never get unnecessary treatment.',
+        'स्टेंट की सलाह तभी दी जाती है जब आपके हार्ट के लिए वास्तव में ज़रूरी हो। हर हार्ट स्कैन को ध्यान से देखा जाता है ताकि कोई गैर-ज़रूरी ट्रीटमेंट न हो।'
+      ),
+      badge: t('Zero Unnecessary Stents', 'कोई गैर-ज़रूरी स्टेंट नहीं'),
+      metric: t('100% Honest Care', '100% ईमानदार केयर')
     },
     {
       id: 'bedside',
       num: '03',
-      tabLabel: 'Clear Talk',
-      title: 'Clear Family Talk',
-      subtitle: 'Watch Your Heart Scan Together',
+      tabLabel: t('Clear Talk', 'साफ बातचीत'),
+      title: t('Clear Family Talk', 'परिवार से साफ बातचीत'),
+      subtitle: t('Watch Your Heart Scan Together', 'अपना हार्ट स्कैन साथ देखें'),
       image: '/images/doctor-angiogram-explain.jpg',
-      desc: 'Dr. Shahi personally sits with patients and families to show the heart scan video and explain every blockage and treatment choice in simple words.',
-      badge: 'Clear & Open Care',
-      metric: '22+ Yrs Trust'
+      desc: t(
+        'Dr. Shahi personally sits with patients and families to show the heart scan video and explain every blockage and treatment choice in simple words.',
+        'डॉ. शाही खुद मरीज़ और परिवार के साथ बैठकर हार्ट स्कैन वीडियो दिखाते हैं और हर ब्लॉकेज व ट्रीटमेंट के विकल्प को आसान शब्दों में समझाते हैं।'
+      ),
+      badge: t('Clear & Open Care', 'साफ और पारदर्शी केयर'),
+      metric: t('22+ Yrs Trust', '22+ साल का भरोसा')
     }
   ];
 
@@ -106,15 +117,15 @@ export default function DoctorMonographSection() {
               <div className="mt-2.5 p-3.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between gap-3">
                 <div className="text-left">
                   <h4 className="text-xs font-extrabold text-[#0A1128] leading-tight">
-                    Senior Heart Specialist
+                    {t('Senior Heart Specialist', 'सीनियर हार्ट स्पेशलिस्ट')}
                   </h4>
                   <p className="text-[11px] text-[#BE123C] font-semibold mt-0.5">
-                    PULSE Heart Centre • Betiahata, Gorakhpur
+                    {t('PULSE Heart Centre • Betiahata, Gorakhpur', 'पल्स हार्ट सेंटर • बेतियाहाता, गोरखपुर')}
                   </p>
                 </div>
                 <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-rose-50 text-[#BE123C] text-[10px] font-mono font-bold border border-rose-200 shrink-0">
                   <ShieldCheck className="w-3.5 h-3.5" />
-                  <span>22+ Yrs</span>
+                  <span>{t('22+ Yrs', '22+ इयर्स')}</span>
                 </span>
               </div>
             </div>
@@ -133,20 +144,20 @@ export default function DoctorMonographSection() {
             <div className="flex flex-wrap items-center gap-2">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-[#0A1128] via-[#1E293B] to-[#BE123C] text-white text-xs font-mono font-bold shadow-xs border border-rose-300/40">
                 <Sparkles className="w-3.5 h-3.5 text-rose-200" />
-                <span className="uppercase tracking-[0.18em]">Senior Heart Specialist</span>
+                <span className="uppercase tracking-[0.18em]">{t('Senior Heart Specialist', 'सीनियर हार्ट स्पेशलिस्ट')}</span>
               </div>
               <span className="text-xs font-mono font-semibold text-[#0A1128] bg-slate-100 px-3 py-1 rounded-full border border-slate-200">
-                Est. 2002 • 22+ Years Experience
+                {t('Est. 2002 • 22+ Years Experience', 'एस्ट. 2002 • 22+ इयर्स एक्सपीरियंस')}
               </span>
             </div>
 
             {/* Primary Typographic Header */}
             <div className="space-y-2">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0A1128] tracking-tight leading-[1.12]">
-                Dr. Prakash Chand Shahi
+                {t('Dr. Prakash Chand Shahi', 'डॉ. प्रकाश चंद शाही')}
               </h2>
               <p className="text-lg sm:text-xl font-serif italic text-[#BE123C]">
-                Honest Heart Care Guided by Experience &amp; Trust
+                {t('Honest Heart Care Guided by Experience & Trust', 'अनुभव और भरोसे पर आधारित ईमानदार हार्ट केयर')}
               </p>
             </div>
 
@@ -154,15 +165,15 @@ export default function DoctorMonographSection() {
             <div className="flex flex-wrap items-center gap-2 pt-0.5">
               <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/90 border border-slate-200 text-xs font-bold text-[#0A1128] shadow-xs hover:border-rose-300 transition-colors">
                 <GraduationCap className="w-4 h-4 text-[#BE123C]" />
-                <span>DM Cardiology • PGIMER Chandigarh</span>
+                <span>{t('DM Cardiology • PGIMER Chandigarh', 'डीएम कार्डियोलॉजी • पीजीआईएमईआर चंडीगढ़')}</span>
               </div>
               <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/90 border border-slate-200 text-xs font-bold text-[#0A1128] shadow-xs hover:border-rose-300 transition-colors">
                 <GraduationCap className="w-4 h-4 text-[#BE123C]" />
-                <span>MD Medicine • KGMU Lucknow</span>
+                <span>{t('MD Medicine • KGMU Lucknow', 'एमडी मेडिसिन • केजीएमयू लखनऊ')}</span>
               </div>
               <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-rose-50 border border-rose-200 text-xs font-bold text-[#BE123C] shadow-xs">
                 <Award className="w-4 h-4 text-[#BE123C]" />
-                <span>22+ Years Experience</span>
+                <span>{t('22+ Years Experience', '22+ साल का अनुभव')}</span>
               </div>
             </div>
 
@@ -170,10 +181,13 @@ export default function DoctorMonographSection() {
             <div className="p-4 sm:p-5 rounded-2xl bg-white/85 backdrop-blur-md border border-slate-200 text-left space-y-2 shadow-xs card-hover-elevate">
               <div className="flex items-center gap-2 text-xs font-mono font-bold text-[#BE123C] uppercase tracking-wider">
                 <Quote className="w-4 h-4 text-[#BE123C]" />
-                <span>Our Promise &amp; Patient Trust</span>
+                <span>{t('Our Promise & Patient Trust', 'हमारा वादा और मरीज़ों का भरोसा')}</span>
               </div>
               <p className="text-xs sm:text-sm text-slate-800 font-medium italic leading-relaxed">
-                "Every heart checkup represents a human life. We recommend a stent only when it is truly needed to protect your heart, and we personally explain every test report and CD clearly to your family."
+                {t(
+                  '"Every heart checkup represents a human life. We recommend a stent only when it is truly needed to protect your heart, and we personally explain every test report and CD clearly to your family."',
+                  '"हर हार्ट चेकअप एक इंसान की ज़िंदगी से जुड़ा होता है। हम स्टेंट की सलाह तभी देते हैं जब आपके हार्ट की सुरक्षा के लिए यह सच में ज़रूरी हो, और हम खुद आपके परिवार को हर टेस्ट रिपोर्ट और सीडी साफ शब्दों में समझाते हैं।"'
+                )}
               </p>
             </div>
 
@@ -183,11 +197,11 @@ export default function DoctorMonographSection() {
                 <div className="flex items-center gap-2">
                   <Activity className="w-4 h-4 text-[#BE123C] animate-pulse" />
                   <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#0A1128]">
-                    How We Care For You
+                    {t('How We Care For You', 'हम आपकी देखभाल कैसे करते हैं')}
                   </span>
                 </div>
                 <span className="text-[11px] font-mono text-slate-500">
-                  Tap to View
+                  {t('Tap to View', 'देखने के लिए टैप करें')}
                 </span>
               </div>
 
@@ -204,7 +218,7 @@ export default function DoctorMonographSection() {
                         : 'bg-slate-50 hover:bg-slate-100 text-slate-700 border border-slate-200'
                         }`}
                     >
-                      <span className="font-mono text-[9px] block opacity-75">STEP {p.num}</span>
+                      <span className="font-mono text-[9px] block opacity-75">{t('STEP', 'स्टेप')} {p.num}</span>
                       <span className="truncate block mt-0.5">{p.tabLabel}</span>
                     </button>
                   );
@@ -251,7 +265,7 @@ export default function DoctorMonographSection() {
                 to="/book-appointment"
                 className="luxury-btn-primary group"
               >
-                <span>Consult Dr. Prakash Chand Shahi</span>
+                <span>{t('Consult Dr. Prakash Chand Shahi', 'डॉ. प्रकाश चंद शाही से परामर्श लें')}</span>
                 <ArrowRight className="w-4 h-4 text-rose-200 group-hover:translate-x-1.5 transition-transform" />
               </Link>
 
@@ -260,7 +274,7 @@ export default function DoctorMonographSection() {
                 className="luxury-btn-secondary group"
               >
                 <Compass className="w-4 h-4 text-[#BE123C] group-hover:rotate-45 transition-transform" />
-                <span>About Dr. Shahi</span>
+                <span>{t('About Dr. Shahi', 'डॉ. शाही के बारे में')}</span>
               </Link>
             </div>
 

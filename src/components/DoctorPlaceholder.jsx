@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ShieldCheck } from 'lucide-react';
 import { PULSE_DATA } from '../data/pulseData';
+import { useLanguage } from '../context/LanguageContext';
 
 /**
  * DoctorPlaceholder
@@ -12,6 +13,7 @@ export default function DoctorPlaceholder({
   aspectRatio = 'aspect-[3/4] sm:aspect-[4/5]',
   imageSrc = '/images/doctor-portrait.jpg',
 }) {
+  const { t } = useLanguage();
   const doctor = PULSE_DATA?.doctor || {
     name: 'Dr. Prakash Chand Shahi',
     qualifications: 'DM Cardiology (PGIMER) • MD (KGMU)',
@@ -36,13 +38,13 @@ export default function DoctorPlaceholder({
           <div className="absolute bottom-3.5 inset-x-3.5 px-4 py-3 rounded-xl bg-white/95 border border-slate-200/90 shadow-md flex items-center justify-between gap-3 text-left">
             <div>
               <span className="text-[10px] font-mono uppercase tracking-[0.18em] text-[#BE123C] font-bold block">
-                Chief Interventional Cardiologist
+                {t('Chief Interventional Cardiologist', 'चीफ इंटरवेंशनल कार्डियोलॉजिस्ट')}
               </span>
               <span className="text-sm font-extrabold text-[#0A1128] block leading-tight mt-0.5">
-                {doctor.name}
+                {t(doctor.name, 'डॉ. प्रकाश चंद शाही')}
               </span>
               <span className="text-[11px] font-medium text-slate-600 block mt-0.5">
-                DM Cardiology (PGIMER) • MD (KGMU)
+                {t('DM Cardiology (PGIMER) • MD (KGMU)', 'डीएम कार्डियोलॉजी (पीजीआईएमईआर) • एमडी (केजीएमयू)')}
               </span>
             </div>
             <div className="w-9 h-9 rounded-xl bg-rose-50 border border-rose-200 flex items-center justify-center shrink-0">

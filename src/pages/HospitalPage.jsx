@@ -9,34 +9,45 @@ import SectionCinematicVideo from '../components/SectionCinematicVideo';
 import SectionBackgroundMotion from '../components/SectionBackgroundMotion';
 import Interactive3DTilt from '../components/Interactive3DTilt';
 import ScrollReveal from '../components/ScrollReveal';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function HospitalPage() {
   const { clinic, doctor } = PULSE_DATA;
+  const { t } = useLanguage();
 
   const facilityGallery = [
     {
-      title: 'Modern Cath Lab',
-      category: 'HEART PROCEDURE ROOM',
+      title: t('Modern Cath Lab', 'मॉडर्न कैथ लैब'),
+      category: t('HEART PROCEDURE ROOM', 'हार्ट प्रोसीजर रूम'),
       image: '/images/doctor-cathlab-procedure.jpg',
       videoUrl: '/videos/facilities-walkthrough.mp4',
       type: 'facilities-walkthrough',
-      desc: 'Dr. Shahi opening blocked heart arteries safely through the wrist.',
+      desc: t(
+        'Dr. Shahi opening blocked heart arteries safely through the wrist.',
+        'डॉ. शाही कलाई के रास्ते बंद हार्ट आर्टरीज़ को सुरक्षित तरीके से खोलते हुए।'
+      ),
     },
     {
-      title: 'Heart Scan & Guidance',
-      category: 'FAMILY CONSULTATION',
+      title: t('Heart Scan & Guidance', 'हार्ट स्कैन और गाइडेंस'),
+      category: t('FAMILY CONSULTATION', 'फैमिली कंसल्टेशन'),
       image: '/images/doctor-angiogram-explain.jpg',
       videoUrl: '/videos/cardiac-catheterization.mp4',
       type: 'cardiac-catheterization',
-      desc: 'Dr. Shahi personally explains the heart scan video clearly to patients and families.',
+      desc: t(
+        'Dr. Shahi personally explains the heart scan video clearly to patients and families.',
+        'डॉ. शाही खुद मरीज़ों और परिवार को हार्ट स्कैन वीडियो साफ और आसान शब्दों में समझाते हैं।'
+      ),
     },
     {
-      title: 'Recovery & OPD Care',
-      category: 'OUTPATIENT CLINIC',
+      title: t('Recovery & OPD Care', 'रिकवरी और ओपीडी केयर'),
+      category: t('OUTPATIENT CLINIC', 'आउटपेशेंट क्लिनिक'),
       image: '/images/doctor-icu-rounds.jpg',
       videoUrl: '/videos/about-hospital.mp4',
       type: 'about-hospital',
-      desc: 'Easy-to-reach centre in Betiahata, Gorakhpur with personal recovery checkups by Dr. Shahi.',
+      desc: t(
+        'Easy-to-reach centre in Betiahata, Gorakhpur with personal recovery checkups by Dr. Shahi.',
+        'बेतियाहाता, गोरखपुर में आसानी से पहुंचने वाला सेंटर, जहां डॉ. शाही खुद रिकवरी चेकअप करते हैं।'
+      ),
     },
   ];
 
@@ -56,14 +67,14 @@ export default function HospitalPage() {
           <ScrollReveal animation="fade-down">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#0A1128] via-[#1E293B] to-[#BE123C] text-white text-xs font-mono font-medium shadow-md shadow-navy/20 border border-rose-300/30">
               <Building2 className="w-4 h-4 text-rose-300" />
-              <span className="uppercase tracking-[0.2em]">Pulse Heart Centre • Betiahata</span>
+              <span className="uppercase tracking-[0.2em]">{t('Pulse Heart Centre • Betiahata', 'पल्स हार्ट सेंटर • बेतियाहाता')}</span>
             </div>
           </ScrollReveal>
 
           <ScrollReveal animation="fade-up" delay={0.1}>
             <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-[#0A1128] tracking-tight leading-[1.05]">
-              Modern Hospital &amp; <br />
-              <span className="font-serif italic font-normal text-[#BE123C]">Heart Care Facilities</span>
+              {t('Modern Hospital &', 'मॉडर्न हॉस्पिटल और')} <br />
+              <span className="font-serif italic font-normal text-[#BE123C]">{t('Heart Care Facilities', 'हार्ट केयर फैसिलिटीज़')}</span>
             </h1>
           </ScrollReveal>
 
@@ -78,10 +89,10 @@ export default function HospitalPage() {
                 />
                 <div className="text-left">
                   <span className="text-xs font-extrabold text-white block">
-                    Clinical Director: Dr. Prakash Chand Shahi
+                    {t('Clinical Director: Dr. Prakash Chand Shahi', 'क्लिनिकल डायरेक्टर: डॉ. प्रकाश चंद शाही')}
                   </span>
                   <span className="text-[10px] font-mono text-rose-300 font-bold block">
-                    DM Cardiology (PGIMER) • MD (KGMU Lucknow)
+                    {t('DM Cardiology (PGIMER) • MD (KGMU Lucknow)', 'डीएम कार्डियोलॉजी (पीजीआईएमईआर) • एमडी (केजीएमयू लखनऊ)')}
                   </span>
                 </div>
               </div>
@@ -90,7 +101,10 @@ export default function HospitalPage() {
 
           <ScrollReveal animation="fade-up" delay={0.2}>
             <p className="text-sm sm:text-base text-slate-700 font-normal max-w-2xl mx-auto leading-relaxed">
-              Clean consultation rooms, modern Cath Lab, and 24/7 Heart ICU directed personally by Dr. Shahi.
+              {t(
+                'Clean consultation rooms, modern Cath Lab, and 24/7 Heart ICU directed personally by Dr. Shahi.',
+                'साफ-सुथरे कंसल्टेशन रूम, मॉडर्न कैथ लैब और 24/7 हार्ट आईसीयू — डॉ. शाही की सीधी देखरेख में।'
+              )}
             </p>
           </ScrollReveal>
 
@@ -102,9 +116,9 @@ export default function HospitalPage() {
                 videoUrl="/videos/facilities-walkthrough.mp4"
                 styleVariant="panoramic-stage"
                 posterImage="/images/operation-theatre-laminar.jpg"
-                title="Pulse Heart Centre Cath Lab"
-                subtitle="Safe &amp; Clean Heart Suite"
-                specs="Sterile Cleanroom • Clear Live Heart Imaging"
+                title={t('Pulse Heart Centre Cath Lab', 'पल्स हार्ट सेंटर कैथ लैब')}
+                subtitle={t('Safe & Clean Heart Suite', 'सेफ और क्लीन हार्ट सूट')}
+                specs={t('Sterile Cleanroom • Clear Live Heart Imaging', 'स्टराइल क्लीनरूम • क्लियर लाइव हार्ट इमेजिंग')}
                 aspectRatio="aspect-[16/8] sm:aspect-[21/9]"
               />
             </Interactive3DTilt>
@@ -122,13 +136,16 @@ export default function HospitalPage() {
           <div className="relative z-10">
             <ScrollReveal animation="fade-down" className="mb-10 text-center max-w-2xl mx-auto space-y-2">
               <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#BE123C] bg-rose-50 px-3.5 py-1 rounded-full border border-rose-200 shadow-xs">
-                Clinical Environments
+                {t('Clinical Environments', 'क्लिनिकल एनवायरनमेंट्स')}
               </span>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0A1128] tracking-tight">
-                Advanced Clinical Suites
+                {t('Advanced Clinical Suites', 'एडवांस्ड क्लिनिकल सूट्स')}
               </h2>
               <p className="text-xs sm:text-sm text-slate-600 font-normal leading-relaxed">
-                Explore our clean heart care rooms and safe modern medical equipment.
+                {t(
+                  'Explore our clean heart care rooms and safe modern medical equipment.',
+                  'हमारे साफ हार्ट केयर रूम्स और सुरक्षित मॉडर्न मेडिकल इक्विपमेंट देखें।'
+                )}
               </p>
             </ScrollReveal>
 
@@ -172,10 +189,13 @@ export default function HospitalPage() {
               <SectionBackgroundMotion variant="hospital-cta" />
               <div className="relative z-10 space-y-5">
                 <h3 className="text-3xl sm:text-5xl font-extrabold text-[#0A1128] tracking-tight">
-                  Visit Pulse Heart Centre in <span className="font-serif italic font-normal text-[#BE123C]">Betiahata, Gorakhpur</span>
+                  {t('Visit Pulse Heart Centre in', 'विज़िट करें पल्स हार्ट सेंटर')} <span className="font-serif italic font-normal text-[#BE123C]">{t('Betiahata, Gorakhpur', 'बेतियाहाता, गोरखपुर में')}</span>
                 </h3>
                 <p className="text-sm text-slate-600 max-w-xl mx-auto font-normal leading-relaxed">
-                  Conveniently located at Betiahata, Gorakhpur. Outpatient consultations run Monday through Saturday from 10:00 AM to 8:00 PM.
+                  {t(
+                    'Conveniently located at Betiahata, Gorakhpur. Outpatient consultations run Monday through Saturday from 10:00 AM to 8:00 PM.',
+                    'बेतियाहाता, गोरखपुर में आसान लोकेशन पर स्थित। ओपीडी कंसल्टेशन सोमवार से शनिवार सुबह 10:00 बजे से रात 8:00 बजे तक उपलब्ध है।'
+                  )}
                 </p>
                 <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
                   <Link
@@ -183,14 +203,14 @@ export default function HospitalPage() {
                     className="luxury-btn-primary"
                   >
                     <Calendar className="w-4 h-4 text-white" />
-                    <span>Book Consultation Pass</span>
+                    <span>{t('Book Consultation Pass', 'कंसल्टेशन पास बुक करें')}</span>
                   </Link>
                   <a
                     href="tel:+919876543210"
                     className="luxury-btn-secondary"
                   >
                     <Phone className="w-4 h-4 text-[#BE123C]" />
-                    <span>Emergency / OPD Helpline</span>
+                    <span>{t('Emergency / OPD Helpline', 'इमरजेंसी / ओपीडी हेल्पलाइन')}</span>
                   </a>
                 </div>
               </div>

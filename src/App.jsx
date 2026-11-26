@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import ScrollToTop from './components/ScrollToTop';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import { LanguageProvider } from './context/LanguageContext';
 
 // Route-level code splitting for instant initial load
 const HomePage = lazy(() => import('./pages/HomePage'));
@@ -13,8 +14,9 @@ const ContactPage = lazy(() => import('./pages/ContactPage'));
 
 export default function App() {
   return (
-    <Router>
-      <ScrollToTop />
+    <LanguageProvider>
+      <Router>
+        <ScrollToTop />
 
       {/* Clean, Realistic Hospital Canvas with Warm Platinum & Silk Wash */}
       <div className="min-h-screen flex flex-col selection:bg-[#BE123C] selection:text-white relative bg-[#FAF9F6] text-[#0F172A] overflow-x-hidden antialiased">
@@ -49,5 +51,6 @@ export default function App() {
         <Footer />
       </div>
     </Router>
+    </LanguageProvider>
   );
 }

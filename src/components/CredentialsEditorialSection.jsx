@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Award, CheckCircle2, ArrowRight, ShieldCheck, Building2 } from 'lucide-react';
 import { PULSE_DATA } from '../data/pulseData';
+import { useLanguage } from '../context/LanguageContext';
 
 /**
  * CredentialsEditorialSection
@@ -12,42 +13,52 @@ import { PULSE_DATA } from '../data/pulseData';
  */
 export default function CredentialsEditorialSection() {
   const { doctor } = PULSE_DATA;
+  const { t } = useLanguage();
 
   const credentials = [
     {
-      badge: 'HEART SPECIALIST',
-      degree: 'DM — Cardiology',
-      institute: 'PGIMER, Chandigarh',
-      tag: 'Top National Medical Institute',
+      badge: t('HEART SPECIALIST', 'हार्ट स्पेशलिस्ट'),
+      degree: t('DM — Cardiology', 'डीएम — कार्डियोलॉजी'),
+      institute: t('PGIMER, Chandigarh', 'पीजीआईएमईआर, चंडीगढ़'),
+      tag: t('Top National Medical Institute', 'देश का शीर्ष मेडिकल संस्थान'),
       image: '/images/ecg-checkup-room.jpg',
       pos: 'object-center',
-      summary: 'Advanced training in painless heart checkups, stenting through the wrist, and pacemaker care.',
+      summary: t(
+        'Advanced training in painless heart checkups, stenting through the wrist, and pacemaker care.',
+        'कलाई के रास्ते बिना दर्द हार्ट चेकअप, स्टेंटिंग और पेसमेकर केयर में एडवांस्ड ट्रेनिंग।'
+      ),
     },
     {
-      badge: 'POST-GRADUATE',
-      degree: 'MD — General Medicine',
-      institute: "King George's Medical University (KGMU)",
-      tag: 'Lucknow • Est. 1905',
+      badge: t('POST-GRADUATE', 'पोस्ट-ग्रेजुएट'),
+      degree: t('MD — General Medicine', 'एमडी — जनरल मेडिसिन'),
+      institute: t("King George's Medical University (KGMU)", "किंग जॉर्ज मेडिकल यूनिवर्सिटी (केजीएमयू)"),
+      tag: t('Lucknow • Est. 1905', 'लखनऊ • स्थापित 1905'),
       image: '/images/doctor-icu-rounds.jpg',
       pos: 'object-center',
-      summary: 'Strong medical foundation in treating blood pressure, chest pain, heart failure, and emergency care.',
+      summary: t(
+        'Strong medical foundation in treating blood pressure, chest pain, heart failure, and emergency care.',
+        'ब्लड प्रेशर, सीने में दर्द, हार्ट फेल्योर और इमरजेंसी केयर के इलाज में मजबूत मेडिकल अनुभव।'
+      ),
     },
     {
-      badge: 'TRUSTED CARE',
-      degree: '22+ Years Practice',
-      institute: 'Pulse Heart Centre, Betiahata',
-      tag: '15,000+ Heart Procedures',
+      badge: t('TRUSTED CARE', 'भरोसेमंद केयर'),
+      degree: t('22+ Years Practice', '22+ साल का अनुभव'),
+      institute: t('Pulse Heart Centre, Betiahata', 'पल्स हार्ट सेंटर, बेतियाहाता'),
+      tag: t('15,000+ Heart Procedures', '15,000+ हार्ट प्रोसीजर्स'),
       image: '/images/hospital-facility.jpg',
       pos: 'object-center',
-      summary: 'Providing Gorakhpur with gentle heart care through the wrist and 24/7 emergency heart attack support.',
+      summary: t(
+        'Providing Gorakhpur with gentle heart care through the wrist and 24/7 emergency heart attack support.',
+        'गोरखपुर में कलाई के रास्ते आरामदायक हार्ट केयर और 24/7 हार्ट अटैक इमरजेंसी सहायता।'
+      ),
     },
   ];
 
   const standards = [
-    'Painless Heart Care Through Wrist',
-    'Honest Advice — Only Needed Treatment',
-    'Clear Report & CD Review with Family',
-    'Long-Term Follow-Up at Betiahata',
+    t('Painless Heart Care Through Wrist', 'कलाई के रास्ते बिना दर्द हार्ट केयर'),
+    t('Honest Advice — Only Needed Treatment', 'ईमानदार सलाह — सिर्फ ज़रूरी ट्रीटमेंट'),
+    t('Clear Report & CD Review with Family', 'परिवार के साथ साफ रिपोर्ट और सीडी रिव्यू'),
+    t('Long-Term Follow-Up at Betiahata', 'बेतियाहाता में लॉन्ग-टर्म फॉलो-अप'),
   ];
 
   return (
@@ -69,10 +80,10 @@ export default function CredentialsEditorialSection() {
           <div className="max-w-2xl space-y-2">
             <div className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-[0.2em] text-rose-400">
               <Award className="w-4 h-4" />
-              <span>Academic Pedigree</span>
+              <span>{t('Academic Pedigree', 'एकेडमिक पेडिग्री')}</span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
-              Trained at India’s Apex Medical Institutes
+              {t('Trained at India’s Apex Medical Institutes', 'भारत के शीर्ष मेडिकल संस्थानों से प्रशिक्षित')}
             </h2>
           </div>
 
@@ -80,7 +91,7 @@ export default function CredentialsEditorialSection() {
             to="/about"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 hover:bg-[#BE123C] text-white text-xs font-bold uppercase tracking-wider border border-white/15 transition-colors w-fit shrink-0"
           >
-            <span>View Full Profile</span>
+            <span>{t('View Full Profile', 'पूरी प्रोफाइल देखें')}</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
@@ -140,13 +151,13 @@ export default function CredentialsEditorialSection() {
             />
             <div>
               <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#BE123C] block">
-                Ethical Clinical Stewardship
+                {t('Ethical Clinical Stewardship', 'एथिकल क्लिनिकल स्टीवर्डशिप')}
               </span>
               <h4 className="text-lg font-extrabold text-[#0A1128] mt-0.5">
-                {doctor.name}
+                {t(doctor.name, 'डॉ. प्रकाश चंद शाही')}
               </h4>
               <p className="text-xs text-slate-600 mt-0.5">
-                Director &amp; Chief Interventional Cardiologist, Pulse Heart Centre
+                {t('Director & Chief Interventional Cardiologist, Pulse Heart Centre', 'डायरेक्टर एंड चीफ इंटरवेंशनल कार्डियोलॉजिस्ट, पल्स हार्ट सेंटर')}
               </p>
             </div>
           </div>
