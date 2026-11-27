@@ -93,8 +93,8 @@ export default function ContactPage() {
               <ScrollReveal animation="fade-up" delay={0.1}>
                 <div className="space-y-3">
                   <h1 className="text-3xl sm:text-5xl lg:text-7xl font-extrabold text-[#0A1128] tracking-tight leading-[1.04]">
-                    {t('Direct Consultation.', 'डायरेक्ट कंसल्टेशन।')} <br />
-                    <span className="font-serif italic font-normal text-[#BE123C]">{t('With Dr. Prakash Chand Shahi.', 'डॉ. प्रकाश चंद शाही के साथ।')}</span>
+                    {t('Book Your Heart', 'अपना हार्ट चेकअप')} <br />
+                    <span className="font-serif italic font-normal text-[#BE123C]">{t('Checkup Today.', 'आज ही बुक करें।')}</span>
                   </h1>
                 </div>
               </ScrollReveal>
@@ -176,11 +176,11 @@ export default function ContactPage() {
                     </a>
 
                     <a
-                      href="tel:+919876543210"
+                      href="tel:+919455899378"
                       className="luxury-btn-secondary"
                     >
                       <Phone className="w-4 h-4 text-[#BE123C]" />
-                      <span>{t('Emergency 24/7 Helpline', 'इमरजेंसी 24/7 हेल्पलाइन')}</span>
+                      <span>{t('Helpline: +91 94558 99378', 'हेल्पलाइन: +91 94558 99378')}</span>
                     </a>
                   </div>
                 </ScrollReveal>
@@ -211,8 +211,7 @@ export default function ContactPage() {
                   <img
                     src="/images/d2.jpeg"
                     alt="Dr. Prakash Chand Shahi"
-                    className="w-full h-full object-cover object-top"
-                  />
+                    className="w-full h-full object-cover object-top" loading="lazy" decoding="async" />
                 </div>
                 <div className="p-4 text-left flex items-center justify-between gap-3">
                   <div>
@@ -239,12 +238,12 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
               { metric: '22+', label: t('Years of Dedication', 'सालों की सेवा'), sub: t('Unbroken leadership in eastern UP', 'पूर्वी यूपी में भरोसेमंद नेतृत्व'), img: '/images/pu.png', pos: 'object-center' },
-              { metric: '15,000+', label: t('Cath Interventions', 'कैथ इंटरवेंशंस'), sub: t('Opening blocked arteries, stents & pacemakers', 'बंद आर्टरीज़ खोलना, स्टेंट्स और पेसमेकर'), img: '/images/radial-catheter-sheath.jpg', pos: 'object-center' },
+              { metric: '15,000+', label: t('Cath Interventions', 'कैथ इंटरवेंशंस'), sub: t('Opening blocked arteries, stents & pacemakers', 'बंद आर्टरीज़ खोलना, स्टेंट्स और पेसमेकर'), img: '/images/15.png', pos: 'object-center' },
               { metric: '99.4%', label: t('Radial Patency Rate', 'रेडियल पेटेंसी रेट'), sub: t('Wrist-first access & rapid walking', 'कलाई के रास्ते प्रोसीजर और जल्दी चलना'), img: '/images/doctor-angiogram-explain.jpg', pos: 'object-center' },
               { metric: t('< 45 Min', '< 45 मिनट'), label: t('STEMI Door-To-Balloon', 'स्टेमी डोर-टू-बैलून'), sub: t('24/7 emergency Code-Blue triage', '24/7 इमरजेंसी कोड-ब्लू ट्राइएज'), img: '/images/doctor-icu-rounds.jpg', pos: 'object-center' },
             ].map((item, i) => (
               <div key={i} className="group relative h-36 rounded-2xl overflow-hidden bg-[#0A1128] border border-slate-200 shadow-md text-left">
-                <img src={item.img} alt={item.label} loading="lazy" className={`absolute inset-0 w-full h-full object-cover ${item.pos} opacity-75 group-hover:scale-110 transition-transform duration-700`} />
+                <img src={item.img} alt={item.label} loading="lazy" decoding="async" className={`absolute inset-0 w-full h-full object-cover ${item.pos} opacity-75 group-hover:scale-110 transition-transform duration-700`} />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0A1128] via-[#0A1128]/75 to-transparent" />
                 <div className="absolute bottom-3 left-4 right-4">
                   <span className="text-2xl font-extrabold text-white tracking-tight block leading-none">{item.metric}</span>
@@ -294,6 +293,7 @@ export default function ContactPage() {
                           src={media.src}
                           alt={card.title}
                           loading="lazy"
+                          decoding="async"
                           className={`w-full h-full object-cover ${media.pos} group-hover:scale-108 transition-transform duration-700`}
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-[#0A1128]/70 via-transparent to-transparent" />

@@ -37,6 +37,7 @@ export default function ThreeDImageCard({
             src={imgSrc}
             alt={alt}
             loading="lazy"
+            decoding="async"
             onError={() => setImgSrc('/images/pu.png')}
             className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
           />

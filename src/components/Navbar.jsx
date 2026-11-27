@@ -88,8 +88,7 @@ export default function Navbar() {
                 <img
                   src="/images/pulse-bars.webp"
                   alt="पल्स हॉस्पिटल"
-                  className="h-7 sm:h-9 w-auto object-contain shrink-0"
-                />
+                  className="h-7 sm:h-9 w-auto object-contain shrink-0" loading="lazy" decoding="async" />
                 <div className="flex flex-col items-end leading-none">
                   <span className="font-black text-lg sm:text-2xl text-[#8F1D1D] group-hover:text-[#BE123C] transition-colors leading-none">
                     पल्स
@@ -103,8 +102,7 @@ export default function Navbar() {
               <img
                 src="/images/p.png"
                 alt="Pulse Heart Centre Logo"
-                className="h-9 sm:h-11 w-auto object-contain rounded-lg"
-              />
+                className="h-9 sm:h-11 w-auto object-contain rounded-lg" loading="lazy" decoding="async" />
             )}
           </Link>
 

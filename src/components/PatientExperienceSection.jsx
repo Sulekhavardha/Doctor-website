@@ -16,36 +16,36 @@ export default function PatientExperienceSection({ onBookClick }) {
     '01': {
       title: t('Book Appointment', 'अपॉइंटमेंट बुक करें'),
       description: t(
-        'Seamlessly schedule your consultation online or via our dedicated priority helpline. Select your preferred specialist, clinical department, and time slot without waiting queues.',
-        'बिना लंबी लाइन के, ऑनलाइन या हमारी प्रायोरिटी हेल्पलाइन के ज़रिए आसानी से अपना कंसल्टेशन और टाइम स्लॉट बुक करें।'
+        'Quick online or helpline booking—no waiting queues.',
+        'बिना लाइन के, ऑनलाइन या फोन से तुरंत स्लॉट बुक करें।'
       ),
     },
     '02': {
       title: t('Doctor Consultation', 'डॉक्टर कंसल्टेशन'),
       description: t(
-        'Meet your senior heart doctor for a calm, clear discussion. We carefully check your past reports, symptoms, and overall heart health.',
-        'अपने सीनियर हार्ट डॉक्टर से शांत और साफ बातचीत के लिए मिलें। हम आपकी पुरानी रिपोर्ट्स, लक्षण और हार्ट हेल्थ को ध्यान से देखते हैं।'
+        'Calm 1-on-1 review of your symptoms and past reports.',
+        'लक्षणों और पुरानी रिपोर्ट्स की डॉक्टर से साफ बातचीत।'
       ),
     },
     '03': {
       title: t('Diagnosis & Tests', 'डायग्नोसिस और टेस्ट्स'),
       description: t(
-        'Undergo recommended diagnostics—such as Flat-Panel Angiography, 3T MRI, 128-Slice CT, or automated pathology—with transparent, fast turnaround reporting.',
-        'जरूरत के अनुसार फ्लैट-पैनल एंजियोग्राफी, 3T एमआरआई, 128-स्लाइस सीटी या पैथोलॉजी जैसे सटीक डायग्नोस्टिक्स और तेज़ रिपोर्ट प्राप्त करें।'
+        'Accurate heart scans & ECG with fast, clear reports.',
+        'सटीक हार्ट स्कैन, ईसीजी और तेज़, साफ रिपोर्ट।'
       ),
     },
     '04': {
       title: t('Personalized Treatment', 'पर्सनलाइज़्ड ट्रीटमेंट'),
       description: t(
-        'From wrist-first transradial stenting and robotic joint replacement to targeted medical therapy, your care plan is customized with zero unnecessary procedures.',
-        'कलाई के रास्ते ट्रांसरेडियल स्टेंटिंग से लेकर सटीक मेडिकल थेरेपी तक, आपका ट्रीटमेंट प्लान बिना किसी गैर-जरूरी प्रोसीजर के तैयार किया जाता है।'
+        'Gentle wrist-first care with zero unnecessary procedures.',
+        'कलाई से सुरक्षित इलाज, बिना किसी गैर-जरूरी प्रोसीजर के।'
       ),
     },
     '05': {
       title: t('Recovery & Follow-up', 'रिकवरी और फॉलो-अप'),
       description: t(
-        'Step-down rehabilitation, post-discharge medication guidance, and tele-consultation follow-ups ensure your recovery is sustained, safe, and empowering.',
-        'डिस्चार्ज के बाद दवाइयों की सही जानकारी, रिहैबिलिटेशन और फॉलो-अप के साथ आपकी सुरक्षित और स्थायी रिकवरी सुनिश्चित की जाती है।'
+        'Guided recovery, medicines, and regular follow-ups.',
+        'सही दवाइयों और रेगुलर फॉलो-अप के साथ सुरक्षित रिकवरी।'
       ),
     },
   };
@@ -173,11 +173,12 @@ export default function PatientExperienceSection({ onBookClick }) {
                     }`}
                   >
                     {/* Visual Image Header */}
-                    <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-900">
+                    <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-900">
                       <img
                         src={a.img}
                         alt={step.title}
                         loading="lazy"
+                        decoding="async"
                         className={`w-full h-full object-cover ${a.pos} group-hover:scale-108 transition-transform duration-700`}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#0A1128]/85 via-transparent to-transparent" />
@@ -195,7 +196,7 @@ export default function PatientExperienceSection({ onBookClick }) {
                       </span>
                     </div>
 
-                    <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between text-left">
+                    <div className="p-3.5 sm:p-4 flex-1 flex flex-col justify-between text-left">
                       <div>
                         <h3 className={`font-extrabold text-sm sm:text-base leading-snug mb-1.5 transition-colors ${isActive ? 'text-[#BE123C]' : 'text-[#0A1128] group-hover:text-[#BE123C]'}`}>
                           {step.title}
@@ -221,30 +222,49 @@ export default function PatientExperienceSection({ onBookClick }) {
           })}
         </ScrollStagger>
 
-        {/* Pre-Visit Records Checklist with Interactive Document Hover */}
+        {/* Pre-Visit Records Checklist — Balanced 2-Column Editorial Redesign */}
         <ScrollReveal variant="fade-up">
-          <div className="rounded-[2.5rem] bg-gradient-to-r from-[#0A1128] via-[#1E293B] to-[#0A1128] text-white p-8 sm:p-12 shadow-2xl border-2 border-rose-300/25 relative overflow-hidden">
-            {/* Luminous Ambient Glow inside card */}
-            <div className="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-[#E11D48]/20 blur-3xl pointer-events-none" />
+          <div className="rounded-[2.5rem] bg-gradient-to-br from-[#0A1128] via-[#131D3B] to-[#0A1128] text-white p-6 sm:p-10 lg:p-12 shadow-2xl border border-rose-300/20 relative overflow-hidden">
+            {/* Subtle Ambient Glow */}
+            <div className="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-[#E11D48]/18 blur-3xl pointer-events-none" />
+            <div className="absolute -bottom-24 -left-24 w-72 h-72 rounded-full bg-rose-900/20 blur-3xl pointer-events-none" />
 
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
-              
-              <div className="lg:col-span-5 space-y-4">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 text-xs font-mono text-rose-200 border border-rose-300/30">
-                  <ClipboardList className="w-3.5 h-3.5" />
-                  <span>{t('Before Your Visit', 'विज़िट से पहले')}</span>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center relative z-10">
+
+              {/* Left Column (7 Cols): Heading + 6-Item Checklist + CTA */}
+              <div className="lg:col-span-7 space-y-5 text-left">
+                <div className="space-y-3">
+                  <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 text-xs font-mono text-rose-200 border border-rose-300/30">
+                    <ClipboardList className="w-3.5 h-3.5" />
+                    <span>{t('Before Your Visit', 'विज़िट से पहले')}</span>
+                  </div>
+
+                  <h3 className="font-extrabold text-2xl sm:text-3xl lg:text-4xl text-white leading-tight tracking-tight">
+                    {t('Reports to Bring for Your Checkup', 'चेकअप के लिए ये रिपोर्ट्स साथ लाएं')}
+                  </h3>
+
+                  <p className="text-slate-300 text-xs sm:text-sm font-normal leading-relaxed max-w-2xl">
+                    {t(
+                      'Bringing your old ECGs, heart scan CDs, and current medicines helps Dr. Prakash Chand Shahi understand your heart health clearly and give you the right advice.',
+                      'अपनी पुरानी ईसीजी, हार्ट स्कैन की सीडी और मौजूदा दवाइयां साथ लाने से डॉ. प्रकाश चंद शाही को आपके हार्ट की स्थिति को बेहतर समझने और सही सलाह देने में मदद मिलती है।'
+                    )}
+                  </p>
                 </div>
 
-                <h3 className="font-extrabold text-2xl sm:text-3xl text-white leading-snug">
-                  {t('Reports to Bring for Your Checkup', 'चेकअप के लिए ये रिपोर्ट्स साथ लाएं')}
-                </h3>
-
-                <p className="text-slate-300 text-xs sm:text-sm font-normal leading-relaxed">
-                  {t(
-                    'Bringing your old ECGs, heart scan CDs, and current medicines helps Dr. Prakash Chand Shahi understand your heart health clearly and give you the right advice.',
-                    'अपनी पुरानी ईसीजी, हार्ट स्कैन की सीडी और मौजूदा दवाइयां साथ लाने से डॉ. प्रकाश चंद शाही को आपके हार्ट की स्थिति को बेहतर समझने और सही सलाह देने में मदद मिलती है।'
-                  )}
-                </p>
+                {/* 2-Column Checklist Grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3 pt-1">
+                  {preVisitDocuments.map((doc, idx) => (
+                    <div
+                      key={idx}
+                      className="p-3 rounded-xl bg-white/8 border border-white/12 hover:border-rose-300/45 hover:bg-white/12 transition-all flex items-start gap-2.5 cursor-default"
+                    >
+                      <CheckCircle2 className="w-4 h-4 text-[#E11D48] shrink-0 mt-0.5" />
+                      <span className="text-xs text-slate-200 font-medium leading-snug">
+                        {doc}
+                      </span>
+                    </div>
+                  ))}
+                </div>
 
                 <div className="pt-2">
                   <button
@@ -257,35 +277,29 @@ export default function PatientExperienceSection({ onBookClick }) {
                 </div>
               </div>
 
-              <div className="lg:col-span-7 space-y-4">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {preVisitDocuments.map((doc, idx) => (
-                    <div 
-                      key={idx}
-                      className="p-3.5 rounded-xl bg-white/8 border border-white/15 hover:border-rose-300/50 hover:bg-white/15 transition-all flex items-start gap-2.5 cursor-default hover:scale-[1.02]"
-                    >
-                      <CheckCircle2 className="w-4 h-4 text-[#E11D48] shrink-0 mt-0.5" />
-                      <span className="text-xs text-slate-200 font-medium leading-snug">
-                        {doc}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Patient Care Video Telemetry */}
-                <div className="pt-2">
-                  <SectionCinematicVideo
-                    type="patient-care"
-                    videoUrl={false}
-                    showControls={false}
-                    styleVariant="video-card"
-                    posterImage="/images/d1.jpeg"
-                    posterPosition="object-top"
-                    title={t('Heart Scan CD & Report Checkup', 'हार्ट स्कैन सीडी और रिपोर्ट चेकअप')}
-                    subtitle={t('Pulse Heart Centre • Patient Care', 'पल्स हार्ट सेंटर • पेशेंट केयर')}
-                    specs={t('Doctor: Dr. Prakash Chand Shahi', 'डॉक्टर: डॉ. प्रकाश चंद शाही')}
-                    aspectRatio="aspect-[16/10]"
-                  />
+              {/* Right Column (5 Cols): Clean Uncropped Portrait Card + Caption Below Image */}
+              <div className="lg:col-span-5">
+                <div className="max-w-sm mx-auto rounded-3xl bg-white p-2.5 shadow-2xl border border-white/20">
+                  <div className="aspect-[4/5] w-full rounded-2xl overflow-hidden bg-slate-100">
+                    <img
+                      src="/images/d4.jpeg"
+                      alt="Dr. Prakash Chand Shahi"
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full h-full object-cover object-top"
+                    />
+                  </div>
+                  <div className="p-3.5 text-left space-y-1">
+                    <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#BE123C] block">
+                      {t('Pulse Heart Centre • Patient Care', 'पल्स हार्ट सेंटर • पेशेंट केयर')}
+                    </span>
+                    <h4 className="text-sm sm:text-base font-extrabold text-[#0A1128] leading-snug">
+                      {t('Heart Scan CD & Report Checkup', 'हार्ट स्कैन सीडी और रिपोर्ट चेकअप')}
+                    </h4>
+                    <p className="text-xs text-slate-600 font-medium">
+                      {t('Dr. Prakash Chand Shahi', 'डॉ. प्रकाश चंद शाही')}
+                    </p>
+                  </div>
                 </div>
               </div>
 

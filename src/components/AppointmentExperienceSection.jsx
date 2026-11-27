@@ -232,7 +232,7 @@ export default function AppointmentExperienceSection({ variant = 'home-appointme
                     <input
                       type="tel"
                       required
-                      placeholder="+91 98765 43210"
+                      placeholder="+91 94558 XXXXX"
                       value={patientPhone}
                       onChange={(e) => setPatientPhone(e.target.value)}
                       className="w-full px-4 py-3 rounded-2xl bg-white border border-slate-200 text-xs text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#EA580C] font-medium"
@@ -277,7 +277,7 @@ export default function AppointmentExperienceSection({ variant = 'home-appointme
               {/* Pass Header */}
               <div className="flex items-center justify-between pb-4 border-b border-slate-100">
                 <div className="flex items-center gap-2.5">
-                  <img src="/images/p.png" alt="Pulse Logo" className="w-6 h-6 object-contain rounded-md bg-white p-0.5 border border-slate-200" />
+                  <img src="/images/p.png" alt="Pulse Logo" className="w-6 h-6 object-contain rounded-md bg-white p-0.5 border border-slate-200" loading="lazy" decoding="async" />
                   <div>
                     <span className="font-bold text-sm tracking-widest uppercase block leading-none text-[#0A1128]">
                       {t('PULSE', 'पल्स')}
@@ -298,8 +298,7 @@ export default function AppointmentExperienceSection({ variant = 'home-appointme
                 <img
                   src="/images/d4.jpeg"
                   alt={doctor.name}
-                  className="w-12 h-12 rounded-xl object-cover object-top border border-slate-300 shrink-0"
-                />
+                  className="w-12 h-12 rounded-xl object-cover object-top border border-slate-300 shrink-0" loading="lazy" decoding="async" />
                 <div className="space-y-0.5 text-left">
                   <span className="text-[10px] font-mono uppercase tracking-wider text-[#BE123C] font-bold block">
                     {t('ATTENDING CARDIOLOGIST', 'अटेंडिंग कार्डियोलॉजिस्ट')}
@@ -356,14 +355,14 @@ export default function AppointmentExperienceSection({ variant = 'home-appointme
             <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-center justify-between">
               <div className="space-y-0.5 text-left">
                 <span className="text-xs font-bold text-[#0A1128] block">
-                  {t('Need Immediate Guidance?', 'नीड इमीडिएट गाइडेंस?')}
+                  {t('Need Immediate Guidance?', 'तत्काल जानकारी चाहिए?')}
                 </span>
                 <span className="text-[11px] text-slate-500 font-medium block">
-                  {t('OPD Desk: +91 98765 43210', 'ओपीडी डेस्क: +91 98765 43210')}
+                  {t('OPD Desk: +91 94558 99378', 'ओपीडी डेस्क: +91 94558 99378')}
                 </span>
               </div>
               <a
-                href="tel:+919876543210"
+                href="tel:+919455899378"
                 className="px-4 py-2 rounded-xl bg-rose-50 text-[#BE123C] text-xs font-bold hover:bg-rose-100 transition-colors border border-rose-200"
               >
                 {t('Call OPD', 'कॉल ओपीडी')}

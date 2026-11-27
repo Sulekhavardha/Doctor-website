@@ -46,8 +46,7 @@ export default function TreatmentsPage() {
                 <img
                   src="/images/d4.jpeg"
                   alt="Dr. Prakash Chand Shahi"
-                  className="w-12 h-12 rounded-xl object-cover object-top border border-rose-200 shrink-0"
-                />
+                  className="w-12 h-12 rounded-xl object-cover object-top border border-rose-200 shrink-0" loading="lazy" decoding="async" />
                 <div className="text-left">
                   <span className="text-xs font-extrabold text-[#0A1128] block">
                     {t('Lead Interventionalist: Dr. Prakash Chand Shahi', 'लीड इंटरवेंशनलिस्ट: डॉ. प्रकाश चंद शाही')}
@@ -77,7 +76,7 @@ export default function TreatmentsPage() {
                 videoUrl={false}
                 showControls={false}
                 styleVariant="panoramic-stage"
-                posterImage="/images/modern.png"
+                posterImage="/images/mm.png"
                 title={t('Heart Blockage Check & Stent Care', 'हार्ट ब्लॉकेज चेक एंड स्टेंट केयर')}
                 subtitle={t('Clear Live Heart Imaging', 'क्लियर लाइव हार्ट इमेजिंग')}
                 specs={t('Gentle Wrist Procedure • Quick Recovery', 'जेंटल रिस्ट प्रोसीजर • क्विक रिकवरी')}

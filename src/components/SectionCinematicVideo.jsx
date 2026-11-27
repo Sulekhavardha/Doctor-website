@@ -47,12 +47,12 @@ const POSTER_SOURCE_MAP = {
   'about-hospital': '/images/hospital-ward-suites.jpg',
   'cardiology-heart': '/images/cardiology-3d-heart-beat.jpg',
   'cardiology-cath': '/images/cardiac-stent-procedure.jpg',
-  'neurology-brain': '/images/neurology-brain-synapse.jpg',
-  'neurology-synapse': '/images/brain-mri-diffusion.jpg',
-  'orthopedics-joint': '/images/orthopedics-biomechanical-joint.jpg',
+  'neurology-brain': '/images/cardiology-3d-heart-beat.jpg',
+  'neurology-synapse': '/images/cardiac-icu-telemetry.jpg',
+  'orthopedics-joint': '/images/radial-catheter-sheath.jpg',
   'doctors-procedure': '/images/doctor-patient-consult.jpg',
   'doctors': '/images/operation-theatre-laminar.jpg',
-  'advanced-tech': '/images/advanced-mri-scanner.jpg',
+  'advanced-tech': '/images/cath-lab.jpg',
   'facilities': '/images/operation-theatre-laminar.jpg',
   'facilities-walkthrough': '/images/cath-lab.jpg',
   'patient-care': '/images/doctor-recovery-discharge.jpg',
@@ -67,7 +67,6 @@ export default function SectionCinematicVideo({
   type = 'hero-architecture',
   styleVariant = 'floating-3d',
   posterImage = null,
-  posterPosition = 'object-center',
   title = 'Live Clinical Feed',
   subtitle = '4K UHD • 60 FPS • Real-Time Broadcast',
   specs = 'Siemens Artis Zee • HEPA-14 Cleanroom',
@@ -113,14 +112,14 @@ export default function SectionCinematicVideo({
     const video = videoRef.current;
     if (!video || videoError) return;
     if (isInView && isPlaying) {
-      video.play().catch(() => {});
+      video.play().catch(() => { });
     } else {
       video.pause();
     }
   }, [isInView, isPlaying, videoError]);
 
-  const handleMouseMove = () => {};
-  const handleMouseLeave = () => {};
+  const handleMouseMove = () => { };
+  const handleMouseLeave = () => { };
 
   // Reset video error on URL or type change
   useEffect(() => {
@@ -172,9 +171,9 @@ export default function SectionCinematicVideo({
       style={
         styleVariant === 'floating-3d'
           ? {
-              transform: 'perspective(1200px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)',
-              transformStyle: 'preserve-3d',
-            }
+            transform: 'perspective(1200px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)',
+            transformStyle: 'preserve-3d',
+          }
           : undefined
       }
       className={`${getContainerStyle()} ${className}`}
@@ -196,7 +195,7 @@ export default function SectionCinematicVideo({
             src={resolvedPoster}
             alt={title}
             loading="lazy"
-            className={`absolute inset-0 w-full h-full object-cover ${posterPosition} filter brightness-90 contrast-105`}
+            className="absolute inset-0 w-full h-full object-cover filter brightness-90 contrast-105"
           />
         )}
 

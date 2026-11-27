@@ -58,9 +58,9 @@ export default function CinematicHeroSection() {
                 <span>{t('Book Consultation', 'कंसल्टेशन बुक करें')}</span>
                 <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform" />
               </Link>
-              <a href="tel:+919876543210" className="luxury-btn-secondary">
+              <a href="tel:+919455899378" className="luxury-btn-secondary">
                 <Phone className="w-4 h-4 text-[#BE123C]" />
-                <span>{t('24/7 Emergency: +91 98765 43210', '24/7 इमरजेंसी: +91 98765 43210')}</span>
+                <span>{t('24/7 Helpline: +91 94558 99378', '24/7 हेल्पलाइन: +91 94558 99378')}</span>
               </a>
             </div>
 
@@ -78,8 +78,7 @@ export default function CinematicHeroSection() {
                   <img
                     src={item.img}
                     alt={item.label}
-                    className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg object-cover shrink-0"
-                  />
+                    className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg object-cover shrink-0" loading="lazy" decoding="async" />
                   <div className="min-w-0">
                     <span className="text-xs sm:text-sm font-extrabold text-[#0A1128] block leading-none">{item.stat}</span>
                     <span className="text-[9px] sm:text-[10px] font-semibold text-[#BE123C] block mt-0.5 truncate">{item.label}</span>
@@ -103,13 +102,23 @@ export default function CinematicHeroSection() {
 
               <div className="relative z-10 grid grid-cols-1 sm:grid-cols-12 gap-5 items-center">
                 {/* Clean Uncropped Portrait of Dr. Prakash Chand Shahi */}
-                <div className="sm:col-span-7 rounded-2xl overflow-hidden bg-slate-100 border border-slate-200 shadow-md">
-                  <div className="aspect-[4/4] sm:aspect-[4/5] sm:max-h-[54vh] w-full overflow-hidden">
-                    <img
-                      src="/images/d1.jpeg"
-                      alt="Dr. Prakash Chand Shahi"
-                      className="w-full h-full object-cover object-top"
-                    />
+                <div className="sm:col-span-7 flex flex-col items-center gap-3">
+                  {/* Above image format — floating elevated card */}
+                  <div className="relative w-full rounded-2xl overflow-hidden bg-white border-2 border-rose-100 shadow-2xl"
+                    style={{ boxShadow: '0 20px 60px -10px rgba(190,18,60,0.18), 0 4px 24px -4px rgba(10,17,40,0.10)' }}
+                  >
+                    <div className="aspect-[4/4] sm:aspect-[4/5] sm:max-h-[54vh] w-full overflow-hidden">
+                      <img
+                        src="/images/d2.jpeg"
+                        alt="Dr. Prakash Chand Shahi"
+                        className="w-full h-full object-cover object-top"
+                        style={{ transform: 'scale(1.03)', transformOrigin: 'top center' }}
+                        loading="eager"
+                        decoding="async"
+                      />
+                    </div>
+                    {/* Soft gradient overlay at bottom */}
+                    <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white/60 to-transparent pointer-events-none" />
                   </div>
                 </div>
 

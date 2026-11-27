@@ -29,6 +29,28 @@ import { useLanguage } from '../context/LanguageContext';
 export default function HospitalPage() {
   const { clinic, doctor } = PULSE_DATA;
   const { t } = useLanguage();
+  const [activeFacilityTab, setActiveFacilityTab] = useState('icu');
+
+  const facilityStages = {
+    icu: {
+      id: 'icu',
+      title: t('24/7 Cardiac ICU & Telemetry Suite', '24/7 कार्डियक आईसीयू व टेलीमेट्री सुइट'),
+      subtitle: t('Continuous Rhythm Monitoring • Central Oxygen & Nursing', 'निरंतर रिदम मॉनिटरिंग • सेंट्रल ऑक्सीजन व नर्सिंग'),
+      badge: t('CRITICAL CARE UNIT', 'क्रिटिकल केयर यूनिट'),
+      image: '/images/Aaa.png',
+      specs: t('Equipped with advanced multi-parameter monitors for round-the-clock emergency care.', '24 घंटे इमरजेंसी केयर के लिए मल्टी-पैरामीटर मॉनिटर्स से सुसज्जित।'),
+    },
+    cleanroom: {
+      id: 'cleanroom',
+      title: t('Sterile Laminar Airflow Operation Suite', 'स्टराइल लैमिनार एयरफ्लो ऑपरेशन सुइट'),
+      subtitle: t('Class-100 Cleanroom • HEPA-14 Filtered', 'क्लास-100 क्लीनरूम • हेपा-14 फिल्टर्ड'),
+      badge: t('ULTRA-CLEAN ENVIRONMENT', 'अल्ट्रा-क्लीन एनवायरनमेंट'),
+      image: '/images/operation-theatre-laminar.jpg',
+      specs: t('Zero-infection environment designed for advanced cardiovascular and surgical procedures.', 'कार्डियोवैस्कुलर प्रोसीजर्स के लिए पूर्ण संक्रमण-मुक्त सुरक्षित वातावरण।'),
+    },
+  };
+
+  const currentStage = facilityStages[activeFacilityTab];
 
   const facilityGallery = [
     {
@@ -129,8 +151,7 @@ export default function HospitalPage() {
                   <img
                     src="/images/d2.jpeg"
                     alt="Dr. Prakash Chand Shahi"
-                    className="w-11 h-11 rounded-xl object-cover object-top border border-rose-200 shrink-0"
-                  />
+                    className="w-11 h-11 rounded-xl object-cover object-top border border-rose-200 shrink-0" loading="lazy" decoding="async" />
                   <div className="min-w-0">
                     <span className="text-xs font-extrabold text-[#0A1128] block truncate">
                       {t('Clinical Director: Dr. Prakash Chand Shahi', 'क्लिनिकल डायरेक्टर: डॉ. प्रकाश चंद शाही')}
@@ -164,24 +185,53 @@ export default function HospitalPage() {
               </ScrollReveal>
             </div>
 
-            {/* Right Column (5 cols): Clinical Visual Stage Card */}
+            {/* Right Column (5 cols): Interactive Clinical Visual Stage Card */}
             <div className="lg:col-span-5">
               <ScrollReveal animation="fade-up" delay={0.15}>
                 <Interactive3DTilt maxTilt={5} scale={1.01}>
                   <div className="rounded-3xl bg-white border border-slate-200 shadow-xl overflow-hidden text-left">
-                    {/* Featured Photo: ca.png */}
+                    {/* Facility Switcher Tabs */}
+                    <div className="p-2 bg-slate-100/80 border-b border-slate-200 flex items-center justify-between gap-1 text-[11px] font-mono font-bold">
+                      <button
+                        type="button"
+                        onClick={() => setActiveFacilityTab('icu')}
+                        className={`flex-1 py-1.5 px-2 rounded-xl transition-all cursor-pointer ${
+                          activeFacilityTab === 'icu'
+                            ? 'bg-[#0A1128] text-white shadow-xs'
+                            : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
+                        }`}
+                      >
+                        {t('24/7 Heart ICU', '24/7 हार्ट आईसीयू')}
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setActiveFacilityTab('cleanroom')}
+                        className={`flex-1 py-1.5 px-2 rounded-xl transition-all cursor-pointer ${
+                          activeFacilityTab === 'cleanroom'
+                            ? 'bg-[#0A1128] text-white shadow-xs'
+                            : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
+                        }`}
+                      >
+                        {t('Cleanroom OT', 'क्लीनरूम ओटी')}
+                      </button>
+                    </div>
+
+                    {/* Featured Stage Photo */}
                     <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-900">
                       <img
-                        src="/images/ca.png"
-                        alt={t('Pulse Heart Centre Cath Lab Facilities', 'पल्स हार्ट सेंटर कैथ लैब फैसिलिटीज़')}
-                        className="w-full h-full object-cover object-center filter brightness-95 contrast-105"
+                        key={currentStage.image}
+                        src={currentStage.image}
+                        alt={currentStage.title}
+                        className="w-full h-full object-cover object-center filter brightness-95 contrast-105 transition-all duration-500"
+                        loading="lazy"
+                        decoding="async"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#0A1128]/70 via-transparent to-transparent pointer-events-none" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#0A1128] via-[#0A1128]/25 to-transparent pointer-events-none" />
 
                       {/* Overlaid Badges */}
                       <div className="absolute top-3 left-3 flex items-center gap-2">
                         <span className="px-2.5 py-1 rounded-full bg-[#0A1128]/85 backdrop-blur-md text-white text-[10px] font-mono font-bold uppercase tracking-wider border border-white/20">
-                          {t('Pulse Heart Centre', 'पल्स हार्ट सेंटर')}
+                          {currentStage.badge}
                         </span>
                       </div>
 
@@ -192,14 +242,14 @@ export default function HospitalPage() {
                         </span>
                       </div>
 
-                      {/* Bottom Info on Photo */}
+                      {/* Bottom Info on Active Photo */}
                       <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between gap-3 text-white">
                         <div className="min-w-0">
                           <span className="text-xs font-bold block truncate">
-                            {t('Modern Hospital & Cardiac Facilities', 'मॉडर्न हॉस्पिटल व कार्डियक फैसिलिटीज़')}
+                            {currentStage.title}
                           </span>
                           <span className="text-[10px] text-slate-300 font-mono block truncate">
-                            {t('Siemens Flat-Panel Cath Lab & 24/7 Heart ICU', 'सीमेंस फ्लैट-पैनल कैथ लैब और 24/7 हार्ट आईसीयू')}
+                            {currentStage.subtitle}
                           </span>
                         </div>
                         <span className="text-[10px] font-mono bg-rose-600/90 backdrop-blur-md px-2.5 py-0.5 rounded-full text-white shrink-0">
@@ -211,10 +261,7 @@ export default function HospitalPage() {
                     {/* Facility Specs Brief */}
                     <div className="p-4 bg-white space-y-2">
                       <p className="text-xs text-slate-600 font-normal leading-relaxed">
-                        {t(
-                          'Siemens flat-panel Cath Lab, 24/7 Heart ICU and sterile cleanrooms under the direct supervision of Dr. Prakash Chand Shahi.',
-                          'डॉ. प्रकाश चंद शाही की सीधी देखरेख में सीमेंस फ्लैट-पैनल कैथ लैब, 24/7 हार्ट आईसीयू और स्टराइल क्लीनरूम्स।'
-                        )}
+                        {currentStage.specs}
                       </p>
                       <div className="flex items-center justify-between text-[11px] font-mono text-slate-500 pt-1 border-t border-slate-100">
                         <span>{t('Director Oversight', 'डॉ. शाही की देखरेख')}</span>

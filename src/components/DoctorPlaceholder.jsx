@@ -29,6 +29,8 @@ export default function DoctorPlaceholder({
           <img
             src={imgSrc}
             alt={`${doctor.name} - Chief Interventional Cardiologist`}
+            loading="lazy"
+            decoding="async"
             onError={() => setImgSrc('/images/d1.jpeg')}
             className="w-full h-full object-cover object-[50%_22%]"
           />

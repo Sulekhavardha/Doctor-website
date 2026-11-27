@@ -23,7 +23,7 @@ export default function MedicalTechnologyShowcase({ variant = 'home-technology' 
       title: t('Modern Heart Cath Lab', 'मॉडर्न हार्ट कैथ लैब'),
       category: t('LIVE HEART IMAGING', 'लाइव हार्ट इमेजिंग'),
       description: t('Shows crystal-clear live heart images with 40% lower X-ray exposure for safer treatment.', 'सुरक्षित ट्रीटमेंट के लिए 40% कम एक्स-रे एक्सपोजर के साथ बिल्कुल साफ लाइव हार्ट इमेज दिखाता है।'),
-      image: '/images/ca.png',
+      image: '/images/doctor-cathlab-procedure.jpg',
       videoUrl: '/videos/facilities-walkthrough.mp4',
       type: 'facilities-walkthrough',
       specs: [
@@ -126,6 +126,7 @@ export default function MedicalTechnologyShowcase({ variant = 'home-technology' 
                       src="/images/d1.jpeg"
                       alt="Dr. Prakash Chand Shahi"
                       loading="lazy"
+                      decoding="async"
                       className="w-8 h-8 rounded-lg object-cover object-top border border-slate-300 shrink-0"
                     />
                     <div className="text-left">
@@ -183,6 +184,7 @@ export default function MedicalTechnologyShowcase({ variant = 'home-technology' 
                           src={tech.image}
                           alt={tech.title}
                           loading="lazy"
+                          decoding="async"
                           className="w-12 h-12 rounded-xl object-cover border border-white/20 shrink-0"
                         />
                         <div className="space-y-0.5 text-left">

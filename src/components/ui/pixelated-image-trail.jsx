@@ -209,7 +209,7 @@ export default function PixelatedImageTrail({
                       width: `${imageSize}px`,
                       height: `${imageSize}px`,
                     }}
-                  />
+                  / decoding="async">
                   {/* Subtle pixelated medical scan-line overlay on each slice */}
                   <div className="absolute inset-0 bg-gradient-to-r from-orange-500/10 via-transparent to-rose-500/10 pointer-events-none mix-blend-overlay" />
                 </div>

@@ -84,8 +84,7 @@ export default function PulseCentreSection({ onBookClick }) {
                     <img
                       src="/images/pu.png"
                       alt="Pulse Heart Centre Betiahata Campus"
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-95"
-                    />
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-95" loading="lazy" decoding="async" />
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0A1128]/90 via-[#0A1128]/25 to-transparent pointer-events-none" />
 
@@ -130,8 +129,7 @@ export default function PulseCentreSection({ onBookClick }) {
                 <img
                   src="/images/reception.png"
                   alt="Pulse Heart Centre Reception Lounge"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0A1128]/85 to-transparent flex items-end p-2.5">
                   <span className="text-[11px] font-bold text-white">{t('Patient Care & Reception Wing', 'पेशेंट केयर व रिसेप्शन विंग')}</span>
                 </div>
@@ -164,8 +162,7 @@ export default function PulseCentreSection({ onBookClick }) {
                 <img
                   src="/images/d1.jpeg"
                   alt="Dr. Prakash Chand Shahi"
-                  className="w-10 h-10 rounded-xl object-cover object-top border border-rose-200 shrink-0"
-                />
+                  className="w-10 h-10 rounded-xl object-cover object-top border border-rose-200 shrink-0" loading="lazy" decoding="async" />
                 <div className="min-w-0">
                   <span className="text-xs font-bold text-[#0A1128] block truncate">{t('Dr. Prakash Chand Shahi', 'डॉ. प्रकाश चंद शाही')}</span>
                   <span className="text-[10px] text-slate-500 font-mono block truncate">{t('DM Cardiology (PGIMER)', 'डीएम कार्डियोलॉजी (पीजीआईएमईआर)')}</span>
@@ -206,8 +203,7 @@ export default function PulseCentreSection({ onBookClick }) {
                 <img
                   src="/images/echo-machine-suite.jpg"
                   alt="Echo Machine Suite"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0A1128]/85 to-transparent flex items-end p-2.5">
                   <span className="text-[11px] font-bold text-white">{t('High-Resolution 2D Echo', 'हाई-रेसोल्यूशन 2डी इको')}</span>
                 </div>

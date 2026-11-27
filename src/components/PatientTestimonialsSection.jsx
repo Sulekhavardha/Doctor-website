@@ -90,6 +90,7 @@ export default function PatientTestimonialsSection() {
                   src="/images/d1.jpeg"
                   alt="Dr. Prakash Chand Shahi"
                   loading="lazy"
+                  decoding="async"
                   className="w-7 h-7 rounded-full object-cover object-top border border-rose-300 shrink-0"
                 />
                 <span className="text-[11px] font-bold text-[#0A1128]">{t('Under Clinical Direction of Dr. Prakash Chand Shahi', 'डॉ. प्रकाश चंद शाही की क्लिनिकल देखरेख में')}</span>

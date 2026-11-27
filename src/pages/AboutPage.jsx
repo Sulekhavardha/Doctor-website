@@ -16,73 +16,73 @@ import { useLanguage } from '../context/LanguageContext';
 const CylinderCarouselMilestones = lazy(() => import('../components/CylinderCarouselMilestones'));
 
 export default function AboutPage() {
-  const [timelineMode, setTimelineMode] = useState('cylinder'); // 'cylinder' | 'expanded'
+  const [timelineMode, setTimelineMode] = useState('expanded'); // 'cylinder' | 'expanded'
   const { t } = useLanguage();
   const milestones = [
     {
-      year: "2002",
-      phase: t('STEP 01', 'स्टेप 01'),
-      badge: t('Starting Point', 'स्टार्टिंग पॉइंट'),
-      institution: t('Betiahata, Gorakhpur', 'बेतियाहाता, गोरखपुर'),
-      title: t('Starting Heart Care in Betiahata', 'स्टार्टिंग हार्ट केयर इन बेतियाहाता'),
-      desc: t('Started dedicated heart care in Betiahata, Gorakhpur, with a promise to listen patiently and put every patient first.', 'स्टार्टेड डेडिकेटेड हार्ट केयर इन बेतियाहाता, गोरखपुर, विद अ प्रॉमिस टू लिसन पेशेंटली एंड पुट एवरी पेशेंट फर्स्ट।'),
-      tags: [t('Betiahata, Gorakhpur', 'बेतियाहाता, गोरखपुर'), t('Patient-First Care', 'पेशेंट-फर्स्ट केयर'), t('Day 1 Promise', 'डे 1 प्रॉमिस')],
-      icon: HeartPulse,
-      accent: "from-[#0A1128] to-[#1E293B]",
-      borderAccent: "border-slate-300",
-      num: "01"
-    },
-    {
-      year: "2007",
-      phase: t('STEP 02', 'स्टेप 02'),
-      badge: t('Medical Degree', 'मेडिकल डिग्री'),
-      institution: t('KGMU Lucknow', 'केजीएमयू लखनऊ'),
-      title: t('MD Medicine at KGMU Lucknow', 'एमडी मेडिसिन एट केजीएमयू लखनऊ'),
-      desc: t("Completed MD General Medicine at King George's Medical University, Lucknow, building strong experience in treating complex heart and BP cases.", "कम्प्लीटेड एमडी जनरल मेडिसिन एट किंग जॉर्ज मेडिकल यूनिवर्सिटी, लखनऊ, बिल्डिंग स्ट्रॉन्ग एक्सपीरियंस इन ट्रीटिंग कॉम्प्लेक्स हार्ट एंड बीपी केसेस।"),
-      tags: [t('KGMU Lucknow', 'केजीएमयू लखनऊ'), t('Strong Diagnosis', 'स्ट्रॉन्ग डायग्नोसिस'), t('Trusted Care', 'ट्रस्टेड केयर')],
-      icon: Award,
-      accent: "from-[#1E293B] to-[#334155]",
-      borderAccent: "border-slate-300",
-      num: "02"
-    },
-    {
-      year: "2013",
-      phase: t('STEP 03', 'स्टेप 03'),
-      badge: t('Heart Specialist', 'हार्ट स्पेशलिस्ट'),
-      institution: t('PGIMER Chandigarh', 'पीजीआईएमईआर चंडीगढ़'),
-      title: t('DM Cardiology at PGIMER Chandigarh', 'डीएम कार्डियोलॉजी एट पीजीआईएमईआर चंडीगढ़'),
-      desc: t('Completed super-specialty DM Cardiology at PGIMER Chandigarh, bringing painless heart checkups and stenting through the wrist to eastern UP.', 'कम्प्लीटेड सुपर-स्पेशियलिटी डीएम कार्डियोलॉजी एट पीजीआईएमईआर चंडीगढ़, ब्रिंगिंग पेनलेस हार्ट चेकअप्स एंड स्टेंटिंग थ्रू द रिस्ट टू ईस्टर्न यूपी।'),
-      tags: [t('PGIMER Chandigarh', 'पीजीआईएमईआर चंडीगढ़'), t('Safe Wrist Care', 'सेफ रिस्ट केयर'), t('Eastern UP', 'ईस्टर्न यूपी')],
-      icon: Sparkles,
-      accent: "from-[#BE123C] to-[#E11D48]",
+      year: "2023",
+      phase: t('LATEST', 'नवीनतम'),
+      badge: t('24/7 Heart ICU', '24/7 हार्ट आईसीयू'),
+      institution: t('Emergency • Heart ICU', 'इमरजेंसी • हार्ट आईसीयू'),
+      title: t('Expanded Emergency & Heart ICU', '24/7 हार्ट आईसीयू एवं आपातकालीन विस्तार'),
+      desc: t('Expanded 24/7 emergency heart care, modern artery imaging, and a dedicated Heart ICU — crossing 15,000+ successful procedures.', '24/7 हार्ट आईसीयू और आधुनिक इमेजिंग का विस्तार — 15,000 से अधिक सफल हृदय प्रक्रियाओं का गौरवशाली मील का पत्थर।'),
+      tags: [t('Modern Imaging', 'आधुनिक इमेजिंग'), t('Dedicated Heart ICU', 'समर्पित हार्ट आईसीयू'), t('15,000+ Procedures', '15,000+ सफल प्रक्रियाएं')],
+      icon: Activity,
+      accent: "from-[#881337] to-[#BE123C]",
       borderAccent: "border-rose-300",
-      num: "03"
+      num: "05"
     },
     {
       year: "2018",
-      phase: t('STEP 04', 'स्टेप 04'),
-      badge: t('Modern Cath Lab', 'मॉडर्न कैथ लैब'),
+      phase: t('MILESTONE', 'माइलस्टोन'),
+      badge: t('Modern Cath Lab', 'डिजिटल कैथ लैब'),
       institution: t('Siemens Artis Zee Cath Lab', 'सीमेंस आर्टिस जी कैथ लैब'),
-      title: t('Digital Heart Cath Lab Opened', 'डिजिटल हार्ट कैथ लैब ओपन्ड'),
-      desc: t('Set up the modern Siemens Artis Zee Cath Lab in Betiahata to provide 24/7 emergency heart attack care with clear live imaging.', 'सेट अप द मॉडर्न सीमेंस आर्टिस जी कैथ लैब इन बेतियाहाता टू प्रोवाइड 24/7 इमरजेंसी हार्ट अटैक केयर विद क्लियर लाइव इमेजिंग।'),
-      tags: [t('Siemens Cath Lab', 'सीमेंस कैथ लैब'), t('Clear Heart Stents', 'क्लियर हार्ट स्टेंट्स'), t('24/7 Emergency', '24/7 इमरजेंसी')],
+      title: t('Digital Heart Cath Lab Opened', 'डिजिटल सीमेंस कैथ लैब की स्थापना'),
+      desc: t('Set up the modern Siemens Artis Zee Cath Lab in Betiahata to provide 24/7 emergency heart attack care with clear live imaging.', 'बेतियाहाता में सीमेंस आर्टिस जी डिजिटल कैथ लैब की स्थापना — आपातकालीन हार्ट अटैक में 24/7 तुरंत लाइव एंजियोप्लास्टी सुविधा।'),
+      tags: [t('Siemens Cath Lab', 'सीमेंस कैथ लैब'), t('Clear Heart Stents', 'लाइव आर्टरी इमेजिंग'), t('24/7 Emergency', '24/7 आपातकालीन सेवा')],
       icon: ShieldCheck,
       accent: "from-[#0A1128] to-[#BE123C]",
       borderAccent: "border-rose-300",
       num: "04"
     },
     {
-      year: "2023",
-      phase: t('STEP 05', 'स्टेप 05'),
-      badge: t('24/7 Heart ICU', '24/7 हार्ट आईसीयू'),
-      institution: t('Emergency • Heart ICU', 'इमरजेंसी • हार्ट आईसीयू'),
-      title: t('Expanded Emergency & Heart ICU', 'एक्सपैंडेड इमरजेंसी एंड हार्ट आईसीयू'),
-      desc: t('Expanded 24/7 emergency heart care, modern artery imaging, and a dedicated Heart ICU — crossing 15,000+ successful procedures.', 'एक्सपैंडेड 24/7 इमरजेंसी हार्ट केयर, मॉडर्न आर्टरी इमेजिंग, एंड अ डेडिकेटेड हार्ट आईसीयू — क्रॉसिंग 15,000+ सक्सेसफुल प्रोसीजर्स।'),
-      tags: [t('Modern Imaging', 'मॉडर्न इमेजिंग'), t('Dedicated Heart ICU', 'डेडिकेटेड हार्ट आईसीयू'), t('15,000+ Procedures', '15,000+ प्रोसीजर्स')],
-      icon: Activity,
-      accent: "from-[#881337] to-[#BE123C]",
+      year: "2013",
+      phase: t('SUPER-SPECIALTY', 'सुपर-स्पेशियलिटी'),
+      badge: t('Heart Specialist', 'सुपर-स्पेशियलिटी'),
+      institution: t('PGIMER Chandigarh', 'पीजीआईएमईआर चंडीगढ़'),
+      title: t('DM Cardiology at PGIMER Chandigarh', 'पीजीआईएमईआर चंडीगढ़ से डीएम कार्डियोलॉजी'),
+      desc: t('Completed super-specialty DM Cardiology at PGIMER Chandigarh, bringing painless heart checkups and stenting through the wrist to eastern UP.', 'पीजीआईएमईआर (PGIMER) चंडीगढ़ से सुपर-स्पेशियलिटी डीएम (कार्डियोलॉजी) पूर्ण — पूर्वांचल में कलाई के रास्ते दर्दरहित एंजियोप्लास्टी की शुरुआत।'),
+      tags: [t('PGIMER Chandigarh', 'पीजीआईएमईआर चंडीगढ़'), t('Safe Wrist Care', 'कलाई से सुरक्षित स्टेंटिंग'), t('Eastern UP', 'पूर्वांचल')],
+      icon: Sparkles,
+      accent: "from-[#BE123C] to-[#E11D48]",
       borderAccent: "border-rose-300",
-      num: "05"
+      num: "03"
+    },
+    {
+      year: "2007",
+      phase: t('POST-GRADUATE', 'पोस्ट-ग्रेजुएट'),
+      badge: t('Medical Degree', 'एमडी मेडिसिन'),
+      institution: t('KGMU Lucknow', 'केजीएमयू लखनऊ'),
+      title: t('MD Medicine at KGMU Lucknow', 'केजीएमयू लखनऊ से एमडी (मेडिसिन)'),
+      desc: t("Completed MD General Medicine at King George's Medical University, Lucknow, building strong experience in treating complex heart and BP cases.", "किंग जॉर्ज मेडिकल यूनिवर्सिटी (KGMU), लखनऊ से एमडी (जनरल मेडिसिन) पूर्ण, जटिल हृदय एवं उच्च रक्तचाप (BP) के इलाज में गहन अनुभव।"),
+      tags: [t('KGMU Lucknow', 'केजीएमयू लखनऊ'), t('Strong Diagnosis', 'सटीक निदान'), t('Trusted Care', 'विश्वसनीय चिकित्सा')],
+      icon: Award,
+      accent: "from-[#1E293B] to-[#334155]",
+      borderAccent: "border-slate-300",
+      num: "02"
+    },
+    {
+      year: "2002",
+      phase: t('ORIGIN', 'शुरुआत'),
+      badge: t('Starting Point', 'शुरुआती पड़ाव'),
+      institution: t('Betiahata, Gorakhpur', 'बेतियाहाता, गोरखपुर'),
+      title: t('Starting Heart Care in Betiahata', 'बेतियाहाता में हृदय चिकित्सा का शुभारंभ'),
+      desc: t('Started dedicated heart care in Betiahata, Gorakhpur, with a promise to listen patiently and put every patient first.', 'बेतियाहाता, गोरखपुर में समर्पित हृदय चिकित्सा की शुरुआत — हर मरीज़ को प्राथमिकता और धैर्यपूर्वक सुनने का संकल्प।'),
+      tags: [t('Betiahata, Gorakhpur', 'बेतियाहाता, गोरखपुर'), t('Patient-First Care', 'मरीज़-प्रथम सेवा'), t('Day 1 Promise', 'पहला संकल्प')],
+      icon: HeartPulse,
+      accent: "from-[#0A1128] to-[#1E293B]",
+      borderAccent: "border-slate-300",
+      num: "01"
     }
   ];
 
@@ -188,25 +188,24 @@ export default function AboutPage() {
                 </Link>
 
                 <a
-                  href="tel:+919876543210"
+                  href="tel:+919455899378"
                   className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-white hover:bg-slate-50 text-[#0A1128] font-bold text-xs uppercase tracking-wider border border-slate-300 hover:border-[#BE123C] hover:text-[#BE123C] shadow-xs transition-all duration-300 text-center"
                 >
                   <Phone className="w-4 h-4 text-[#BE123C]" />
-                  <span>{t('24/7 Emergency Helpline', '24/7 इमरजेंसी हेल्पलाइन')}</span>
+                  <span>{t('24/7 Helpline: +91 94558 99378', '24/7 हेल्पलाइन: +91 94558 99378')}</span>
                 </a>
               </div>
             </div>
 
             {/* Right Column (5 cols): Editorial Portrait + Real Clinical Action Collage */}
             <div className="lg:col-span-5 flex flex-col gap-3">
-              {/* Main Uncropped Portrait Frame */}
-              <div className="relative rounded-3xl overflow-hidden bg-[#0A1128] p-2.5 shadow-[0_24px_55px_-15px_rgba(10,17,40,0.28)] border border-slate-800">
-                <div className="relative aspect-[4/4] sm:aspect-[5/4] rounded-2xl overflow-hidden bg-slate-900">
+              {/* Main Arched-Top Portrait Frame */}
+              <div className="relative max-w-md mx-auto w-full rounded-t-[10rem] rounded-b-3xl overflow-hidden bg-white p-3 border border-slate-200 shadow-xl">
+                <div className="relative aspect-[4/5] rounded-t-[9.2rem] rounded-b-2xl overflow-hidden bg-slate-100">
                   <img
                     src="/images/d3.jpeg"
                     alt="Dr. Prakash Chand Shahi — Chief Interventional Cardiologist"
-                    className="w-full h-full object-cover object-top"
-                  />
+                    className="w-full h-full object-cover object-center" loading="lazy" decoding="async" />
                   <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#0A1128] via-[#0A1128]/70 to-transparent" />
                   <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between gap-2">
                     <div>
@@ -216,37 +215,6 @@ export default function AboutPage() {
                     <span className="px-2.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[10px] font-bold uppercase tracking-wider text-white">
                       {t('Lead Clinician', 'लीड क्लिनिशियन')}
                     </span>
-                  </div>
-                </div>
-              </div>
-
-              {/* 2-Card Real Clinical Interaction Strip */}
-              <div className="grid grid-cols-2 gap-3">
-                <div className="relative rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-sm group">
-                  <div className="aspect-[16/10] overflow-hidden">
-                    <img
-                      src="/images/doctor-patient-consult.jpg"
-                      alt="Direct OPD consultation with Dr. Shahi"
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-                  <div className="px-3 py-2 flex items-center justify-between">
-                    <span className="text-[11px] font-bold text-[#0A1128]">{t('Direct OPD Care', 'डायरेक्ट ओपीडी केयर')}</span>
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                  </div>
-                </div>
-
-                <div className="relative rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-sm group">
-                  <div className="aspect-[16/10] overflow-hidden">
-                    <img
-                      src="/images/doctor-cathlab-procedure.jpg"
-                      alt="Dr. Shahi performing transradial cath lab procedure"
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-                  <div className="px-3 py-2 flex items-center justify-between">
-                    <span className="text-[11px] font-bold text-[#0A1128]">{t('Radial Cath Lab', 'रेडियल कैथ लैब')}</span>
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#BE123C]" />
                   </div>
                 </div>
               </div>
@@ -332,8 +300,8 @@ export default function AboutPage() {
 
               <div className="space-y-3">
                 <ThreeDImageCard
-                  src="/images/operation-theatre-laminar.jpg"
-                  image="/images/operation-theatre-laminar.jpg"
+                  src="/images/Hospital-Grade Hygiene Room.png"
+                  image="/images/Hospital-Grade Hygiene Room.png"
                   alt="Clean & Safe Rooms"
                   badge={t('STEP 03', 'स्टेप 03')}
                   title={t('Clean & Safe Rooms', 'क्लीन एंड सेफ रूम्स')}
@@ -614,11 +582,11 @@ export default function AboutPage() {
                   </Link>
 
                   <a
-                    href="tel:+919876543210"
+                    href="tel:+919455899378"
                     className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-white hover:bg-slate-50 text-[#0A1128] text-xs font-bold uppercase tracking-wider border-2 border-slate-300 hover:border-[#BE123C] hover:text-[#BE123C] shadow-sm transition-all text-center"
                   >
                     <Phone className="w-4 h-4 text-[#BE123C]" />
-                    <span>{t('Emergency: +91 98765 43210', 'इमरजेंसी: +91 98765 43210')}</span>
+                    <span>{t('Emergency: +91 94558 99378', 'इमरजेंसी: +91 94558 99378')}</span>
                   </a>
                 </div>
 

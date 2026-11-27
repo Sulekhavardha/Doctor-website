@@ -49,7 +49,7 @@ export default function DoctorMonographSection() {
       tabLabel: t('Wrist Care', 'रिस्ट केयर'),
       title: t('Gentle Care Through the Wrist', 'कलाई के रास्ते आसान और सुरक्षित इलाज'),
       subtitle: t('Safe Wrist Heart Procedure', 'सेफ रिस्ट हार्ट प्रोसीजर'),
-      image: '/images/doctor-cathlab-procedure.jpg',
+      image: '/images/wrist-heart-care.jpg',
       desc: t(
         'Over 98% of heart checks and stent procedures are done safely through the wrist instead of the leg, avoiding pain and letting you walk the same day.',
         '98% से ज़्यादा हार्ट चेकअप और स्टेंट प्रोसीजर पैर के बजाय कलाई के रास्ते किए जाते हैं, जिससे दर्द नहीं होता और आप उसी दिन चल सकते हैं।'
@@ -104,12 +104,13 @@ export default function DoctorMonographSection() {
             <div className="absolute -bottom-4 -right-4 inset-0 rounded-3xl bg-[#0A1128] -z-10" />
 
             <div className="relative rounded-3xl overflow-hidden bg-white p-2.5 border border-slate-200 shadow-xl">
-              <div className="aspect-square w-full rounded-2xl overflow-hidden bg-slate-100">
+              <div className="aspect-[3/4] w-full rounded-2xl overflow-hidden bg-slate-100">
                 <img
                   src="/images/d3.jpeg"
                   alt="Dr. Prakash Chand Shahi"
                   loading="lazy"
-                  className="w-full h-full object-cover object-top"
+                  decoding="async"
+                  className="w-full h-full object-cover object-center"
                 />
               </div>
 
@@ -117,15 +118,15 @@ export default function DoctorMonographSection() {
               <div className="mt-2.5 p-3.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between gap-3">
                 <div className="text-left">
                   <h4 className="text-xs font-extrabold text-[#0A1128] leading-tight">
-                    {t('Senior Heart Specialist', 'सीनियर हार्ट स्पेशलिस्ट')}
+                    {t('Clinical Director', 'क्लिनिकल डायरेक्टर')}
                   </h4>
                   <p className="text-[11px] text-[#BE123C] font-semibold mt-0.5">
-                    {t('PULSE Heart Centre • Betiahata, Gorakhpur', 'पल्स हार्ट सेंटर • बेतियाहाता, गोरखपुर')}
+                    {t('Pulse Heart Centre • Betiahata', 'पल्स हार्ट सेंटर • बेतियाहाता')}
                   </p>
                 </div>
                 <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-rose-50 text-[#BE123C] text-[10px] font-mono font-bold border border-rose-200 shrink-0">
                   <ShieldCheck className="w-3.5 h-3.5" />
-                  <span>{t('22+ Yrs', '22+ इयर्स')}</span>
+                  <span>{t('Reg. 47395', 'पंजीकरण 47395')}</span>
                 </span>
               </div>
             </div>
@@ -144,10 +145,10 @@ export default function DoctorMonographSection() {
             <div className="flex flex-wrap items-center gap-2">
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-[#0A1128] via-[#1E293B] to-[#BE123C] text-white text-xs font-mono font-bold shadow-xs border border-rose-300/40">
                 <Sparkles className="w-3.5 h-3.5 text-rose-200" />
-                <span className="uppercase tracking-[0.18em]">{t('Senior Heart Specialist', 'सीनियर हार्ट स्पेशलिस्ट')}</span>
+                <span className="uppercase tracking-[0.18em]">{t('Senior Interventional Cardiologist', 'वरिष्ठ इंटरवेंशनल कार्डियोलॉजिस्ट')}</span>
               </div>
               <span className="text-xs font-mono font-semibold text-[#0A1128] bg-slate-100 px-3 py-1 rounded-full border border-slate-200">
-                {t('Est. 2002 • 22+ Years Experience', 'एस्ट. 2002 • 22+ इयर्स एक्सपीरियंस')}
+                {t('Betiahata, Gorakhpur', 'बेतियाहाता, गोरखपुर')}
               </span>
             </div>
 
@@ -173,7 +174,7 @@ export default function DoctorMonographSection() {
               </div>
               <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-rose-50 border border-rose-200 text-xs font-bold text-[#BE123C] shadow-xs">
                 <Award className="w-4 h-4 text-[#BE123C]" />
-                <span>{t('22+ Years Experience', '22+ साल का अनुभव')}</span>
+                <span>{t('22+ Years Clinical Excellence', '22+ साल का क्लिनिकल अनुभव')}</span>
               </div>
             </div>
 
@@ -233,6 +234,7 @@ export default function DoctorMonographSection() {
                       src={pillars[activePillar].image}
                       alt={pillars[activePillar].title}
                       loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-cover"
                     />
                   </div>

@@ -30,8 +30,7 @@ export default function Footer() {
                 <img
                   src="/images/p.png"
                   alt="Pulse Heart Centre Logo"
-                  className="w-full h-full object-contain"
-                />
+                  className="w-full h-full object-contain" loading="lazy" decoding="async" />
               </div>
               <div className="flex flex-col text-left">
                 <span className="font-display font-bold text-xl tracking-[0.2em] text-white uppercase leading-none">

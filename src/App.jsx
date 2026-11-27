@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from 'react';
+import React, { Suspense, lazy, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import ScrollToTop from './components/ScrollToTop';
 import Navbar from './components/Navbar';
@@ -6,14 +6,36 @@ import Footer from './components/Footer';
 import { LanguageProvider } from './context/LanguageContext';
 
 // Route-level code splitting for instant initial load
-const HomePage = lazy(() => import('./pages/HomePage'));
-const AboutPage = lazy(() => import('./pages/AboutPage'));
-const ServicesPage = lazy(() => import('./pages/ServicesPage'));
-const TreatmentsPage = lazy(() => import('./pages/TreatmentsPage'));
-const HospitalPage = lazy(() => import('./pages/HospitalPage'));
-const ContactPage = lazy(() => import('./pages/ContactPage'));
+const loadHome = () => import('./pages/HomePage');
+const loadAbout = () => import('./pages/AboutPage');
+const loadServices = () => import('./pages/ServicesPage');
+const loadTreatments = () => import('./pages/TreatmentsPage');
+const loadHospital = () => import('./pages/HospitalPage');
+const loadContact = () => import('./pages/ContactPage');
+
+const HomePage = lazy(loadHome);
+const AboutPage = lazy(loadAbout);
+const ServicesPage = lazy(loadServices);
+const TreatmentsPage = lazy(loadTreatments);
+const HospitalPage = lazy(loadHospital);
+const ContactPage = lazy(loadContact);
 
 export default function App() {
+  useEffect(() => {
+    const prefetchRoutes = () => {
+      loadAbout();
+      loadServices();
+      loadTreatments();
+      loadHospital();
+      loadContact();
+    };
+    if ('requestIdleCallback' in window) {
+      const id = window.requestIdleCallback(prefetchRoutes, { timeout: 2500 });
+      return () => window.cancelIdleCallback(id);
+    }
+    const timer = setTimeout(prefetchRoutes, 1500);
+    return () => clearTimeout(timer);
+  }, []);
   return (
     <LanguageProvider>
       <Router>

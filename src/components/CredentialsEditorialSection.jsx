@@ -21,7 +21,7 @@ export default function CredentialsEditorialSection() {
       degree: t('DM — Cardiology', 'डीएम — कार्डियोलॉजी'),
       institute: t('PGIMER, Chandigarh', 'पीजीआईएमईआर, चंडीगढ़'),
       tag: t('Top National Medical Institute', 'देश का शीर्ष मेडिकल संस्थान'),
-      image: '/images/precision.png',
+      image: '/images/ccc.png',
       pos: 'object-center',
       summary: t(
         'Advanced training in painless heart checkups, stenting through the wrist, and pacemaker care.',
@@ -109,6 +109,7 @@ export default function CredentialsEditorialSection() {
                   src={item.image}
                   alt={item.degree}
                   loading="lazy"
+                  decoding="async"
                   className={`w-full h-full object-cover ${item.pos} group-hover:scale-105 transition-transform duration-500`}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0A1128] via-transparent to-transparent" />
@@ -147,6 +148,7 @@ export default function CredentialsEditorialSection() {
               src="/images/d2.jpeg"
               alt={doctor.name}
               loading="lazy"
+              decoding="async"
               className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl object-cover object-top border border-slate-200 shadow-sm shrink-0"
             />
             <div>

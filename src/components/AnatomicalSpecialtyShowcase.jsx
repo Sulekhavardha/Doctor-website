@@ -22,7 +22,7 @@ export default function AnatomicalSpecialtyShowcase({ variant = 'home-specialtie
       title: t('Heart Stenting & Blockage Care', 'हार्ट स्टेंटिंग और ब्लॉकेज केयर'),
       category: t('Painless Wrist Procedure', 'बिना दर्द कलाई प्रोसीजर'),
       desc: t('Opening blocked heart arteries gently through the wrist using safe, medicine-coated stents with quick recovery.', 'कलाई के रास्ते सेफ मेडिसिन-कोटेड स्टेंट्स के ज़रिए बंद हार्ट आर्टरीज़ को आराम से खोलना और तेज़ रिकवरी।'),
-      image: '/images/rist.png',
+      image: '/images/ll.png',
       stat: t('99.4% Success Rate', '99.4% सफलता दर'),
       recovery: t('Walk in 2 Hours', '2 घंटे में चलें'),
       points: [
@@ -37,7 +37,7 @@ export default function AnatomicalSpecialtyShowcase({ variant = 'home-specialtie
       title: t('Heart Blockage Check (Angiogram)', 'हार्ट ब्लॉकेज जांच (एंजियोग्राम)'),
       category: t('15-Minute Heart Test', '15-मिनट हार्ट टेस्ट'),
       desc: t('A quick, painless heart test through the wrist to clearly see if any arteries are blocked.', 'कलाई के रास्ते एक तेज़ और बिना दर्द का हार्ट टेस्ट, जिससे साफ पता चलता है कि कोई आर्टरी बंद तो नहीं है।'),
-      image: '/images/ca.png',
+      image: '/images/hhh.png',
       stat: t('15-Min Quick Check', '15-मिनट तेज़ जांच'),
       recovery: t('Same-Day Discharge', 'उसी दिन डिस्चार्ज'),
       points: [
@@ -52,7 +52,7 @@ export default function AnatomicalSpecialtyShowcase({ variant = 'home-specialtie
       title: t('Pacemaker for Slow Heartbeat', 'धीमी हार्टबीट के लिए पेसमेकर'),
       category: t('Heartbeat Support', 'हार्टबीट सपोर्ट'),
       desc: t('Safe small heart device that keeps a slow or irregular heartbeat steady and prevents dizziness.', 'छोटा और सुरक्षित हार्ट डिवाइस जो धीमी या अनियमित हार्टबीट को स्थिर रखता है और चक्कर आने से बचाता है।'),
-      image: '/images/Pacemaker for a Steady Heart.png',
+      image: '/images/pace.jpg',
       stat: t('10–14 Yr Battery', '10–14 साल बैटरी'),
       recovery: t('24–48 Hr Recovery', '24–48 घंटे रिकवरी'),
       points: [
@@ -67,7 +67,7 @@ export default function AnatomicalSpecialtyShowcase({ variant = 'home-specialtie
       title: t('24/7 Heart Attack Emergency', '24/7 हार्ट अटैक इमरजेंसी'),
       category: t('Round-the-Clock Care', '24 घंटे देखभाल'),
       desc: t('Immediate emergency heart care and 24/7 cardiac ICU support at Pulse Heart Centre, Betiahata.', 'पल्स हार्ट सेंटर, बेतियाहाता में तुरंत इमरजेंसी हार्ट केयर और 24/7 कार्डियक आईसीयू सपोर्ट।'),
-      image: '/images/24.png',
+      image: '/images/cardiac-emergency.jpg',
       stat: t('Under 45 Min Care', '45 मिनट से कम में केयर'),
       recovery: t('24/7 Emergency Team', '24/7 इमरजेंसी टीम'),
       points: [
@@ -150,8 +150,7 @@ export default function AnatomicalSpecialtyShowcase({ variant = 'home-specialtie
                 key={current.id}
                 src={current.image}
                 alt={current.title}
-                className="w-full h-full object-cover transition-opacity duration-300"
-              />
+                className="w-full h-full object-cover transition-opacity duration-300" loading="lazy" decoding="async" />
             </div>
 
             {/* Clean Clinical Details Below Photo */}
@@ -191,8 +190,7 @@ export default function AnatomicalSpecialtyShowcase({ variant = 'home-specialtie
                   <img
                     src="/images/d2.jpeg"
                     alt="Dr. Prakash Chand Shahi"
-                    className="w-11 h-11 rounded-full object-cover object-top border border-slate-300 shrink-0"
-                  />
+                    className="w-11 h-11 rounded-full object-cover object-top border border-slate-300 shrink-0" loading="lazy" decoding="async" />
                   <div>
                     <span className="text-xs font-extrabold text-[#0A1128] flex items-center gap-1.5">
                       <span>{t('Dr. Prakash Chand Shahi', 'डॉ. प्रकाश चंद शाही')}</span>

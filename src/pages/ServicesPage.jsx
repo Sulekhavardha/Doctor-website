@@ -90,19 +90,19 @@ export default function ServicesPage() {
       leadTag: t('Pulse Betiahata Campus & HDU', 'पल्स बेतियाहाता कैंपस व एचडीयू'),
     },
     'electrophysiology': {
-      image: '/images/e.jpeg',
+      image: '/images/f.png',
       aspect: 'aspect-[16/10]',
       objectPos: 'object-center',
       leadTag: t('Pulse Pacemaker Suite', 'पल्स पेसमेकर सूट'),
     },
     'emergency-services': {
-      image: '/images/24.png',
+      image: '/images/E.png',
       aspect: 'aspect-[16/10]',
       objectPos: 'object-center',
       leadTag: t('24/7 Pulse Emergency', '24/7 पल्स इमरजेंसी'),
     },
     'preventive-cardiology': {
-      image: '/images/pr.webp',
+      image: '/images/pp.png',
       aspect: 'aspect-[16/10]',
       objectPos: 'object-center',
       leadTag: t('Pulse Wellness & Clinic', 'पल्स वेलनेस व क्लिनिक'),
@@ -256,8 +256,7 @@ export default function ServicesPage() {
                         key={activeStage.image}
                         src={activeStage.image}
                         alt={activeStage.title}
-                        className="w-full h-full object-cover object-center filter brightness-95 contrast-105 transition-all duration-500"
-                      />
+                        className="w-full h-full object-cover object-center filter brightness-95 contrast-105 transition-all duration-500" loading="lazy" decoding="async" />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#0A1128] via-[#0A1128]/25 to-transparent" />
 
                       {/* Overlaid Badges */}
@@ -296,8 +295,7 @@ export default function ServicesPage() {
                         <img
                           src="/images/d1.jpeg"
                           alt="Dr. Prakash Chand Shahi"
-                          className="w-10 h-10 rounded-xl object-cover object-top border border-rose-200 shrink-0"
-                        />
+                          className="w-10 h-10 rounded-xl object-cover object-top border border-rose-200 shrink-0" loading="lazy" decoding="async" />
                         <div className="min-w-0">
                           <span className="text-xs font-bold text-[#0A1128] block truncate">
                             {t('Dr. Prakash Chand Shahi', 'डॉ. प्रकाश चंद शाही')}
@@ -365,6 +363,7 @@ export default function ServicesPage() {
                       src={service.image}
                       alt={isHindi ? service.titleHi : service.title}
                       loading="lazy"
+                      decoding="async"
                       className={`w-full h-full object-cover ${service.objectPos} group-hover:scale-108 transition-transform duration-700 filter brightness-95`}
                     />
                     {/* Cinematic Gradient Overlay */}
@@ -504,8 +503,7 @@ export default function ServicesPage() {
               <img
                 src="/images/pu.png"
                 alt="Pulse Heart Centre Betiahata Campus"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0A1128]/85 via-transparent to-transparent" />
               <div className="absolute bottom-2.5 left-3 right-3 text-white">
                 <span className="text-[10px] font-mono font-bold text-rose-300 uppercase block">
@@ -531,10 +529,9 @@ export default function ServicesPage() {
           <div className="group rounded-2xl bg-white border border-slate-200 overflow-hidden shadow-sm hover:shadow-lg transition-all">
             <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-900">
               <img
-                src="/images/moder.png"
+                src="/images/fff.png"
                 alt="Pulse Heart Centre Cath Lab"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0A1128]/85 via-transparent to-transparent" />
               <div className="absolute bottom-2.5 left-3 right-3 text-white">
                 <span className="text-[10px] font-mono font-bold text-rose-300 uppercase block">
@@ -562,8 +559,7 @@ export default function ServicesPage() {
               <img
                 src="/images/reception.png"
                 alt="Pulse Heart Centre OPD Lounge"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0A1128]/85 via-transparent to-transparent" />
               <div className="absolute bottom-2.5 left-3 right-3 text-white">
                 <span className="text-[10px] font-mono font-bold text-rose-300 uppercase block">
@@ -609,8 +605,7 @@ export default function ServicesPage() {
                 <img
                   src={selectedService.image}
                   alt={isHindi ? selectedService.titleHi : selectedService.title}
-                  className="w-full h-full object-cover"
-                />
+                  className="w-full h-full object-cover" loading="lazy" decoding="async" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0A1128] via-[#0A1128]/30 to-transparent" />
 
                 <button
@@ -659,8 +654,7 @@ export default function ServicesPage() {
                     <img
                       src="/images/d1.jpeg"
                       alt="Dr. Prakash Chand Shahi"
-                      className="w-9 h-9 rounded-lg object-cover object-top border border-slate-300"
-                    />
+                      className="w-9 h-9 rounded-lg object-cover object-top border border-slate-300" loading="lazy" decoding="async" />
                     <div>
                       <span className="font-bold text-[#0A1128] block">{t('Dr. Prakash Chand Shahi', 'डॉ. प्रकाश चंद शाही')}</span>
                       <span className="text-[10px] text-slate-500">{t('Director & Chief Interventional Cardiologist', 'डायरेक्टर एंड चीफ कार्डियोलॉजिस्ट')}</span>

@@ -214,6 +214,8 @@ export default function TreatmentStorytellingSection() {
                   ? '/images/precision.png'
                   : activeProcedure === 'pacemaker-implantation'
                   ? '/images/pace.jpg'
+                  : activeProcedure === 'peripheral-angioplasty'
+                  ? '/images/hh.png'
                   : '/images/heart.png'
               }
               title={`${currentStory.title} • ${t('Live Procedural Cine', 'लाइव प्रोसीजरल सिने')}`}
@@ -243,6 +245,7 @@ export default function TreatmentStorytellingSection() {
                       src={media.src}
                       alt={step.phase}
                       loading="lazy"
+                      decoding="async"
                       className={`w-full h-full object-cover ${media.pos} group-hover:scale-110 transition-transform duration-700`}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0A1128]/85 via-transparent to-transparent" />
@@ -270,6 +273,7 @@ export default function TreatmentStorytellingSection() {
                 src="/images/d1.jpeg"
                 alt="Dr. Prakash Chand Shahi"
                 loading="lazy"
+                decoding="async"
                 className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl object-cover object-top border-2 border-[#BE123C]/40 shadow-md shrink-0 block"
               />
               <div className="space-y-1 text-left">
