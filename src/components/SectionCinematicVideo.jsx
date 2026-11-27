@@ -43,7 +43,7 @@ const VIDEO_SOURCE_MAP = {
 };
 
 const POSTER_SOURCE_MAP = {
-  'hero-architecture': '/images/hero-architecture-entrance.jpg',
+  'hero-architecture': '/images/pu.png',
   'about-hospital': '/images/hospital-ward-suites.jpg',
   'cardiology-heart': '/images/cardiology-3d-heart-beat.jpg',
   'cardiology-cath': '/images/cardiac-stent-procedure.jpg',
@@ -67,6 +67,7 @@ export default function SectionCinematicVideo({
   type = 'hero-architecture',
   styleVariant = 'floating-3d',
   posterImage = null,
+  posterPosition = 'object-center',
   title = 'Live Clinical Feed',
   subtitle = '4K UHD • 60 FPS • Real-Time Broadcast',
   specs = 'Siemens Artis Zee • HEPA-14 Cleanroom',
@@ -80,7 +81,7 @@ export default function SectionCinematicVideo({
     videoUrl === false
       ? null
       : videoUrl || VIDEO_SOURCE_MAP[type] || '/videos/hero-architecture.mp4';
-  const resolvedPoster = posterImage || POSTER_SOURCE_MAP[type] || '/images/hospital-facility.jpg';
+  const resolvedPoster = posterImage || POSTER_SOURCE_MAP[type] || '/images/pu.png';
 
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
@@ -195,7 +196,7 @@ export default function SectionCinematicVideo({
             src={resolvedPoster}
             alt={title}
             loading="lazy"
-            className="absolute inset-0 w-full h-full object-cover filter brightness-90 contrast-105"
+            className={`absolute inset-0 w-full h-full object-cover ${posterPosition} filter brightness-90 contrast-105`}
           />
         )}
 

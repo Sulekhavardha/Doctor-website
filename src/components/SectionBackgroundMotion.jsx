@@ -288,11 +288,7 @@ export default function SectionBackgroundMotion({
           </div>
 
           {/* Horizontal Crimson Calibration Laser Beam */}
-          <div className="absolute inset-x-0 h-[2.5px] bg-gradient-to-r from-transparent via-[#E11D48] to-transparent shadow-[0_0_20px_#BE123C] opacity-50 animate-laser-sweep pointer-events-none" />
-
-          {/* Blueprint Engineering Coordinates */}
-          <div className="absolute top-20 left-10 font-mono text-[10px] text-[#0A1128]/70 hidden sm:block">+ ARTIS-ZEE-FLAT-PANEL-C-ARM</div>
-          <div className="absolute top-20 right-10 font-mono text-[10px] text-[#BE123C]/70 hidden sm:block">+ 60-FPS-SUB-MILLIMETER-RESOLUTION</div>
+          <div className="absolute inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-[#E11D48] to-transparent shadow-[0_0_12px_#BE123C] opacity-40 pointer-events-none" />
         </>
       )}
 
@@ -422,9 +418,7 @@ export default function SectionBackgroundMotion({
           <div className="absolute bottom-0 right-10 w-[620px] h-[620px] bg-gradient-to-tl from-[#E11D48]/18 via-[#BE123C]/12 to-transparent rounded-full [mask-image:radial-gradient(closest-side,black_15%,transparent_100%)] will-change-transform animate-float-2" />
 
           {/* Laser Edge Sweep in Crimson Ruby */}
-          <div className="absolute left-0 right-0 top-0 h-[2.5px] bg-gradient-to-r from-transparent via-[#E11D48] to-transparent shadow-[0_0_16px_#BE123C] opacity-60" />
-
-          <div className="absolute bottom-20 left-16 font-mono text-[10px] text-slate-500 hidden sm:block">+ PRIORITY-OPD-ROSTER</div>
+          <div className="absolute left-0 right-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#E11D48] to-transparent shadow-[0_0_12px_#BE123C] opacity-40 pointer-events-none" />
         </>
       )}
 
@@ -518,10 +512,6 @@ export default function SectionBackgroundMotion({
             <circle cx="720" cy="900" r="600" stroke="#E5B9AB" strokeWidth="1.2" strokeDasharray="8 10" />
             <circle cx="720" cy="900" r="750" stroke="#C27866" strokeWidth="1" />
           </svg>
-
-          {/* Projection Stage Framing Crosshairs */}
-          <div className="absolute top-10 left-12 font-mono text-[10px] text-amber-900/60 hidden sm:block">+ CINEMA-STAGE-01</div>
-          <div className="absolute top-10 right-12 font-mono text-[10px] text-amber-900/60 hidden sm:block">+ 4K-HEMODYNAMIC-ARCHIVE</div>
         </>
       )}
 
@@ -861,12 +851,9 @@ export default function SectionBackgroundMotion({
 
           {/* Rotating Collimator Reticle */}
           <div className="absolute top-1/2 right-1/4 -translate-y-1/2 w-[520px] h-[520px] rounded-full border border-slate-300/40 hidden lg:block pointer-events-none">
-            <div className="absolute inset-8 rounded-full border-2 border-dashed border-rose-400/40 animate-radar-sweep" />
-            <div className="absolute inset-24 rounded-full border border-slate-400/30 animate-rotate-reverse" />
+            <div className="absolute inset-8 rounded-full border-2 border-dashed border-rose-400/40" />
+            <div className="absolute inset-24 rounded-full border border-slate-400/30" />
           </div>
-
-          <div className="absolute top-20 left-12 font-mono text-[10px] text-slate-800/80 font-bold hidden sm:block">+ SCHEMATIC: C-ARM FLAT PANEL FLUOROSCOPY</div>
-          <div className="absolute bottom-20 right-12 font-mono text-[10px] text-slate-800/80 font-bold hidden sm:block">+ SPATIAL RESOLUTION: &lt; 0.3MM</div>
         </>
       )}
 
@@ -879,11 +866,7 @@ export default function SectionBackgroundMotion({
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-gradient-to-r from-[#0A1128]/10 via-[#BE123C]/15 to-[#0A1128]/10 rounded-full [mask-image:radial-gradient(closest-side,black_15%,transparent_100%)] will-change-transform" />
 
           {/* Radiographic Perfusion Dot Matrix */}
-          <div className="absolute inset-0 bg-[radial-gradient(#0A112814_1.2px,transparent_1.2px)] bg-[size:24px_24px] opacity-60" />
-
-          {/* Lightbox Bevel Frame Markers */}
-          <div className="absolute top-6 left-8 font-mono text-[10px] text-slate-600 font-bold">+ VIEWBOX CH-01 • ARTERIAL PERFUSION</div>
-          <div className="absolute top-6 right-8 font-mono text-[10px] text-slate-600 font-bold">+ SUB-MILLIMETER CALCIUM MAP</div>
+          <div className="absolute inset-0 bg-[radial-gradient(#0A112814_1.2px,transparent_1.2px)] bg-[size:24px_24px] opacity-40 pointer-events-none" />
         </>
       )}
 
@@ -1051,12 +1034,7 @@ export default function SectionBackgroundMotion({
           {/* Laminar Airflow Blueprint Grid & Cleanroom Laser Sweep */}
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#0A11280D_1px,transparent_1px),linear-gradient(to_bottom,#0A11280D_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] pointer-events-none" />
           <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#0A1128]/15 rounded-full [mask-image:radial-gradient(closest-side,black_15%,transparent_100%)] pointer-events-none" />
-          <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-[#BE123C]/20 rounded-full [mask-image:radial-gradient(closest-side,black_15%,transparent_100%)] pointer-events-none" />
-          <div className="absolute left-0 right-0 h-[2.5px] bg-gradient-to-r from-transparent via-[#E11D48] to-transparent shadow-[0_0_16px_#BE123C] opacity-80 animate-laser-fast pointer-events-none" />
-
-          {/* Suite Blueprint Crosshairs */}
-          <div className="absolute top-4 left-6 text-slate-800 font-mono text-[11px] font-bold select-none hidden sm:block bg-white/90 px-3 py-1 rounded-md border border-slate-200 shadow-xs">+ SUITE-01 C-ARM FLUOROSCOPY</div>
-          <div className="absolute top-4 right-6 text-slate-800 font-mono text-[11px] font-bold select-none hidden sm:block bg-white/90 px-3 py-1 rounded-md border border-slate-200 shadow-xs">+ SUITE-02 LAMINAR OT</div>
+          <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-[#BE123C]/15 rounded-full [mask-image:radial-gradient(closest-side,black_15%,transparent_100%)] pointer-events-none" />
         </>
       )}
 
@@ -1087,11 +1065,7 @@ export default function SectionBackgroundMotion({
           {/* Concentric Distance Rings */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[580px] h-[580px] rounded-full border-2 border-slate-300/40 pointer-events-none">
             <div className="absolute inset-10 rounded-full border-2 border-dashed border-rose-400/40 animate-radar-sweep" />
-            <div className="absolute inset-28 rounded-full border border-slate-300/40 flex items-center justify-center animate-rotate-reverse">
-              <span className="text-[10px] font-mono font-bold text-slate-800 bg-white/95 px-3.5 py-1.5 rounded-full border border-slate-200 shadow-sm">
-                BETIAHATA MEDICAL DISTRICT
-              </span>
-            </div>
+            <div className="absolute inset-28 rounded-full border border-slate-300/40 animate-rotate-reverse" />
           </div>
         </>
       )}
@@ -1153,10 +1127,7 @@ export default function SectionBackgroundMotion({
           </svg>
 
           {/* Tactile Micro-Grid */}
-          <div className="absolute inset-0 bg-[radial-gradient(#0A112814_1.2px,transparent_1.2px)] bg-[size:28px_28px] opacity-40" />
-
-          {/* Emergency Triage Compass Tag */}
-          <div className="absolute top-8 right-12 font-mono text-[10px] text-slate-700 font-bold hidden sm:block">+ EMERGENCY-TRIAGE-PROTOCOL</div>
+          <div className="absolute inset-0 bg-[radial-gradient(#0A112814_1.2px,transparent_1.2px)] bg-[size:28px_28px] opacity-30 pointer-events-none" />
         </>
       )}
 

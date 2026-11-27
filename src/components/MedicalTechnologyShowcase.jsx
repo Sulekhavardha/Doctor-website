@@ -23,7 +23,7 @@ export default function MedicalTechnologyShowcase({ variant = 'home-technology' 
       title: t('Modern Heart Cath Lab', 'मॉडर्न हार्ट कैथ लैब'),
       category: t('LIVE HEART IMAGING', 'लाइव हार्ट इमेजिंग'),
       description: t('Shows crystal-clear live heart images with 40% lower X-ray exposure for safer treatment.', 'सुरक्षित ट्रीटमेंट के लिए 40% कम एक्स-रे एक्सपोजर के साथ बिल्कुल साफ लाइव हार्ट इमेज दिखाता है।'),
-      image: '/images/operation-theatre-laminar.jpg',
+      image: '/images/c.webp',
       videoUrl: '/videos/facilities-walkthrough.mp4',
       type: 'facilities-walkthrough',
       specs: [
@@ -35,27 +35,11 @@ export default function MedicalTechnologyShowcase({ variant = 'home-technology' 
       clinicalValue: t('Helps Dr. Shahi treat blocked heart arteries safely and accurately.', 'डॉ. शाही को बंद हार्ट आर्टरीज़ का सुरक्षित और सटीक इलाज करने में मदद करता है।'),
     },
     {
-      id: 'angiogram-fluoroscopy',
-      title: t('Clear Blockage Mapping', 'साफ ब्लॉकेज मैपिंग'),
-      category: t('ACCURATE HEART CHECK', 'सटीक हार्ट चेकअप'),
-      description: t('Checks heart blood flow clearly to find the exact location and size of any blockage.', 'किसी भी ब्लॉकेज की सही जगह और साइज का पता लगाने के लिए हार्ट ब्लड फ्लो की साफ जांच करता है।'),
-      image: '/images/heart-ct-scanner.jpg',
-      videoUrl: '/videos/cardiac-catheterization.mp4',
-      type: 'cardiac-catheterization',
-      specs: [
-        { label: t('Angles', 'एंगल्स'), value: t('Full 3D Views', 'फुल 3डी व्यूज़') },
-        { label: t('Measurement', 'माप'), value: t('Exact Blockage %', 'सटीक ब्लॉकेज %') },
-        { label: t('Entry Point', 'एंट्री पॉइंट'), value: t('Through the Wrist (Painless)', 'कलाई के रास्ते (बिना दर्द)') },
-        { label: t('Recovery', 'रिकवरी'), value: t('Walk in 2 Hours', '2 घंटे में चलें') },
-      ],
-      clinicalValue: t('Helps decide honestly whether medicines alone or a stent is best.', 'ईमानदारी से यह तय करने में मदद करता है कि सिर्फ दवाइयां बेहतर हैं या स्टेंट।'),
-    },
-    {
       id: 'stent-biomaterials',
       title: t('Safe Coated Heart Stents', 'सेफ कोटेड हार्ट स्टेंट्स'),
       category: t('HEART ARTERY SUPPORT', 'हार्ट आर्टरी सपोर्ट'),
       description: t('Ultra-thin, medicine-coated stents that gently keep arteries open and heal smoothly.', 'बेहद पतले, मेडिसिन-कोटेड स्टेंट्स जो आर्टरीज़ को आराम से खुला रखते हैं और जल्दी हील करते हैं।'),
-      image: '/images/echo-machine-suite.jpg',
+      image: '/images/safe.jpg',
       videoUrl: '/videos/cardiology-heart.mp4',
       type: 'cardiology-heart',
       specs: [
@@ -71,7 +55,7 @@ export default function MedicalTechnologyShowcase({ variant = 'home-technology' 
       title: t('Long-Life Heart Pacemaker', 'लॉन्ग-लाइफ हार्ट पेसमेकर'),
       category: t('HEARTBEAT SUPPORT', 'हार्टबीट सपोर्ट'),
       description: t('Small, safe device that keeps a slow or irregular heartbeat steady day and night.', 'एक छोटा और सुरक्षित डिवाइस जो दिन-रात धीमी या अनियमित हार्टबीट को स्थिर रखता है।'),
-      image: '/images/ecg-checkup-room.jpg',
+      image: '/images/pace.jpg',
       videoUrl: '/videos/cardiology-heart.mp4',
       type: 'cardiology-heart',
       specs: [
@@ -84,10 +68,10 @@ export default function MedicalTechnologyShowcase({ variant = 'home-technology' 
     },
   ];
 
-  const current = techArsenal[activeTech];
+  const current = techArsenal[activeTech] || techArsenal[0];
 
   return (
-    <section className="relative py-28 lg:py-36 overflow-hidden select-none bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9] border-b border-slate-200">
+    <section className="relative pt-6 pb-8 sm:pt-8 sm:pb-10 lg:pt-10 lg:pb-12 overflow-hidden bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9] border-b border-slate-200">
 
       {/* Bespoke Cleanroom Background */}
       <SectionBackgroundMotion variant={variant} />
@@ -120,8 +104,8 @@ export default function MedicalTechnologyShowcase({ variant = 'home-technology' 
           {/* Left Column (7 cols): Completely Unobstructed 4K Cinematic Equipment Showcase with 3D Tilt */}
           <div className="lg:col-span-7 space-y-4">
             <Interactive3DTilt maxTilt={8} glowColor="rgba(190, 18, 60, 0.22)">
-              <div className="group relative rounded-[2.5rem] overflow-hidden bg-white/95 p-3 sm:p-4 border-2 border-slate-200 shadow-xl hover:shadow-2xl hover:border-rose-300 transition-all duration-500">
-                <div className="relative rounded-[2rem] overflow-hidden">
+              <div className="group relative rounded-3xl sm:rounded-[2.5rem] overflow-hidden bg-white/95 p-2.5 sm:p-4 border-2 border-slate-200 shadow-xl hover:shadow-2xl hover:border-rose-300 transition-all duration-500">
+                <div className="relative rounded-2xl sm:rounded-[2rem] overflow-hidden">
                   <SectionCinematicVideo
                     type={current.type || "facilities-walkthrough"}
                     videoUrl={false}
@@ -139,10 +123,10 @@ export default function MedicalTechnologyShowcase({ variant = 'home-technology' 
                 <div className="mt-3 px-3 py-2.5 rounded-xl bg-slate-50 border border-slate-200 flex flex-wrap items-center justify-between gap-2 text-xs">
                   <div className="flex items-center gap-2.5">
                     <img
-                      src="/images/doctor-portrait.jpg"
+                      src="/images/d1.jpeg"
                       alt="Dr. Prakash Chand Shahi"
                       loading="lazy"
-                      className="w-8 h-8 rounded-lg object-cover object-[50%_20%] border border-slate-300 shrink-0"
+                      className="w-8 h-8 rounded-lg object-cover object-top border border-slate-300 shrink-0"
                     />
                     <div className="text-left">
                       <span className="font-mono font-bold text-[#0A1128] block leading-tight">{current.title}</span>

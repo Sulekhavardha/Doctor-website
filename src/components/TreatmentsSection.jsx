@@ -159,7 +159,7 @@ export default function TreatmentsSection({ onBookClick }) {
                     ? '/images/cath-lab.jpg'
                     : activeTreatment.id === 'coronary-angiogram'
                     ? '/images/angiogram-scan.jpg'
-                    : '/images/hospital-facility.jpg'
+                    : '/images/pu.png'
                 }
                 alt={activeTreatment.name}
                 className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105 filter brightness-90"

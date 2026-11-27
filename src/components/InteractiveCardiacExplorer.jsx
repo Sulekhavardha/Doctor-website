@@ -47,7 +47,7 @@ export default function InteractiveCardiacExplorer({ onBookClick }) {
   const activeData = explorerHotspots.find((h) => h.id === activeId) || explorerHotspots[0];
 
   return (
-    <section className="relative py-16 lg:py-24 overflow-hidden select-none bg-gradient-to-b from-[#FAFBF9] via-[#F0FDF4]/30 to-[#FAFBF9] rounded-[3rem] my-8 border-2 border-[#A7F3D0]/80 shadow-lg">
+    <section className="relative py-10 sm:py-16 lg:py-24 overflow-hidden select-none bg-gradient-to-b from-[#FAFBF9] via-[#F0FDF4]/30 to-[#FAFBF9] rounded-3xl sm:rounded-[3rem] my-4 sm:my-8 border-2 border-[#A7F3D0]/80 shadow-lg">
       {/* Animated Lightbox Illuminator Background Grid & Dynamic Scan Sweep */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
         <svg className="absolute inset-0 w-full h-full opacity-25" xmlns="http://www.w3.org/2000/svg">
@@ -59,13 +59,7 @@ export default function InteractiveCardiacExplorer({ onBookClick }) {
           </defs>
           <rect width="100%" height="100%" fill="url(#lightboxGrid)" />
         </svg>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-tr from-[#059669]/20 via-teal-300/15 to-transparent rounded-full blur-[120px] pointer-events-none" />
-        {/* Rotating CAD Coordinate Rings */}
-        <div className="absolute top-6 left-6 w-64 h-64 rounded-full border-2 border-[#047857]/25 hidden md:block animate-gentle-cw" />
-        <div className="absolute bottom-6 right-6 w-80 h-80 rounded-full border-2 border-dashed border-[#10B981]/30 hidden md:block animate-gentle-ccw" />
-        <div className="absolute left-0 right-0 h-[2.5px] bg-gradient-to-r from-transparent via-[#10B981] to-transparent shadow-[0_0_15px_#059669] opacity-50 animate-laser-sweep pointer-events-none" />
-        <div className="absolute top-8 left-8 text-[#059669]/35 font-mono text-base font-bold select-none">+</div>
-        <div className="absolute bottom-8 right-8 text-[#059669]/35 font-mono text-base font-bold select-none">+</div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-tr from-[#059669]/15 via-teal-300/10 to-transparent rounded-full blur-[100px] pointer-events-none" />
       </div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -92,7 +86,7 @@ export default function InteractiveCardiacExplorer({ onBookClick }) {
         </div>
 
         {/* Master Diagnostic Lightbox Container */}
-        <div className="rounded-[2.5rem] bg-white border-2 border-[#A7F3D0]/60 shadow-xl overflow-hidden p-5 sm:p-8 backdrop-blur-2xl">
+        <div className="rounded-3xl sm:rounded-[2.5rem] bg-white border-2 border-[#A7F3D0]/60 shadow-xl overflow-hidden p-3.5 sm:p-8 backdrop-blur-2xl">
           
           {/* Top Control Bar: Mode Toggle + Target Domains */}
           <div className="flex flex-wrap items-center justify-between gap-4 pb-5 border-b border-slate-100">
@@ -147,8 +141,8 @@ export default function InteractiveCardiacExplorer({ onBookClick }) {
             
             {/* Real Photographic Medical Image */}
             <img
-              src={viewMode === 'anatomy' ? '/images/cathlab-control-review.jpg' : '/images/doctor-angiogram-explain.jpg'}
-              alt={viewMode === 'anatomy' ? 'Real Heart Artery & Stent Monitor' : 'Real Diagnostic Coronary Angiogram Review'}
+              src={viewMode === 'anatomy' ? '/images/Advanced.png' : '/images/doctor-angiogram-explain.jpg'}
+              alt={viewMode === 'anatomy' ? 'Advanced Heart Anatomy & Care' : 'Real Diagnostic Coronary Angiogram Review'}
               className="w-full h-full object-cover object-center transition-all duration-700 filter brightness-95 group-hover:scale-102"
             />
 
@@ -156,14 +150,14 @@ export default function InteractiveCardiacExplorer({ onBookClick }) {
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-transparent to-slate-950/50 pointer-events-none" />
 
             {/* Top Diagnostic Badges */}
-            <div className="absolute top-4 left-4 flex items-center gap-2 pointer-events-none">
-              <div className="px-3.5 py-1.5 rounded-full bg-slate-900/80 backdrop-blur-md border border-white/20 text-white text-[11px] font-medium flex items-center gap-2 shadow-md">
-                <span className="w-2 h-2 rounded-full bg-[#059669] animate-ping" />
-                <span>{viewMode === 'anatomy' ? t('Heart View: Clear Artery Guide', 'हार्ट व्यू: क्लियर आर्टरी गाइड') : t('Angiogram View: Live Blood Flow Check', 'एंजियोग्राम व्यू: लाइव ब्लड फ्लो चेक')}</span>
+            <div className="absolute top-3 left-3 sm:top-4 sm:left-4 flex items-center gap-2 pointer-events-none">
+              <div className="px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-slate-900/80 backdrop-blur-md border border-white/20 text-white text-[10px] sm:text-[11px] font-medium flex items-center gap-1.5 sm:gap-2 shadow-md">
+                <span className="w-2 h-2 rounded-full bg-[#059669] animate-ping shrink-0" />
+                <span className="truncate max-w-[190px] sm:max-w-none">{viewMode === 'anatomy' ? t('Heart View: Clear Artery Guide', 'हार्ट व्यू: क्लियर आर्टरी गाइड') : t('Angiogram View: Live Blood Flow Check', 'एंजियोग्राम व्यू: लाइव ब्लड फ्लो चेक')}</span>
               </div>
             </div>
 
-            <div className="absolute top-4 right-4 pointer-events-none">
+            <div className="absolute top-4 right-4 pointer-events-none hidden sm:block">
               <div className="px-3.5 py-1.5 rounded-full bg-slate-900/80 backdrop-blur-md border border-white/20 text-amber-300 text-[11px] font-mono shadow-md font-bold">
                 {t('72 BPM · Healthy Heartbeat', '72 बीपीएम · हेल्दी हार्टबीट')}
               </div>
@@ -189,7 +183,7 @@ export default function InteractiveCardiacExplorer({ onBookClick }) {
                   </div>
 
                   {/* Hotspot Floating Tooltip */}
-                  <div className={`absolute left-1/2 -translate-x-1/2 bottom-full mb-2 w-56 p-3.5 rounded-2xl bg-slate-950/95 backdrop-blur-md border border-white/20 text-white shadow-2xl transition-all pointer-events-none ${
+                  <div className={`hidden sm:block absolute left-1/2 -translate-x-1/2 bottom-full mb-2 w-56 p-3.5 rounded-2xl bg-slate-950/95 backdrop-blur-md border border-white/20 text-white shadow-2xl transition-all pointer-events-none ${
                     isSpotActive ? 'opacity-100 visible -translate-y-0' : 'opacity-0 invisible group-hover/pin:opacity-100 group-hover/pin:visible'
                   }`}>
                     <span className="text-[10px] font-mono text-[#059669] block uppercase font-bold">

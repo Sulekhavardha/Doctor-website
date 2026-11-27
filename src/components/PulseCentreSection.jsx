@@ -11,7 +11,7 @@ export default function PulseCentreSection({ onBookClick }) {
   const { t } = useLanguage();
 
   return (
-    <section id="centre" className="relative py-16 lg:py-24 overflow-hidden select-none bg-gradient-to-b from-[#FFF8F5] via-[#FAF5F0] to-[#FFF3EE] rounded-[3rem] border border-orange-200/60 shadow-lg my-12">
+    <section id="centre" className="relative py-8 sm:py-10 lg:py-12 my-6 sm:my-8 overflow-hidden bg-gradient-to-b from-[#FFF8F5] via-[#FAF5F0] to-[#FFF3EE] rounded-[2.5rem] sm:rounded-[3rem] border border-orange-200/60 shadow-lg">
 
       {/* Bespoke Betiahata Medical Quarter Blueprint & Asymmetrical Planar Cards */}
       <SectionBackgroundMotion variant="hospital-pulse-centre" />
@@ -30,7 +30,7 @@ export default function PulseCentreSection({ onBookClick }) {
 
               <div className="space-y-4 max-w-xl text-left">
                 <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-orange-200 text-xs font-mono font-medium text-[#C2410C] shadow-xs">
-                  <img src="/images/p.webp" alt="Pulse Logo" className="w-5 h-5 object-contain rounded-md bg-white p-0.5 border border-orange-200" />
+                  <img src="/images/p.png" alt="Pulse Logo" className="w-5 h-5 object-contain rounded-md bg-white p-0.5 border border-orange-200" />
                   <span className="font-bold">{t('Pulse Heart Centre • Betiahata, Gorakhpur', 'पल्स हार्ट सेंटर • बेतियाहाता, गोरखपुर')}</span>
                 </div>
 
@@ -61,13 +61,14 @@ export default function PulseCentreSection({ onBookClick }) {
                 </div>
               </div>
 
-              {/* Real Architectural Hospital Video Presentation */}
+              {/* Real Architectural Hospital Image Presentation */}
               <div className="w-full lg:w-[420px] rounded-2xl overflow-hidden shrink-0">
                 <SectionCinematicVideo
                   type="about-hospital"
-                  videoUrl="/videos/about-hospital.mp4"
+                  videoUrl={false}
+                  showControls={false}
                   styleVariant="video-card"
-                  posterImage="/images/hospital-facility.jpg"
+                  posterImage="/images/pu.png"
                   title={t('Pulse Heart Centre Campus', 'पल्स हार्ट सेंटर कैंपस')}
                   subtitle={t('Betiahata, Gorakhpur', 'बेतियाहाता, गोरखपुर')}
                   specs={t('OPD Clinic • Heart Care Wing', 'ओपीडी क्लिनिक • हार्ट केयर विंग')}

@@ -28,7 +28,7 @@ export default function CinematicVideoPlayerModal({ isOpen, onClose, initialClip
       id: 'tour',
       title: t('NABH Tertiary Hospital & Atrium Tour', 'एनएबीएच टर्शियरी हॉस्पिटल एंड एट्रियम टूर'),
       tagline: t('4K Drone Architecture & HEPA-14 Cleanroom Suites', '4के ड्रोन आर्किटेक्चर एंड हेपा-14 क्लीनरूम सूट्स'),
-      image: '/images/hospital-facility.jpg',
+      image: '/images/pu.png',
       videoUrl: '/videos/hero-architecture.mp4',
       badge: t('ARCHITECTURAL TOUR', 'आर्किटेक्चरल टूर'),
       duration: '01:30',

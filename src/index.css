@@ -1405,3 +1405,64 @@ main section {
     scroll-behavior: auto !important;
   }
 }
+
+/* =========================================================================
+   GLOBAL MOUSE TEXT SELECTION & COPY SUPPORT
+   Enables users to highlight and copy any text on the website with mouse
+   ========================================================================= */
+html,
+body,
+#root,
+main,
+section,
+article,
+div:not([aria-hidden="true"]),
+h1, h2, h3, h4, h5, h6,
+p, span, strong, b, em, i,
+li, a, blockquote, dt, dd, td, th,
+input, textarea {
+  -webkit-user-select: text !important;
+  -moz-user-select: text !important;
+  -ms-user-select: text !important;
+  user-select: text !important;
+}
+
+/* Beautiful Crimson Highlight when text is selected with mouse */
+::selection {
+  background-color: #BE123C !important;
+  color: #ffffff !important;
+}
+
+::-moz-selection {
+  background-color: #BE123C !important;
+  color: #ffffff !important;
+}
+
+/* Prevent selection only on decorative canvases, SVGs, icons & images */
+svg,
+img,
+video,
+canvas,
+[aria-hidden="true"],
+.watermark-typography,
+.pointer-events-none {
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+  -webkit-user-drag: none;
+}
+
+/* Performance optimization: disable expensive infinite background laser and radar sweeps */
+.animate-laser-fast,
+.animate-laser-sweep,
+.animate-laser-horizontal,
+.animate-laser-vertical,
+.animate-radar-sweep,
+.animate-scanline,
+.animate-gentle-cw,
+.animate-gentle-ccw,
+.animate-rotate-reverse,
+.animate-reticle-slow {
+  animation: none !important;
+}

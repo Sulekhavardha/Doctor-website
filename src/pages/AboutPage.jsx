@@ -87,7 +87,7 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="relative pt-24 pb-24 select-none bg-[#FAF9F6] overflow-hidden">
+    <div className="relative pt-20 sm:pt-24 pb-12 sm:pb-16 bg-[#FAF9F6] overflow-hidden">
 
       {/* =========================================================================
           HERO SECTION: EXECUTIVE BIOGRAPHICAL & CLINICAL LEADERSHIP DOSSIER
@@ -203,9 +203,9 @@ export default function AboutPage() {
               <div className="relative rounded-3xl overflow-hidden bg-[#0A1128] p-2.5 shadow-[0_24px_55px_-15px_rgba(10,17,40,0.28)] border border-slate-800">
                 <div className="relative aspect-[4/4] sm:aspect-[5/4] rounded-2xl overflow-hidden bg-slate-900">
                   <img
-                    src="/images/doctor-portrait.jpg"
+                    src="/images/d3.jpeg"
                     alt="Dr. Prakash Chand Shahi — Chief Interventional Cardiologist"
-                    className="w-full h-full object-cover object-[50%_20%]"
+                    className="w-full h-full object-cover object-top"
                   />
                   <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#0A1128] via-[#0A1128]/70 to-transparent" />
                   <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between gap-2">
@@ -279,33 +279,8 @@ export default function AboutPage() {
 
       </section>
 
-      {/* Panoramic Hospital Interior Video Console Section with Dynamic Ambient Theatre Background */}
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8 my-8 overflow-hidden select-none bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9] rounded-[3rem] border border-slate-200 shadow-lg">
-        {/* Bespoke Cinematic Documentary Auditorium & Ambient Horizon Stage */}
-        <SectionBackgroundMotion variant="about-video" />
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.9, delay: 0.15 }}
-          className="max-w-5xl mx-auto relative z-10"
-        >
-          <SectionCinematicVideo
-            type="about-hospital"
-            videoUrl="/videos/about-hospital.mp4"
-            styleVariant="panoramic-stage"
-            posterImage="/images/hospital-facility.jpg"
-            title={t('Hospital Interior & Clinical Ward Walkthrough', 'हॉस्पिटल इंटीरियर एंड क्लिनिकल वार्ड वॉकथ्रू')}
-            subtitle={t('4K Interior Steady-Cam • 60 FPS', '4के इंटीरियर स्टेडी-कैम • 60 एफपीएस')}
-            specs={t('14,000 Sq. Ft. Clinical Facility • Zero Particulate HEPA Filtered', '14,000 स्क्वायर फीट क्लिनिकल फैसिलिटी • जीरो पार्टिकुलेट हेपा फिल्टर्ड')}
-            aspectRatio="aspect-[16/8] sm:aspect-[21/9]"
-          />
-        </motion.div>
-      </section>
-
       <div className="relative z-10">
-        <section className="relative py-20 overflow-hidden border-y border-slate-200 shadow-xs bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9]">
+        <section className="relative py-10 sm:py-14 lg:py-16 overflow-hidden border-y border-slate-200 shadow-xs bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9]">
           {/* Bespoke Four Monoliths of Trust & Sculptural Fluted Columns */}
           <SectionBackgroundMotion variant="about-pillars" />
 
@@ -378,14 +353,14 @@ export default function AboutPage() {
         </section>
 
         {/* 3. Milestones Timeline: 3D Cylinder Carousel & Architectural Clinical Dossiers */}
-        <section className="relative py-24 sm:py-28 overflow-hidden bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9]">
+        <section className="relative py-12 sm:py-16 lg:py-20 overflow-hidden bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9]">
           {/* Bespoke Temporal Pathway & Luminous Chrono-Spine */}
           <SectionBackgroundMotion variant="about-milestones" />
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
             {/* Section Header */}
-            <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16 space-y-3">
+            <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10 space-y-3">
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-rose-50 text-[#BE123C] border border-rose-200/90 text-xs font-bold uppercase tracking-[0.24em] shadow-xs">
                 <Sparkles className="w-3.5 h-3.5 text-[#BE123C]" />
                 <span>{t('Two Decades of Clinical Leadership', 'टू डिकेड्स ऑफ क्लिनिकल लीडरशिप')}</span>
@@ -547,7 +522,7 @@ export default function AboutPage() {
         </section>
 
         {/* 4. Luxury Direct Consultation Pavilion & Priority Access Suite */}
-        <section className="relative py-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto overflow-hidden">
+        <section className="relative py-10 sm:py-14 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto overflow-hidden">
           {/* Bespoke Luminous Solarium Pavilion & Radiant Focus Ring */}
           <SectionBackgroundMotion variant="about-cta" />
 

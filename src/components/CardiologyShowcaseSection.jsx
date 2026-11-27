@@ -208,7 +208,7 @@ export default function CardiologyShowcaseSection() {
               {/* Lead Cardiologist Squircle Portrait Badge */}
               <div className="flex items-center gap-3 p-2.5 rounded-2xl bg-white border border-slate-200 shadow-sm max-w-md">
                 <img
-                  src="/images/doctor-portrait.jpg"
+                  src="/images/d1.jpeg"
                   alt="Dr. Prakash Chand Shahi"
                   loading="lazy"
                   className="w-12 h-12 rounded-xl object-cover object-[50%_20%] border border-rose-200 shrink-0"

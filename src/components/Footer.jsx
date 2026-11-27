@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Activity, MapPin, Clock, ArrowUp, Calendar, Heart, Facebook, Instagram, ShieldCheck, Stethoscope } from 'lucide-react';
+import { Activity, MapPin, Clock, ArrowUp, Calendar, Heart, Facebook, Instagram, ShieldCheck, Stethoscope, Phone } from 'lucide-react';
 import { PULSE_DATA } from '../data/pulseData';
 import SectionBackgroundMotion from './SectionBackgroundMotion';
 import { useLanguage } from '../context/LanguageContext';
@@ -14,21 +14,21 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative bg-gradient-to-b from-[#0A1128] via-[#070D1F] to-[#040813] text-white overflow-hidden border-t-2 border-rose-900/50 select-none">
-      
+    <footer className="relative bg-gradient-to-b from-[#0A1128] via-[#070D1F] to-[#040813] text-white overflow-hidden border-t-2 border-rose-900/50">
+
       {/* High-Impact Deep Midnight Navy & Crimson Ruby Animated Telemetry Background */}
       <SectionBackgroundMotion variant="footer" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 pt-16 pb-12 relative z-10">
-        
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 pt-10 sm:pt-12 pb-8 sm:pb-10 relative z-10">
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12 pb-12 border-b border-white/10">
-          
+
           {/* Brand Identity */}
           <div className="lg:col-span-4 space-y-4">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-xl overflow-hidden bg-white p-1 border border-rose-300/40 shadow-sm flex items-center justify-center shrink-0">
                 <img
-                  src="/images/p.webp"
+                  src="/images/p.png"
                   alt="Pulse Heart Centre Logo"
                   className="w-full h-full object-contain"
                 />
@@ -105,6 +105,9 @@ export default function Footer() {
                 <Link to="/" className="hover:text-rose-300 transition-colors">{t('Home', 'होम')}</Link>
               </li>
               <li>
+                <Link to="/#services" className="hover:text-rose-300 transition-colors font-medium text-rose-300">{t('Comprehensive Heart Care', 'कंप्रिहेंसिव हार्ट केयर')}</Link>
+              </li>
+              <li>
                 <Link to="/about" className="hover:text-rose-300 transition-colors">{t('About Dr. P. C. Shahi', 'अबाउट डॉ. पी. सी. शाही')}</Link>
               </li>
               <li>
@@ -133,6 +136,10 @@ export default function Footer() {
               <div className="flex items-start gap-2.5">
                 <Clock className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
                 <span>{t(`${clinic.hours} (${clinic.sunday})`, 'मंडे – सैटरडे: 08:30 एएम – 08:30 पीएम (संडे: इमरजेंसी एंड इनपेशेंट सर्विसेस ओपन 24/7)')}</span>
+              </div>
+              <div className="flex items-center gap-2.5">
+                <Phone className="w-4 h-4 text-rose-400 shrink-0" />
+                <a href="tel:+919455899378" className="hover:text-rose-300 transition-colors font-mono font-bold text-white">+91 94558 99378</a>
               </div>
               <div className="flex items-center gap-2.5">
                 <Calendar className="w-4 h-4 text-rose-400 shrink-0" />

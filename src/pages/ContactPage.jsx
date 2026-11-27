@@ -49,12 +49,12 @@ export default function ContactPage() {
   ];
 
   return (
-    <div className="relative select-none bg-[#FAF9F6] overflow-hidden pt-24">
+    <div className="relative bg-[#FAF9F6] overflow-hidden pt-20 sm:pt-24 pb-10 sm:pb-14">
 
       {/* =========================================================================
           HERO SECTION: MATCHED 100% WITH HOME & ABOUT HERO ARCHITECTURE
          ========================================================================= */}
-      <section className="relative min-h-[90vh] lg:min-h-screen flex flex-col justify-between pt-16 pb-12 px-4 sm:px-6 lg:px-12 overflow-hidden select-none bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9]">
+      <section className="relative min-h-[85vh] lg:min-h-[90vh] flex flex-col justify-between pt-10 sm:pt-12 pb-8 sm:pb-10 px-4 sm:px-6 lg:px-12 overflow-hidden bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9]">
 
         {/* Bespoke Welcoming Medical Concierge & Biometric Radar Compass */}
         <SectionBackgroundMotion variant="contact-hero" />
@@ -209,9 +209,9 @@ export default function ContactPage() {
               <div className="relative max-w-md mx-auto rounded-t-[10rem] rounded-b-3xl overflow-hidden bg-white p-3 border border-slate-200 shadow-xl">
                 <div className="aspect-[4/5] rounded-t-[9.2rem] rounded-b-2xl overflow-hidden bg-slate-100">
                   <img
-                    src="/images/doctor-portrait.jpg"
+                    src="/images/d2.jpeg"
                     alt="Dr. Prakash Chand Shahi"
-                    className="w-full h-full object-cover object-[50%_20%]"
+                    className="w-full h-full object-cover object-top"
                   />
                 </div>
                 <div className="p-4 text-left flex items-center justify-between gap-3">
@@ -238,7 +238,7 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto w-full pt-8 border-t border-slate-200/90 relative z-10">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { metric: '22+', label: t('Years of Dedication', 'सालों की सेवा'), sub: t('Unbroken leadership in eastern UP', 'पूर्वी यूपी में भरोसेमंद नेतृत्व'), img: '/images/hero-architecture-entrance.jpg', pos: 'object-center' },
+              { metric: '22+', label: t('Years of Dedication', 'सालों की सेवा'), sub: t('Unbroken leadership in eastern UP', 'पूर्वी यूपी में भरोसेमंद नेतृत्व'), img: '/images/pu.png', pos: 'object-center' },
               { metric: '15,000+', label: t('Cath Interventions', 'कैथ इंटरवेंशंस'), sub: t('Opening blocked arteries, stents & pacemakers', 'बंद आर्टरीज़ खोलना, स्टेंट्स और पेसमेकर'), img: '/images/radial-catheter-sheath.jpg', pos: 'object-center' },
               { metric: '99.4%', label: t('Radial Patency Rate', 'रेडियल पेटेंसी रेट'), sub: t('Wrist-first access & rapid walking', 'कलाई के रास्ते प्रोसीजर और जल्दी चलना'), img: '/images/doctor-angiogram-explain.jpg', pos: 'object-center' },
               { metric: t('< 45 Min', '< 45 मिनट'), label: t('STEMI Door-To-Balloon', 'स्टेमी डोर-टू-बैलून'), sub: t('24/7 emergency Code-Blue triage', '24/7 इमरजेंसी कोड-ब्लू ट्राइएज'), img: '/images/doctor-icu-rounds.jpg', pos: 'object-center' },
@@ -258,27 +258,6 @@ export default function ContactPage() {
 
       </section>
 
-      {/* Location Video & Campus Walkthrough Console */}
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8 my-8 overflow-hidden rounded-[3rem] border-2 border-slate-200/90 shadow-2xl bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9] backdrop-blur-xl">
-        {/* Bespoke Wayfinding Horizon & Transit Access Routes */}
-        <SectionBackgroundMotion variant="contact-video" />
-
-        <ScrollReveal animation="fade-up" className="max-w-5xl mx-auto w-full relative z-10">
-          <Interactive3DTilt maxTilt={5} scale={1.01}>
-            <SectionCinematicVideo
-              type="contact-location"
-              videoUrl="/videos/contact-location.mp4"
-              styleVariant="panoramic-stage"
-              posterImage="/images/hospital-facility.jpg"
-              title={t('Pulse Heart Centre Betiahata Campus', 'पल्स हार्ट सेंटर बेतियाहाता कैंपस')}
-              subtitle={t('GPS Navigation • 26.7606° N, 83.3732° E', 'जीपीएस नेविगेशन • 26.7606° N, 83.3732° E')}
-              specs={t('Centrally Located in Gorakhpur • 10 Min from Railway Station', 'गोरखपुर के बीचों-बीच स्थित • रेलवे स्टेशन से 10 मिनट')}
-              aspectRatio="aspect-[16/8] sm:aspect-[21/9]"
-            />
-          </Interactive3DTilt>
-        </ScrollReveal>
-      </section>
-
       {/* ===================================================================
           APPOINTMENT SECTION
          =================================================================== */}
@@ -289,7 +268,7 @@ export default function ContactPage() {
       {/* ===================================================================
           INFO CARDS + PROTOCOL SECTION
          =================================================================== */}
-      <div className="relative py-20 bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9] overflow-hidden">
+      <div className="relative py-10 sm:py-14 bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9] overflow-hidden">
         {/* Bespoke Editorial Wayfinding & Patient Checklist Dossier */}
         <SectionBackgroundMotion variant="contact-protocol" />
 
@@ -305,7 +284,7 @@ export default function ContactPage() {
                   const cardImgs = [
                     { src: '/images/hospital-ward-suites.jpg', pos: 'object-center' },
                     { src: '/images/hospital-helpdesk.jpg', pos: 'object-center' },
-                    { src: '/images/ambulance-cardiac-care.jpg', pos: 'object-center' },
+                    { src: '/images/24.png', pos: 'object-center' },
                   ];
                   const media = cardImgs[idx % cardImgs.length];
                   return (

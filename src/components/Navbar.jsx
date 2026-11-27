@@ -8,7 +8,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
-  const { language, setLanguage, t } = useLanguage();
+  const { language, isHindi, setLanguage, t } = useLanguage();
 
   useEffect(() => {
     setMobileMenuOpen(false);
@@ -26,6 +26,7 @@ export default function Navbar() {
   const navLinks = [
     { label: t('Home', 'होम'), path: '/' },
     { label: t('About', 'अबाउट'), path: '/about' },
+    { label: t('Services', 'सर्विसेज'), path: '/#services' },
     { label: t('Treatments', 'ट्रीटमेंट्स'), path: '/treatments' },
     { label: t('Hospital', 'हॉस्पिटल'), path: '/hospital' },
     { label: t('Contact', 'कॉन्टैक्ट'), path: '/contact' },
@@ -48,7 +49,7 @@ export default function Navbar() {
             type="button"
             onClick={() => setLanguage(opt.code)}
             aria-pressed={isActive}
-            className={`relative z-10 px-2.5 sm:px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-bold tracking-wide transition-colors duration-300 cursor-pointer ${
+            className={`relative z-10 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-[11px] font-bold tracking-wide transition-colors duration-300 cursor-pointer ${
               isActive
                 ? 'text-white'
                 : 'text-slate-700 hover:text-[#BE123C]'
@@ -76,27 +77,35 @@ export default function Navbar() {
           : 'bg-white/95 border border-slate-200/80 shadow-sm'
           }`}>
 
-          {/* Brand Logo: PULSE Heart Centre */}
+          {/* Brand Logo: PULSE Hospital */}
           <Link
             to="/"
-            className="group flex items-center gap-2 sm:gap-3 min-w-0 shrink-0"
+            className="group flex items-center gap-1.5 sm:gap-2 min-w-0 shrink-0"
             onClick={() => setMobileMenuOpen(false)}
           >
-            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl overflow-hidden bg-white p-1 border border-slate-200 shadow-sm flex items-center justify-center shrink-0">
+            {isHindi ? (
+              <>
+                <img
+                  src="/images/pulse-bars.webp"
+                  alt="पल्स हॉस्पिटल"
+                  className="h-7 sm:h-9 w-auto object-contain shrink-0"
+                />
+                <div className="flex flex-col items-end leading-none">
+                  <span className="font-black text-lg sm:text-2xl text-[#8F1D1D] group-hover:text-[#BE123C] transition-colors leading-none">
+                    पल्स
+                  </span>
+                  <span className="text-[10px] sm:text-xs font-extrabold text-[#4CA3C3] leading-none mt-0.5">
+                    हार्ट सेंटर
+                  </span>
+                </div>
+              </>
+            ) : (
               <img
-                src="/images/p.webp"
+                src="/images/p.png"
                 alt="Pulse Heart Centre Logo"
-                className="w-full h-full object-contain"
+                className="h-9 sm:h-11 w-auto object-contain rounded-lg"
               />
-            </div>
-            <div className="flex flex-col text-left">
-              <span className="font-extrabold text-base sm:text-xl tracking-[0.14em] sm:tracking-[0.2em] text-[#0A1128] group-hover:text-[#BE123C] transition-colors uppercase leading-none">
-                {t('PULSE', 'पल्स')}
-              </span>
-              <span className="text-[9px] sm:text-[10px] tracking-[0.16em] sm:tracking-[0.26em] uppercase font-bold text-[#BE123C] font-mono mt-0.5">
-                {t('Heart Centre', 'हार्ट सेंटर')}
-              </span>
-            </div>
+            )}
           </Link>
 
           {/* Lead Doctor Identification Pill (With Stethoscope Crest) */}
@@ -116,7 +125,8 @@ export default function Navbar() {
               <NavLink
                 key={item.path}
                 to={item.path}
-                className={({ isActive }) => `relative px-4 py-1.5 rounded-full text-xs font-bold tracking-wider transition-all duration-300 ${
+                end={item.path === '/'}
+                className={({ isActive }) => `relative px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wider transition-all duration-300 ${
                   isActive
                     ? 'bg-gradient-to-r from-[#0A1128] via-[#1E293B] to-[#BE123C] text-white shadow-md shadow-navy/30 scale-102 border border-rose-300/30'
                     : 'text-slate-700 hover:text-[#BE123C] hover:bg-white/80'
@@ -196,12 +206,12 @@ export default function Navbar() {
               </Link>
 
               <a
-                href="tel:+919876543210"
+                href="tel:+919455899378"
                 onClick={() => setMobileMenuOpen(false)}
                 className="w-full py-2.5 rounded-full bg-slate-50 hover:bg-rose-50 text-[#0A1128] hover:text-[#BE123C] font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 border border-slate-200"
               >
                 <span className="w-2 h-2 rounded-full bg-[#BE123C] animate-ping" />
-                <span>{t('24/7 Helpline: +91 98765 43210', '24/7 हेल्पलाइन: +91 98765 43210')}</span>
+                <span>{t('24/7 Helpline: +91 94558 99378', '24/7 हेल्पलाइन: +91 94558 99378')}</span>
               </a>
             </div>
           </div>

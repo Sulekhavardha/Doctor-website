@@ -22,7 +22,7 @@ export default function AnatomicalSpecialtyShowcase({ variant = 'home-specialtie
       title: t('Heart Stenting & Blockage Care', 'हार्ट स्टेंटिंग और ब्लॉकेज केयर'),
       category: t('Painless Wrist Procedure', 'बिना दर्द कलाई प्रोसीजर'),
       desc: t('Opening blocked heart arteries gently through the wrist using safe, medicine-coated stents with quick recovery.', 'कलाई के रास्ते सेफ मेडिसिन-कोटेड स्टेंट्स के ज़रिए बंद हार्ट आर्टरीज़ को आराम से खोलना और तेज़ रिकवरी।'),
-      image: '/images/cathlab-control-review.jpg',
+      image: '/images/rist.png',
       stat: t('99.4% Success Rate', '99.4% सफलता दर'),
       recovery: t('Walk in 2 Hours', '2 घंटे में चलें'),
       points: [
@@ -37,7 +37,7 @@ export default function AnatomicalSpecialtyShowcase({ variant = 'home-specialtie
       title: t('Heart Blockage Check (Angiogram)', 'हार्ट ब्लॉकेज जांच (एंजियोग्राम)'),
       category: t('15-Minute Heart Test', '15-मिनट हार्ट टेस्ट'),
       desc: t('A quick, painless heart test through the wrist to clearly see if any arteries are blocked.', 'कलाई के रास्ते एक तेज़ और बिना दर्द का हार्ट टेस्ट, जिससे साफ पता चलता है कि कोई आर्टरी बंद तो नहीं है।'),
-      image: '/images/cardiac-tmt-stress.jpg',
+      image: '/images/c.webp',
       stat: t('15-Min Quick Check', '15-मिनट तेज़ जांच'),
       recovery: t('Same-Day Discharge', 'उसी दिन डिस्चार्ज'),
       points: [
@@ -52,7 +52,7 @@ export default function AnatomicalSpecialtyShowcase({ variant = 'home-specialtie
       title: t('Pacemaker for Slow Heartbeat', 'धीमी हार्टबीट के लिए पेसमेकर'),
       category: t('Heartbeat Support', 'हार्टबीट सपोर्ट'),
       desc: t('Safe small heart device that keeps a slow or irregular heartbeat steady and prevents dizziness.', 'छोटा और सुरक्षित हार्ट डिवाइस जो धीमी या अनियमित हार्टबीट को स्थिर रखता है और चक्कर आने से बचाता है।'),
-      image: '/images/pacemaker-tech.jpg',
+      image: '/images/Pacemaker for a Steady Heart.png',
       stat: t('10–14 Yr Battery', '10–14 साल बैटरी'),
       recovery: t('24–48 Hr Recovery', '24–48 घंटे रिकवरी'),
       points: [
@@ -67,7 +67,7 @@ export default function AnatomicalSpecialtyShowcase({ variant = 'home-specialtie
       title: t('24/7 Heart Attack Emergency', '24/7 हार्ट अटैक इमरजेंसी'),
       category: t('Round-the-Clock Care', '24 घंटे देखभाल'),
       desc: t('Immediate emergency heart care and 24/7 cardiac ICU support at Pulse Heart Centre, Betiahata.', 'पल्स हार्ट सेंटर, बेतियाहाता में तुरंत इमरजेंसी हार्ट केयर और 24/7 कार्डियक आईसीयू सपोर्ट।'),
-      image: '/images/ambulance-cardiac-care.jpg',
+      image: '/images/24.png',
       stat: t('Under 45 Min Care', '45 मिनट से कम में केयर'),
       recovery: t('24/7 Emergency Team', '24/7 इमरजेंसी टीम'),
       points: [
@@ -81,13 +81,13 @@ export default function AnatomicalSpecialtyShowcase({ variant = 'home-specialtie
   const current = specialties[activeIndex];
 
   return (
-    <section className="relative py-20 lg:py-28 overflow-hidden select-none bg-[#FAF9F6] border-b border-slate-200">
+    <section className="relative pt-8 pb-8 sm:pt-10 sm:pb-10 lg:pt-12 lg:pb-12 overflow-hidden bg-[#FAF9F6] border-b border-slate-200">
       <SectionBackgroundMotion variant={variant} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Clean Editorial Header */}
-        <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6 text-left">
+        <div className="mb-8 sm:mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6 text-left">
           <div className="max-w-2xl space-y-2">
             <span className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-[#BE123C] block">
               {t('Simple & Safe Heart Care', 'आसान और सुरक्षित हार्ट केयर')}
@@ -189,9 +189,9 @@ export default function AnatomicalSpecialtyShowcase({ variant = 'home-specialtie
               <div className="pt-4 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div className="flex items-center gap-3">
                   <img
-                    src="/images/doctor-portrait.jpg"
+                    src="/images/d2.jpeg"
                     alt="Dr. Prakash Chand Shahi"
-                    className="w-11 h-11 rounded-full object-cover object-[50%_20%] border border-slate-300 shrink-0"
+                    className="w-11 h-11 rounded-full object-cover object-top border border-slate-300 shrink-0"
                   />
                   <div>
                     <span className="text-xs font-extrabold text-[#0A1128] flex items-center gap-1.5">

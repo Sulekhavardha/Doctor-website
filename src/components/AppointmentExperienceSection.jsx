@@ -77,7 +77,7 @@ export default function AppointmentExperienceSection({ variant = 'home-appointme
   };
 
   return (
-    <section id="appointment-experience" className="relative py-20 lg:py-28 overflow-hidden select-none bg-[#FAF9F6] text-slate-900 border-t border-slate-200">
+    <section id="appointment-experience" className="relative pt-8 pb-10 sm:pt-10 sm:pb-12 lg:pt-12 lg:pb-14 overflow-hidden bg-[#FAF9F6] text-slate-900 border-t border-slate-200">
       <SectionBackgroundMotion variant={variant} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -110,7 +110,7 @@ export default function AppointmentExperienceSection({ variant = 'home-appointme
 
           {/* Left Column (7 cols): Interactive Concierge Scheduling Form */}
           <div className="lg:col-span-7">
-            <div className="rounded-[2.5rem] bg-white/95 backdrop-blur-xl p-6 sm:p-10 text-left space-y-8 border-2 border-slate-200/90 shadow-layered transition-all duration-400 hover:shadow-2xl">
+            <div className="rounded-3xl sm:rounded-[2.5rem] bg-white/95 backdrop-blur-xl p-5 sm:p-10 text-left space-y-6 sm:space-y-8 border-2 border-slate-200/90 shadow-layered transition-all duration-400 hover:shadow-2xl">
 
               {/* Step 1: Clinical Triage Reason */}
               <div className="space-y-3">
@@ -258,10 +258,11 @@ export default function AppointmentExperienceSection({ variant = 'home-appointme
           {/* Right Column (5 cols): Live Digital Consultation Pass Preview (Boarding Pass Design) */}
           <div className="lg:col-span-5 space-y-6">
 
-            {/* Live Triage & Priority Booking Video */}
+            {/* Priority Booking Image Card (Pure Image, No Video) */}
             <SectionCinematicVideo
               type="appointment-suite"
-              videoUrl="/videos/appointment-suite.mp4"
+              videoUrl={false}
+              showControls={false}
               styleVariant="video-card"
               posterImage="/images/hospital-helpdesk.jpg"
               title={t('Priority OPD Consultation', 'प्रायोरिटी ओपीडी कंसल्टेशन')}
@@ -276,7 +277,7 @@ export default function AppointmentExperienceSection({ variant = 'home-appointme
               {/* Pass Header */}
               <div className="flex items-center justify-between pb-4 border-b border-slate-100">
                 <div className="flex items-center gap-2.5">
-                  <img src="/images/p.webp" alt="Pulse Logo" className="w-6 h-6 object-contain rounded-md bg-white p-0.5 border border-slate-200" />
+                  <img src="/images/p.png" alt="Pulse Logo" className="w-6 h-6 object-contain rounded-md bg-white p-0.5 border border-slate-200" />
                   <div>
                     <span className="font-bold text-sm tracking-widest uppercase block leading-none text-[#0A1128]">
                       {t('PULSE', 'पल्स')}
@@ -295,9 +296,9 @@ export default function AppointmentExperienceSection({ variant = 'home-appointme
               {/* Physician & Clinic Identity */}
               <div className="flex items-center gap-3.5 p-3 rounded-xl bg-slate-50 border border-slate-200">
                 <img
-                  src="/images/doctor-portrait.jpg"
+                  src="/images/d4.jpeg"
                   alt={doctor.name}
-                  className="w-12 h-12 rounded-xl object-cover object-[50%_20%] border border-slate-300 shrink-0"
+                  className="w-12 h-12 rounded-xl object-cover object-top border border-slate-300 shrink-0"
                 />
                 <div className="space-y-0.5 text-left">
                   <span className="text-[10px] font-mono uppercase tracking-wider text-[#BE123C] font-bold block">

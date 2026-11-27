@@ -23,7 +23,7 @@ export default function OverlappingCardShowcase() {
       title: 'About Dr. Shahi',
       subtitle: 'Academic Pedigree & Bedside Devotion',
       description: 'DM Cardiology from apex PGIMER Chandigarh, MD Medicine from KGMU Lucknow, with 22+ years of bedside catheterization mastery.',
-      image: '/images/hospital-facility.jpg',
+      image: '/images/pu.png',
       link: '/about',
       badge: 'PGIMER Chandigarh · 22+ Yrs',
       icon: UserCheck,

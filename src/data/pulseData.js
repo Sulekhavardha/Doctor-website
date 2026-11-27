@@ -4,8 +4,8 @@ export const PULSE_DATA = {
   tagline: "Care That Moves You Forward.",
   supportingText: "Expert doctors. Advanced technology. Compassionate healthcare.",
   location: "Betiahata, Gorakhpur, Uttar Pradesh 273001, India",
-  emergencyPhone: "+91 98765 43210",
-  opdHelpline: "+91 98765 43211",
+  emergencyPhone: "+91 94558 99378",
+  opdHelpline: "+91 94558 99378",
   email: "care@pulsehospital.com",
   opdHours: "Monday – Saturday: 10:00 AM – 8:00 PM",
   emergencyHours: "24/7 Continuous Emergency, Trauma & Cardiac ICU",
@@ -59,6 +59,82 @@ export const PULSE_DATA = {
     ],
     philosophy: "Precision diagnosis, meticulous interventional execution, and compassionate long-term cardiac preservation for every patient."
   },
+
+  // Comprehensive Heart Care Services (Official Hospital Portfolio)
+  comprehensiveServices: [
+    {
+      id: "interventional-cardiology",
+      title: "Interventional Cardiology",
+      titleHi: "इंटरवेंशनल कार्डियोलॉजी",
+      description: "Angioplasty, stenting and complex PCI performed by expert interventional teams.",
+      descriptionHi: "एंजियोप्लास्टी, स्टेंटिंग और कॉम्प्लेक्स पीसीआई एक्सपर्ट इंटरवेंशनल टीम द्वारा।",
+      icon: "HeartPulse",
+      link: "/treatments",
+      badge: "Apex Cath Lab",
+      badgeHi: "अपेक्स कैथ लैब",
+      highlights: ["Coronary Angioplasty & Stenting", "Complex Radial Access PCI", "Bifurcation Lesion Care"]
+    },
+    {
+      id: "diagnostic-cardiology",
+      title: "Diagnostic Cardiology",
+      titleHi: "डायग्नोस्टिक कार्डियोलॉजी",
+      description: "ECG, Echo, TMT, Holter and advanced non-invasive cardiac diagnostics.",
+      descriptionHi: "ईसीजी, इको, टीएमटी, होल्टर और एडवांस्ड नॉन-इनवेसिव कार्डियक डायग्नोस्टिक्स।",
+      icon: "Activity",
+      link: "/treatments",
+      badge: "High Precision",
+      badgeHi: "सटीक जांच",
+      highlights: ["12-Lead Digital ECG", "2D Color Doppler Echo", "Treadmill Stress Test (TMT)", "24-Hour Holter"]
+    },
+    {
+      id: "hdu-general-ward",
+      title: "HDU / General Ward",
+      titleHi: "एचडीयू / जनरल वार्ड",
+      description: "High Dependency Unit and fully equipped general ward care with 24x7 dedicated nursing.",
+      descriptionHi: "हाई डिपेंडेंसी यूनिट (एचडीयू) और 24x7 डेडिकेटेड नर्सिंग के साथ पूरी तरह सुसज्जित जनरल वार्ड केयर।",
+      icon: "Stethoscope",
+      link: "/hospital",
+      badge: "24x7 Nursing",
+      badgeHi: "24x7 नर्सिंग",
+      highlights: ["High Dependency Cardiac Beds", "Central Telemetry Monitoring", "Round-the-clock Resident Care"]
+    },
+    {
+      id: "electrophysiology",
+      title: "Electrophysiology",
+      titleHi: "इलेक्ट्रोफिजियोलॉजी",
+      description: "Pacemaker implants, ICDs and radiofrequency ablation for arrhythmias.",
+      descriptionHi: "पेसमेकर इम्प्लांट्स, आईसीडी और अतालता (एरिथ्मिया) के लिए रेडियोफ्रीक्वेंसी एब्लेशन।",
+      icon: "Zap",
+      link: "/treatments",
+      badge: "Rhythm Care",
+      badgeHi: "हार्टबीट केयर",
+      highlights: ["Permanent Pacemaker (PPI)", "AICD Implantation", "Cardiac Resynchronization (CRT)"]
+    },
+    {
+      id: "emergency-services",
+      title: "Emergency Services",
+      titleHi: "इमरजेंसी सर्विसेज",
+      description: "24x7 chest-pain response with door-to-balloon protocols under 60 minutes.",
+      descriptionHi: "60 मिनट से कम के डोर-टू-बैलून प्रोटोकॉल के साथ 24x7 सीने में दर्द (चेस्ट पेन) इमरजेंसी रिस्पॉन्स।",
+      icon: "ShieldAlert",
+      link: "/contact",
+      badge: "< 60 Min Protocol",
+      badgeHi: "< 60 मिनट प्रोटोकॉल",
+      highlights: ["24/7 Acute Chest Pain Triage", "Emergency Primary Angioplasty", "Direct Doctor ICU Access"]
+    },
+    {
+      id: "preventive-cardiology",
+      title: "Preventive Cardiology",
+      titleHi: "प्रिवेंटिव कार्डियोलॉजी",
+      description: "Cardiac wellness, lipid clinic and personalised heart-risk programs.",
+      descriptionHi: "कार्डियक वेलनेस, लिपिड क्लिनिक और पर्सनलाइज्ड हार्ट-रिस्क प्रिवेंशन प्रोग्राम्स।",
+      icon: "Users",
+      link: "/contact",
+      badge: "Heart Wellness",
+      badgeHi: "हार्ट वेलनेस",
+      highlights: ["Lipid & Cholesterol Clinic", "Hypertension Reversal Programs", "Personalized Cardiac Risk Audit"]
+    }
+  ],
 
   clinic: {
     name: "PULSE Multispeciality Hospital & Heart Centre",
@@ -177,7 +253,7 @@ export const PULSE_DATA = {
       pillColor: "border-[#65BCA6] text-[#0D9488]",
       tagline: "Robotic sub-millimeter joint reconstruction and sports arthroscopy.",
       description: "Pioneering computer-navigated total knee and hip arthroplasty, complex trauma reconstruction, and minimally invasive sports ligament repair for rapid mobility.",
-      image: "/images/hospital-facility.jpg",
+      image: "/images/pu.png",
       icon: "Bone",
       keyProcedures: [
         "Robotic Total Knee Replacement",
@@ -267,7 +343,7 @@ export const PULSE_DATA = {
       pillColor: "border-[#2788B8] text-[#2788B8]",
       tagline: "Laser stone fragmentation, prostate holmium enucleation, and uro-oncology.",
       description: "Pioneering incision-less laser lithotripsy (RIRS), Holmium laser enucleation of prostate (HoLEP), laparoscopic uro-oncology, and renal transplantation support.",
-      image: "/images/hospital-facility.jpg",
+      image: "/images/pu.png",
       icon: "Activity",
       keyProcedures: [
         "RIRS (Retrograde Intrarenal Surgery with Laser)",
@@ -357,7 +433,7 @@ export const PULSE_DATA = {
       pillColor: "border-[#65BCA6] text-[#0D9488]",
       tagline: "Level-3 NICU care, child development, and comprehensive pediatric emergencies.",
       description: "Specialized pediatric and neonatal care for premature neonates, congenital anomalies, pediatric infectious illnesses, asthma, and developmental milestones monitoring.",
-      image: "/images/hospital-facility.jpg",
+      image: "/images/pu.png",
       icon: "Baby",
       keyProcedures: [
         "Level-3 Neonatal Intensive Care (NICU)",
@@ -491,7 +567,7 @@ export const PULSE_DATA = {
       languages: "English, Hindi",
       consultationHours: "Mon – Sat: 10:00 AM – 8:00 PM",
       opdRoom: "Suite 101, Executive Cardiology Wing",
-      image: "/images/doctor-portrait.jpg",
+      image: "/images/d1.jpeg",
       bio: "Trained at India's top medical institutes — PGIMER Chandigarh, KGMU Lucknow, and GSVM Kanpur — Dr. Prakash Chand Shahi is a pioneer of painless heart care through the wrist in eastern Uttar Pradesh. With over 22 years of experience, he is trusted for honest advice, safe treatment, and caring family consultations.",
       achievements: [
         "Pioneered transradial coronary catheterization in Gorakhpur",
@@ -549,7 +625,7 @@ export const PULSE_DATA = {
       languages: "English, Hindi",
       consultationHours: "Mon – Sat: 11:00 AM – 04:00 PM",
       opdRoom: "Suite 201, Joint Reconstruction Wing",
-      image: "/images/hospital-facility.jpg",
+      image: "/images/pu.png",
       bio: "Dr. Vikramaditya Rathore is a renowned authority on robotic-assisted knee and hip arthroplasty with surgical fellowships in the United Kingdom. He focuses on sub-millimeter prosthetic alignment, tissue preservation, and fast-track rehabilitation allowing patients to walk within 24 hours.",
       achievements: [
         "MCh Orthopaedics from Dundee, United Kingdom",
@@ -577,7 +653,7 @@ export const PULSE_DATA = {
       languages: "English, Hindi, Malayalam",
       consultationHours: "Mon – Sat: 09:30 AM – 01:30 PM & 04:30 PM – 07:30 PM",
       opdRoom: "Suite 205, Mother & Child Centre",
-      image: "/images/hospital-facility.jpg",
+      image: "/images/pu.png",
       bio: "With dual British and Indian board qualifications (MRCOG London & MD), Dr. Meera Nambiar leads the Mother & Child Centre at PULSE. She is widely respected for managing high-risk pregnancies, performing laparoscopic gynecological surgeries, and guiding parents through advanced 3D fetal echocardiography.",
       achievements: [
         "Member of the Royal College of Obstetricians and Gynaecologists (MRCOG UK)",
@@ -871,7 +947,7 @@ export const PULSE_DATA = {
       title: "Grand Architectural Atrium & Reception",
       category: "Patient Welcome & Triage",
       description: "Designed with generous natural light, acoustic dampening, and streamlined digital registration kiosks for zero-wait patient admission.",
-      image: "/images/hospital-opd-lounge.jpg",
+      image: "/images/reception.png",
       featured: true
     },
     {

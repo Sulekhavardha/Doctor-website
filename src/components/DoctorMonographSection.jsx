@@ -88,7 +88,7 @@ export default function DoctorMonographSection() {
   ];
 
   return (
-    <section className="relative py-20 lg:py-28 overflow-hidden select-none bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9] border-b border-slate-200">
+    <section className="relative pt-10 pb-6 sm:pt-12 sm:pb-8 lg:pt-14 lg:pb-10 overflow-hidden bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9] border-b border-slate-200">
 
       {/* Layered flowing curves, abstract wave shapes & warm ivory-pink gradients */}
       <SectionBackgroundMotion variant="home-monograph" />
@@ -106,10 +106,10 @@ export default function DoctorMonographSection() {
             <div className="relative rounded-3xl overflow-hidden bg-white p-2.5 border border-slate-200 shadow-xl">
               <div className="aspect-square w-full rounded-2xl overflow-hidden bg-slate-100">
                 <img
-                  src="/images/p3.jpeg"
-                  alt="Dr. Prakash Chand Shahi reviewing coronary angiogram"
+                  src="/images/d3.jpeg"
+                  alt="Dr. Prakash Chand Shahi"
                   loading="lazy"
-                  className="w-full h-full object-cover object-[65%_20%]"
+                  className="w-full h-full object-cover object-top"
                 />
               </div>
 

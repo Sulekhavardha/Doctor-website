@@ -52,7 +52,7 @@ export default function HospitalPage() {
   ];
 
   return (
-    <div className="relative pt-32 pb-24 select-none bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9] overflow-hidden">
+    <div className="relative pt-20 sm:pt-24 pb-12 sm:pb-16 bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9] overflow-hidden">
 
       {/* Bespoke Campus Masterplan Background: Laminar Airflow Streams & Blueprint Grid */}
       <SectionBackgroundMotion variant="hospital-hero" />
@@ -63,7 +63,7 @@ export default function HospitalPage() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* 1. Master Editorial Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10 space-y-4">
           <ScrollReveal animation="fade-down">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#0A1128] via-[#1E293B] to-[#BE123C] text-white text-xs font-mono font-medium shadow-md shadow-navy/20 border border-rose-300/30">
               <Building2 className="w-4 h-4 text-rose-300" />
@@ -72,7 +72,7 @@ export default function HospitalPage() {
           </ScrollReveal>
 
           <ScrollReveal animation="fade-up" delay={0.1}>
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-[#0A1128] tracking-tight leading-[1.05]">
+            <h1 className="text-3xl sm:text-5xl lg:text-7xl font-extrabold text-[#0A1128] tracking-tight leading-[1.08]">
               {t('Modern Hospital &', 'मॉडर्न हॉस्पिटल और')} <br />
               <span className="font-serif italic font-normal text-[#BE123C]">{t('Heart Care Facilities', 'हार्ट केयर फैसिलिटीज़')}</span>
             </h1>
@@ -83,7 +83,7 @@ export default function HospitalPage() {
             <div className="pt-1 flex items-center justify-center gap-3">
               <div className="flex items-center gap-3.5 px-4 py-2.5 rounded-2xl bg-[#0A1128] text-white border border-slate-700 shadow-lg">
                 <img
-                  src="/images/p2.jpeg"
+                  src="/images/d2.jpeg"
                   alt="Dr. Prakash Chand Shahi"
                   className="w-12 h-12 rounded-full object-cover object-top border-2 border-rose-400 shrink-0"
                 />
@@ -108,17 +108,18 @@ export default function HospitalPage() {
             </p>
           </ScrollReveal>
 
-          {/* Virtual Facility Video Tour Console */}
+          {/* Virtual Facility Image Console (Pure Image, No Video) */}
           <ScrollReveal animation="scale-up" delay={0.25} className="pt-6 max-w-5xl mx-auto">
             <Interactive3DTilt maxTilt={5} scale={1.01}>
               <SectionCinematicVideo
                 type="facilities-walkthrough"
-                videoUrl="/videos/facilities-walkthrough.mp4"
+                videoUrl={false}
+                showControls={false}
                 styleVariant="panoramic-stage"
-                posterImage="/images/operation-theatre-laminar.jpg"
-                title={t('Pulse Heart Centre Cath Lab', 'पल्स हार्ट सेंटर कैथ लैब')}
+                posterImage="/images/moder.png"
+                title={t('Pulse Heart Centre Cath Lab & Facilities', 'पल्स हार्ट सेंटर कैथ लैब और फैसिलिटीज़')}
                 subtitle={t('Safe & Clean Heart Suite', 'सेफ और क्लीन हार्ट सूट')}
-                specs={t('Sterile Cleanroom • Clear Live Heart Imaging', 'स्टराइल क्लीनरूम • क्लियर लाइव हार्ट इमेजिंग')}
+                specs={t('Sterile Cleanroom • Clear Live Heart Imaging • 24/7 ICU', 'स्टराइल क्लीनरूम • क्लियर लाइव हार्ट इमेजिंग • 24/7 आईसीयू')}
                 aspectRatio="aspect-[16/8] sm:aspect-[21/9]"
               />
             </Interactive3DTilt>
@@ -129,7 +130,7 @@ export default function HospitalPage() {
         <PulseCentreSection />
 
         {/* 3. Full-Width Clinical Equipment & Facility Gallery */}
-        <div className="my-20 p-6 sm:p-10 rounded-[3rem] bg-gradient-to-b from-white/95 via-slate-50/90 to-white/95 border-2 border-slate-200/90 shadow-2xl relative overflow-hidden backdrop-blur-xl">
+        <div className="my-6 sm:my-8 p-5 sm:p-8 rounded-[2.5rem] sm:rounded-[3rem] bg-gradient-to-b from-white/95 via-slate-50/90 to-white/95 border-2 border-slate-200/90 shadow-2xl relative overflow-hidden backdrop-blur-xl">
           {/* Bespoke Tri-Suite Cleanroom Isolation & Laminar Airflow Streams */}
           <SectionBackgroundMotion variant="hospital-suites" />
 
@@ -156,7 +157,8 @@ export default function HospitalPage() {
                     <div className="group relative rounded-[2rem] bg-white/95 backdrop-blur-xl p-4 border border-slate-200 shadow-lg hover:shadow-2xl hover:border-rose-300 transition-all duration-500 space-y-4 text-left">
                       <SectionCinematicVideo
                         type={item.type}
-                        videoUrl={item.videoUrl}
+                        videoUrl={false}
+                        showControls={false}
                         styleVariant="floating-3d"
                         posterImage={item.image}
                         title={item.title}
@@ -177,12 +179,12 @@ export default function HospitalPage() {
         </div>
 
         {/* 4. Patient Experience & Pre-Visit Checklist */}
-        <div className="my-16">
+        <div>
           <PatientExperienceSection />
         </div>
 
         {/* 5. Direct OPD Directions & Priority Booking Callout */}
-        <ScrollReveal animation="fade-up" className="mt-20">
+        <ScrollReveal animation="fade-up" className="my-6 sm:my-8">
           <Interactive3DTilt maxTilt={4} scale={1.01} className="max-w-4xl mx-auto">
             <div className="p-8 sm:p-14 rounded-[2.5rem] bg-gradient-to-br from-white via-slate-50 to-white text-slate-900 shadow-2xl border-2 border-slate-200/90 text-center space-y-6 relative overflow-hidden backdrop-blur-xl">
               {/* Bespoke Betiahata Gateway & Radiant Geographic Beacon */}

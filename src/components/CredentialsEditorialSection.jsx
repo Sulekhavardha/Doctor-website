@@ -21,7 +21,7 @@ export default function CredentialsEditorialSection() {
       degree: t('DM — Cardiology', 'डीएम — कार्डियोलॉजी'),
       institute: t('PGIMER, Chandigarh', 'पीजीआईएमईआर, चंडीगढ़'),
       tag: t('Top National Medical Institute', 'देश का शीर्ष मेडिकल संस्थान'),
-      image: '/images/ecg-checkup-room.jpg',
+      image: '/images/precision.png',
       pos: 'object-center',
       summary: t(
         'Advanced training in painless heart checkups, stenting through the wrist, and pacemaker care.',
@@ -33,7 +33,7 @@ export default function CredentialsEditorialSection() {
       degree: t('MD — General Medicine', 'एमडी — जनरल मेडिसिन'),
       institute: t("King George's Medical University (KGMU)", "किंग जॉर्ज मेडिकल यूनिवर्सिटी (केजीएमयू)"),
       tag: t('Lucknow • Est. 1905', 'लखनऊ • स्थापित 1905'),
-      image: '/images/doctor-icu-rounds.jpg',
+      image: '/images/d.png',
       pos: 'object-center',
       summary: t(
         'Strong medical foundation in treating blood pressure, chest pain, heart failure, and emergency care.',
@@ -45,7 +45,7 @@ export default function CredentialsEditorialSection() {
       degree: t('22+ Years Practice', '22+ साल का अनुभव'),
       institute: t('Pulse Heart Centre, Betiahata', 'पल्स हार्ट सेंटर, बेतियाहाता'),
       tag: t('15,000+ Heart Procedures', '15,000+ हार्ट प्रोसीजर्स'),
-      image: '/images/hospital-facility.jpg',
+      image: '/images/pu.png',
       pos: 'object-center',
       summary: t(
         'Providing Gorakhpur with gentle heart care through the wrist and 24/7 emergency heart attack support.',
@@ -62,7 +62,7 @@ export default function CredentialsEditorialSection() {
   ];
 
   return (
-    <section className="relative py-20 lg:py-28 overflow-hidden select-none bg-[#0A1128] text-white">
+    <section className="relative pt-8 pb-8 sm:pt-10 sm:pb-10 lg:pt-12 lg:pb-12 overflow-hidden bg-[#0A1128] text-white">
       {/* Subtle Architectural Radial Depth */}
       <div
         className="absolute -top-40 right-0 w-[680px] h-[680px] rounded-full pointer-events-none"
@@ -144,7 +144,7 @@ export default function CredentialsEditorialSection() {
         <div className="p-6 sm:p-8 rounded-2xl bg-white text-[#0A1128] shadow-xl grid grid-cols-1 lg:grid-cols-12 gap-6 items-center text-left">
           <div className="lg:col-span-5 flex items-center gap-4">
             <img
-              src="/images/p2.jpeg"
+              src="/images/d2.jpeg"
               alt={doctor.name}
               loading="lazy"
               className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl object-cover object-top border border-slate-200 shadow-sm shrink-0"

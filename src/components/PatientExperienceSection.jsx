@@ -1,5 +1,5 @@
-import React from 'react';
-import { ClipboardList, CheckCircle2, Sparkles, ArrowRight } from 'lucide-react';
+import React, { useState } from 'react';
+import { ClipboardList, CheckCircle2, Sparkles, ArrowRight, ChevronRight } from 'lucide-react';
 import { PULSE_DATA } from '../data/pulseData';
 import SectionCinematicVideo from './SectionCinematicVideo';
 import SectionBackgroundMotion from './SectionBackgroundMotion';
@@ -10,6 +10,7 @@ import { useLanguage } from '../context/LanguageContext';
 export default function PatientExperienceSection({ onBookClick }) {
   const { patientJourney: rawJourney } = PULSE_DATA;
   const { t } = useLanguage();
+  const [activePhase, setActivePhase] = useState(0);
 
   const journeyTranslations = {
     '01': {
@@ -64,7 +65,7 @@ export default function PatientExperienceSection({ onBookClick }) {
   ];
 
   return (
-    <section id="patient-experience" className="relative py-16 lg:py-24 overflow-hidden select-none bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9] rounded-[3rem] border border-slate-200 shadow-lg my-12">
+    <section id="patient-experience" className="relative py-8 sm:py-10 lg:py-12 my-6 sm:my-8 overflow-hidden bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9] rounded-[2.5rem] sm:rounded-[3rem] border border-slate-200 shadow-lg">
       {/* Bespoke Serene Hospitality & Calming Organic Waves */}
       <SectionBackgroundMotion variant="hospital-experience" />
 
@@ -102,21 +103,74 @@ export default function PatientExperienceSection({ onBookClick }) {
           </div>
         </ScrollReveal>
 
-        {/* 4-Stage Visual Pathway Cards with Doctor & Procedure Photography */}
-        <ScrollStagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-14" staggerDelay={0.12}>
+        {/* 5-Phase Connected Stepper Bar (Desktop) */}
+        <div className="hidden lg:block mb-8 relative px-4">
+          {/* Connecting Gradient Line */}
+          <div className="absolute top-5 left-12 right-12 h-0.5 bg-slate-200 z-0">
+            <div
+              className="h-full bg-gradient-to-r from-[#0A1128] via-[#BE123C] to-[#E11D48] transition-all duration-500"
+              style={{ width: `${(activePhase / Math.max(patientJourney.length - 1, 1)) * 100}%` }}
+            />
+          </div>
+
+          <div className="grid grid-cols-5 gap-4 relative z-10">
+            {patientJourney.map((step, index) => {
+              const isActive = activePhase === index;
+              const isCompleted = index <= activePhase;
+              return (
+                <button
+                  key={step.step}
+                  type="button"
+                  onClick={() => setActivePhase(index)}
+                  className="group flex flex-col items-center text-center cursor-pointer focus:outline-none"
+                >
+                  <div
+                    className={`w-10 h-10 rounded-full flex items-center justify-center font-mono text-xs font-extrabold border-2 transition-all duration-300 ${
+                      isActive
+                        ? 'bg-gradient-to-br from-[#0A1128] to-[#BE123C] text-white border-rose-300 shadow-lg scale-110'
+                        : isCompleted
+                        ? 'bg-[#0A1128] text-white border-[#0A1128]'
+                        : 'bg-white text-slate-600 border-slate-300 group-hover:border-[#BE123C] group-hover:text-[#BE123C]'
+                    }`}
+                  >
+                    {step.step}
+                  </div>
+                  <span
+                    className={`mt-2 text-[10px] font-mono font-bold uppercase tracking-wider transition-colors ${
+                      isActive ? 'text-[#BE123C]' : 'text-slate-500 group-hover:text-[#0A1128]'
+                    }`}
+                  >
+                    {t('PHASE', 'फेज़')} {step.step}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* 5-Phase Visual Pathway Cards with Distinct Clinical Photography */}
+        <ScrollStagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mb-14" staggerDelay={0.1}>
           {patientJourney.map((step, index) => {
             const stepMedia = [
-              { img: '/images/doctor-patient-consult.jpg', pos: 'object-center', border: 'border-slate-200', text: 'text-[#0A1128]', pill: 'bg-slate-100 text-[#0A1128]' },
-              { img: '/images/doctor-echo-checkup.jpg', pos: 'object-center', border: 'border-rose-200', text: 'text-[#BE123C]', pill: 'bg-rose-50 text-[#BE123C]' },
-              { img: '/images/doctor-cathlab-procedure.jpg', pos: 'object-center', border: 'border-slate-200', text: 'text-[#0A1128]', pill: 'bg-slate-100 text-[#0A1128]' },
-              { img: '/images/doctor-icu-rounds.jpg', pos: 'object-center', border: 'border-rose-200', text: 'text-[#BE123C]', pill: 'bg-rose-50 text-[#BE123C]' },
+              { img: '/images/hospital-opd-lounge.jpg', pos: 'object-center', border: 'border-slate-200', pill: 'bg-slate-100 text-[#0A1128]' },
+              { img: '/images/doctor-patient-consult.jpg', pos: 'object-center', border: 'border-rose-200', pill: 'bg-rose-50 text-[#BE123C]' },
+              { img: '/images/doctor-echo-checkup.jpg', pos: 'object-center', border: 'border-slate-200', pill: 'bg-slate-100 text-[#0A1128]' },
+              { img: '/images/doctor-cathlab-procedure.jpg', pos: 'object-center', border: 'border-rose-200', pill: 'bg-rose-50 text-[#BE123C]' },
+              { img: '/images/doctor-recovery-discharge.jpg', pos: 'object-center', border: 'border-slate-200', pill: 'bg-slate-100 text-[#0A1128]' },
             ];
             const a = stepMedia[index % stepMedia.length];
+            const isActive = activePhase === index;
             return (
               <StaggerItem key={step.step}>
-                <Interactive3DTilt maxTilt={9} glowColor="rgba(190, 18, 60, 0.22)">
+                <Interactive3DTilt maxTilt={7} glowColor="rgba(190, 18, 60, 0.22)">
                   <div
-                    className={`group rounded-[2rem] bg-white border-2 ${a.border} shadow-md flex flex-col justify-between h-full hover:border-rose-300 transition-all duration-300 overflow-hidden`}
+                    onMouseEnter={() => setActivePhase(index)}
+                    onClick={() => setActivePhase(index)}
+                    className={`group rounded-[1.75rem] bg-white border-2 shadow-md flex flex-col justify-between h-full transition-all duration-300 overflow-hidden cursor-pointer ${
+                      isActive
+                        ? 'border-[#BE123C] shadow-xl ring-2 ring-rose-200/70 -translate-y-1'
+                        : `${a.border} hover:border-rose-300`
+                    }`}
                   >
                     {/* Visual Image Header */}
                     <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-900">
@@ -126,29 +180,38 @@ export default function PatientExperienceSection({ onBookClick }) {
                         loading="lazy"
                         className={`w-full h-full object-cover ${a.pos} group-hover:scale-108 transition-transform duration-700`}
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#0A1128]/80 via-transparent to-transparent" />
-                      <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-[#0A1128]/80 border border-white/20 text-[10px] font-mono font-bold text-white">
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#0A1128]/85 via-transparent to-transparent" />
+                      <span
+                        className={`absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-full border text-[10px] font-mono font-bold text-white transition-colors ${
+                          isActive
+                            ? 'bg-[#BE123C] border-rose-300/60'
+                            : 'bg-[#0A1128]/85 border-white/20'
+                        }`}
+                      >
                         {t('PHASE', 'फेज़')} {step.step}
                       </span>
-                      <span className="absolute bottom-2.5 right-3 font-serif font-bold text-2xl text-white/95 drop-shadow-md">
+                      <span className="absolute bottom-2 right-3 font-serif font-bold text-2xl text-white/95 drop-shadow-md">
                         {step.step}
                       </span>
                     </div>
 
-                    <div className="p-6 flex-1 flex flex-col justify-between text-left">
+                    <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between text-left">
                       <div>
-                        <h3 className="font-extrabold text-base text-[#0A1128] leading-snug mb-2 group-hover:text-[#BE123C] transition-colors">
+                        <h3 className={`font-extrabold text-sm sm:text-base leading-snug mb-1.5 transition-colors ${isActive ? 'text-[#BE123C]' : 'text-[#0A1128] group-hover:text-[#BE123C]'}`}>
                           {step.title}
                         </h3>
-                        <p className="text-xs text-slate-600 font-normal leading-relaxed">
+                        <p className="text-[11px] sm:text-xs text-slate-600 font-normal leading-relaxed">
                           {step.description}
                         </p>
                       </div>
 
-                      <div className={`mt-5 pt-3 border-t border-slate-100 flex items-center justify-between`}>
-                        <span className={`text-[10px] font-mono tracking-widest uppercase font-bold ${a.pill} px-2.5 py-1 rounded-full`}>
+                      <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
+                        <span className={`text-[9px] font-mono tracking-wider uppercase font-bold ${a.pill} px-2.5 py-1 rounded-full`}>
                           {t('Dr. Shahi Protocol', 'डॉ. शाही प्रोटोकॉल')}
                         </span>
+                        {index < patientJourney.length - 1 && (
+                          <ChevronRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-[#BE123C] hidden lg:block shrink-0" />
+                        )}
                       </div>
                     </div>
                   </div>
@@ -216,11 +279,12 @@ export default function PatientExperienceSection({ onBookClick }) {
                     videoUrl={false}
                     showControls={false}
                     styleVariant="video-card"
-                    posterImage="/images/p3.jpeg"
+                    posterImage="/images/d1.jpeg"
+                    posterPosition="object-top"
                     title={t('Heart Scan CD & Report Checkup', 'हार्ट स्कैन सीडी और रिपोर्ट चेकअप')}
                     subtitle={t('Pulse Heart Centre • Patient Care', 'पल्स हार्ट सेंटर • पेशेंट केयर')}
                     specs={t('Doctor: Dr. Prakash Chand Shahi', 'डॉक्टर: डॉ. प्रकाश चंद शाही')}
-                    aspectRatio="aspect-[16/8]"
+                    aspectRatio="aspect-[16/10]"
                   />
                 </div>
               </div>

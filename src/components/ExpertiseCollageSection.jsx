@@ -46,7 +46,7 @@ export default function ExpertiseCollageSection() {
       title: 'Pulse Heart Centre, Betiahata',
       subtitle: 'Comprehensive Ambulatory Care',
       description: 'Centrally situated in the prominent Betiahata medical corridor in Gorakhpur, featuring peaceful consultation suites, ECG, and echocardiography.',
-      image: '/images/hospital-facility.jpg',
+      image: '/images/pu.png',
       aspect: 'aspect-[16/10]',
       stats: 'Mon – Sat Consultations',
       subtext: 'Prime Betiahata Location',

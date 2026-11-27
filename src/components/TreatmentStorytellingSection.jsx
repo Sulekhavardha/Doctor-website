@@ -128,7 +128,7 @@ export default function TreatmentStorytellingSection() {
   const currentStory = storyboards[activeProcedure];
 
   return (
-    <section className="relative py-28 lg:py-36 overflow-hidden select-none bg-gradient-to-b from-[#FFF6F0] via-[#FFF2EB] to-[#FFF5F7] border-b border-rose-100/60">
+    <section className="relative pt-8 pb-8 sm:pt-10 sm:pb-10 lg:pt-12 lg:pb-12 overflow-hidden bg-gradient-to-b from-[#FFF6F0] via-[#FFF2EB] to-[#FFF5F7] border-b border-rose-100/60">
 
       {/* Soft coral-peach gradient with translucent floating shapes */}
       <SectionBackgroundMotion variant="patient-care" />
@@ -155,15 +155,15 @@ export default function TreatmentStorytellingSection() {
         </div>
 
         {/* Procedure Selector Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-3 mb-14">
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-6 sm:mb-8">
           {Object.entries(storyboards).map(([key, data]) => {
             const isActive = activeProcedure === key;
             return (
               <button
                 key={key}
                 onClick={() => setActiveProcedure(key)}
-                className={`px-6 py-3 rounded-full text-xs font-semibold tracking-wide transition-all duration-300 ${isActive
-                  ? 'bg-gradient-to-r from-[#0A1128] via-[#1E293B] to-[#BE123C] text-white shadow-md shadow-navy/25 scale-105 border border-rose-300/30'
+                className={`px-4 sm:px-6 py-2.5 sm:py-3 rounded-full text-[11px] sm:text-xs font-semibold tracking-wide transition-all duration-300 ${isActive
+                  ? 'bg-gradient-to-r from-[#0A1128] via-[#1E293B] to-[#BE123C] text-white shadow-md shadow-navy/25 sm:scale-105 border border-rose-300/30'
                   : 'bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 shadow-xs'
                   }`}
               >
@@ -174,7 +174,7 @@ export default function TreatmentStorytellingSection() {
         </div>
 
         {/* Master Procedural Journey Card with Smooth Step Elevation */}
-        <div className="rounded-[2.5rem] bg-white border-2 border-slate-200 shadow-layered p-6 sm:p-10 space-y-8 text-left transition-all duration-400 hover:shadow-2xl">
+        <div className="rounded-3xl sm:rounded-[2.5rem] bg-white border-2 border-slate-200 shadow-layered p-4 sm:p-10 space-y-6 sm:space-y-8 text-left transition-all duration-400 hover:shadow-2xl">
 
           {/* Header Banner */}
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 pb-6 border-b border-slate-100">
@@ -211,10 +211,10 @@ export default function TreatmentStorytellingSection() {
               styleVariant="floating-3d"
               posterImage={
                 activeProcedure === 'coronary-angiogram'
-                  ? '/images/peripheral-angioplasty-unique.jpg'
+                  ? '/images/precision.png'
                   : activeProcedure === 'pacemaker-implantation'
-                  ? '/images/pacemaker-tech.jpg'
-                  : '/images/heart-stent-angioplasty.jpg'
+                  ? '/images/pace.jpg'
+                  : '/images/heart.png'
               }
               title={`${currentStory.title} • ${t('Live Procedural Cine', 'लाइव प्रोसीजरल सिने')}`}
               subtitle={currentStory.badge}
@@ -267,10 +267,10 @@ export default function TreatmentStorytellingSection() {
           <div className="p-6 sm:p-7 rounded-2xl bg-gradient-to-r from-slate-50 via-white to-rose-50/60 border-2 border-slate-200 text-slate-900 shadow-md flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
             <div className="flex items-center gap-4">
               <img
-                src="/images/doctor-portrait.jpg"
+                src="/images/d1.jpeg"
                 alt="Dr. Prakash Chand Shahi"
                 loading="lazy"
-                className="w-16 h-16 rounded-2xl object-cover object-[50%_22%] border-2 border-[#BE123C]/40 shadow-md shrink-0 hidden sm:block"
+                className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl object-cover object-top border-2 border-[#BE123C]/40 shadow-md shrink-0 block"
               />
               <div className="space-y-1 text-left">
                 <span className="text-[10px] font-mono text-[#BE123C] font-bold uppercase tracking-wider block">

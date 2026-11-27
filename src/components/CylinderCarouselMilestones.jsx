@@ -109,7 +109,7 @@ export default function CylinderCarouselMilestones({
   useEffect(() => {
     const updateRadius = () => {
       if (window.innerWidth < 640) {
-        setCylinderRadius(280);
+        setCylinderRadius(235);
       } else if (window.innerWidth < 1024) {
         setCylinderRadius(360);
       } else {
@@ -267,7 +267,7 @@ export default function CylinderCarouselMilestones({
 
         {/* The 3D Rotating Cylinder Axis */}
         <div
-          className="relative w-[320px] sm:w-[380px] md:w-[420px] h-[420px] sm:h-[460px] flex items-center justify-center"
+          className="relative w-[285px] sm:w-[380px] md:w-[420px] h-[420px] sm:h-[460px] flex items-center justify-center"
           style={{
             transformStyle: 'preserve-3d',
             transform: `rotateY(${rotationAngle}deg)`,

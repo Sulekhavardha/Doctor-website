@@ -52,7 +52,7 @@ export default function ArchitecturalGallerySection() {
   const current = hospitalTour[activeIndex] || hospitalTour[0];
 
   return (
-    <section id="gallery" className="relative py-20 lg:py-28 overflow-hidden select-none bg-[#FAF9F6] text-slate-900 border-y border-slate-200">
+    <section id="gallery" className="relative pt-8 pb-8 sm:pt-10 sm:pb-10 lg:pt-12 lg:pb-12 overflow-hidden bg-[#FAF9F6] text-slate-900 border-y border-slate-200">
       <SectionBackgroundMotion variant="home-gallery" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

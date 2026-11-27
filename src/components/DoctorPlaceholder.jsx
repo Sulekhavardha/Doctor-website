@@ -11,7 +11,7 @@ import { useLanguage } from '../context/LanguageContext';
 export default function DoctorPlaceholder({
   className = '',
   aspectRatio = 'aspect-[3/4] sm:aspect-[4/5]',
-  imageSrc = '/images/doctor-portrait.jpg',
+  imageSrc = '/images/d1.jpeg',
 }) {
   const { t } = useLanguage();
   const doctor = PULSE_DATA?.doctor || {
@@ -19,7 +19,7 @@ export default function DoctorPlaceholder({
     qualifications: 'DM Cardiology (PGIMER) • MD (KGMU)',
   };
 
-  const [imgSrc, setImgSrc] = useState(imageSrc || '/images/doctor-portrait.jpg');
+  const [imgSrc, setImgSrc] = useState(imageSrc || '/images/d1.jpeg');
 
   return (
     <div className={`relative select-none ${className}`}>
@@ -29,7 +29,7 @@ export default function DoctorPlaceholder({
           <img
             src={imgSrc}
             alt={`${doctor.name} - Chief Interventional Cardiologist`}
-            onError={() => setImgSrc('/images/i.png')}
+            onError={() => setImgSrc('/images/d1.jpeg')}
             className="w-full h-full object-cover object-[50%_22%]"
           />
           <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#0A1128]/85 via-[#0A1128]/35 to-transparent pointer-events-none" />
