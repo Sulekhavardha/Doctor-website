@@ -295,20 +295,14 @@ export default function CardiologyShowcaseSection() {
             {/* The Main High-End 3D Visual Console */}
             <div className="relative rounded-[2.5rem] bg-slate-950 border-2 border-orange-200/90 shadow-2xl overflow-hidden group">
 
-              {/* Media Container with 4K Cine Video & Smooth Loop */}
-              <div className="relative aspect-[16/11] w-full overflow-hidden">
-                <video
+              {/* Media Container with 4K Imaging */}
+              <div className="relative aspect-[16/11] w-full overflow-hidden bg-slate-950">
+                <img
                   key={current.id}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  preload="metadata"
-                  poster={current.image}
-                  className="w-full h-full object-cover filter contrast-115 brightness-95 group-hover:scale-105 transition-transform duration-700"
-                >
-                  <source src={current.videoUrl} type="video/mp4" />
-                </video>
+                  src={current.image}
+                  alt={current.title}
+                  className="w-full h-full object-cover filter contrast-110 brightness-95 group-hover:scale-105 transition-transform duration-700"
+                />
 
                 {/* Ambient Dark Gradient & Vignette */}
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-slate-950/60 pointer-events-none" />
