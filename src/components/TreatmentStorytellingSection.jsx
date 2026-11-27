@@ -30,8 +30,8 @@ export default function TreatmentStorytellingSection() {
       steps: [
         {
           num: '01',
-          phase: t('Small Wrist Entry', 'कलाई में छोटा पॉइंट'),
-          detail: t('Tiny, painless wrist opening with minimal discomfort.', 'कलाई में बिना दर्द का बेहद छोटा पॉइंट।'),
+          phase: t('Painless Wrist Entry', 'कलाई से आसान शुरुआत'),
+          detail: t('A tiny, pain-free point on the wrist without any cuts.', 'कलाई पर बिना चीरे और बिना दर्द के आसान शुरुआत।'),
         },
         {
           num: '02',
@@ -40,8 +40,8 @@ export default function TreatmentStorytellingSection() {
         },
         {
           num: '03',
-          phase: t('Gentle Balloon Opening', 'बैलून से आर्टरी खोलना'),
-          detail: t('Soft balloon widens the narrowed artery smoothly.', 'सॉफ्ट बैलून सिकुड़ी हुई आर्टरी को आराम से चौड़ा करता है।'),
+          phase: t('Opening the Blocked Artery', 'बंद नस को खोलना'),
+          detail: t('A soft balloon gently opens the blocked artery.', 'एक मुलायम बैलून से बंद नस को आराम से खोल दिया जाता है।'),
         },
         {
           num: '04',
@@ -128,7 +128,7 @@ export default function TreatmentStorytellingSection() {
   const currentStory = storyboards[activeProcedure];
 
   return (
-    <section className="relative pt-8 pb-8 sm:pt-10 sm:pb-10 lg:pt-12 lg:pb-12 overflow-hidden bg-gradient-to-b from-[#FFF6F0] via-[#FFF2EB] to-[#FFF5F7] border-b border-rose-100/60">
+    <section className="relative pt-6 pb-6 sm:pt-7 sm:pb-7 lg:pt-8 lg:pb-8 overflow-hidden bg-gradient-to-b from-[#FFF6F0] via-[#FFF2EB] to-[#FFF5F7] border-b border-rose-100/60">
 
       {/* Soft coral-peach gradient with translucent floating shapes */}
       <SectionBackgroundMotion variant="patient-care" />
@@ -136,7 +136,7 @@ export default function TreatmentStorytellingSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Section Header */}
-        <div className="mb-10 text-center max-w-3xl mx-auto space-y-2">
+        <div className="mb-6 text-center max-w-3xl mx-auto space-y-2">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-[#0A1128] via-[#1E293B] to-[#BE123C] text-white text-xs font-mono font-bold shadow-md shadow-navy/20 border border-rose-300/30">
             <Target className="w-4 h-4 text-rose-300" />
             <span className="uppercase tracking-[0.2em]">{t('Step-by-Step Treatment Guide', 'स्टेप-बाय-स्टेप ट्रीटमेंट गाइड')}</span>
@@ -155,7 +155,7 @@ export default function TreatmentStorytellingSection() {
         </div>
 
         {/* Procedure Selector Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-6 sm:mb-8">
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-5 sm:mb-6">
           {Object.entries(storyboards).map(([key, data]) => {
             const isActive = activeProcedure === key;
             return (

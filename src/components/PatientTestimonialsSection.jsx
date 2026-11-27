@@ -66,7 +66,7 @@ export default function PatientTestimonialsSection() {
   const current = stories[activeStory];
 
   return (
-    <section className="relative pt-8 pb-8 sm:pt-10 sm:pb-10 lg:pt-12 lg:pb-12 overflow-hidden bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9] border-b border-slate-200">
+    <section className="relative pt-6 pb-6 sm:pt-7 sm:pb-7 lg:pt-8 lg:pb-8 overflow-hidden bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9] border-b border-slate-200">
       {/* Bespoke Concentric Healing Resonance Waves & Luminescent Constellation */}
       <SectionBackgroundMotion variant="home-testimonials" />
 
@@ -74,7 +74,7 @@ export default function PatientTestimonialsSection() {
         
         {/* Header with Doctor Stewardship Stamp */}
         <ScrollReveal variant="fade-down">
-          <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10 space-y-3">
+          <div className="text-center max-w-2xl mx-auto mb-6 sm:mb-7 space-y-2">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-rose-200 text-[#BE123C] text-xs font-mono font-bold shadow-xs">
               <Heart className="w-3.5 h-3.5 text-[#BE123C] fill-[#BE123C] animate-pulse" />
               <span className="uppercase tracking-widest">{t('Verified Clinical Outcomes', 'वेरिफाइड क्लिनिकल आउटकम्स')}</span>

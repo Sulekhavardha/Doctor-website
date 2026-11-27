@@ -47,7 +47,7 @@ export default function InteractiveCardiacExplorer({ onBookClick }) {
   const activeData = explorerHotspots.find((h) => h.id === activeId) || explorerHotspots[0];
 
   return (
-    <section className="relative py-10 sm:py-16 lg:py-24 overflow-hidden select-none bg-gradient-to-b from-[#FAFBF9] via-[#F0FDF4]/30 to-[#FAFBF9] rounded-3xl sm:rounded-[3rem] my-4 sm:my-8 border-2 border-[#A7F3D0]/80 shadow-lg">
+    <section className="relative py-6 sm:py-8 lg:py-10 overflow-hidden select-none bg-gradient-to-b from-[#FAFBF9] via-[#F0FDF4]/30 to-[#FAFBF9] rounded-3xl sm:rounded-[3rem] my-2 sm:my-3 border-2 border-[#A7F3D0]/80 shadow-lg">
       {/* Animated Lightbox Illuminator Background Grid & Dynamic Scan Sweep */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
         <svg className="absolute inset-0 w-full h-full opacity-25" xmlns="http://www.w3.org/2000/svg">

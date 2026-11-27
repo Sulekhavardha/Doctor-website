@@ -52,13 +52,13 @@ export default function ArchitecturalGallerySection() {
   const current = hospitalTour[activeIndex] || hospitalTour[0];
 
   return (
-    <section id="gallery" className="relative pt-8 pb-8 sm:pt-10 sm:pb-10 lg:pt-12 lg:pb-12 overflow-hidden bg-[#FAF9F6] text-slate-900 border-y border-slate-200">
+    <section id="gallery" className="relative pt-6 pb-6 sm:pt-7 sm:pb-7 lg:pt-8 lg:pb-8 overflow-hidden bg-[#FAF9F6] text-slate-900 border-y border-slate-200">
       <SectionBackgroundMotion variant="home-gallery" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Clean Editorial Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 text-left">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-6 sm:mb-7 text-left">
           <div className="space-y-2">
             <div className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-[0.2em] text-[#BE123C]">
               <Building2 className="w-4 h-4" />

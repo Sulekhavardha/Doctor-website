@@ -23,7 +23,7 @@ export default function MedicalTechnologyShowcase({ variant = 'home-technology' 
       title: t('Modern Heart Cath Lab', 'मॉडर्न हार्ट कैथ लैब'),
       category: t('LIVE HEART IMAGING', 'लाइव हार्ट इमेजिंग'),
       description: t('Shows crystal-clear live heart images with 40% lower X-ray exposure for safer treatment.', 'सुरक्षित ट्रीटमेंट के लिए 40% कम एक्स-रे एक्सपोजर के साथ बिल्कुल साफ लाइव हार्ट इमेज दिखाता है।'),
-      image: '/images/c.webp',
+      image: '/images/ca.png',
       videoUrl: '/videos/facilities-walkthrough.mp4',
       type: 'facilities-walkthrough',
       specs: [
@@ -71,7 +71,7 @@ export default function MedicalTechnologyShowcase({ variant = 'home-technology' 
   const current = techArsenal[activeTech] || techArsenal[0];
 
   return (
-    <section className="relative pt-6 pb-8 sm:pt-8 sm:pb-10 lg:pt-10 lg:pb-12 overflow-hidden bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9] border-b border-slate-200">
+    <section className="relative pt-6 pb-6 sm:pt-7 sm:pb-7 lg:pt-8 lg:pb-8 overflow-hidden bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9] border-b border-slate-200">
 
       {/* Bespoke Cleanroom Background */}
       <SectionBackgroundMotion variant={variant} />
@@ -80,7 +80,7 @@ export default function MedicalTechnologyShowcase({ variant = 'home-technology' 
 
         {/* Section Header */}
         <ScrollReveal variant="fade-down">
-          <div className="mb-10 text-center max-w-3xl mx-auto space-y-2">
+          <div className="mb-6 text-center max-w-3xl mx-auto space-y-2">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-rose-200 text-[#0A1128] text-xs font-mono font-medium shadow-xs">
               <Radio className="w-4 h-4 text-[#BE123C] animate-pulse" />
               <span className="uppercase tracking-[0.2em]">{t('Cath Lab & Diagnostic Systems', 'कैथ लैब एंड डायग्नोस्टिक सिस्टम्स')}</span>

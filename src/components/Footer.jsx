@@ -19,9 +19,9 @@ export default function Footer() {
       {/* High-Impact Deep Midnight Navy & Crimson Ruby Animated Telemetry Background */}
       <SectionBackgroundMotion variant="footer" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 pt-10 sm:pt-12 pb-8 sm:pb-10 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 pt-7 sm:pt-8 pb-6 sm:pb-7 relative z-10">
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12 pb-12 border-b border-white/10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10 pb-7 sm:pb-8 border-b border-white/10">
 
           {/* Brand Identity */}
           <div className="lg:col-span-4 space-y-4">
@@ -105,7 +105,7 @@ export default function Footer() {
                 <Link to="/" className="hover:text-rose-300 transition-colors">{t('Home', 'होम')}</Link>
               </li>
               <li>
-                <Link to="/#services" className="hover:text-rose-300 transition-colors font-medium text-rose-300">{t('Comprehensive Heart Care', 'कंप्रिहेंसिव हार्ट केयर')}</Link>
+                <Link to="/services" className="hover:text-rose-300 transition-colors font-medium text-rose-300">{t('Hospital Services', 'हॉस्पिटल सर्विसेज')}</Link>
               </li>
               <li>
                 <Link to="/about" className="hover:text-rose-300 transition-colors">{t('About Dr. P. C. Shahi', 'अबाउट डॉ. पी. सी. शाही')}</Link>

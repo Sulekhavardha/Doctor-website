@@ -62,7 +62,7 @@ export default function CredentialsEditorialSection() {
   ];
 
   return (
-    <section className="relative pt-8 pb-8 sm:pt-10 sm:pb-10 lg:pt-12 lg:pb-12 overflow-hidden bg-[#0A1128] text-white">
+    <section className="relative pt-7 pb-7 sm:pt-8 sm:pb-8 lg:pt-9 lg:pb-9 overflow-hidden bg-[#0A1128] text-white">
       {/* Subtle Architectural Radial Depth */}
       <div
         className="absolute -top-40 right-0 w-[680px] h-[680px] rounded-full pointer-events-none"
@@ -76,7 +76,7 @@ export default function CredentialsEditorialSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 text-left">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-7 sm:mb-8 text-left">
           <div className="max-w-2xl space-y-2">
             <div className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-[0.2em] text-rose-400">
               <Award className="w-4 h-4" />

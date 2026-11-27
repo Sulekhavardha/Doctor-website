@@ -8,6 +8,7 @@ import { LanguageProvider } from './context/LanguageContext';
 // Route-level code splitting for instant initial load
 const HomePage = lazy(() => import('./pages/HomePage'));
 const AboutPage = lazy(() => import('./pages/AboutPage'));
+const ServicesPage = lazy(() => import('./pages/ServicesPage'));
 const TreatmentsPage = lazy(() => import('./pages/TreatmentsPage'));
 const HospitalPage = lazy(() => import('./pages/HospitalPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
@@ -36,6 +37,7 @@ export default function App() {
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/about" element={<AboutPage />} />
+              <Route path="/services" element={<ServicesPage />} />
               <Route path="/treatments" element={<TreatmentsPage />} />
               <Route path="/hospital" element={<HospitalPage />} />
               <Route path="/contact" element={<ContactPage />} />

@@ -1,7 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Building2, MapPin, Clock, Phone, Sparkles, Calendar, Navigation, ShieldCheck, CheckCircle2, ArrowRight, Stethoscope } from 'lucide-react';
+import {
+  Building2,
+  MapPin,
+  Clock,
+  Phone,
+  Sparkles,
+  Calendar,
+  Navigation,
+  ShieldCheck,
+  CheckCircle2,
+  ArrowRight,
+  Stethoscope,
+  Activity,
+  HeartPulse,
+  Eye
+} from 'lucide-react';
 import PulseCentreSection from '../components/PulseCentreSection';
 import PatientExperienceSection from '../components/PatientExperienceSection';
 import { PULSE_DATA } from '../data/pulseData';
@@ -34,8 +49,8 @@ export default function HospitalPage() {
       videoUrl: '/videos/cardiac-catheterization.mp4',
       type: 'cardiac-catheterization',
       desc: t(
-        'Dr. Shahi personally explains the heart scan video clearly to patients and families.',
-        'डॉ. शाही खुद मरीज़ों और परिवार को हार्ट स्कैन वीडियो साफ और आसान शब्दों में समझाते हैं।'
+        'Clear, calm explanation of heart reports and CD scans with patient family.',
+        'मरीज़ के परिवार के साथ हार्ट रिपोर्ट और सीडी स्कैन की साफ और शांत समझाइश।'
       ),
     },
     {
@@ -52,7 +67,7 @@ export default function HospitalPage() {
   ];
 
   return (
-    <div className="relative pt-20 sm:pt-24 pb-12 sm:pb-16 bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9] overflow-hidden">
+    <div className="relative pt-16 sm:pt-20 pb-8 sm:pb-10 bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9] overflow-hidden">
 
       {/* Bespoke Campus Masterplan Background: Laminar Airflow Streams & Blueprint Grid */}
       <SectionBackgroundMotion variant="hospital-hero" />
@@ -62,75 +77,163 @@ export default function HospitalPage() {
          ===================================================================== */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* 1. Master Editorial Header */}
-        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-10 space-y-4">
-          <ScrollReveal animation="fade-down">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#0A1128] via-[#1E293B] to-[#BE123C] text-white text-xs font-mono font-medium shadow-md shadow-navy/20 border border-rose-300/30">
-              <Building2 className="w-4 h-4 text-rose-300" />
-              <span className="uppercase tracking-[0.2em]">{t('Pulse Heart Centre • Betiahata', 'पल्स हार्ट सेंटर • बेतियाहाता')}</span>
-            </div>
-          </ScrollReveal>
+        {/* =====================================================================
+            1. MASTER HOSPITAL HERO: ASYMMETRIC SPLIT ARCHITECTURE (NEW DESIGN)
+           ===================================================================== */}
+        <section className="relative pt-4 sm:pt-6 pb-6 sm:pb-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
-          <ScrollReveal animation="fade-up" delay={0.1}>
-            <h1 className="text-3xl sm:text-5xl lg:text-7xl font-extrabold text-[#0A1128] tracking-tight leading-[1.08]">
-              {t('Modern Hospital &', 'मॉडर्न हॉस्पिटल और')} <br />
-              <span className="font-serif italic font-normal text-[#BE123C]">{t('Heart Care Facilities', 'हार्ट केयर फैसिलिटीज़')}</span>
-            </h1>
-          </ScrollReveal>
+            {/* Left Column (7 cols): Editorial Typography & Direct Clinical Actions */}
+            <div className="lg:col-span-7 space-y-4 sm:space-y-5 text-left">
+              <ScrollReveal animation="fade-down">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-[#0A1128] via-[#1E293B] to-[#BE123C] text-white text-[10px] sm:text-xs font-mono font-bold shadow-md shadow-navy/20 border border-rose-300/30">
+                  <Sparkles className="w-3.5 h-3.5 text-rose-300" />
+                  <span className="uppercase tracking-[0.2em]">{t('NABH-Standard Infrastructure • Betiahata', 'एनएबीएच-मानक इन्फ्रास्ट्रक्चर • बेतियाहाता')}</span>
+                </div>
+              </ScrollReveal>
 
-          {/* Director Portrait Badge (Unique to Hospital Page) */}
-          <ScrollReveal animation="fade-up" delay={0.15}>
-            <div className="pt-1 flex items-center justify-center gap-3">
-              <div className="flex items-center gap-3.5 px-4 py-2.5 rounded-2xl bg-[#0A1128] text-white border border-slate-700 shadow-lg">
-                <img
-                  src="/images/d2.jpeg"
-                  alt="Dr. Prakash Chand Shahi"
-                  className="w-12 h-12 rounded-full object-cover object-top border-2 border-rose-400 shrink-0"
-                />
-                <div className="text-left">
-                  <span className="text-xs font-extrabold text-white block">
-                    {t('Clinical Director: Dr. Prakash Chand Shahi', 'क्लिनिकल डायरेक्टर: डॉ. प्रकाश चंद शाही')}
+              <ScrollReveal animation="fade-up" delay={0.08}>
+                <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#0A1128] tracking-tight leading-[1.06]">
+                  {t('Modern Hospital &', 'मॉडर्न हॉस्पिटल और')} <br />
+                  <span className="font-serif italic font-normal text-[#BE123C]">{t('Heart Care Facilities.', 'हार्ट केयर फैसिलिटीज़।')}</span>
+                </h1>
+              </ScrollReveal>
+
+              <ScrollReveal animation="fade-up" delay={0.14}>
+                <p className="text-sm sm:text-base text-slate-600 font-normal leading-relaxed max-w-xl">
+                  {t(
+                    'Clean consultation rooms, advanced Siemens flat-panel Cath Lab, and 24/7 Heart ICU directed personally by Dr. Prakash Chand Shahi in Betiahata, Gorakhpur.',
+                    'साफ-सुथरे कंसल्टेशन रूम, एडवांस्ड सीमेंस फ्लैट-पैनल कैथ लैब और 24/7 हार्ट आईसीयू — बेतियाहाता, गोरखपुर में डॉ. प्रकाश चंद शाही की सीधी देखरेख में संचालित।'
+                  )}
+                </p>
+              </ScrollReveal>
+
+              {/* 3 Live Clinical Infrastructure Badges */}
+              <ScrollReveal animation="fade-up" delay={0.18}>
+                <div className="flex flex-wrap items-center gap-2 pt-1 font-mono text-[11px] font-bold">
+                  <span className="bg-rose-50 text-[#BE123C] px-3 py-1 rounded-full border border-rose-200 shadow-2xs">
+                    {t('Siemens Flat-Panel Cath Lab', 'सीमेंस फ्लैट-पैनल कैथ लैब')}
                   </span>
-                  <span className="text-[10px] font-mono text-rose-300 font-bold block">
-                    {t('DM Cardiology (PGIMER) • MD (KGMU Lucknow)', 'डीएम कार्डियोलॉजी (पीजीआईएमईआर) • एमडी (केजीएमयू लखनऊ)')}
+                  <span className="bg-white text-[#0A1128] px-3 py-1 rounded-full border border-slate-200 shadow-2xs">
+                    {t('Class-100 Cleanroom', 'क्लास-100 क्लीनरूम')}
+                  </span>
+                  <span className="bg-rose-50 text-[#BE123C] px-3 py-1 rounded-full border border-rose-200 shadow-2xs">
+                    {t('24/7 Cardiac ICU', '24/7 कार्डियक आईसीयू')}
                   </span>
                 </div>
-              </div>
+              </ScrollReveal>
+
+              {/* Director Credential Pill */}
+              <ScrollReveal animation="fade-up" delay={0.22}>
+                <div className="flex items-center gap-3 p-3 rounded-2xl bg-white border border-slate-200 shadow-sm max-w-md">
+                  <img
+                    src="/images/d2.jpeg"
+                    alt="Dr. Prakash Chand Shahi"
+                    className="w-11 h-11 rounded-xl object-cover object-top border border-rose-200 shrink-0"
+                  />
+                  <div className="min-w-0">
+                    <span className="text-xs font-extrabold text-[#0A1128] block truncate">
+                      {t('Clinical Director: Dr. Prakash Chand Shahi', 'क्लिनिकल डायरेक्टर: डॉ. प्रकाश चंद शाही')}
+                    </span>
+                    <span className="text-[10px] font-mono text-rose-700 font-bold block truncate">
+                      {t('DM Cardiology (PGIMER) • MD (KGMU)', 'डीएम कार्डियोलॉजी (पीजीआईएमईआर) • एमडी (केजीएमयू)')}
+                    </span>
+                  </div>
+                </div>
+              </ScrollReveal>
+
+              {/* Action Buttons */}
+              <ScrollReveal animation="fade-up" delay={0.25}>
+                <div className="pt-2 flex flex-wrap items-center gap-3">
+                  <Link
+                    to="/contact"
+                    className="luxury-btn-primary"
+                  >
+                    <Calendar className="w-4 h-4 text-white" />
+                    <span>{t('Book Consultation Pass', 'कंसल्टेशन पास बुक करें')}</span>
+                  </Link>
+
+                  <a
+                    href="tel:+919455899378"
+                    className="luxury-btn-secondary"
+                  >
+                    <Phone className="w-4 h-4 text-[#BE123C]" />
+                    <span>+91 94558 99378</span>
+                  </a>
+                </div>
+              </ScrollReveal>
             </div>
-          </ScrollReveal>
 
-          <ScrollReveal animation="fade-up" delay={0.2}>
-            <p className="text-sm sm:text-base text-slate-700 font-normal max-w-2xl mx-auto leading-relaxed">
-              {t(
-                'Clean consultation rooms, modern Cath Lab, and 24/7 Heart ICU directed personally by Dr. Shahi.',
-                'साफ-सुथरे कंसल्टेशन रूम, मॉडर्न कैथ लैब और 24/7 हार्ट आईसीयू — डॉ. शाही की सीधी देखरेख में।'
-              )}
-            </p>
-          </ScrollReveal>
+            {/* Right Column (5 cols): Clinical Visual Stage Card */}
+            <div className="lg:col-span-5">
+              <ScrollReveal animation="fade-up" delay={0.15}>
+                <Interactive3DTilt maxTilt={5} scale={1.01}>
+                  <div className="rounded-3xl bg-white border border-slate-200 shadow-xl overflow-hidden text-left">
+                    {/* Featured Photo: ca.png */}
+                    <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-900">
+                      <img
+                        src="/images/ca.png"
+                        alt={t('Pulse Heart Centre Cath Lab Facilities', 'पल्स हार्ट सेंटर कैथ लैब फैसिलिटीज़')}
+                        className="w-full h-full object-cover object-center filter brightness-95 contrast-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#0A1128]/70 via-transparent to-transparent pointer-events-none" />
 
-          {/* Virtual Facility Image Console (Pure Image, No Video) */}
-          <ScrollReveal animation="scale-up" delay={0.25} className="pt-6 max-w-5xl mx-auto">
-            <Interactive3DTilt maxTilt={5} scale={1.01}>
-              <SectionCinematicVideo
-                type="facilities-walkthrough"
-                videoUrl={false}
-                showControls={false}
-                styleVariant="panoramic-stage"
-                posterImage="/images/moder.png"
-                title={t('Pulse Heart Centre Cath Lab & Facilities', 'पल्स हार्ट सेंटर कैथ लैब और फैसिलिटीज़')}
-                subtitle={t('Safe & Clean Heart Suite', 'सेफ और क्लीन हार्ट सूट')}
-                specs={t('Sterile Cleanroom • Clear Live Heart Imaging • 24/7 ICU', 'स्टराइल क्लीनरूम • क्लियर लाइव हार्ट इमेजिंग • 24/7 आईसीयू')}
-                aspectRatio="aspect-[16/8] sm:aspect-[21/9]"
-              />
-            </Interactive3DTilt>
-          </ScrollReveal>
-        </div>
+                      {/* Overlaid Badges */}
+                      <div className="absolute top-3 left-3 flex items-center gap-2">
+                        <span className="px-2.5 py-1 rounded-full bg-[#0A1128]/85 backdrop-blur-md text-white text-[10px] font-mono font-bold uppercase tracking-wider border border-white/20">
+                          {t('Pulse Heart Centre', 'पल्स हार्ट सेंटर')}
+                        </span>
+                      </div>
 
-        {/* 2. Facility Architecture & Overlapping Highlights */}
+                      <div className="absolute top-3 right-3">
+                        <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-500/90 text-white text-[10px] font-mono font-bold shadow-xs">
+                          <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+                          <span>{t('Active Standby', 'सक्रिय स्टैंडबाय')}</span>
+                        </span>
+                      </div>
+
+                      {/* Bottom Info on Photo */}
+                      <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between gap-3 text-white">
+                        <div className="min-w-0">
+                          <span className="text-xs font-bold block truncate">
+                            {t('Modern Hospital & Cardiac Facilities', 'मॉडर्न हॉस्पिटल व कार्डियक फैसिलिटीज़')}
+                          </span>
+                          <span className="text-[10px] text-slate-300 font-mono block truncate">
+                            {t('Siemens Flat-Panel Cath Lab & 24/7 Heart ICU', 'सीमेंस फ्लैट-पैनल कैथ लैब और 24/7 हार्ट आईसीयू')}
+                          </span>
+                        </div>
+                        <span className="text-[10px] font-mono bg-rose-600/90 backdrop-blur-md px-2.5 py-0.5 rounded-full text-white shrink-0">
+                          {t('NABH Level', 'एनएबीएच स्तर')}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Facility Specs Brief */}
+                    <div className="p-4 bg-white space-y-2">
+                      <p className="text-xs text-slate-600 font-normal leading-relaxed">
+                        {t(
+                          'Siemens flat-panel Cath Lab, 24/7 Heart ICU and sterile cleanrooms under the direct supervision of Dr. Prakash Chand Shahi.',
+                          'डॉ. प्रकाश चंद शाही की सीधी देखरेख में सीमेंस फ्लैट-पैनल कैथ लैब, 24/7 हार्ट आईसीयू और स्टराइल क्लीनरूम्स।'
+                        )}
+                      </p>
+                      <div className="flex items-center justify-between text-[11px] font-mono text-slate-500 pt-1 border-t border-slate-100">
+                        <span>{t('Director Oversight', 'डॉ. शाही की देखरेख')}</span>
+                        <span className="text-rose-700 font-bold">{t('Betiahata, Gorakhpur', 'बेतियाहाता, गोरखपुर')}</span>
+                      </div>
+                    </div>
+                  </div>
+                </Interactive3DTilt>
+              </ScrollReveal>
+            </div>
+
+          </div>
+        </section>
+
+        {/* 2. Facility Architecture & Overlapping Highlights (PulseCentreSection) */}
         <PulseCentreSection />
 
         {/* 3. Full-Width Clinical Equipment & Facility Gallery */}
-        <div className="my-6 sm:my-8 p-5 sm:p-8 rounded-[2.5rem] sm:rounded-[3rem] bg-gradient-to-b from-white/95 via-slate-50/90 to-white/95 border-2 border-slate-200/90 shadow-2xl relative overflow-hidden backdrop-blur-xl">
+        <div className="my-4 sm:my-5 p-4 sm:p-7 rounded-[2.5rem] sm:rounded-[3rem] bg-gradient-to-b from-white/95 via-slate-50/90 to-white/95 border-2 border-slate-200/90 shadow-xl relative overflow-hidden backdrop-blur-xl">
           {/* Bespoke Tri-Suite Cleanroom Isolation & Laminar Airflow Streams */}
           <SectionBackgroundMotion variant="hospital-suites" />
 
@@ -184,9 +287,9 @@ export default function HospitalPage() {
         </div>
 
         {/* 5. Direct OPD Directions & Priority Booking Callout */}
-        <ScrollReveal animation="fade-up" className="my-6 sm:my-8">
+        <ScrollReveal animation="fade-up" className="my-4 sm:my-5">
           <Interactive3DTilt maxTilt={4} scale={1.01} className="max-w-4xl mx-auto">
-            <div className="p-8 sm:p-14 rounded-[2.5rem] bg-gradient-to-br from-white via-slate-50 to-white text-slate-900 shadow-2xl border-2 border-slate-200/90 text-center space-y-6 relative overflow-hidden backdrop-blur-xl">
+            <div className="p-6 sm:p-10 lg:p-12 rounded-[2.5rem] bg-gradient-to-br from-white via-slate-50 to-white text-slate-900 shadow-xl border-2 border-slate-200/90 text-center space-y-5 relative overflow-hidden backdrop-blur-xl">
               {/* Bespoke Betiahata Gateway & Radiant Geographic Beacon */}
               <SectionBackgroundMotion variant="hospital-cta" />
               <div className="relative z-10 space-y-5">
@@ -208,11 +311,11 @@ export default function HospitalPage() {
                     <span>{t('Book Consultation Pass', 'कंसल्टेशन पास बुक करें')}</span>
                   </Link>
                   <a
-                    href="tel:+919876543210"
+                    href="tel:+919455899378"
                     className="luxury-btn-secondary"
                   >
                     <Phone className="w-4 h-4 text-[#BE123C]" />
-                    <span>{t('Emergency / OPD Helpline', 'इमरजेंसी / ओपीडी हेल्पलाइन')}</span>
+                    <span>+91 94558 99378</span>
                   </a>
                 </div>
               </div>

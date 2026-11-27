@@ -39,7 +39,7 @@ export default function ComprehensiveServicesSection() {
   return (
     <section 
       id="services" 
-      className="relative pt-10 pb-12 sm:pt-14 sm:pb-16 lg:pt-16 lg:pb-20 overflow-hidden bg-gradient-to-b from-[#FAF9F6] via-white to-[#F8FAFC] border-b border-slate-200"
+      className="relative pt-6 pb-6 sm:pt-7 sm:pb-7 lg:pt-8 lg:pb-8 overflow-hidden bg-gradient-to-b from-[#FAF9F6] via-white to-[#F8FAFC] border-b border-slate-200"
     >
       {/* Soft Ambient Radiance */}
       <div 
@@ -56,7 +56,7 @@ export default function ComprehensiveServicesSection() {
         {/* =========================================================================
             1. SECTION HEADER (Exact Match to Official pulseheartcentre.in/#services)
            ========================================================================= */}
-        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14 space-y-3">
+        <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-8 space-y-2.5">
           <ScrollReveal animation="fade-down">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-[#0A1128] via-[#1E293B] to-[#BE123C] text-white text-xs font-mono font-bold shadow-md border border-rose-300/30">
               <Sparkles className="w-3.5 h-3.5 text-rose-300" />
@@ -141,7 +141,7 @@ export default function ComprehensiveServicesSection() {
         {/* =========================================================================
             3. QUICK CALL-TO-ACTION BAR (Helpline & Direct OPD Pass)
            ========================================================================= */}
-        <ScrollReveal animation="fade-up" delay={0.3} className="mt-10 sm:mt-12">
+        <ScrollReveal animation="fade-up" delay={0.3} className="mt-6 sm:mt-8">
           <div className="p-5 sm:p-6 rounded-2xl bg-white border border-slate-200/90 shadow-md flex flex-col md:flex-row items-center justify-between gap-4 max-w-4xl mx-auto">
             <div className="flex items-center gap-3.5 text-left">
               <div className="w-10 h-10 rounded-xl bg-rose-50 text-[#BE123C] flex items-center justify-center shrink-0 border border-rose-200">

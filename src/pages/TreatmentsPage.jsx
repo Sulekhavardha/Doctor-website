@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Activity, ShieldCheck, Heart, Sparkles, Calendar, ArrowRight, CheckCircle2, Stethoscope, Compass, Play } from 'lucide-react';
 import AnatomicalSpecialtyShowcase from '../components/AnatomicalSpecialtyShowcase';
-import ComprehensiveServicesSection from '../components/ComprehensiveServicesSection';
 import TreatmentStorytellingSection from '../components/TreatmentStorytellingSection';
 import MedicalTechnologyShowcase from '../components/MedicalTechnologyShowcase';
 import InteractiveCardiacExplorer from '../components/InteractiveCardiacExplorer';
@@ -16,12 +15,12 @@ import { useLanguage } from '../context/LanguageContext';
 export default function TreatmentsPage() {
   const { t } = useLanguage();
   return (
-    <div className="relative pt-20 sm:pt-24 pb-12 sm:pb-16 bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9] overflow-hidden">
+    <div className="relative pt-16 sm:pt-20 pb-8 sm:pb-10 bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9] overflow-hidden">
 
       {/* =========================================================================
           1. MASTER EDITORIAL HEADER & FLUOROSCOPY VIDEO STAGE
          ========================================================================= */}
-      <section className="relative pt-8 pb-10 sm:pt-10 sm:pb-12 px-4 sm:px-6 lg:px-8 text-center overflow-hidden">
+      <section className="relative pt-4 sm:pt-6 pb-6 sm:pb-8 px-4 sm:px-6 lg:px-8 text-center overflow-hidden">
         {/* Bespoke Interventional Catheterization Theater & Fluoroscopic Rayfield */}
         <SectionBackgroundMotion variant="treatments-hero" />
 
@@ -95,30 +94,19 @@ export default function TreatmentsPage() {
       <AnatomicalSpecialtyShowcase variant="treatments-specialties" />
 
       {/* =========================================================================
-          2B. COMPREHENSIVE HEART CARE SERVICES (OFFICIAL 6-SERVICE PORTFOLIO)
-         ========================================================================= */}
-      <div className="my-4 sm:my-6">
-        <ComprehensiveServicesSection />
-      </div>
-
-      {/* =========================================================================
           3. VISUAL STORYTELLING PROCEDURAL SUITE (CARE ODYSSEY VARIANT)
          ========================================================================= */}
-      <div className="my-4 sm:my-6">
-        <TreatmentStorytellingSection variant="treatments-storytelling" />
-      </div>
+      <TreatmentStorytellingSection variant="treatments-storytelling" />
 
       {/* =========================================================================
           4. MEDICAL TECHNOLOGY SHOWCASE (SCHEMATIC RETICLE VARIANT)
          ========================================================================= */}
-      <div className="my-4 sm:my-6">
-        <MedicalTechnologyShowcase variant="treatments-technology" />
-      </div>
+      <MedicalTechnologyShowcase variant="treatments-technology" />
 
       {/* =========================================================================
           5. INTERACTIVE DIAGNOSTIC LIGHTBOX (BACKLIT MATRIX VARIANT)
          ========================================================================= */}
-      <section className="relative py-8 sm:py-12 px-2 sm:px-6 lg:px-8 my-4 sm:my-6 overflow-hidden rounded-3xl sm:rounded-[3rem] border-2 border-slate-200/90 shadow-2xl backdrop-blur-xl">
+      <section className="relative py-4 sm:py-6 px-2 sm:px-6 lg:px-8 my-3 sm:my-4 overflow-hidden rounded-3xl sm:rounded-[3rem] border-2 border-slate-200/90 shadow-2xl backdrop-blur-xl">
         {/* Bespoke Backlit Radiographic Lightbox & Perfusion Grid Matrix */}
         <SectionBackgroundMotion variant="treatments-explorer" />
 
@@ -130,14 +118,14 @@ export default function TreatmentsPage() {
       {/* =========================================================================
           6. DIRECT SECOND OPINION CONSULTATION CALLOUT (ATELIER SEAL VARIANT)
          ========================================================================= */}
-      <section className="relative py-10 sm:py-14 px-4 my-6 sm:my-8 overflow-hidden text-center">
+      <section className="relative py-6 sm:py-8 px-4 my-3 sm:my-4 overflow-hidden text-center">
         {/* Bespoke Atelier Second Opinion Chamber & Compassionate Medical Seal */}
         <SectionBackgroundMotion variant="treatments-cta" />
 
         <div className="max-w-4xl mx-auto relative z-10">
           <ScrollReveal animation="fade-up">
             <Interactive3DTilt maxTilt={4} scale={1.01}>
-              <div className="p-8 sm:p-14 rounded-[2.5rem] bg-gradient-to-br from-white via-slate-50 to-white text-slate-900 shadow-2xl border-2 border-slate-200/90 space-y-6 backdrop-blur-xl">
+              <div className="p-6 sm:p-10 lg:p-12 rounded-[2.5rem] bg-gradient-to-br from-white via-slate-50 to-white text-slate-900 shadow-2xl border-2 border-slate-200/90 space-y-5 backdrop-blur-xl">
                 <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#BE123C] font-bold block">
                   {t('Honest Second Opinion • Betiahata, Gorakhpur', 'ऑनेस्ट सेकंड ओपिनियन • बेतियाहाता, गोरखपुर')}
                 </span>

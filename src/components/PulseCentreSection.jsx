@@ -1,9 +1,9 @@
 import React from 'react';
-import { Building2, MapPin, Clock, Calendar, CheckCircle, Navigation, ArrowRight, ShieldCheck, Phone } from 'lucide-react';
+import { Building2, MapPin, Clock, Calendar, CheckCircle2, Navigation, ArrowRight, ShieldCheck, Phone, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { PULSE_DATA } from '../data/pulseData';
-import SectionCinematicVideo from './SectionCinematicVideo';
 import SectionBackgroundMotion from './SectionBackgroundMotion';
+import Interactive3DTilt from './Interactive3DTilt';
 import { useLanguage } from '../context/LanguageContext';
 
 export default function PulseCentreSection({ onBookClick }) {
@@ -11,168 +11,219 @@ export default function PulseCentreSection({ onBookClick }) {
   const { t } = useLanguage();
 
   return (
-    <section id="centre" className="relative py-8 sm:py-10 lg:py-12 my-6 sm:my-8 overflow-hidden bg-gradient-to-b from-[#FFF8F5] via-[#FAF5F0] to-[#FFF3EE] rounded-[2.5rem] sm:rounded-[3rem] border border-orange-200/60 shadow-lg">
+    <section id="centre" className="relative py-6 sm:py-8 my-4 sm:my-6 overflow-hidden bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9] rounded-[2.5rem] sm:rounded-[3rem] border border-slate-200/90 shadow-xl">
 
-      {/* Bespoke Betiahata Medical Quarter Blueprint & Asymmetrical Planar Cards */}
+      {/* Ambient Blueprint and Grid */}
       <SectionBackgroundMotion variant="hospital-pulse-centre" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-6 sm:space-y-8">
 
-        {/* Master Facility Banner */}
-        <div className="space-y-8">
+        {/* Master Facility Split Banner */}
+        <div className="rounded-[2.5rem] bg-white/95 backdrop-blur-xl text-slate-900 p-6 sm:p-10 lg:p-12 shadow-xl border border-slate-200/90 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-80 h-80 bg-rose-100/30 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-80 h-80 bg-sky-100/30 rounded-full blur-3xl pointer-events-none" />
 
-          {/* Schematic Banner */}
-          <div className="rounded-[2.5rem] bg-white/80 backdrop-blur-xl text-slate-900 p-8 sm:p-12 shadow-2xl border-2 border-orange-200/90 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-80 h-80 bg-orange-200/30 rounded-full blur-3xl pointer-events-none" />
-            <div className="absolute bottom-0 left-0 w-80 h-80 bg-rose-200/20 rounded-full blur-3xl pointer-events-none" />
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
 
-            <div className="flex flex-col lg:flex-row items-center justify-between gap-8 relative z-10">
-
-              <div className="space-y-4 max-w-xl text-left">
-                <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-orange-200 text-xs font-mono font-medium text-[#C2410C] shadow-xs">
-                  <img src="/images/p.png" alt="Pulse Logo" className="w-5 h-5 object-contain rounded-md bg-white p-0.5 border border-orange-200" />
-                  <span className="font-bold">{t('Pulse Heart Centre • Betiahata, Gorakhpur', 'पल्स हार्ट सेंटर • बेतियाहाता, गोरखपुर')}</span>
-                </div>
-
-                <h3 className="text-3xl sm:text-5xl font-semibold text-slate-950 leading-tight tracking-tight">
-                  {t('Modern Heart Clinic & OPD Care', 'मॉडर्न हार्ट क्लिनिक और ओपीडी केयर')}
-                </h3>
-
-                <p className="text-sm sm:text-base text-slate-700 font-medium leading-relaxed">
-                  {t('Led by', 'लीड बाय')} <strong className="text-[#BE123C] font-bold">{t('Dr. Prakash Chand Shahi', 'डॉ. प्रकाश चंद शाही')}</strong> {t('(Heart Specialist). Here you can easily get your ECG, Echo heart scan, report checkup, and regular follow-up care.', '(हार्ट स्पेशलिस्ट)। यहां आप आसानी से अपना ईसीजी, इको हार्ट स्कैन, रिपोर्ट चेकअप और रेगुलर फॉलो-अप केयर करवा सकते हैं।')}
-                </p>
-
-                <div className="pt-2 flex flex-wrap items-center gap-3">
-                  <Link
-                    to="/contact"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#BE123C] via-[#E11D48] to-[#FB923C] hover:from-[#9F1239] hover:to-[#BE123C] text-white text-xs font-semibold uppercase tracking-wider shadow-md shadow-rose-600/20 hover:shadow-xl transition-all"
-                  >
-                    <span>{t('Book OPD Appointment', 'ओपीडी अपॉइंटमेंट बुक करें')}</span>
-                    <ArrowRight className="w-3.5 h-3.5 text-amber-200" />
-                  </Link>
-
-                  <a
-                    href="tel:+919876543210"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white hover:bg-orange-50 text-[#BE123C] border-2 border-orange-200 text-xs font-semibold uppercase tracking-wider transition-all shadow-xs"
-                  >
-                    <Phone className="w-3.5 h-3.5 text-[#EA580C]" />
-                    <span>{t('Call +91 98765 43210', 'कॉल करें +91 98765 43210')}</span>
-                  </a>
-                </div>
+            {/* Left Column (7 cols): Clinical Information & Priorities */}
+            <div className="lg:col-span-7 space-y-4 sm:space-y-5 text-left">
+              <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-rose-50 border border-rose-200 text-xs font-mono font-bold text-[#BE123C] shadow-2xs">
+                <Sparkles className="w-3.5 h-3.5 text-[#BE123C]" />
+                <span>{t('Pulse Heart Centre • Betiahata Campus', 'पल्स हार्ट सेंटर • बेतियाहाता कैंपस')}</span>
               </div>
 
-              {/* Real Architectural Hospital Image Presentation */}
-              <div className="w-full lg:w-[420px] rounded-2xl overflow-hidden shrink-0">
-                <SectionCinematicVideo
-                  type="about-hospital"
-                  videoUrl={false}
-                  showControls={false}
-                  styleVariant="video-card"
-                  posterImage="/images/pu.png"
-                  title={t('Pulse Heart Centre Campus', 'पल्स हार्ट सेंटर कैंपस')}
-                  subtitle={t('Betiahata, Gorakhpur', 'बेतियाहाता, गोरखपुर')}
-                  specs={t('OPD Clinic • Heart Care Wing', 'ओपीडी क्लिनिक • हार्ट केयर विंग')}
-                  aspectRatio="aspect-[16/11]"
+              <h3 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-[#0A1128] leading-[1.08] tracking-tight">
+                {t('Modern Heart Clinic & OPD Facility', 'मॉडर्न हार्ट क्लिनिक और ओपीडी सेंटर')}
+              </h3>
+
+              <p className="text-xs sm:text-sm text-slate-600 font-normal leading-relaxed max-w-xl">
+                {t(
+                  'Led personally by Dr. Prakash Chand Shahi (Director & Chief Cardiologist). Conveniently located in central Gorakhpur for same-day ECG, Echo heart scans, CD reviews, and specialized heart consultations.',
+                  'डॉ. प्रकाश चंद शाही (चीफ कार्डियोलॉजिस्ट) की सीधी देखरेख में। गोरखपुर के केंद्र बेतियाहाता में स्थित — जहां आप आसानी से ईसीजी, 2डी इको स्कैन, रिपोर्ट व सीडी चेकअप और रेगुलर ओपीडी परामर्श प्राप्त कर सकते हैं।'
+                )}
+              </p>
+
+              {/* Status Pills */}
+              <div className="flex flex-wrap items-center gap-2 pt-1 font-mono text-[11px] font-bold">
+                <span className="bg-white text-[#0A1128] px-3 py-1 rounded-full border border-slate-200 shadow-2xs">
+                  {t('10 Min from Railway Station', 'रेलवे स्टेशन से 10 मिनट')}
+                </span>
+                <span className="bg-rose-50 text-[#BE123C] px-3 py-1 rounded-full border border-rose-200 shadow-2xs">
+                  {t('Mon–Sat, 10 AM – 8 PM', 'सोम–शनि, 10 AM – 8 PM')}
+                </span>
+                <span className="bg-white text-emerald-700 px-3 py-1 rounded-full border border-emerald-200 shadow-2xs">
+                  {t('Same-Day Report Check', 'सेम-डे रिपोर्ट जांच')}
+                </span>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="pt-2 flex flex-wrap items-center gap-3">
+                <Link
+                  to="/contact"
+                  className="luxury-btn-primary"
+                >
+                  <Calendar className="w-4 h-4 text-white" />
+                  <span>{t('Book OPD Appointment', 'ओपीडी अपॉइंटमेंट बुक करें')}</span>
+                </Link>
+
+                <a
+                  href="tel:+919455899378"
+                  className="luxury-btn-secondary"
+                >
+                  <Phone className="w-4 h-4 text-[#BE123C]" />
+                  <span>+91 94558 99378</span>
+                </a>
+              </div>
+            </div>
+
+            {/* Right Column (5 cols): Architectural Exterior Campus Photo */}
+            <div className="lg:col-span-5">
+              <Interactive3DTilt maxTilt={5} scale={1.01}>
+                <div className="relative rounded-3xl overflow-hidden bg-slate-900 border border-slate-200 shadow-xl group">
+                  <div className="aspect-[16/11] w-full overflow-hidden">
+                    <img
+                      src="/images/pu.png"
+                      alt="Pulse Heart Centre Betiahata Campus"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-95"
+                    />
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A1128]/90 via-[#0A1128]/25 to-transparent pointer-events-none" />
+
+                  {/* Overlaid Badges */}
+                  <div className="absolute top-3 left-3">
+                    <span className="px-3 py-1 rounded-full bg-[#0A1128]/85 backdrop-blur-md text-white text-[10px] font-mono font-bold uppercase tracking-wider border border-white/20">
+                      {t('Main Hospital Campus', 'मुख्य हॉस्पिटल कैंपस')}
+                    </span>
+                  </div>
+
+                  <div className="absolute bottom-3 left-4 right-4 text-white text-left">
+                    <span className="text-xs sm:text-sm font-extrabold block truncate">
+                      {t('Pulse Heart Centre, Betiahata', 'पल्स हार्ट सेंटर, बेतियाहाता')}
+                    </span>
+                    <span className="text-[10px] text-slate-300 font-mono block">
+                      {t('Centrally Located in Gorakhpur • Dedicated Patient Parking', 'सेंट्रल गोरखपुर • सुविधाजनक पार्किंग')}
+                    </span>
+                  </div>
+                </div>
+              </Interactive3DTilt>
+            </div>
+
+          </div>
+        </div>
+
+        {/* 3 Distinct Feature Cards (Location, OPD Timings, Diagnostics) */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 text-left">
+
+          {/* Box 1: Clinic Location & Landmark (OPD Reception Lounge Photo) */}
+          <div className="p-6 rounded-3xl bg-white border border-slate-200 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+            <div className="space-y-3">
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 rounded-xl bg-rose-50 text-[#BE123C] flex items-center justify-center border border-rose-200 shrink-0">
+                  <MapPin className="w-4 h-4" />
+                </div>
+                <span className="text-xs font-mono uppercase tracking-wider text-[#BE123C] font-bold">
+                  {t('Clinic Location', 'क्लिनिक लोकेशन')}
+                </span>
+              </div>
+
+              <div className="h-32 rounded-2xl overflow-hidden border border-slate-200 relative bg-slate-900">
+                <img
+                  src="/images/reception.png"
+                  alt="Pulse Heart Centre Reception Lounge"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A1128]/85 to-transparent flex items-end p-2.5">
+                  <span className="text-[11px] font-bold text-white">{t('Patient Care & Reception Wing', 'पेशेंट केयर व रिसेप्शन विंग')}</span>
+                </div>
               </div>
 
+              <p className="text-xs text-slate-600 leading-relaxed font-normal">
+                {t('Pulse Multispeciality Hospital & Heart Centre, Betiahata, Gorakhpur, UP (PIN 273001).', 'पल्स मल्टीस्पेशियलिटी हॉस्पिटल एंड हार्ट सेंटर, बेतियाहाता, गोरखपुर, उत्तर प्रदेश (पिन 273001)।')}
+              </p>
+            </div>
+
+            <div className="mt-4 pt-3 border-t border-slate-100 text-[11px] text-slate-500 font-mono flex items-center justify-between">
+              <span>{t('Gorakhpur Central Access', 'गोरखपुर सेंट्रल एक्सेस')}</span>
+              <span className="font-bold text-[#BE123C]">{t('10 Min from Station', 'स्टेशन से 10 मिनट')}</span>
             </div>
           </div>
 
-          {/* Overlapping Modular Cards with Rich Visuals */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-            {/* Box 1: Clinic Location & Landmark */}
-            <div className="p-7 rounded-[2rem] bg-white/85 backdrop-blur-xl border-2 border-orange-200/90 shadow-layered hover:shadow-layered-hover hover:border-orange-400 hover:bg-white/95 transition-all duration-500 hover:-translate-y-1.5 flex flex-col justify-between text-left group">
-              <div>
-                <div className="flex items-center gap-2 mb-3">
-                  <div className="p-2 rounded-xl bg-orange-50 text-[#EA580C] border border-orange-200">
-                    <MapPin className="w-5 h-5" />
-                  </div>
-                  <span className="text-xs font-mono uppercase tracking-wider text-[#C2410C] font-bold">
-                    {t('Clinic Location', 'क्लिनिक लोकेशन')}
-                  </span>
+          {/* Box 2: Consultation Schedule & Lead Doctor */}
+          <div className="p-6 rounded-3xl bg-white border border-slate-200 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+            <div className="space-y-3">
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 rounded-xl bg-slate-100 text-[#0A1128] flex items-center justify-center border border-slate-200 shrink-0">
+                  <Clock className="w-4 h-4" />
                 </div>
-                <div className="h-28 rounded-2xl overflow-hidden mb-3 border border-orange-200/80 relative">
-                  <img src="/images/hospital-opd-lounge.jpg" alt="Pulse Heart Centre Betiahata" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-2.5">
-                    <span className="text-[11px] font-bold text-white">{t('Easy to Reach in Betiahata', 'बेतियाहाता में पहुंचना आसान')}</span>
-                  </div>
-                </div>
-                <p className="text-xs text-slate-700 font-medium leading-relaxed">
-                  {t(`${clinic.name}, ${clinic.address}`, 'पल्स मल्टीस्पेशियलिटी हॉस्पिटल एंड हार्ट सेंटर, बेतियाहाता, गोरखपुर, उत्तर प्रदेश, भारत')}
-                </p>
+                <span className="text-xs font-mono uppercase tracking-wider text-[#0A1128] font-bold">
+                  {t('OPD Timings', 'ओपीडी टाइमिंग्स')}
+                </span>
               </div>
-              <div className="mt-4 pt-3 border-t border-orange-200/60 text-xs text-slate-900 font-bold flex items-center justify-between">
-                <span>{t('Gorakhpur Central Access', 'गोरखपुर सेंट्रल एक्सेस')}</span>
-                <span className="font-mono text-[#EA580C]">{t('PIN 273001', 'पिन 273001')}</span>
+
+              <div className="flex items-center gap-2.5 p-2.5 rounded-2xl bg-slate-50 border border-slate-200">
+                <img
+                  src="/images/d1.jpeg"
+                  alt="Dr. Prakash Chand Shahi"
+                  className="w-10 h-10 rounded-xl object-cover object-top border border-rose-200 shrink-0"
+                />
+                <div className="min-w-0">
+                  <span className="text-xs font-bold text-[#0A1128] block truncate">{t('Dr. Prakash Chand Shahi', 'डॉ. प्रकाश चंद शाही')}</span>
+                  <span className="text-[10px] text-slate-500 font-mono block truncate">{t('DM Cardiology (PGIMER)', 'डीएम कार्डियोलॉजी (पीजीआईएमईआर)')}</span>
+                </div>
+              </div>
+
+              <div className="space-y-1.5 text-xs">
+                <div className="flex justify-between py-1 border-b border-slate-100">
+                  <span className="text-slate-600 font-medium">{t('Monday — Saturday', 'सोमवार — शनिवार')}</span>
+                  <span className="text-[#0A1128] font-bold font-mono">{t('10:00 AM – 8:00 PM', '10:00 AM – 8:00 PM')}</span>
+                </div>
+                <div className="flex justify-between py-1 text-slate-500">
+                  <span>{t('Emergency / ICU', 'इमरजेंसी / आईसीयू')}</span>
+                  <span className="text-[#BE123C] font-bold font-mono">{t('24/7 Active', '24/7 सक्रिय')}</span>
+                </div>
               </div>
             </div>
 
-            {/* Box 2: Consultation Schedule Table & Lead Clinician */}
-            <div className="p-7 rounded-[2rem] bg-white/85 backdrop-blur-xl border-2 border-orange-200/90 shadow-layered hover:shadow-layered-hover hover:border-orange-400 hover:bg-white/95 transition-all duration-500 hover:-translate-y-1.5 flex flex-col justify-between text-left group">
-              <div>
-                <div className="flex items-center gap-2 mb-3">
-                  <div className="p-2 rounded-xl bg-orange-50 text-[#EA580C] border border-orange-200">
-                    <Clock className="w-5 h-5" />
-                  </div>
-                  <span className="text-xs font-mono uppercase tracking-wider text-[#C2410C] font-bold">
-                    {t('OPD Timings', 'ओपीडी टाइमिंग्स')}
-                  </span>
+            <div className="mt-4 pt-3 border-t border-slate-100 text-[11px] text-slate-600 font-medium flex items-center justify-between">
+              <span>{t('Walk-In & Scheduled Visits', 'वॉक-इन व शेड्यूल्ड विज़िट्स')}</span>
+              <span className="text-emerald-700 font-bold font-mono text-[10px]">{t('Direct Triage', 'डायरेक्ट परामर्श')}</span>
+            </div>
+          </div>
+
+          {/* Box 3: Heart Tests Available (2D Echo Diagnostic Photo) */}
+          <div className="p-6 rounded-3xl bg-white border border-slate-200 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+            <div className="space-y-3">
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 rounded-xl bg-rose-50 text-[#BE123C] flex items-center justify-center border border-rose-200 shrink-0">
+                  <ShieldCheck className="w-4 h-4" />
                 </div>
-                <div className="flex items-center gap-2.5 p-2 rounded-xl bg-white/90 border border-orange-200 mb-3">
-                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#BE123C] to-[#FB923C] border border-rose-200 flex items-center justify-center text-white shrink-0">
-                    <Clock className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <span className="text-xs font-bold text-slate-900 block">{t('Dr. Prakash Chand Shahi', 'डॉ. प्रकाश चंद शाही')}</span>
-                    <span className="text-[10px] text-[#C2410C] font-semibold block">{t('Mon–Sat • 10 AM – 8 PM', 'सोम–शनि • 10 एएम – 8 पीएम')}</span>
-                  </div>
-                </div>
-                <div className="space-y-1.5 text-xs">
-                  <div className="flex justify-between py-1 border-b border-orange-200/60">
-                    <span className="text-slate-600 font-medium">{t('Mon — Sat', 'सोम — शनि')}</span>
-                    <span className="text-slate-900 font-bold font-mono">{t('10:00 AM – 8:00 PM', '10:00 एएम – 8:00 पीएम')}</span>
-                  </div>
-                  <div className="flex justify-between py-1 text-slate-500">
-                    <span>{t('Sunday', 'रविवार')}</span>
-                    <span className="text-[#EA580C] font-bold font-mono">{t('Emergencies Prioritized', 'इमरजेंसी प्राथमिकता')}</span>
-                  </div>
+                <span className="text-xs font-mono uppercase tracking-wider text-[#BE123C] font-bold">
+                  {t('Cardiac Diagnostics', 'कार्डियक डायग्नोस्टिक्स')}
+                </span>
+              </div>
+
+              <div className="h-32 rounded-2xl overflow-hidden border border-slate-200 relative bg-slate-900">
+                <img
+                  src="/images/echo-machine-suite.jpg"
+                  alt="Echo Machine Suite"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A1128]/85 to-transparent flex items-end p-2.5">
+                  <span className="text-[11px] font-bold text-white">{t('High-Resolution 2D Echo', 'हाई-रेसोल्यूशन 2डी इको')}</span>
                 </div>
               </div>
-              <div className="mt-4 pt-3 border-t border-orange-200/60 text-xs text-slate-900 font-bold">
-                {t('Walk-In & Scheduled Visits', 'वॉक-इन और शेड्यूल्ड विज़िट्स')}
+
+              <div className="flex flex-wrap gap-1.5 pt-1">
+                <span className="text-[10px] font-bold bg-slate-100 text-[#0A1128] px-2.5 py-1 rounded-full border border-slate-200">{t('Digital ECG', 'डिजिटल ईसीजी')}</span>
+                <span className="text-[10px] font-bold bg-slate-100 text-[#0A1128] px-2.5 py-1 rounded-full border border-slate-200">{t('2D Color Echo', '2डी कलर इको')}</span>
+                <span className="text-[10px] font-bold bg-rose-50 text-[#BE123C] px-2.5 py-1 rounded-full border border-rose-200">{t('TMT & Holter', 'टीएमटी व होल्टर')}</span>
               </div>
             </div>
 
-            {/* Box 3: Heart Tests Available */}
-            <div className="p-7 rounded-[2rem] bg-white/85 backdrop-blur-xl border-2 border-orange-200/90 shadow-layered hover:shadow-layered-hover hover:border-orange-400 hover:bg-white/95 transition-all duration-500 hover:-translate-y-1.5 flex flex-col justify-between text-left group">
-              <div>
-                <div className="flex items-center gap-2 mb-3">
-                  <div className="p-2 rounded-xl bg-orange-50 text-[#EA580C] border border-orange-200">
-                    <ShieldCheck className="w-5 h-5" />
-                  </div>
-                  <span className="text-xs font-mono uppercase tracking-wider text-[#C2410C] font-bold">
-                    {t('Heart Tests Available', 'उपलब्ध हार्ट टेस्ट्स')}
-                  </span>
-                </div>
-                <div className="h-28 rounded-2xl overflow-hidden mb-3 border border-orange-200/80 relative">
-                  <img src="/images/echo-machine-suite.jpg" alt="2D Echo Machine Suite" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-2.5">
-                    <span className="text-[11px] font-bold text-white">{t('2D Echo & Report Check', '2डी इको और रिपोर्ट चेक')}</span>
-                  </div>
-                </div>
-                <div className="flex flex-wrap gap-1">
-                  <span className="text-[10px] font-bold bg-orange-50 text-[#C2410C] px-2 py-0.5 rounded border border-orange-200">{t('ECG Heart Test', 'ईसीजी हार्ट टेस्ट')}</span>
-                  <span className="text-[10px] font-bold bg-orange-50 text-[#C2410C] px-2 py-0.5 rounded border border-orange-200">{t('2D Echo Scan', '2डी इको स्कैन')}</span>
-                  <span className="text-[10px] font-bold bg-orange-50 text-[#C2410C] px-2 py-0.5 rounded border border-orange-200">{t('Report & CD Check', 'रिपोर्ट और सीडी चेक')}</span>
-                </div>
-              </div>
-              <div className="mt-4 pt-3 border-t border-orange-200/60 text-xs text-slate-900 font-bold">
-                {t('Fast & Accurate Heart Tests', 'तेज़ और सटीक हार्ट टेस्ट्स')}
-              </div>
+            <div className="mt-4 pt-3 border-t border-slate-100 text-[11px] text-slate-500 font-mono flex items-center justify-between">
+              <span>{t('Fast & Accurate Testing', 'सटीक व त्वरित जांच')}</span>
+              <span className="font-bold text-[#0A1128]">{t('Same-Day CD', 'सेम-डे सीडी')}</span>
             </div>
-
           </div>
 
         </div>

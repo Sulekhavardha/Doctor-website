@@ -88,7 +88,7 @@ export default function DoctorMonographSection() {
   ];
 
   return (
-    <section className="relative pt-10 pb-6 sm:pt-12 sm:pb-8 lg:pt-14 lg:pb-10 overflow-hidden bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9] border-b border-slate-200">
+    <section className="relative pt-6 pb-6 sm:pt-7 sm:pb-7 lg:pt-8 lg:pb-8 overflow-hidden bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9] border-b border-slate-200">
 
       {/* Layered flowing curves, abstract wave shapes & warm ivory-pink gradients */}
       <SectionBackgroundMotion variant="home-monograph" />
@@ -96,7 +96,7 @@ export default function DoctorMonographSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Master Balanced 2-Column Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
 
           {/* Left Column (5 Cols): Offset Architectural Square Portrait Frame (Unique to Monograph) */}
           <div className="lg:col-span-5 relative max-w-md mx-auto w-full">

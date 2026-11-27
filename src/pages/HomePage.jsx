@@ -2,7 +2,6 @@ import React, { Suspense, lazy } from 'react';
 import CinematicHeroSection from '../components/CinematicHeroSection';
 import DoctorMonographSection from '../components/DoctorMonographSection';
 
-const ComprehensiveServicesSection = lazy(() => import('../components/ComprehensiveServicesSection'));
 const MedicalTechnologyShowcase = lazy(() => import('../components/MedicalTechnologyShowcase'));
 const TreatmentStorytellingSection = lazy(() => import('../components/TreatmentStorytellingSection'));
 const CredentialsEditorialSection = lazy(() => import('../components/CredentialsEditorialSection'));
@@ -26,8 +25,6 @@ export default function HomePage() {
 
       {/* Below-the-fold sections lazy-loaded for instant initial render & smooth scroll */}
       <Suspense fallback={null}>
-        {/* 3. COMPREHENSIVE HEART CARE SERVICES — 6 Hospital Services */}
-        <ComprehensiveServicesSection />
         <MedicalTechnologyShowcase />
         <TreatmentStorytellingSection />
         <CredentialsEditorialSection />

@@ -49,30 +49,30 @@ export default function ContactPage() {
   ];
 
   return (
-    <div className="relative bg-[#FAF9F6] overflow-hidden pt-20 sm:pt-24 pb-10 sm:pb-14">
+    <div className="relative bg-[#FAF9F6] overflow-hidden pt-16 sm:pt-20 pb-6 sm:pb-8">
 
       {/* =========================================================================
           HERO SECTION: MATCHED 100% WITH HOME & ABOUT HERO ARCHITECTURE
          ========================================================================= */}
-      <section className="relative min-h-[85vh] lg:min-h-[90vh] flex flex-col justify-between pt-10 sm:pt-12 pb-8 sm:pb-10 px-4 sm:px-6 lg:px-12 overflow-hidden bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9]">
+      <section className="relative pt-4 sm:pt-6 pb-6 sm:pb-8 px-4 sm:px-6 lg:px-12 overflow-hidden bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9]">
 
         {/* Bespoke Welcoming Medical Concierge & Biometric Radar Compass */}
         <SectionBackgroundMotion variant="contact-hero" />
 
         {/* Hero Content Grid */}
-        <div className="max-w-7xl mx-auto w-full flex-1 flex flex-col justify-center relative z-10 py-4 sm:py-8">
+        <div className="max-w-7xl mx-auto w-full flex-1 flex flex-col justify-center relative z-10 py-2 sm:py-4">
 
           {/* Top Status Strip */}
-          <div className="flex items-center justify-end mb-6 sm:mb-8">
+          <div className="flex items-center justify-end mb-4 sm:mb-6">
             <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-xs font-semibold text-slate-700 bg-white/95 backdrop-blur-md px-3.5 sm:px-4 py-1.5 rounded-full border border-slate-200 shadow-xs">
               <span className="flex items-center gap-1.5">
                 <Clock className="w-3.5 h-3.5 text-[#BE123C]" />
                 <span>{t('OPD: 10:00 AM – 08:00 PM', 'ओपीडी: सुबह 10:00 – रात 08:00 बजे')}</span>
               </span>
               <span className="text-slate-300 hidden sm:inline">•</span>
-              <a href="tel:+919876543210" className="flex items-center gap-1.5 text-[#BE123C] font-bold hover:underline">
+              <a href="tel:+919455899378" className="flex items-center gap-1.5 text-[#BE123C] font-bold hover:underline">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#E11D48] animate-ping" />
-                <span>{t('24/7 Helpline: +91 98765 43210', '24/7 हेल्पलाइन: +91 98765 43210')}</span>
+                <span>+91 94558 99378</span>
               </a>
             </div>
           </div>
@@ -268,7 +268,7 @@ export default function ContactPage() {
       {/* ===================================================================
           INFO CARDS + PROTOCOL SECTION
          =================================================================== */}
-      <div className="relative py-10 sm:py-14 bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9] overflow-hidden">
+      <div className="relative py-6 sm:py-8 bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9] overflow-hidden">
         {/* Bespoke Editorial Wayfinding & Patient Checklist Dossier */}
         <SectionBackgroundMotion variant="contact-protocol" />
 

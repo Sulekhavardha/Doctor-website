@@ -26,7 +26,7 @@ export default function Navbar() {
   const navLinks = [
     { label: t('Home', 'होम'), path: '/' },
     { label: t('About', 'अबाउट'), path: '/about' },
-    { label: t('Services', 'सर्विसेज'), path: '/#services' },
+    { label: t('Services', 'सर्विसेज'), path: '/services' },
     { label: t('Treatments', 'ट्रीटमेंट्स'), path: '/treatments' },
     { label: t('Hospital', 'हॉस्पिटल'), path: '/hospital' },
     { label: t('Contact', 'कॉन्टैक्ट'), path: '/contact' },

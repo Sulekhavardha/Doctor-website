@@ -87,12 +87,12 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="relative pt-20 sm:pt-24 pb-12 sm:pb-16 bg-[#FAF9F6] overflow-hidden">
+    <div className="relative pt-16 sm:pt-20 pb-8 sm:pb-10 bg-[#FAF9F6] overflow-hidden">
 
       {/* =========================================================================
           HERO SECTION: EXECUTIVE BIOGRAPHICAL & CLINICAL LEADERSHIP DOSSIER
          ========================================================================= */}
-      <section className="relative min-h-[calc(100vh-5rem)] flex flex-col justify-between pt-8 sm:pt-10 pb-10 px-4 sm:px-6 lg:px-12 overflow-hidden select-none">
+      <section className="relative pt-4 sm:pt-6 pb-6 sm:pb-8 px-4 sm:px-6 lg:px-12 overflow-hidden select-none">
 
         {/* Clean, Non-Intrusive Medical Backdrop */}
         <DoctorHeroMedicalCanvas />
@@ -280,12 +280,12 @@ export default function AboutPage() {
       </section>
 
       <div className="relative z-10">
-        <section className="relative py-10 sm:py-14 lg:py-16 overflow-hidden border-y border-slate-200 shadow-xs bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9]">
+        <section className="relative py-6 sm:py-7 lg:py-8 overflow-hidden border-y border-slate-200 shadow-xs bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9]">
           {/* Bespoke Four Monoliths of Trust & Sculptural Fluted Columns */}
           <SectionBackgroundMotion variant="about-pillars" />
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="text-center max-w-xl mx-auto mb-10 space-y-2">
+            <div className="text-center max-w-xl mx-auto mb-6 sm:mb-8 space-y-2">
               <span className="text-[11px] font-bold uppercase tracking-widest text-[#BE123C] bg-rose-50 border border-rose-200 px-3.5 py-1 rounded-full">{t('Our Promise', 'आवर प्रॉमिस')}</span>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0A1128]">
                 {t('How We Care for', 'हम आपके हार्ट की')} <span className="font-serif italic font-normal text-[#BE123C]">{t('Your Heart', 'देखभाल कैसे करते हैं')}</span>
@@ -353,14 +353,14 @@ export default function AboutPage() {
         </section>
 
         {/* 3. Milestones Timeline: 3D Cylinder Carousel & Architectural Clinical Dossiers */}
-        <section className="relative py-12 sm:py-16 lg:py-20 overflow-hidden bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9]">
+        <section className="relative py-6 sm:py-7 lg:py-8 overflow-hidden bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9]">
           {/* Bespoke Temporal Pathway & Luminous Chrono-Spine */}
           <SectionBackgroundMotion variant="about-milestones" />
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
             {/* Section Header */}
-            <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10 space-y-3">
+            <div className="text-center max-w-2xl mx-auto mb-6 sm:mb-8 space-y-2">
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-rose-50 text-[#BE123C] border border-rose-200/90 text-xs font-bold uppercase tracking-[0.24em] shadow-xs">
                 <Sparkles className="w-3.5 h-3.5 text-[#BE123C]" />
                 <span>{t('Two Decades of Clinical Leadership', 'टू डिकेड्स ऑफ क्लिनिकल लीडरशिप')}</span>
@@ -522,11 +522,11 @@ export default function AboutPage() {
         </section>
 
         {/* 4. Luxury Direct Consultation Pavilion & Priority Access Suite */}
-        <section className="relative py-10 sm:py-14 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto overflow-hidden">
+        <section className="relative py-6 sm:py-8 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto overflow-hidden">
           {/* Bespoke Luminous Solarium Pavilion & Radiant Focus Ring */}
           <SectionBackgroundMotion variant="about-cta" />
 
-          <div className="relative p-8 sm:p-14 lg:p-16 rounded-[3rem] bg-gradient-to-br from-white/95 via-slate-50 to-white/90 text-slate-900 shadow-2xl border-2 border-slate-200/90 overflow-hidden backdrop-blur-xl">
+          <div className="relative p-6 sm:p-10 lg:p-12 rounded-[2.5rem] bg-gradient-to-br from-white/95 via-slate-50 to-white/90 text-slate-900 shadow-2xl border-2 border-slate-200/90 overflow-hidden backdrop-blur-xl">
 
             {/* Glowing Internal Ambient Flare */}
             <div className="absolute -top-20 -right-20 w-80 h-80 bg-gradient-to-bl from-[#E11D48]/15 via-[#0A1128]/10 to-transparent rounded-full blur-3xl pointer-events-none" />

@@ -65,7 +65,7 @@ export default function PatientExperienceSection({ onBookClick }) {
   ];
 
   return (
-    <section id="patient-experience" className="relative py-8 sm:py-10 lg:py-12 my-6 sm:my-8 overflow-hidden bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9] rounded-[2.5rem] sm:rounded-[3rem] border border-slate-200 shadow-lg">
+    <section id="patient-experience" className="relative py-6 sm:py-7 lg:py-8 my-4 sm:my-5 overflow-hidden bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9] rounded-[2.5rem] sm:rounded-[3rem] border border-slate-200 shadow-lg">
       {/* Bespoke Serene Hospitality & Calming Organic Waves */}
       <SectionBackgroundMotion variant="hospital-experience" />
 
@@ -73,7 +73,7 @@ export default function PatientExperienceSection({ onBookClick }) {
         
         {/* Section Header */}
         <ScrollReveal variant="fade-down">
-          <div className="mb-12">
+          <div className="mb-6 sm:mb-8">
             <div className="flex items-center gap-3 mb-3">
               <span className="text-xs font-semibold text-white bg-gradient-to-r from-[#0A1128] via-[#1E293B] to-[#BE123C] px-3.5 py-1 rounded-full shadow-sm border border-rose-300/30">
                 {t('Patient Care Guide', 'पेशेंट केयर गाइड')}

@@ -37,7 +37,7 @@ export default function AnatomicalSpecialtyShowcase({ variant = 'home-specialtie
       title: t('Heart Blockage Check (Angiogram)', 'हार्ट ब्लॉकेज जांच (एंजियोग्राम)'),
       category: t('15-Minute Heart Test', '15-मिनट हार्ट टेस्ट'),
       desc: t('A quick, painless heart test through the wrist to clearly see if any arteries are blocked.', 'कलाई के रास्ते एक तेज़ और बिना दर्द का हार्ट टेस्ट, जिससे साफ पता चलता है कि कोई आर्टरी बंद तो नहीं है।'),
-      image: '/images/c.webp',
+      image: '/images/ca.png',
       stat: t('15-Min Quick Check', '15-मिनट तेज़ जांच'),
       recovery: t('Same-Day Discharge', 'उसी दिन डिस्चार्ज'),
       points: [

@@ -6,15 +6,7 @@ import CardiologyFullCanvas from './CardiologyFullCanvas';
 import SectionBackgroundMotion from './SectionBackgroundMotion';
 import CinematicVideoPlayerModal from './CinematicVideoPlayerModal';
 
-/**
- * CardiologyShowcaseSection
- * Completely redesigned flagship 3D Cardiovascular Sciences Showcase:
- * - 100% Cardiology Authentic: NO brain imagery, NO neurology elements
- * - 3D Perspective interactive visual stage with live fluoroscopic catheterization video & high-res cardiac scans
- * - 4 Visual-first 3D interactive procedure cards with minimal text & punchy metrics
- * - Live cardiac telemetry HUD (72 BPM Sinus Rhythm, TIMI-3 Perfusion, < 0.3mm Precision)
- * - Rich architectural blueprint background with animated ECG sinus wave, laser sweeps & CAD compass rings
- */
+
 export default function CardiologyShowcaseSection() {
   const [activeChannel, setActiveChannel] = useState('stenting');
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
@@ -25,7 +17,7 @@ export default function CardiologyShowcaseSection() {
       title: 'Transradial Coronary Angioplasty & Stenting',
       category: 'INTERVENTIONAL CATH-LAB',
       badge: 'WRIST-FIRST ACCESS',
-      image: '/images/doctor-cathlab-procedure.jpg',
+      image: '/images/ca.png',
       videoUrl: '/videos/cardiac-catheterization.mp4',
       primaryMetric: '99.4% Flow Restored',
       statLabel: 'Vessel Patency Restored',
