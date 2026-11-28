@@ -48,7 +48,7 @@ export default function ServicesPage() {
       id: 'campus',
       title: t('Pulse Heart Centre Betiahata Campus', 'पल्स हार्ट सेंटर बेतियाहाता कैंपस'),
       specs: t('Central Gorakhpur • 10 Min from Railway Station', 'सेंट्रल गोरखपुर • रेलवे स्टेशन से 10 मिनट'),
-      image: '/images/pu.png',
+      image: '/images/ppp.png',
       badge: t('Main Hospital Building', 'मुख्य हॉस्पिटल बिल्डिंग'),
     },
     cathlab: {
@@ -84,7 +84,7 @@ export default function ServicesPage() {
       leadTag: t('Pulse Precision Diagnostics', 'पल्स प्रेसिजन जांच'),
     },
     'hdu-general-ward': {
-      image: '/images/pu.png',
+      image: '/images/ppp.png',
       aspect: 'aspect-[16/10]',
       objectPos: 'object-center',
       leadTag: t('Pulse Betiahata Campus & HDU', 'पल्स बेतियाहाता कैंपस व एचडीयू'),
@@ -113,7 +113,7 @@ export default function ServicesPage() {
   const services = rawServices.map((srv) => ({
     ...srv,
     ...(serviceImageMap[srv.id] || {
-      image: '/images/pu.png',
+      image: '/images/ppp.png',
       aspect: 'aspect-[16/10]',
       objectPos: 'object-center',
       leadTag: srv.badge,
@@ -251,15 +251,14 @@ export default function ServicesPage() {
                     </div>
 
                     {/* Featured Stage Photo (Real Pulse Heart Centre Asset) */}
-                    <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-900">
+                    <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-100">
                       <img
                         key={activeStage.image}
                         src={activeStage.image}
                         alt={activeStage.title}
-                        className="w-full h-full object-cover object-center filter brightness-95 contrast-105 transition-all duration-500" loading="lazy" decoding="async" />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#0A1128] via-[#0A1128]/25 to-transparent" />
+                        className={`w-full h-full object-cover ${activeCampusTab === 'campus' ? 'object-[50%_68%]' : 'object-center'} transition-all duration-500`} loading="lazy" decoding="async" />
 
-                      {/* Overlaid Badges */}
+                      {/* Overlaid Top Badges */}
                       <div className="absolute top-3 left-3 flex items-center gap-2">
                         <span className="px-2.5 py-1 rounded-full bg-[#0A1128]/85 backdrop-blur-md text-white text-[10px] font-mono font-bold uppercase tracking-wider border border-white/20">
                           {activeStage.badge}
@@ -267,26 +266,26 @@ export default function ServicesPage() {
                       </div>
 
                       <div className="absolute top-3 right-3">
-                        <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-500/90 text-white text-[10px] font-mono font-bold shadow-xs">
+                        <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-500/95 text-white text-[10px] font-mono font-bold shadow-xs">
                           <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
                           <span>{t('Live Facility', 'लाइव फैसिलिटी')}</span>
                         </span>
                       </div>
+                    </div>
 
-                      {/* Bottom Info on Active Photo */}
-                      <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between gap-3 text-white">
-                        <div className="min-w-0">
-                          <span className="text-xs font-bold block truncate">
-                            {activeStage.title}
-                          </span>
-                          <span className="text-[10px] text-slate-300 font-mono block truncate">
-                            {activeStage.specs}
-                          </span>
-                        </div>
-                        <span className="text-[10px] font-mono bg-rose-600/90 backdrop-blur-md px-2.5 py-0.5 rounded-full text-white shrink-0">
-                          {t('Betiahata', 'बेतियाहाता')}
+                    {/* Clean Info Strip Below Photo */}
+                    <div className="px-4 py-3 bg-[#0A1128] text-white flex items-center justify-between gap-3 text-left">
+                      <div className="min-w-0">
+                        <span className="text-xs font-bold block truncate">
+                          {activeStage.title}
+                        </span>
+                        <span className="text-[10px] text-slate-300 font-mono block truncate mt-0.5">
+                          {activeStage.specs}
                         </span>
                       </div>
+                      <span className="text-[10px] font-mono bg-rose-600 px-2.5 py-0.5 rounded-full text-white shrink-0">
+                        {t('Betiahata', 'बेतियाहाता')}
+                      </span>
                     </div>
 
                     {/* Doctor Supervision Footer */}
@@ -501,9 +500,9 @@ export default function ServicesPage() {
           <div className="group rounded-2xl bg-white border border-slate-200 overflow-hidden shadow-sm hover:shadow-lg transition-all">
             <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-900">
               <img
-                src="/images/pu.png"
+                src="/images/ppp.png"
                 alt="Pulse Heart Centre Betiahata Campus"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" />
+                className="w-full h-full object-cover object-[50%_68%] group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0A1128]/85 via-transparent to-transparent" />
               <div className="absolute bottom-2.5 left-3 right-3 text-white">
                 <span className="text-[10px] font-mono font-bold text-rose-300 uppercase block">

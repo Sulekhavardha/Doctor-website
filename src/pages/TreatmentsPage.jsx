@@ -68,20 +68,33 @@ export default function TreatmentsPage() {
             </p>
           </ScrollReveal>
 
-          {/* Interactive Vascular Intervention Video Console */}
+          {/* Interactive Vascular Intervention Visual Console (Unobstructed Image + Clean Caption Bar) */}
           <ScrollReveal animation="scale-up" delay={0.25} className="pt-6 max-w-5xl mx-auto">
             <Interactive3DTilt maxTilt={5} scale={1.01}>
-              <SectionCinematicVideo
-                type="cardiac-catheterization"
-                videoUrl={false}
-                showControls={false}
-                styleVariant="panoramic-stage"
-                posterImage="/images/mm.png"
-                title={t('Heart Blockage Check & Stent Care', 'हार्ट ब्लॉकेज चेक एंड स्टेंट केयर')}
-                subtitle={t('Clear Live Heart Imaging', 'क्लियर लाइव हार्ट इमेजिंग')}
-                specs={t('Gentle Wrist Procedure • Quick Recovery', 'जेंटल रिस्ट प्रोसीजर • क्विक रिकवरी')}
-                aspectRatio="aspect-[16/8] sm:aspect-[21/9]"
-              />
+              <div className="rounded-3xl sm:rounded-[2.5rem] p-2.5 sm:p-4 bg-white/95 border-2 border-slate-200/90 shadow-2xl overflow-hidden">
+                <div className="aspect-[16/9] sm:aspect-[21/9] rounded-2xl sm:rounded-[2rem] overflow-hidden bg-slate-100">
+                  <img
+                    src="/images/mm.png"
+                    alt={t('Heart Blockage Check & Stent Care', 'हार्ट ब्लॉकेज चेक एंड स्टेंट केयर')}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover object-center"
+                  />
+                </div>
+                <div className="mt-2.5 sm:mt-3 px-3 sm:px-4 py-2.5 rounded-2xl bg-[#0A1128] text-white flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-left">
+                  <div>
+                    <span className="text-xs sm:text-sm font-extrabold block leading-snug">
+                      {t('Heart Blockage Check & Stent Care', 'हार्ट ब्लॉकेज चेक एंड स्टेंट केयर')}
+                    </span>
+                    <span className="text-[11px] text-slate-300 font-medium block">
+                      {t('Gentle Wrist Procedure • Quick Recovery', 'जेंटल रिस्ट प्रोसीजर • क्विक रिकवरी')}
+                    </span>
+                  </div>
+                  <span className="text-[10px] font-mono font-bold text-rose-200 bg-white/10 px-3 py-1 rounded-full border border-white/15 self-start sm:self-auto shrink-0">
+                    {t('Clear Live Heart Imaging', 'क्लियर लाइव हार्ट इमेजिंग')}
+                  </span>
+                </div>
+              </div>
             </Interactive3DTilt>
           </ScrollReveal>
         </div>

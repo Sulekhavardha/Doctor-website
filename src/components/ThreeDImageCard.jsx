@@ -38,7 +38,7 @@ export default function ThreeDImageCard({
             alt={alt}
             loading="lazy"
             decoding="async"
-            onError={() => setImgSrc('/images/pu.png')}
+            onError={() => setImgSrc('/images/ppp.png')}
             className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
           />
         )}

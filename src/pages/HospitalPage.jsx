@@ -216,56 +216,53 @@ export default function HospitalPage() {
                       </button>
                     </div>
 
-                    {/* Featured Stage Photo */}
-                    <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-900">
+                    {/* Featured Stage Photo (Unobstructed) */}
+                    <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-100">
                       <img
                         key={currentStage.image}
                         src={currentStage.image}
                         alt={currentStage.title}
-                        className="w-full h-full object-cover object-center filter brightness-95 contrast-105 transition-all duration-500"
+                        className="w-full h-full object-cover object-center transition-all duration-500"
                         loading="lazy"
                         decoding="async"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#0A1128] via-[#0A1128]/25 to-transparent pointer-events-none" />
 
-                      {/* Overlaid Badges */}
-                      <div className="absolute top-3 left-3 flex items-center gap-2">
-                        <span className="px-2.5 py-1 rounded-full bg-[#0A1128]/85 backdrop-blur-md text-white text-[10px] font-mono font-bold uppercase tracking-wider border border-white/20">
+                      {/* Compact Top Corner Badges */}
+                      <div className="absolute top-3 left-3">
+                        <span className="px-2.5 py-1 rounded-full bg-[#0A1128]/85 backdrop-blur-md text-white text-[9.5px] sm:text-[10px] font-mono font-bold uppercase tracking-wider border border-white/20">
                           {currentStage.badge}
                         </span>
                       </div>
 
                       <div className="absolute top-3 right-3">
-                        <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-500/90 text-white text-[10px] font-mono font-bold shadow-xs">
+                        <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-500/95 text-white text-[9.5px] sm:text-[10px] font-mono font-bold shadow-xs">
                           <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
                           <span>{t('Active Standby', 'सक्रिय स्टैंडबाय')}</span>
                         </span>
                       </div>
+                    </div>
 
-                      {/* Bottom Info on Active Photo */}
-                      <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between gap-3 text-white">
-                        <div className="min-w-0">
-                          <span className="text-xs font-bold block truncate">
+                    {/* Facility Details & Specs Below Photo */}
+                    <div className="p-4 bg-white space-y-2.5 text-left">
+                      <div className="flex items-start justify-between gap-2">
+                        <div>
+                          <h4 className="text-sm font-extrabold text-[#0A1128] leading-snug">
                             {currentStage.title}
-                          </span>
-                          <span className="text-[10px] text-slate-300 font-mono block truncate">
+                          </h4>
+                          <span className="text-[10.5px] text-[#BE123C] font-mono font-semibold block mt-0.5">
                             {currentStage.subtitle}
                           </span>
                         </div>
-                        <span className="text-[10px] font-mono bg-rose-600/90 backdrop-blur-md px-2.5 py-0.5 rounded-full text-white shrink-0">
+                        <span className="text-[10px] font-mono font-bold bg-rose-50 border border-rose-200 px-2.5 py-0.5 rounded-full text-[#BE123C] whitespace-nowrap shrink-0">
                           {t('NABH Level', 'एनएबीएच स्तर')}
                         </span>
                       </div>
-                    </div>
-
-                    {/* Facility Specs Brief */}
-                    <div className="p-4 bg-white space-y-2">
                       <p className="text-xs text-slate-600 font-normal leading-relaxed">
                         {currentStage.specs}
                       </p>
-                      <div className="flex items-center justify-between text-[11px] font-mono text-slate-500 pt-1 border-t border-slate-100">
-                        <span>{t('Director Oversight', 'डॉ. शाही की देखरेख')}</span>
-                        <span className="text-rose-700 font-bold">{t('Betiahata, Gorakhpur', 'बेतियाहाता, गोरखपुर')}</span>
+                      <div className="flex items-center justify-between gap-2 text-[10.5px] sm:text-[11px] font-mono text-slate-500 pt-2 border-t border-slate-100">
+                        <span className="whitespace-nowrap">{t('Director Oversight', 'डॉ. शाही की देखरेख')}</span>
+                        <span className="text-rose-700 font-bold whitespace-nowrap">{t('Betiahata, Gorakhpur', 'बेतियाहाता, गोरखपुर')}</span>
                       </div>
                     </div>
                   </div>
@@ -304,21 +301,22 @@ export default function HospitalPage() {
               {facilityGallery.map((item, idx) => (
                 <ScrollReveal key={idx} animation="fade-up" delay={idx * 0.12}>
                   <Interactive3DTilt maxTilt={8} scale={1.02}>
-                    <div className="group relative rounded-[2rem] bg-white/95 backdrop-blur-xl p-4 border border-slate-200 shadow-lg hover:shadow-2xl hover:border-rose-300 transition-all duration-500 space-y-4 text-left">
-                      <SectionCinematicVideo
-                        type={item.type}
-                        videoUrl={false}
-                        showControls={false}
-                        styleVariant="floating-3d"
-                        posterImage={item.image}
-                        title={item.title}
-                        subtitle={item.category}
-                        specs={item.desc}
-                        aspectRatio="aspect-[16/10]"
-                      />
-                      <div className="px-1 flex items-center justify-between">
-                        <h3 className="text-base font-extrabold text-[#0A1128] tracking-tight group-hover:text-[#BE123C] transition-colors">{item.title}</h3>
-                        <span className="text-[10px] font-mono font-bold text-[#BE123C] bg-rose-50 px-2.5 py-1 rounded-md border border-rose-200 shadow-xs">{item.category}</span>
+                    <div className="group relative rounded-3xl bg-white/95 backdrop-blur-xl p-3 sm:p-4 border border-slate-200 shadow-lg hover:shadow-2xl hover:border-rose-300 transition-all duration-500 space-y-3.5 text-left">
+                      <div className="aspect-[16/10] w-full rounded-2xl overflow-hidden bg-slate-100">
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          loading="lazy"
+                          decoding="async"
+                          className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                        />
+                      </div>
+                      <div className="px-1 space-y-1.5">
+                        <div className="flex items-center justify-between gap-2">
+                          <h3 className="text-base font-extrabold text-[#0A1128] tracking-tight group-hover:text-[#BE123C] transition-colors">{item.title}</h3>
+                          <span className="text-[10px] font-mono font-bold text-[#BE123C] bg-rose-50 px-2.5 py-1 rounded-md border border-rose-200 shadow-xs whitespace-nowrap shrink-0">{item.category}</span>
+                        </div>
+                        <p className="text-xs text-slate-600 leading-relaxed">{item.desc}</p>
                       </div>
                     </div>
                   </Interactive3DTilt>

@@ -79,27 +79,24 @@ export default function PulseCentreSection({ onBookClick }) {
             {/* Right Column (5 cols): Architectural Exterior Campus Photo */}
             <div className="lg:col-span-5">
               <Interactive3DTilt maxTilt={5} scale={1.01}>
-                <div className="relative rounded-3xl overflow-hidden bg-slate-900 border border-slate-200 shadow-xl group">
-                  <div className="aspect-[16/11] w-full overflow-hidden">
+                <div className="rounded-3xl overflow-hidden bg-white border border-slate-200 shadow-xl group">
+                  <div className="relative aspect-[16/11] w-full overflow-hidden bg-slate-100">
                     <img
-                      src="/images/pu.png"
+                      src="/images/ppp.png"
                       alt="Pulse Heart Centre Betiahata Campus"
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 filter brightness-95" loading="lazy" decoding="async" />
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A1128]/90 via-[#0A1128]/25 to-transparent pointer-events-none" />
-
-                  {/* Overlaid Badges */}
-                  <div className="absolute top-3 left-3">
-                    <span className="px-3 py-1 rounded-full bg-[#0A1128]/85 backdrop-blur-md text-white text-[10px] font-mono font-bold uppercase tracking-wider border border-white/20">
-                      {t('Main Hospital Campus', 'मुख्य हॉस्पिटल कैंपस')}
-                    </span>
+                      className="w-full h-full object-cover object-[50%_68%] group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async" />
+                    <div className="absolute top-3 left-3">
+                      <span className="px-3 py-1 rounded-full bg-[#0A1128]/85 backdrop-blur-md text-white text-[10px] font-mono font-bold uppercase tracking-wider border border-white/20">
+                        {t('Main Hospital Campus', 'मुख्य हॉस्पिटल कैंपस')}
+                      </span>
+                    </div>
                   </div>
 
-                  <div className="absolute bottom-3 left-4 right-4 text-white text-left">
+                  <div className="px-4 py-3 bg-[#0A1128] text-white text-left">
                     <span className="text-xs sm:text-sm font-extrabold block truncate">
                       {t('Pulse Heart Centre, Betiahata', 'पल्स हार्ट सेंटर, बेतियाहाता')}
                     </span>
-                    <span className="text-[10px] text-slate-300 font-mono block">
+                    <span className="text-[10px] text-slate-300 font-mono block truncate mt-0.5">
                       {t('Centrally Located in Gorakhpur • Dedicated Patient Parking', 'सेंट्रल गोरखपुर • सुविधाजनक पार्किंग')}
                     </span>
                   </div>

@@ -74,35 +74,50 @@ export default function ArchitecturalGallerySection() {
         </div>
 
         {/* Main Panoramic Facility Stage */}
-        <div className="relative rounded-2xl overflow-hidden border border-slate-200 shadow-xl aspect-[16/9] sm:aspect-[21/10] bg-[#0A1128] group">
-          <img
-            key={current.id}
-            src={current.image}
-            alt={current.title}
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]" loading="lazy" decoding="async" />
+        <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-xl bg-white group">
+          <div className="relative aspect-[16/10] sm:aspect-[21/10] bg-[#0A1128] overflow-hidden">
+            <img
+              key={current.id}
+              src={current.image}
+              alt={current.title}
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]" loading="lazy" decoding="async" />
 
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0A1128]/90 via-[#0A1128]/20 to-transparent pointer-events-none" />
+            <div className="hidden sm:block absolute inset-0 bg-gradient-to-t from-[#0A1128]/90 via-[#0A1128]/20 to-transparent pointer-events-none" />
 
-          {/* Top Action Controls */}
-          <div className="absolute top-4 right-4 flex items-center gap-2 z-20">
-            <button
-              onClick={() => setIsLightboxOpen(true)}
-              className="px-3.5 py-2 rounded-full bg-[#0A1128]/80 hover:bg-[#0A1128] text-white text-xs font-semibold flex items-center gap-1.5 border border-white/20 transition-colors"
-            >
-              <Eye className="w-3.5 h-3.5" />
-              <span>{t('Expand Photo', 'एक्सपैंड फोटो')}</span>
-            </button>
+            {/* Top Action Controls */}
+            <div className="absolute top-3 right-3 sm:top-4 sm:right-4 flex items-center gap-2 z-20">
+              <button
+                onClick={() => setIsLightboxOpen(true)}
+                className="px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-full bg-[#0A1128]/80 hover:bg-[#0A1128] text-white text-[11px] sm:text-xs font-semibold flex items-center gap-1.5 border border-white/20 transition-colors"
+              >
+                <Eye className="w-3.5 h-3.5" />
+                <span>{t('Expand Photo', 'एक्सपैंड फोटो')}</span>
+              </button>
+            </div>
+
+            {/* Desktop/Tablet Overlay Caption */}
+            <div className="hidden sm:block absolute bottom-5 left-5 right-5 z-20 text-left text-white max-w-2xl">
+              <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-rose-300 block">
+                0{activeIndex + 1} / 0{hospitalTour.length} • {current.category}
+              </span>
+              <h3 className="text-xl sm:text-2xl font-extrabold text-white mt-1">
+                {current.title}
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-200 mt-1 leading-relaxed">
+                {current.description}
+              </p>
+            </div>
           </div>
 
-          {/* Bottom Clean Caption */}
-          <div className="absolute bottom-5 left-5 right-5 z-20 text-left text-white max-w-2xl">
-            <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-rose-300 block">
+          {/* Mobile Clean Caption Below Image (Zero Overlap) */}
+          <div className="sm:hidden p-4 bg-white text-left border-t border-slate-100">
+            <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#BE123C] block">
               0{activeIndex + 1} / 0{hospitalTour.length} • {current.category}
             </span>
-            <h3 className="text-xl sm:text-2xl font-extrabold text-white mt-1">
+            <h3 className="text-base font-extrabold text-[#0A1128] mt-1 leading-snug">
               {current.title}
             </h3>
-            <p className="text-xs sm:text-sm text-slate-200 mt-1 leading-relaxed">
+            <p className="text-xs text-slate-600 mt-1 leading-relaxed">
               {current.description}
             </p>
           </div>

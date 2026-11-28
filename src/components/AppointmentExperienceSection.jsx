@@ -258,18 +258,26 @@ export default function AppointmentExperienceSection({ variant = 'home-appointme
           {/* Right Column (5 cols): Live Digital Consultation Pass Preview (Boarding Pass Design) */}
           <div className="lg:col-span-5 space-y-6">
 
-            {/* Priority Booking Image Card (Pure Image, No Video) */}
-            <SectionCinematicVideo
-              type="appointment-suite"
-              videoUrl={false}
-              showControls={false}
-              styleVariant="video-card"
-              posterImage="/images/hospital-helpdesk.jpg"
-              title={t('Priority OPD Consultation', 'प्रायोरिटी ओपीडी कंसल्टेशन')}
-              subtitle={t('Direct Appointment with Dr. Shahi', 'डायरेक्ट अपॉइंटमेंट विद डॉ. शाही')}
-              specs={t('Pulse Heart Centre • Betiahata, Gorakhpur', 'पल्स हार्ट सेंटर • बेतियाहाता, गोरखपुर')}
-              aspectRatio="aspect-[16/8]"
-            />
+            {/* Priority Booking Image Card (Clean Unobstructed Image) */}
+            <div className="rounded-2xl overflow-hidden bg-white border border-slate-200 shadow-lg">
+              <div className="aspect-[16/9] w-full overflow-hidden bg-slate-100">
+                <img
+                  src="/images/hospital-helpdesk.jpg"
+                  alt={t('Priority OPD Consultation', 'प्रायोरिटी ओपीडी कंसल्टेशन')}
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover object-center"
+                />
+              </div>
+              <div className="px-4 py-2.5 bg-white border-t border-slate-100 flex items-center justify-between gap-2 text-left">
+                <span className="text-xs font-extrabold text-[#0A1128] truncate">
+                  {t('Priority OPD Consultation', 'प्रायोरिटी ओपीडी कंसल्टेशन')}
+                </span>
+                <span className="text-[10px] font-mono font-bold text-[#BE123C] shrink-0">
+                  {t('Direct OPD', 'डायरेक्ट ओपीडी')}
+                </span>
+              </div>
+            </div>
 
             {/* Real-Time Consultation Pass */}
             <div className="relative rounded-2xl bg-white text-slate-900 shadow-lg border border-slate-200 p-6 sm:p-8 text-left space-y-6 overflow-hidden">

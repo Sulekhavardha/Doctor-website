@@ -105,17 +105,13 @@ export default function MedicalTechnologyShowcase({ variant = 'home-technology' 
           <div className="lg:col-span-7 space-y-4">
             <Interactive3DTilt maxTilt={8} glowColor="rgba(190, 18, 60, 0.22)">
               <div className="group relative rounded-3xl sm:rounded-[2.5rem] overflow-hidden bg-white/95 p-2.5 sm:p-4 border-2 border-slate-200 shadow-xl hover:shadow-2xl hover:border-rose-300 transition-all duration-500">
-                <div className="relative rounded-2xl sm:rounded-[2rem] overflow-hidden">
-                  <SectionCinematicVideo
-                    type={current.type || "facilities-walkthrough"}
-                    videoUrl={false}
-                    showControls={false}
-                    styleVariant="floating-3d"
-                    posterImage={current.image}
-                    title={current.title}
-                    subtitle={current.category}
-                    specs={current.clinicalValue}
-                    aspectRatio="aspect-[16/10]"
+                <div className="relative aspect-[4/3] sm:aspect-[16/10] rounded-2xl sm:rounded-[2rem] overflow-hidden bg-slate-100">
+                  <img
+                    src={current.image}
+                    alt={current.title}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                 </div>
 

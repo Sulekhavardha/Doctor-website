@@ -156,15 +156,11 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              {/* 4 Impact Micro-Metrics */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+              {/* 3 Impact Micro-Metrics */}
+              <div className="grid grid-cols-3 gap-2 sm:gap-2.5">
                 <div className="p-3 rounded-xl bg-white border border-slate-200/90 shadow-xs">
                   <span className="text-lg sm:text-xl font-extrabold text-[#0A1128] block">{t('22+ Yrs', '22+ इयर्स')}</span>
                   <span className="text-[10px] font-bold text-slate-600 uppercase tracking-tight block">{t('Clinical Legacy', 'क्लिनिकल लिगेसी')}</span>
-                </div>
-                <div className="p-3 rounded-xl bg-white border border-slate-200/90 shadow-xs">
-                  <span className="text-lg sm:text-xl font-extrabold text-[#BE123C] block">15,000+</span>
-                  <span className="text-[10px] font-bold text-slate-600 uppercase tracking-tight block">{t('Cath Procedures', 'कैथ प्रोसीजर्स')}</span>
                 </div>
                 <div className="p-3 rounded-xl bg-white border border-slate-200/90 shadow-xs">
                   <span className="text-lg sm:text-xl font-extrabold text-[#0A1128] block">{t('< 45 Min', '< 45 मिन')}</span>

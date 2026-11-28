@@ -118,9 +118,27 @@ export default function SectionBackgroundMotion({
           <div className="absolute top-36 right-10 text-[#BE123C]/50 font-mono text-xl font-bold animate-float-2 select-none pointer-events-none hidden sm:block">+</div>
 
           {/* Bottom ECG Heartbeat Rhythm Line + GPU-Smooth Sweeping Pulse Light */}
-          <div className="absolute inset-x-0 bottom-1 h-24 pointer-events-none overflow-hidden">
+          <div className="absolute inset-x-0 bottom-2 sm:bottom-1 h-20 sm:h-24 pointer-events-none overflow-hidden">
+            {/* Mobile-proportioned ECG line (prevents horizontal squishing on narrow screens) */}
             <svg
-              className="w-full h-full opacity-65"
+              className="w-full h-full opacity-85 sm:hidden"
+              viewBox="0 0 400 80"
+              fill="none"
+              preserveAspectRatio="xMidYMid meet"
+            >
+              <path
+                d="M0,48 L70,48 L82,48 L92,30 L102,68 L114,12 L126,58 L136,48 L220,48 L232,48 L242,30 L252,68 L264,12 L276,58 L286,48 L400,48"
+                stroke="#BE123C"
+                strokeWidth="2.4"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeDasharray="14 6"
+                className="animate-flow-dash-fast"
+              />
+            </svg>
+            {/* Desktop/Tablet ECG line */}
+            <svg
+              className="hidden sm:block w-full h-full opacity-65"
               viewBox="0 0 1440 100"
               fill="none"
               preserveAspectRatio="none"
@@ -1074,28 +1092,50 @@ export default function SectionBackgroundMotion({
           PAGE 5: CONTACT SECTIONS
          ========================================================================= */}
 
-      {/* 5.1 CONTACT HERO: Welcoming Medical Concierge & Biometric Radar Compass */}
+      {/* 5.1 CONTACT HERO: Treatments-Related Dual-Beacon Arrival Rayfield, Blueprint Grid & Laser */}
       {(variant === 'contact-hero' || variant === 'contact') && (
         <>
           <div className="absolute inset-0 bg-gradient-to-b from-[#FAF9F6] via-[#F8FAFC] to-[#F1F5F9]" />
-          
-          {/* Luminous Glow Orbs */}
-          <div className="absolute -top-24 left-1/3 w-[680px] h-[680px] bg-gradient-to-br from-[#0A1128]/20 via-[#1E293B]/14 to-transparent rounded-full [mask-image:radial-gradient(closest-side,black_15%,transparent_100%)] will-change-transform animate-float-1" />
-          <div className="absolute bottom-0 right-10 w-[620px] h-[620px] bg-gradient-to-tl from-[#E11D48]/24 via-[#BE123C]/16 to-transparent rounded-full [mask-image:radial-gradient(closest-side,black_15%,transparent_100%)] will-change-transform animate-float-2" />
 
-          {/* Navigation Compass Rose & Betiahata GPS Coordinates */}
-          <div className="absolute top-1/2 right-12 -translate-y-1/2 w-[520px] h-[520px] rounded-full border border-slate-300/40 hidden lg:block pointer-events-none">
-            <div className="absolute inset-8 rounded-full border border-dashed border-rose-400/40 animate-radar-sweep" />
-            <div className="absolute inset-20 rounded-full border border-slate-300/40 flex items-center justify-center animate-rotate-reverse">
-              <span className="text-[10px] font-mono text-slate-800 font-bold bg-white/95 px-3 py-1 rounded-full border border-slate-200 shadow-xs">
-                BETIAHATA, GORAKHPUR • 26.7606° N, 83.3732° E
-              </span>
-            </div>
-            <div className="absolute inset-36 rounded-full border border-rose-300/30 animate-pulse-glow" />
+          {/* Luminous Floating Atmospheric Orbs (Midnight Navy & Crimson Ruby) */}
+          <div className="absolute -top-24 left-1/4 w-[680px] h-[680px] bg-gradient-to-br from-[#0A1128]/20 via-[#1E293B]/14 to-transparent rounded-full [mask-image:radial-gradient(closest-side,black_15%,transparent_100%)] will-change-transform animate-float-1" />
+          <div className="absolute -bottom-16 right-1/5 w-[640px] h-[640px] bg-gradient-to-tl from-[#E11D48]/24 via-[#BE123C]/16 to-transparent rounded-full [mask-image:radial-gradient(closest-side,black_15%,transparent_100%)] will-change-transform animate-float-2" />
+
+          {/* Diagonal Hospital Arrival Beacon Rayfield (Distinct from Treatments Center Cone) */}
+          <div className="absolute inset-0 w-full h-full opacity-45 pointer-events-none">
+            <svg className="w-full h-full" viewBox="0 0 1440 900" fill="none" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="contactBeaconRuby" x1="100%" y1="0%" x2="20%" y2="100%">
+                  <stop offset="0%" stopColor="#BE123C" stopOpacity="0.42" />
+                  <stop offset="60%" stopColor="#0A1128" stopOpacity="0.08" />
+                  <stop offset="100%" stopColor="#0A1128" stopOpacity="0" />
+                </linearGradient>
+                <linearGradient id="contactBeaconNavy" x1="0%" y1="0%" x2="80%" y2="100%">
+                  <stop offset="0%" stopColor="#0A1128" stopOpacity="0.18" />
+                  <stop offset="100%" stopColor="#BE123C" stopOpacity="0" />
+                </linearGradient>
+              </defs>
+              {/* Angled Arrival Spotlight Beam from Top-Right */}
+              <path d="M 1180,0 L 1440,0 L 820,900 L 300,900 Z" fill="url(#contactBeaconRuby)" />
+              {/* Secondary Counter-Beam from Top-Left */}
+              <path d="M 0,0 L 340,0 L 960,900 L 580,900 Z" fill="url(#contactBeaconNavy)" />
+              {/* Dashed Wayfinding & Emergency Corridor Tracks */}
+              <path d="M 1220,0 L 560,900 M 1360,0 L 760,900" stroke="#BE123C" strokeWidth="1.5" strokeDasharray="10 10" className="animate-flow-dash" />
+              <path d="M 180,0 L 780,900" stroke="#0A1128" strokeOpacity="0.35" strokeWidth="1.25" strokeDasharray="8 12" className="animate-flow-dash-fast" />
+            </svg>
           </div>
 
-          {/* Precision Blueprint Grid */}
-          <div className="absolute inset-0 bg-[radial-gradient(#0A112814_1.25px,transparent_1.25px)] bg-[size:32px_32px] opacity-60 [mask-image:radial-gradient(ellipse_80%_70%_at_50%_45%,#000_75%,transparent_100%)]" />
+          {/* Concentric Location Beacon Rings Behind Right Portrait */}
+          <div className="hidden lg:block absolute top-1/2 right-[8%] -translate-y-1/2 w-[500px] h-[500px] rounded-full border border-rose-300/40 pointer-events-none">
+            <div className="absolute inset-8 rounded-full border border-dashed border-[#BE123C]/35 animate-gentle-cw" />
+            <div className="absolute inset-20 rounded-full border border-dashed border-[#0A1128]/25 animate-hero-ring-ccw" />
+          </div>
+
+          {/* Sweeping Laser Line in Crimson Ruby */}
+          <div className="absolute left-0 right-0 h-[2.5px] top-1/3 bg-gradient-to-r from-transparent via-[#E11D48] to-transparent shadow-[0_0_20px_#BE123C] opacity-75 animate-laser-fast" />
+
+          {/* Precision Blueprint Dot Grid (Matched with Treatments Hero) */}
+          <div className="absolute inset-0 bg-[radial-gradient(#0A112814_1.5px,transparent_1.5px)] bg-[size:28px_28px] opacity-70" />
         </>
       )}
 

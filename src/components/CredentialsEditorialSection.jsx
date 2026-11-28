@@ -45,8 +45,8 @@ export default function CredentialsEditorialSection() {
       degree: t('22+ Years Practice', '22+ साल का अनुभव'),
       institute: t('Pulse Heart Centre, Betiahata', 'पल्स हार्ट सेंटर, बेतियाहाता'),
       tag: t('15,000+ Heart Procedures', '15,000+ हार्ट प्रोसीजर्स'),
-      image: '/images/pu.png',
-      pos: 'object-center',
+      image: '/images/ppp.png',
+      pos: 'object-[50%_68%]',
       summary: t(
         'Providing Gorakhpur with gentle heart care through the wrist and 24/7 emergency heart attack support.',
         'गोरखपुर में कलाई के रास्ते आरामदायक हार्ट केयर और 24/7 हार्ट अटैक इमरजेंसी सहायता।'

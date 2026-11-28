@@ -13,7 +13,7 @@ import { useLanguage } from '../context/LanguageContext';
 export default function CinematicHeroSection() {
   const { t } = useLanguage();
   return (
-    <section className="relative min-h-screen lg:h-screen flex items-center pt-24 pb-8 lg:pt-20 lg:pb-6 px-4 sm:px-6 lg:px-10 border-b border-slate-200/80 overflow-hidden">
+    <section className="relative min-h-screen lg:h-screen flex items-center pt-24 pb-24 sm:pb-20 lg:pt-20 lg:pb-6 px-4 sm:px-6 lg:px-10 border-b border-slate-200/80 overflow-hidden">
 
       {/* Animated Medical & Silk Background */}
       <SectionBackgroundMotion variant="home-hero" />
@@ -64,12 +64,11 @@ export default function CinematicHeroSection() {
               </a>
             </div>
 
-            {/* 3 Visual Proof Thumbnails */}
-            <div className="pt-4 border-t border-slate-200/80 grid grid-cols-3 gap-2 sm:gap-3 max-w-lg">
+            {/* 2 Visual Proof Thumbnails */}
+            <div className="pt-4 border-t border-slate-200/80 grid grid-cols-2 gap-2.5 sm:gap-3 max-w-md">
               {[
-                { img: '/images/pu.png', stat: t('22+ Yrs', '22+ साल'), label: t('Experience', 'अनुभव') },
-                { img: '/images/cath-lab.jpg', stat: '15,000+', label: t('Procedures', 'प्रोसीजर्स') },
-                { img: '/images/radial-catheter-sheath.jpg', stat: '99.4%', label: t('Success Rate', 'सफलता दर') },
+                { img: '/images/ppp.png', stat: t('22+ Yrs', '22+ साल'), label: t('Experience', 'अनुभव') },
+                { img: '/images/doctor-recovery-discharge.jpg', stat: '99.4%', label: t('Success Rate', 'सफलता दर') },
               ].map((item, idx) => (
                 <div
                   key={idx}

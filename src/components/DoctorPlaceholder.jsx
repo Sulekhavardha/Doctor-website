@@ -34,23 +34,23 @@ export default function DoctorPlaceholder({
             onError={() => setImgSrc('/images/d1.jpeg')}
             className="w-full h-full object-cover object-[50%_22%]"
           />
-          <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#0A1128]/85 via-[#0A1128]/35 to-transparent pointer-events-none" />
+          <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#0A1128]/70 via-[#0A1128]/20 to-transparent pointer-events-none" />
 
-          {/* Clean Bottom Identity Strip */}
-          <div className="absolute bottom-3.5 inset-x-3.5 px-4 py-3 rounded-xl bg-white/95 border border-slate-200/90 shadow-md flex items-center justify-between gap-3 text-left">
-            <div>
-              <span className="text-[10px] font-mono uppercase tracking-[0.18em] text-[#BE123C] font-bold block">
+          {/* Compact Bottom Identity Strip */}
+          <div className="absolute bottom-2.5 inset-x-2.5 px-3 py-2 rounded-xl bg-white/95 backdrop-blur-sm border border-slate-200/90 shadow-md flex items-center justify-between gap-2 text-left">
+            <div className="min-w-0">
+              <span className="text-[8.5px] sm:text-[9px] font-mono uppercase tracking-wider text-[#BE123C] font-bold block leading-tight truncate">
                 {t('Chief Interventional Cardiologist', 'चीफ इंटरवेंशनल कार्डियोलॉजिस्ट')}
               </span>
-              <span className="text-sm font-extrabold text-[#0A1128] block leading-tight mt-0.5">
+              <span className="text-xs sm:text-sm font-extrabold text-[#0A1128] block leading-tight mt-0.5 truncate">
                 {t(doctor.name, 'डॉ. प्रकाश चंद शाही')}
               </span>
-              <span className="text-[11px] font-medium text-slate-600 block mt-0.5">
+              <span className="text-[9.5px] sm:text-[10px] font-medium text-slate-600 block leading-tight mt-0.5 truncate">
                 {t('DM Cardiology (PGIMER) • MD (KGMU)', 'डीएम कार्डियोलॉजी (पीजीआईएमईआर) • एमडी (केजीएमयू)')}
               </span>
             </div>
-            <div className="w-9 h-9 rounded-xl bg-rose-50 border border-rose-200 flex items-center justify-center shrink-0">
-              <ShieldCheck className="w-5 h-5 text-[#BE123C]" />
+            <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-rose-50 border border-rose-200 flex items-center justify-center shrink-0">
+              <ShieldCheck className="w-4 h-4 text-[#BE123C]" />
             </div>
           </div>
         </div>

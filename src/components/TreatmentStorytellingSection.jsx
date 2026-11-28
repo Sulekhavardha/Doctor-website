@@ -202,31 +202,43 @@ export default function TreatmentStorytellingSection() {
             </div>
           </div>
 
-          {/* Active Procedural Cinematic Video Feed in 3D */}
-          <div className="py-2">
-            <SectionCinematicVideo
-              type={activeProcedure === 'ct-coronary-angiography' ? 'advanced-tech' : activeProcedure === 'pacemaker-implantation' ? 'cardiology-heart' : 'cardiac-catheterization'}
-              videoUrl={false}
-              showControls={false}
-              styleVariant="floating-3d"
-              posterImage={
-                activeProcedure === 'coronary-angiogram'
-                  ? '/images/precision.png'
-                  : activeProcedure === 'pacemaker-implantation'
-                  ? '/images/pace.jpg'
-                  : activeProcedure === 'peripheral-angioplasty'
-                  ? '/images/hh.png'
-                  : '/images/heart.png'
-              }
-              title={`${currentStory.title} • ${t('Live Procedural Cine', 'लाइव प्रोसीजरल सिने')}`}
-              subtitle={currentStory.badge}
-              specs={currentStory.stats}
-              aspectRatio="aspect-[16/8] sm:aspect-[21/9]"
-            />
+          {/* Active Procedural Visual Stage in 3D */}
+          <div className="py-1 sm:py-2">
+            {activeProcedure === 'peripheral-angioplasty' ? (
+              <div className="w-full max-w-5xl mx-auto relative rounded-2xl sm:rounded-[2rem] p-1 sm:p-2 bg-gradient-to-b from-white/95 via-slate-50/70 to-white/95 border-2 border-slate-200/90 shadow-2xl">
+                <div className="overflow-hidden rounded-xl sm:rounded-[1.6rem] bg-[#EAF4FF]">
+                  <img
+                    src="/images/hhhh.png"
+                    alt={currentStory.title}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-auto block object-contain"
+                  />
+                </div>
+              </div>
+            ) : (
+              <SectionCinematicVideo
+                type={activeProcedure === 'ct-coronary-angiography' ? 'advanced-tech' : activeProcedure === 'pacemaker-implantation' ? 'cardiology-heart' : 'cardiac-catheterization'}
+                videoUrl={false}
+                showControls={false}
+                styleVariant="floating-3d"
+                posterImage={
+                  activeProcedure === 'coronary-angiogram'
+                    ? '/images/precision.png'
+                    : activeProcedure === 'pacemaker-implantation'
+                    ? '/images/pace.jpg'
+                    : '/images/heart.png'
+                }
+                title={`${currentStory.title} • ${t('Live Procedural Cine', 'लाइव प्रोसीजरल सिने')}`}
+                subtitle={currentStory.badge}
+                specs={currentStory.stats}
+                aspectRatio="aspect-[16/8] sm:aspect-[21/9]"
+              />
+            )}
           </div>
 
           {/* Stepped Visual Procedural Grid (4 Image-Explained Steps) */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
             {currentStory.steps.map((step, sIdx) => {
               const stepImages = [
                 { src: '/images/hospital-opd-lounge.jpg', pos: 'object-center' },
@@ -238,9 +250,9 @@ export default function TreatmentStorytellingSection() {
               return (
                 <div
                   key={step.num}
-                  className="group relative rounded-2xl bg-white border-2 border-slate-200 hover:border-rose-300 shadow-sm transition-all duration-400 hover:-translate-y-2 hover:shadow-xl overflow-hidden text-left flex flex-col"
+                  className="group relative rounded-xl sm:rounded-2xl bg-white border border-slate-200 sm:border-2 hover:border-rose-300 shadow-sm transition-all duration-400 hover:-translate-y-1.5 hover:shadow-xl overflow-hidden text-left flex flex-col"
                 >
-                  <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-900">
+                  <div className="relative h-24 sm:h-32 w-full overflow-hidden bg-slate-900">
                     <img
                       src={media.src}
                       alt={step.phase}
@@ -248,16 +260,16 @@ export default function TreatmentStorytellingSection() {
                       decoding="async"
                       className={`w-full h-full object-cover ${media.pos} group-hover:scale-110 transition-transform duration-700`}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0A1128]/85 via-transparent to-transparent" />
-                    <div className="absolute top-2.5 left-2.5 w-8 h-8 rounded-lg bg-gradient-to-br from-[#0A1128] to-[#BE123C] text-white flex items-center justify-center font-mono text-xs font-bold shadow-md border border-white/20">
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0A1128]/80 via-transparent to-transparent" />
+                    <div className="absolute top-2 left-2 w-6 h-6 sm:w-7 sm:h-7 rounded-md sm:rounded-lg bg-gradient-to-br from-[#0A1128] to-[#BE123C] text-white flex items-center justify-center font-mono text-[10px] sm:text-xs font-bold shadow-md border border-white/20">
                       {step.num}
                     </div>
                   </div>
-                  <div className="p-4 space-y-1.5 flex-1">
-                    <h4 className="text-xs sm:text-sm font-extrabold text-[#0A1128] tracking-tight group-hover:text-[#BE123C] transition-colors">
+                  <div className="p-2.5 sm:p-3.5 space-y-1 flex-1">
+                    <h4 className="text-[11px] sm:text-sm font-extrabold text-[#0A1128] tracking-tight group-hover:text-[#BE123C] transition-colors leading-snug">
                       {step.phase}
                     </h4>
-                    <p className="text-[11px] text-slate-600 font-medium leading-normal">
+                    <p className="text-[10px] sm:text-[11px] text-slate-600 font-medium leading-snug">
                       {step.detail}
                     </p>
                   </div>
@@ -267,26 +279,44 @@ export default function TreatmentStorytellingSection() {
           </div>
 
           {/* Indications & Doctor Consultation Banner */}
-          <div className="p-6 sm:p-7 rounded-2xl bg-gradient-to-r from-slate-50 via-white to-rose-50/60 border-2 border-slate-200 text-slate-900 shadow-md flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
-            <div className="flex items-center gap-4">
-              <img
-                src="/images/d1.jpeg"
-                alt="Dr. Prakash Chand Shahi"
-                loading="lazy"
-                decoding="async"
-                className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl object-cover object-top border-2 border-[#BE123C]/40 shadow-md shrink-0 block"
-              />
-              <div className="space-y-1 text-left">
-                <span className="text-[10px] font-mono text-[#BE123C] font-bold uppercase tracking-wider block">
+          <div className="p-4 sm:p-6 rounded-2xl bg-gradient-to-r from-slate-50 via-white to-rose-50/60 border-2 border-slate-200 text-slate-900 shadow-md flex flex-col lg:flex-row lg:items-center justify-between gap-4 sm:gap-6">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-5 flex-1 min-w-0">
+              {/* Top Row on Mobile / Left on Desktop: Doctor Portrait + Header */}
+              <div className="flex items-center gap-3.5 sm:gap-4 shrink-0">
+                <div className="w-24 sm:w-28 aspect-[4/5] rounded-2xl overflow-hidden border-2 border-[#BE123C]/40 shadow-lg shrink-0 bg-slate-100">
+                  <img
+                    src="/images/d1.jpeg"
+                    alt="Dr. Prakash Chand Shahi"
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-full object-cover object-top block"
+                  />
+                </div>
+                <div className="sm:hidden text-left space-y-1 min-w-0">
+                  <span className="text-[10px] font-mono text-[#BE123C] font-bold uppercase tracking-wider block">
+                    {t('Primary Indications', 'प्रमुख लक्षण')}
+                  </span>
+                  <h4 className="text-sm font-extrabold text-[#0A1128] leading-tight">
+                    {t('Dr. Prakash Chand Shahi', 'डॉ. प्रकाश चंद शाही')}
+                  </h4>
+                  <p className="text-[11px] font-medium text-slate-600">
+                    {t('Supervised Clinical Care', 'सुपरवाइज्ड क्लिनिकल केयर')}
+                  </p>
+                </div>
+              </div>
+
+              {/* Indications List */}
+              <div className="flex-1 min-w-0 space-y-2 text-left">
+                <span className="hidden sm:block text-[11px] font-mono text-[#BE123C] font-bold uppercase tracking-wider leading-snug">
                   {t('Primary Clinical Indications • Supervised by Dr. Prakash Chand Shahi', 'प्राइमरी क्लिनिकल इंडिकेशंस • सुपरवाइज्ड बाय डॉ. प्रकाश चंद शाही')}
                 </span>
-                <div className="flex flex-wrap gap-2 pt-1">
+                <div className="flex flex-wrap gap-2">
                   {currentStory.indications.map((ind, i) => (
                     <span
                       key={i}
-                      className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white text-[11px] font-bold text-[#0A1128] border border-slate-200 shadow-xs"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white text-[11px] font-bold text-[#0A1128] border border-slate-200 shadow-xs"
                     >
-                      <CheckCircle2 className="w-3.5 h-3.5 text-[#BE123C]" />
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#BE123C] shrink-0" />
                       <span>{ind}</span>
                     </span>
                   ))}
@@ -296,10 +326,10 @@ export default function TreatmentStorytellingSection() {
 
             <Link
               to="/contact"
-              className="luxury-btn-primary shrink-0"
+              className="luxury-btn-primary w-full lg:w-auto justify-center whitespace-nowrap shrink-0"
             >
               <span>{t('Discuss with Dr. Shahi', 'डॉ. शाही से बात करें')}</span>
-              <ArrowRight className="w-4 h-4 text-white" />
+              <ArrowRight className="w-4 h-4 text-white shrink-0" />
             </Link>
           </div>
 
