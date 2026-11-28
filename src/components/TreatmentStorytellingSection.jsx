@@ -243,7 +243,7 @@ export default function TreatmentStorytellingSection() {
               const stepImages = [
                 { src: '/images/hospital-opd-lounge.jpg', pos: 'object-center' },
                 { src: '/images/doctor-echo-checkup.jpg', pos: 'object-center' },
-                { src: '/images/cardiac-icu-room.jpg', pos: 'object-center' },
+                { src: '/images/balloon-artery-opening.webp', pos: 'object-center' },
                 { src: '/images/cardiac-stent-procedure.jpg', pos: 'object-center' },
               ];
               const media = stepImages[sIdx % stepImages.length];

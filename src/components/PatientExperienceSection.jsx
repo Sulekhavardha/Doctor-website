@@ -54,7 +54,6 @@ export default function PatientExperienceSection({ onBookClick }) {
                 </h2>
               </div>
               <div className="lg:col-span-4 text-slate-600 text-xs sm:text-sm font-normal leading-relaxed">
-                Transparent, evidence-based medical consultation with clear steps from record review to post-intervention follow-up.
                 Clear and honest doctor consultation from checking your old reports to your regular follow-up care.
               </div>
             </div>
@@ -123,39 +122,30 @@ export default function PatientExperienceSection({ onBookClick }) {
             {/* Luminous Ambient Glow inside card */}
             <div className="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-[#E11D48]/20 blur-3xl pointer-events-none" />
 
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center relative z-10">
 
-              <div className="lg:col-span-5 space-y-4 text-left">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 text-xs font-mono text-rose-200 border border-rose-300/30">
-                  <ClipboardList className="w-3.5 h-3.5" />
-                  <span>{t('Before Your Visit', 'विज़िट से पहले')}</span>
+              {/* Left Column (7 Cols): Heading, Description, 2-Column Checklist & CTA */}
+              <div className="lg:col-span-7 space-y-5 text-left">
+                <div className="space-y-3">
+                  <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 text-xs font-mono text-rose-200 border border-rose-300/30">
+                    <ClipboardList className="w-3.5 h-3.5" />
+                    <span>{t('Before Your Visit', 'विज़िट से पहले')}</span>
+                  </div>
+
+                  <h3 className="font-extrabold text-xl sm:text-3xl lg:text-4xl text-white leading-tight tracking-tight">
+                    {t('Reports to Bring for Your Checkup', 'चेकअप के लिए ये रिपोर्ट्स साथ लाएं')}
+                  </h3>
+
+                  <p className="text-slate-300 text-[11px] sm:text-sm font-normal leading-relaxed max-w-2xl">
+                    {t(
+                      'Bringing your old ECGs, heart scan CDs, and current medicines helps Dr. Prakash Chand Shahi understand your heart health clearly and give you the right advice.',
+                      'अपनी पुरानी ईसीजी, हार्ट स्कैन की सीडी और मौजूदा दवाइयां साथ लाने से डॉ. प्रकाश चंद शाही को आपके हार्ट की स्थिति को बेहतर समझने और सही सलाह देने में मदद मिलती है।'
+                    )}
+                  </p>
                 </div>
 
-                <h3 className="font-extrabold text-xl sm:text-3xl text-white leading-tight tracking-tight">
-                  {t('Reports to Bring for Your Checkup', 'चेकअप के लिए ये रिपोर्ट्स साथ लाएं')}
-                </h3>
-
-                <p className="text-slate-300 text-[11px] sm:text-sm font-normal leading-relaxed">
-                  {t(
-                    'Bringing your old ECGs, heart scan CDs, and current medicines helps Dr. Prakash Chand Shahi understand your heart health clearly and give you the right advice.',
-                    'अपनी पुरानी ईसीजी, हार्ट स्कैन की सीडी और मौजूदा दवाइयां साथ लाने से डॉ. प्रकाश चंद शाही को आपके हार्ट की स्थिति को बेहतर समझने और सही सलाह देने में मदद मिलती है।'
-                  )}
-                </p>
-
-                <div className="pt-2">
-                  <button
-                    onClick={onBookClick}
-                    className="luxury-btn-ruby group"
-                  >
-                    <span>{t('Book Your Checkup', 'अपना चेकअप बुक करें')}</span>
-                    <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1.5 transition-transform" />
-                  </button>
-                </div>
-              </div>
-
-              <div className="lg:col-span-7 space-y-4">
                 {/* 2-Column Checklist Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 sm:gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 sm:gap-3 pt-1">
                   {preVisitDocuments.map((doc, idx) => (
                     <div
                       key={idx}
@@ -169,19 +159,40 @@ export default function PatientExperienceSection({ onBookClick }) {
                   ))}
                 </div>
 
-                {/* Patient Care Video Telemetry */}
                 <div className="pt-2">
-                  <SectionCinematicVideo
-                    type="patient-care"
-                    videoUrl={false}
-                    showControls={false}
-                    styleVariant="video-card"
-                    posterImage="/images/p3.jpeg"
-                    title="Heart Scan CD & Report Checkup"
-                    subtitle="Pulse Heart Centre • Patient Care"
-                    specs="Doctor: Dr. Prakash Chand Shahi"
-                    aspectRatio="aspect-[16/8]"
-                  />
+                  <button
+                    onClick={onBookClick}
+                    className="luxury-btn-ruby group"
+                  >
+                    <span>{t('Book Your Checkup', 'अपना चेकअप बुक करें')}</span>
+                    <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1.5 transition-transform" />
+                  </button>
+                </div>
+              </div>
+
+              {/* Right Column (5 Cols): Clean Editorial Card (Image on Top, Text Below) */}
+              <div className="lg:col-span-5">
+                <div className="max-w-sm mx-auto rounded-3xl bg-white p-2.5 shadow-2xl border border-white/20 overflow-hidden">
+                  <div className="relative aspect-[4/5] w-full rounded-2xl overflow-hidden bg-slate-100">
+                    <img
+                      src="/images/d4.jpeg"
+                      alt="Dr. Prakash Chand Shahi — Heart Scan CD & Report Checkup"
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full h-full object-cover object-top"
+                    />
+                  </div>
+                  <div className="p-3.5 text-left space-y-1">
+                    <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#BE123C] block">
+                      {t('Pulse Heart Centre • Patient Care', 'पल्स हार्ट सेंटर • पेशेंट केयर')}
+                    </span>
+                    <h4 className="text-sm sm:text-base font-extrabold text-[#0A1128] leading-snug">
+                      {t('Heart Scan CD & Report Checkup', 'हार्ट स्कैन सीडी और रिपोर्ट चेकअप')}
+                    </h4>
+                    <p className="text-xs text-slate-600 font-medium">
+                      {t('Dr. Prakash Chand Shahi', 'डॉ. प्रकाश चंद शाही')}
+                    </p>
+                  </div>
                 </div>
               </div>
 

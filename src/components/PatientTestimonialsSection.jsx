@@ -147,31 +147,6 @@ export default function PatientTestimonialsSection() {
                 </div>
               </motion.div>
             </Interactive3DTilt>
-
-            {/* Quick Case Switcher Tabs */}
-            <div className="flex gap-3">
-              {stories.map((s, idx) => {
-                const isActive = activeStory === idx;
-                return (
-                  <button
-                    key={s.id}
-                    onClick={() => setActiveStory(idx)}
-                    className={`flex-1 p-3 rounded-2xl border-2 transition-all duration-300 text-left cursor-pointer hover:scale-105 active:scale-95 ${
-                      isActive
-                        ? 'bg-white border-[#BE123C] shadow-lg ring-2 ring-rose-200 scale-102'
-                        : 'bg-white/80 border-slate-200 hover:border-rose-300 shadow-xs'
-                    }`}
-                  >
-                    <span className={`text-[10px] font-mono font-bold block ${isActive ? 'text-[#BE123C]' : 'text-slate-500'}`}>
-                      {t('CASE', 'केस')} 0{idx + 1}
-                    </span>
-                    <span className="text-xs font-bold text-[#0A1128] truncate block mt-0.5">
-                      {s.name.split(' ')[0]}
-                    </span>
-                  </button>
-                );
-              })}
-            </div>
           </div>
 
         </div>
