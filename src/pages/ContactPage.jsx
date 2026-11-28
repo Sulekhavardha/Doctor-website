@@ -52,129 +52,134 @@ export default function ContactPage() {
     <div className="relative bg-[#FAF9F6] overflow-hidden pt-16 sm:pt-20 pb-6 sm:pb-8">
 
       {/* =========================================================================
-          HERO SECTION: EXACT MATCH WITH SERVICES 100VH EDITORIAL SPLIT
+          COMPACT CONTACT US HEADER & 3 DIRECT CONTACT CARDS
          ========================================================================= */}
-      <section className="relative min-h-[calc(100vh-4rem)] lg:min-h-[100dvh] lg:h-[100dvh] flex items-center px-4 sm:px-6 lg:px-8 overflow-hidden py-4 sm:py-6">
+      <section className="relative min-h-[calc(100vh-4rem)] lg:min-h-[100dvh] flex flex-col justify-start pt-8 sm:pt-12 pb-12 px-4 sm:px-6 lg:px-8 overflow-hidden border-b border-slate-200/80">
 
         <SectionBackgroundMotion variant="contact-hero" />
 
-        <div className="max-w-7xl mx-auto w-full relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center w-full">
-
-            {/* Left Column (7 cols): Editorial Typography & Direct Clinical Actions */}
-            <div className="lg:col-span-7 space-y-4 sm:space-y-5 text-left">
-              <ScrollReveal animation="fade-down">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white text-[#BE123C] text-[10px] sm:text-xs font-mono font-bold shadow-xs border border-rose-200">
-                  <Sparkles className="w-3.5 h-3.5 text-[#BE123C]" />
-                  <span className="uppercase tracking-[0.2em]">{t('Book Appointment • Betiahata, Gorakhpur', 'अपॉइंटमेंट बुक करें • बेतियाहाता, गोरखपुर')}</span>
-                </div>
-              </ScrollReveal>
-
-              <ScrollReveal animation="fade-up" delay={0.08}>
-                <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#0A1128] tracking-tight leading-[1.06]">
-                  {t('Book Your Heart Checkup', 'अपना हार्ट चेकअप बुक करें')} <br />
-                  <span className="font-serif italic font-normal text-[#BE123C]">{t('Direct Consultation & 24/7 Emergency Care.', 'सीधी सलाह और 24/7 इमरजेंसी हार्ट केयर।')}</span>
-                </h1>
-              </ScrollReveal>
-
-              <ScrollReveal animation="fade-up" delay={0.14}>
-                <p className="text-sm sm:text-base text-slate-600 max-w-xl font-normal leading-relaxed">
-                  {t('Visit', 'मिलें')} <span className="font-semibold text-[#0A1128]">{t('Dr. Prakash Chand Shahi', 'डॉ. प्रकाश चंद शाही')}</span> ({t('DM Cardiology, PGIMER • MD, KGMU', 'डीएम कार्डियोलॉजी, पीजीआईएमईआर • एमडी, केजीएमयू')}) {t('at', 'से')} <span className="font-semibold text-[#0A1128]">{t('Pulse Heart Centre, Betiahata', 'पल्स हार्ट सेंटर, बेतियाहाता')}</span> — <span className="font-semibold text-[#0A1128]">{t('UP Medical Council Reg. No. 47395', 'यूपी मेडिकल काउंसिल रजि. नं. 47395')}</span>. {t('Book a priority OPD pass, bring your old ECG/Echo reports & heart CDs, or reach our 24/7 emergency desk.', 'प्रायोरिटी ओपीडी पास बुक करें, अपनी पुरानी ईसीजी/इको रिपोर्ट्स व हार्ट सीडी साथ लाएं, या हमारे 24/7 इमरजेंसी डेस्क से संपर्क करें।')}
-                </p>
-              </ScrollReveal>
-
-              {/* Quick Clinical Metric Pills */}
-              <ScrollReveal animation="fade-up" delay={0.18}>
-                <div className="flex flex-wrap items-center gap-2 pt-1 font-mono text-[11px] font-bold">
-                  <span className="bg-rose-50 text-[#BE123C] px-3 py-1 rounded-full border border-rose-200 shadow-2xs">
-                    {t('22+ Yrs Clinical Legacy', '22+ साल क्लिनिकल अनुभव')}
-                  </span>
-                  <span className="bg-white text-[#0A1128] px-3 py-1 rounded-full border border-slate-200 shadow-2xs">
-                    {t('Door-To-Balloon < 45 Min', 'डोर-टू-बैलून < 45 मिन')}
-                  </span>
-                  <span className="bg-rose-50 text-[#BE123C] px-3 py-1 rounded-full border border-rose-200 shadow-2xs">
-                    {t('99.4% Radial Patency', '99.4% रेडियल सफलता')}
-                  </span>
-                  <span className="bg-white text-[#0A1128] px-3 py-1 rounded-full border border-slate-200 shadow-2xs">
-                    {t('24/7 Heart ICU', '24/7 हार्ट आईसीयू')}
-                  </span>
-                </div>
-              </ScrollReveal>
-
-              {/* HospitalPage-Style Clean Clinic & Doctor Strip Card */}
-              <ScrollReveal animation="fade-up" delay={0.2}>
-                <div className="p-3 rounded-2xl bg-white border border-slate-200/90 shadow-xs flex items-center gap-3.5 max-w-lg">
-                  <div className="w-11 h-11 rounded-xl bg-rose-50 border border-rose-200 flex items-center justify-center text-[#BE123C] shrink-0">
-                    <Stethoscope className="w-5 h-5" />
-                  </div>
-                  <div className="min-w-0">
-                    <p className="text-xs sm:text-sm font-extrabold text-[#0A1128] leading-snug truncate">
-                      {t('OPD Desk: Dr. Prakash Chand Shahi (Room 101)', 'ओपीडी डेस्क: डॉ. प्रकाश चंद शाही (रूम 101)')}
-                    </p>
-                    <p className="text-[11px] font-semibold text-[#BE123C] mt-0.5 truncate">
-                      {t('DM Cardiology (PGIMER) • MD (KGMU) • Reg. 47395', 'डीएम कार्डियोलॉजी (पीजीआईएमईआर) • एमडी (केजीएमयू) • रजि. 47395')}
-                    </p>
-                  </div>
-                </div>
-              </ScrollReveal>
-
-              {/* Direct Action Row */}
-              <ScrollReveal animation="fade-up" delay={0.22}>
-                <div className="pt-2 flex flex-wrap items-center gap-3">
-                  <a
-                    href="#appointment"
-                    className="luxury-btn-primary"
-                  >
-                    <Calendar className="w-4 h-4 text-white" />
-                    <span>{t('Book Priority OPD Pass', 'प्रायोरिटी ओपीडी पास बुक करें')}</span>
-                  </a>
-
-                  <a
-                    href="tel:+919455899378"
-                    className="luxury-btn-secondary"
-                  >
-                    <Phone className="w-4 h-4 text-[#BE123C]" />
-                    <span>+91 94558 99378</span>
-                  </a>
-                </div>
-              </ScrollReveal>
-
-              {/* Trust Strip */}
-              <div className="pt-3 flex flex-wrap items-center gap-4 text-xs text-slate-600 font-medium">
-                <span className="flex items-center gap-1.5">
-                  <Building2 className="w-4 h-4 text-[#BE123C]" />
-                  <span>{t('Betiahata, GKP • 10 Min from Rly Station', 'बेतियाहाता, जीकेपी • रेलवे स्टेशन से 10 मिनट')}</span>
-                </span>
-                <span className="text-slate-300">•</span>
-                <span className="flex items-center gap-1.5 text-rose-800 font-mono font-bold">
-                  <Clock className="w-3.5 h-3.5 text-[#BE123C]" />
-                  <span>{t('Mon – Sat, 10 AM – 8 PM', 'सोम – शनि, सुबह 10 – रात 8')}</span>
-                </span>
+        <div className="max-w-7xl mx-auto w-full relative z-10 space-y-10 sm:space-y-12">
+          {/* Compact Centered Contact Header */}
+          <ScrollReveal animation="fade-up">
+            <div className="text-center max-w-3xl mx-auto space-y-3.5">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-[#0A1128] via-[#1E293B] to-[#BE123C] text-white text-[10px] sm:text-xs font-mono font-bold shadow-md shadow-navy/20 border border-rose-300/30">
+                <Sparkles className="w-3.5 h-3.5 text-rose-300" />
+                <span className="uppercase tracking-[0.2em]">{t('Contact & Appointments • Betiahata, Gorakhpur', 'संपर्क और अपॉइंटमेंट • बेतियाहाता, गोरखपुर')}</span>
               </div>
-            </div>
 
-            {/* Right Column (5 cols): Clean Portrait Showcase Card with Subtle Offset Frame */}
-            <div className="lg:col-span-5">
-              <ScrollReveal animation="fade-up" delay={0.15}>
-                <Interactive3DTilt maxTilt={5} scale={1.01}>
-                  <div className="relative max-w-[360px] mx-auto lg:ml-auto">
-                    <div className="absolute -bottom-3 -right-3 inset-0 rounded-[2rem] bg-gradient-to-br from-[#0A1128] to-[#BE123C] opacity-90 -z-10" />
-                    <div className="rounded-[2rem] bg-white p-2.5 sm:p-3 border border-slate-200/90 shadow-2xl overflow-hidden">
-                      <div className="relative aspect-[4/5] w-full rounded-[1.35rem] overflow-hidden bg-slate-100">
-                        <img
-                          src="/images/d2.jpeg"
-                          alt="Dr. Prakash Chand Shahi"
-                          className="w-full h-full object-cover object-top"
-                          loading="lazy"
-                          decoding="async"
-                        />
-                      </div>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#0A1128] tracking-tight leading-[1.06]">
+                {t('Get in Touch', 'संपर्क करें')} <br />
+                <span className="font-serif italic font-normal text-[#BE123C]">{t('With Pulse Heart Centre.', 'पल्स हार्ट सेंटर के साथ।')}</span>
+              </h1>
+
+              <p className="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto font-normal leading-relaxed">
+                <p className="pt-5 sm:pt-7 text-sm sm:text-base text-slate-600 max-w-2xl mx-auto font-normal leading-relaxed">
+                  {t(
+                    'Have a question, need clinic directions, or want to book an OPD visit with Dr. Prakash Chand Shahi? Call us directly or schedule your visit below.',
+                    'कोई सवाल हो, क्लिनिक का रास्ता जानना हो, या डॉ. प्रकाश चंद शाही से मिलने के लिए ओपीडी बुक करनी हो — सीधे कॉल करें या नीचे अपॉइंटमेंट बुक करें।'
+                  )}
+                </p>
+            </div>
+          </ScrollReveal>
+
+          {/* 3 Instant Contact Cards (Call, Address, OPD Timings) */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 text-left">
+            {/* Card 1: Phone & 24/7 Helpline */}
+            <ScrollReveal animation="fade-up" delay={0.05}>
+              <a
+                href="tel:+919455899378"
+                className="group h-full p-6 rounded-3xl bg-white border border-slate-200/90 shadow-sm hover:shadow-lg hover:border-rose-300 transition-all flex flex-col justify-between gap-4"
+              >
+                <div className="flex items-start justify-between gap-3">
+                  <div className="w-11 h-11 rounded-2xl bg-rose-50 border border-rose-200 flex items-center justify-center text-[#BE123C] shrink-0">
+                    <Phone className="w-5 h-5" />
+                  </div>
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-rose-50 text-[#BE123C] border border-rose-200">
+                    {t('24/7 Helpline', '24/7 हेल्पलाइन')}
+                  </span>
+                </div>
+                <div className="space-y-1">
+                  <p className="text-xs font-bold uppercase tracking-wider text-slate-500">
+                    {t('Call for Appointment / Emergency', 'अपॉइंटमेंट / इमरजेंसी कॉल')}
+                  </p>
+                  <p className="text-xl font-extrabold text-[#0A1128] group-hover:text-[#BE123C] transition-colors">
+                    +91 94558 99378
+                  </p>
+                  <p className="text-xs text-slate-600">
+                    {t('Tap to call our reception or emergency desk directly.', 'रिसेप्शन या इमरजेंसी डेस्क पर सीधे कॉल करने के लिए टैप करें।')}
+                  </p>
+                </div>
+              </a>
+            </ScrollReveal>
+
+            {/* Card 2: Clinic Location */}
+            <ScrollReveal animation="fade-up" delay={0.1}>
+              <a
+                href={clinic?.mapUrl || 'https://maps.google.com/?q=Pulse+Heart+Centre+Betiahata+Gorakhpur'}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group h-full p-6 rounded-3xl bg-white border border-slate-200/90 shadow-sm hover:shadow-lg hover:border-slate-300 transition-all flex flex-col justify-between gap-4"
+              >
+                <div className="flex items-start justify-between gap-3">
+                  <div className="w-11 h-11 rounded-2xl bg-slate-100 border border-slate-200 flex items-center justify-center text-[#0A1128] shrink-0">
+                    <MapPin className="w-5 h-5" />
+                  </div>
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-slate-100 text-[#0A1128] border border-slate-200">
+                    {t('Google Maps', 'गूगल मैप्स')}
+                  </span>
+                </div>
+                <div className="space-y-1">
+                  <p className="text-xs font-bold uppercase tracking-wider text-slate-500">
+                    {t('Clinic Address', 'क्लिनिक का पता')}
+                  </p>
+                  <p className="text-base font-extrabold text-[#0A1128] group-hover:text-[#BE123C] transition-colors leading-snug">
+                    {t('Pulse Heart Centre, Betiahata, Gorakhpur', 'पल्स हार्ट सेंटर, बेतियाहाता, गोरखपुर')}
+                  </p>
+                  <p className="text-xs text-slate-600">
+                    {t('Uttar Pradesh 273001 • 10 min from Railway Station', 'उत्तर प्रदेश 273001 • रेलवे स्टेशन से 10 मिनट')}
+                  </p>
+                </div>
+              </a>
+            </ScrollReveal>
+
+            {/* Card 3: OPD Timings & Doctor */}
+            <ScrollReveal animation="fade-up" delay={0.15}>
+              <div className="h-full p-6 rounded-3xl bg-white border border-slate-200/90 shadow-sm flex flex-col justify-between gap-4">
+                <div className="flex items-center justify-between gap-3">
+                  <div className="flex items-center gap-2.5">
+                    <img
+                      src="/images/d2.jpeg"
+                      alt="Dr. Prakash Chand Shahi"
+                      className="w-11 h-11 rounded-2xl object-cover object-top border border-rose-200 shrink-0"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <div className="min-w-0">
+                      <p className="text-xs font-extrabold text-[#0A1128] truncate">
+                        {t('Dr. Prakash Chand Shahi', 'डॉ. प्रकाश चंद शाही')}
+                      </p>
+                      <p className="text-[11px] font-semibold text-[#BE123C] truncate">
+                        {t('Room 101 • Reg. 47395', 'रूम 101 • रजि. 47395')}
+                      </p>
                     </div>
                   </div>
-                </Interactive3DTilt>
-              </ScrollReveal>
-            </div>
-
+                  <div className="w-9 h-9 rounded-xl bg-rose-50 border border-rose-200 flex items-center justify-center text-[#BE123C] shrink-0">
+                    <Clock className="w-4 h-4" />
+                  </div>
+                </div>
+                <div className="space-y-1">
+                  <p className="text-xs font-bold uppercase tracking-wider text-slate-500">
+                    {t('OPD Timings', 'ओपीडी समय')}
+                  </p>
+                  <p className="text-lg font-extrabold text-[#0A1128]">
+                    {t('Mon – Sat: 10:00 AM – 8:00 PM', 'सोम – शनि: सुबह 10 – रात 8')}
+                  </p>
+                  <p className="text-xs text-slate-600">
+                    {t('Sunday: Emergency Care Only', 'रविवार: केवल इमरजेंसी सेवा')}
+                  </p>
+                </div>
+              </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>

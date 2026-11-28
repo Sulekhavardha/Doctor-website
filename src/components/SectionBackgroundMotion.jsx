@@ -1131,8 +1131,8 @@ export default function SectionBackgroundMotion({
             <div className="absolute inset-12 sm:inset-20 rounded-full border border-dashed border-[#0A1128]/25 animate-hero-ring-ccw" />
           </div>
 
-          {/* Sweeping Laser Line in Crimson Ruby */}
-          <div className="absolute left-0 right-0 h-[2.5px] top-1/3 bg-gradient-to-r from-transparent via-[#E11D48] to-transparent shadow-[0_0_20px_#BE123C] opacity-75 animate-laser-fast" />
+          {/* Subtle Finishing Laser Line along Bottom of Contact Hero */}
+          <div className="absolute left-0 right-0 h-[2px] bottom-0 bg-gradient-to-r from-transparent via-[#E11D48] to-transparent shadow-[0_0_16px_#BE123C] opacity-60 pointer-events-none" />
 
           {/* Precision Blueprint Dot Grid (Matched with Treatments Hero) */}
           <div className="absolute inset-0 bg-[radial-gradient(#0A112814_1.5px,transparent_1.5px)] bg-[size:28px_28px] opacity-70" />
