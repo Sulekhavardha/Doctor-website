@@ -83,27 +83,13 @@ export default function Navbar() {
             className="group flex items-center gap-1.5 sm:gap-2 min-w-0 shrink-0"
             onClick={() => setMobileMenuOpen(false)}
           >
-            {isHindi ? (
-              <>
-                <img
-                  src="/images/pulse-bars.webp"
-                  alt="पल्स हॉस्पिटल"
-                  className="h-7 sm:h-9 w-auto object-contain shrink-0" loading="lazy" decoding="async" />
-                <div className="flex flex-col items-end leading-none">
-                  <span className="font-black text-lg sm:text-2xl text-[#8F1D1D] group-hover:text-[#BE123C] transition-colors leading-none">
-                    पल्स
-                  </span>
-                  <span className="text-[10px] sm:text-xs font-extrabold text-[#4CA3C3] leading-none mt-0.5">
-                    हार्ट सेंटर
-                  </span>
-                </div>
-              </>
-            ) : (
-              <img
-                src="/images/p.webp"
-                alt="Pulse Heart Centre Logo"
-                className="h-9 sm:h-11 w-auto object-contain rounded-lg" loading="lazy" decoding="async" />
-            )}
+            <img
+              src="/images/p.webp"
+              alt={t('Pulse Heart Centre Logo', 'पल्स हार्ट सेंटर लोगो')}
+              className="h-9 sm:h-11 w-auto object-contain rounded-lg"
+              loading="lazy"
+              decoding="async"
+            />
           </Link>
 
           {/* Lead Doctor Identification Pill (With Stethoscope Crest) */}

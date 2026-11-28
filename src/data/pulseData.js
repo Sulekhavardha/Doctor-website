@@ -72,7 +72,8 @@ export const PULSE_DATA = {
       link: "/treatments",
       badge: "Apex Cath Lab",
       badgeHi: "अपेक्स कैथ लैब",
-      highlights: ["Coronary Angioplasty & Stenting", "Complex Radial Access PCI", "Bifurcation Lesion Care"]
+      highlights: ["Coronary Angioplasty & Stenting", "Complex Radial Access PCI", "Bifurcation Lesion Care"],
+      highlightsHi: ["कोरोनरी एंजियोप्लास्टी और स्टेंटिंग", "कलाई से सुरक्षित एंजियोप्लास्टी (PCI)", "जटिल ब्लॉकेज का इलाज"]
     },
     {
       id: "diagnostic-cardiology",
@@ -84,7 +85,8 @@ export const PULSE_DATA = {
       link: "/treatments",
       badge: "High Precision",
       badgeHi: "सटीक जांच",
-      highlights: ["12-Lead Digital ECG", "2D Color Doppler Echo", "Treadmill Stress Test (TMT)", "24-Hour Holter"]
+      highlights: ["12-Lead Digital ECG", "2D Color Doppler Echo", "Treadmill Stress Test (TMT)", "24-Hour Holter"],
+      highlightsHi: ["12-लीड डिजिटल ईसीजी (ECG)", "2D कलर डॉपलर इको (Echo)", "ट्रेडमिल स्ट्रेस टेस्ट (TMT)", "24-घंटे होल्टर जांच"]
     },
     {
       id: "hdu-general-ward",
@@ -96,7 +98,8 @@ export const PULSE_DATA = {
       link: "/hospital",
       badge: "24x7 Nursing",
       badgeHi: "24x7 नर्सिंग",
-      highlights: ["High Dependency Cardiac Beds", "Central Telemetry Monitoring", "Round-the-clock Resident Care"]
+      highlights: ["High Dependency Cardiac Beds", "Central Telemetry Monitoring", "Round-the-clock Resident Care"],
+      highlightsHi: ["हाई डिपेंडेंसी कार्डियक बेड्स", "सेंट्रल टेलीमेट्री मॉनिटरिंग", "24x7 डॉक्टर और नर्सिंग देखभाल"]
     },
     {
       id: "electrophysiology",
@@ -108,7 +111,8 @@ export const PULSE_DATA = {
       link: "/treatments",
       badge: "Rhythm Care",
       badgeHi: "हार्टबीट केयर",
-      highlights: ["Permanent Pacemaker (PPI)", "AICD Implantation", "Cardiac Resynchronization (CRT)"]
+      highlights: ["Permanent Pacemaker (PPI)", "AICD Implantation", "Cardiac Resynchronization (CRT)"],
+      highlightsHi: ["परमानेंट पेसमेकर (PPI)", "एआईसीडी (AICD) इम्प्लांटेशन", "कार्डियक रीसिंक्रोनाइजेशन (CRT)"]
     },
     {
       id: "emergency-services",
@@ -120,7 +124,8 @@ export const PULSE_DATA = {
       link: "/contact",
       badge: "< 60 Min Protocol",
       badgeHi: "< 60 मिनट प्रोटोकॉल",
-      highlights: ["24/7 Acute Chest Pain Triage", "Emergency Primary Angioplasty", "Direct Doctor ICU Access"]
+      highlights: ["24/7 Acute Chest Pain Triage", "Emergency Primary Angioplasty", "Direct Doctor ICU Access"],
+      highlightsHi: ["24/7 सीने में दर्द (चेस्ट पेन) इमरजेंसी", "इमरजेंसी प्राइमरी एंजियोप्लास्टी", "सीधे डॉक्टर और आईसीयू की सुविधा"]
     },
     {
       id: "preventive-cardiology",
@@ -132,7 +137,8 @@ export const PULSE_DATA = {
       link: "/contact",
       badge: "Heart Wellness",
       badgeHi: "हार्ट वेलनेस",
-      highlights: ["Lipid & Cholesterol Clinic", "Hypertension Reversal Programs", "Personalized Cardiac Risk Audit"]
+      highlights: ["Lipid & Cholesterol Clinic", "Hypertension Reversal Programs", "Personalized Cardiac Risk Audit"],
+      highlightsHi: ["लिपिड और कोलेस्ट्रॉल क्लिनिक", "ब्लड प्रेशर नियंत्रण प्रोग्राम", "व्यक्तिगत हार्ट-रिस्क जांच"]
     }
   ],
 
@@ -183,32 +189,42 @@ export const PULSE_DATA = {
     {
       step: "01",
       title: "Book Appointment",
+      titleHi: "अपॉइंटमेंट बुक करें",
       subtitle: "Instant Digital & OPD Access",
-      description: "Seamlessly schedule your consultation online or via our dedicated priority helpline. Select your preferred specialist, clinical department, and time slot without waiting queues."
+      description: "Book your OPD visit online or by phone. Pick a convenient time slot with zero long queues.",
+      descriptionHi: "ऑनलाइन या फोन पर आसानी से अपना ओपीडी अपॉइंटमेंट बुक करें और बिना लंबी कतार के समय पर मिलें।"
     },
     {
       step: "02",
       title: "Doctor Consultation",
+      titleHi: "डॉक्टर से परामर्श",
       subtitle: "Thorough Clinical Evaluation",
-      description: "Meet your senior heart doctor for a calm, clear discussion. We carefully check your past reports, symptoms, and overall heart health."
+      description: "Meet Dr. Shahi for a calm, clear discussion. We carefully check your past reports, symptoms, and overall heart health.",
+      descriptionHi: "डॉ. शाही से शांत और साफ बातचीत करें। हम आपकी पुरानी रिपोर्ट्स, लक्षण और दिल की सेहत को ध्यान से जांचते हैं।"
     },
     {
       step: "03",
       title: "Diagnosis & Tests",
-      subtitle: "Sub-Millimeter Precision Investigations",
-      description: "Undergo recommended diagnostics—such as Flat-Panel Angiography, 3T MRI, 128-Slice CT, or automated pathology—with transparent, fast turnaround reporting."
+      titleHi: "दिल की जांच और टेस्ट",
+      subtitle: "Accurate Heart Investigations",
+      description: "Get Digital ECG, 2D Color Echo, TMT, or Angiography done cleanly with same-day reports and CDs.",
+      descriptionHi: "डिजिटल ईसीजी, 2डी कलर इको, टीएमटी या एंजियोग्राफी की जांच सेम-डे रिपोर्ट और सीडी के साथ कराएं।"
     },
     {
       step: "04",
       title: "Personalized Treatment",
-      subtitle: "Ethical & Minimally Invasive Care",
-      description: "From wrist-first transradial stenting and robotic joint replacement to targeted medical therapy, your care plan is customized with zero unnecessary procedures."
+      titleHi: "सही और व्यक्तिगत इलाज",
+      subtitle: "Honest & Safe Heart Care",
+      description: "From safe heart stenting through the wrist and pacemakers to tailored medicines, you get only the care you truly need.",
+      descriptionHi: "कलाई के रास्ते सुरक्षित हार्ट स्टेंटिंग और पेसमेकर से लेकर सही दवाइयों तक, आपको सिर्फ वही इलाज मिलता है जिसकी सच में ज़रूरत है।"
     },
     {
       step: "05",
       title: "Recovery & Follow-up",
-      subtitle: "Continuity of Compassionate Health",
-      description: "Step-down rehabilitation, post-discharge medication guidance, and tele-consultation follow-ups ensure your recovery is sustained, safe, and empowering."
+      titleHi: "रिकवरी और फॉलो-अप",
+      subtitle: "Ongoing Heart Health",
+      description: "Clear medicine guidance, diet tips, and regular follow-up checkups keep your heart strong and healthy.",
+      descriptionHi: "सही दवाई मार्गदर्शन, खान-पान की सलाह और नियमित फॉलो-अप जांच से आपका दिल लंबे समय तक स्वस्थ रहता है।"
     }
   ],
 

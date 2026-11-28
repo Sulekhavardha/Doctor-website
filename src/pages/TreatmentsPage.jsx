@@ -139,15 +139,15 @@ export default function TreatmentsPage() {
             <Interactive3DTilt maxTilt={4} scale={1.01}>
               <div className="p-6 sm:p-10 lg:p-12 rounded-[2.5rem] bg-gradient-to-br from-white via-slate-50 to-white text-slate-900 shadow-2xl border-2 border-slate-200/90 space-y-5 backdrop-blur-xl">
                 <span className="text-xs font-mono uppercase tracking-[0.25em] text-[#BE123C] font-bold block">
-                  {t('Honest Second Opinion • Betiahata, Gorakhpur', 'ऑनेस्ट सेकंड ओपिनियन • बेतियाहाता, गोरखपुर')}
+                  {t('Honest Second Opinion • Betiahata, Gorakhpur', 'सही सलाह और दूसरी राय • बेतियाहाता, गोरखपुर')}
                 </span>
                 <h3 className="text-3xl sm:text-5xl font-extrabold text-[#0A1128] tracking-tight">
-                  {t('Bring Your Heart Report or CD for a', 'अपनी हार्ट रिपोर्ट या सीडी लाएं')} <span className="font-serif italic font-normal text-[#BE123C]">{t('Doctor Review', 'डॉक्टर रिव्यू के लिए')}</span>
+                  {t('Bring Your Heart Report or CD for a', 'जांच के लिए अपनी हार्ट रिपोर्ट या सीडी')} <span className="font-serif italic font-normal text-[#BE123C]">{t('Doctor Review', 'डॉक्टर को दिखाएं')}</span>
                 </h3>
                 <p className="text-sm sm:text-base text-slate-600 max-w-xl mx-auto font-normal leading-relaxed">
                   {t(
                     'Get clear, honest advice from Dr. Shahi on whether simple medicines or a stent is best for your heart.',
-                    'डॉ. शाही से साफ और ईमानदार सलाह लें कि आपके हार्ट के लिए सिर्फ दवाइयां बेहतर हैं या स्टेंट।'
+                    'डॉ. शाही से सही और आसान सलाह लें कि आपके दिल के लिए सिर्फ दवाइयां ठीक हैं या स्टेंट की जरूरत है।'
                   )}
                 </p>
                 <div className="pt-2 flex items-center justify-center gap-4">
@@ -156,7 +156,7 @@ export default function TreatmentsPage() {
                     className="luxury-btn-primary"
                   >
                     <Calendar className="w-4 h-4 text-white" />
-                    <span>{t('Schedule Second Opinion Session', 'सेकंड ओपिनियन सेशन बुक करें')}</span>
+                    <span>{t('Schedule Second Opinion Session', 'डॉक्टर से सलाह बुक करें')}</span>
                     <ArrowRight className="w-4 h-4 text-white" />
                   </Link>
                 </div>

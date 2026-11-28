@@ -300,7 +300,7 @@ export default function TreatmentStorytellingSection() {
                     {t('Dr. Prakash Chand Shahi', 'डॉ. प्रकाश चंद शाही')}
                   </h4>
                   <p className="text-[11px] font-medium text-slate-600">
-                    {t('Supervised Clinical Care', 'सुपरवाइज्ड क्लिनिकल केयर')}
+                    {t('Care by Dr. Shahi', 'डॉ. शाही की देखरेख में इलाज')}
                   </p>
                 </div>
               </div>
@@ -308,7 +308,7 @@ export default function TreatmentStorytellingSection() {
               {/* Indications List */}
               <div className="flex-1 min-w-0 space-y-2 text-left">
                 <span className="hidden sm:block text-[11px] font-mono text-[#BE123C] font-bold uppercase tracking-wider leading-snug">
-                  {t('Primary Clinical Indications • Supervised by Dr. Prakash Chand Shahi', 'प्राइमरी क्लिनिकल इंडिकेशंस • सुपरवाइज्ड बाय डॉ. प्रकाश चंद शाही')}
+                  {t('When This Treatment Helps • Care by Dr. Prakash Chand Shahi', 'प्रमुख लक्षण • डॉ. प्रकाश चंद शाही की देखरेख में')}
                 </span>
                 <div className="flex flex-wrap gap-2">
                   {currentStory.indications.map((ind, i) => (

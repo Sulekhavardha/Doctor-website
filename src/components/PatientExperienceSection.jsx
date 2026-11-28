@@ -12,12 +12,30 @@ export default function PatientExperienceSection({ onBookClick }) {
   const { t } = useLanguage();
 
   const preVisitDocuments = [
-    "Old ECG reports",
-    "Past heart scan (Angiogram or CT) CD and reports",
-    "Current doctor prescriptions and daily medicines",
-    "Recent blood test reports (Sugar, Cholesterol, Kidney)",
-    "Echo heart scan reports, if you have them",
-    "Old hospital discharge papers or stent records"
+    {
+      en: "Old ECG reports",
+      hi: "पुरानी ईसीजी (ECG) रिपोर्ट्स"
+    },
+    {
+      en: "Past heart scan (Angiogram or CT) CD and reports",
+      hi: "पिछले हार्ट स्कैन (एंजियोग्राम या सीटी) की सीडी और रिपोर्ट्स"
+    },
+    {
+      en: "Current doctor prescriptions and daily medicines",
+      hi: "डॉक्टर का मौजूदा पर्चा और रोज़ाना की दवाइयां"
+    },
+    {
+      en: "Recent blood test reports (Sugar, Cholesterol, Kidney)",
+      hi: "हाल की ब्लड टेस्ट रिपोर्ट्स (शुगर, कोलेस्ट्रॉल, किडनी)"
+    },
+    {
+      en: "Echo heart scan reports, if you have them",
+      hi: "दिल के इको (Echo) टेस्ट की रिपोर्ट्स, यदि आपके पास हों"
+    },
+    {
+      en: "Old hospital discharge papers or stent records",
+      hi: "अस्पताल के पुराने डिस्चार्ज पेपर या स्टेंट के रिकॉर्ड"
+    }
   ];
 
   return (
@@ -85,7 +103,7 @@ export default function PatientExperienceSection({ onBookClick }) {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#0A1128]/80 via-transparent to-transparent" />
                       <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-[#0A1128]/80 border border-white/20 text-[10px] font-mono font-bold text-white">
-                        PHASE {step.step}
+                        {t('STEP', 'चरण')} {step.step}
                       </span>
                       <span className="absolute bottom-2.5 right-3 font-serif font-bold text-2xl text-white/95 drop-shadow-md">
                         {step.step}
@@ -95,16 +113,16 @@ export default function PatientExperienceSection({ onBookClick }) {
                     <div className="p-6 flex-1 flex flex-col justify-between text-left">
                       <div>
                         <h3 className="font-extrabold text-base text-[#0A1128] leading-snug mb-2 group-hover:text-[#BE123C] transition-colors">
-                          {step.title}
+                          {t(step.title, step.titleHi || step.title)}
                         </h3>
                         <p className="text-xs text-slate-600 font-normal leading-relaxed">
-                          {step.description}
+                          {t(step.description, step.descriptionHi || step.description)}
                         </p>
                       </div>
 
                       <div className={`mt-5 pt-3 border-t border-slate-100 flex items-center justify-between`}>
                         <span className={`text-[10px] font-mono tracking-widest uppercase font-bold ${a.pill} px-2.5 py-1 rounded-full`}>
-                          Dr. Shahi Protocol
+                          {t('Dr. Shahi Care', 'डॉ. शाही केयर')}
                         </span>
                       </div>
                     </div>
@@ -152,7 +170,7 @@ export default function PatientExperienceSection({ onBookClick }) {
                     >
                       <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#E11D48] shrink-0 mt-0.5" />
                       <span className="text-[11px] sm:text-xs text-slate-200 font-medium leading-snug">
-                        {doc}
+                        {t(doc.en, doc.hi)}
                       </span>
                     </div>
                   ))}

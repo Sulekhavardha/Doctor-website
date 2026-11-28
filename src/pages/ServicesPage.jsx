@@ -404,7 +404,7 @@ export default function ServicesPage() {
                     {/* Visual Highlights Chips */}
                     {service.highlights && (
                       <div className="pt-2 border-t border-slate-100 space-y-1.5">
-                        {service.highlights.slice(0, 2).map((h, i) => (
+                        {(isHindi && service.highlightsHi ? service.highlightsHi : service.highlights).slice(0, 2).map((h, i) => (
                           <div key={i} className="flex items-center gap-1.5 text-[11px] text-slate-600 font-medium">
                             <CheckCircle2 className="w-3.5 h-3.5 text-[#0284C7] shrink-0" />
                             <span className="truncate">{h}</span>
@@ -638,7 +638,7 @@ export default function ServicesPage() {
                       {t('Key Clinical Capabilities:', 'प्रमुख क्लिनिकल सुविधाएं:')}
                     </span>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
-                      {selectedService.highlights.map((h, i) => (
+                      {(isHindi && selectedService.highlightsHi ? selectedService.highlightsHi : selectedService.highlights).map((h, i) => (
                         <div key={i} className="flex items-center gap-1.5 text-[11px] text-slate-700 font-medium">
                           <CheckCircle2 className="w-3.5 h-3.5 text-[#0284C7] shrink-0" />
                           <span className="truncate">{h}</span>

@@ -36,13 +36,13 @@ export default function InteractiveCardiacExplorer() {
           </div>
 
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0A1128] tracking-tight leading-tight">
-            {t('How Your Heart', 'हाउ योर हार्ट')} <span className="font-serif italic font-normal text-[#BE123C]">{t('Works & Heals', 'वर्क्स एंड हील्स')}</span>
+            {t('How Your Heart', 'आपका दिल कैसे')} <span className="font-serif italic font-normal text-[#BE123C]">{t('Works & Heals', 'काम करता है और ठीक होता है')}</span>
           </h2>
 
           <p className="text-xs sm:text-sm text-slate-600 font-medium max-w-xl mx-auto leading-relaxed">
             {t(
-              'Click any part of the heart below to see how Dr. Shahi checks blockages, opens arteries, and keeps your heartbeat steady.',
-              'क्लिक एनी पार्ट ऑफ द हार्ट बिलो टू सी हाउ डॉ. शाही चेक्स ब्लॉकेजेस, ओपन्स आर्टरीज, एंड कीप्स योर हार्टबीट स्टेडी।'
+              'See how Dr. Shahi checks blockages, opens arteries safely, and keeps your heartbeat steady.',
+              'देखें कि डॉ. शाही दिल की ब्लॉकेज कैसे जांचते हैं, बंद नसें सुरक्षित तरीके से कैसे खोलते हैं और धड़कन को सामान्य कैसे रखते हैं।'
             )}
           </p>
         </div>
