@@ -75,6 +75,18 @@
 }
 
 /* Clean Devanagari rendering in Hindi mode — prevent tracking/letter-spacing gaps */
+html[lang="hi"] {
+  text-rendering: optimizeLegibility !important;
+  font-family: 'Noto Sans Devanagari', 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif !important;
+}
+
+html[lang="hi"],
+html[lang="hi"] * {
+  letter-spacing: normal !important;
+  word-spacing: normal !important;
+  font-kerning: normal;
+}
+
 html[lang="hi"] body,
 html[lang="hi"] h1,
 html[lang="hi"] h2,
@@ -82,19 +94,21 @@ html[lang="hi"] h3,
 html[lang="hi"] h4,
 html[lang="hi"] h5,
 html[lang="hi"] h6,
-html[lang="hi"] p,
-html[lang="hi"] span,
-html[lang="hi"] a,
-html[lang="hi"] button,
-html[lang="hi"] div,
+html[lang="hi"] .font-serif,
 html[lang="hi"] .font-mono,
-html[lang="hi"] [class*="tracking-"] {
-  letter-spacing: normal !important;
-  word-spacing: normal !important;
+html[lang="hi"] .luxury-heading-xl,
+html[lang="hi"] .luxury-serif-accent,
+html[lang="hi"] .luxury-badge-pill {
+  font-family: 'Noto Sans Devanagari', 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif !important;
+  font-feature-settings: normal !important;
 }
 
-html[lang="hi"] .font-mono {
-  font-family: 'Noto Sans Devanagari', 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif !important;
+html[lang="hi"] .italic,
+html[lang="hi"] .font-serif,
+html[lang="hi"] .luxury-serif-accent,
+html[lang="hi"] em,
+html[lang="hi"] i {
+  font-style: normal !important;
 }
 
 /* =========================================================================
