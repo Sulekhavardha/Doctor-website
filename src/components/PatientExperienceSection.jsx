@@ -32,29 +32,28 @@ export default function PatientExperienceSection({ onBookClick }) {
           <div className="mb-12">
             <div className="flex items-center gap-3 mb-3">
               <span className="text-xs font-semibold text-white bg-gradient-to-r from-[#0A1128] via-[#1E293B] to-[#BE123C] px-3.5 py-1 rounded-full shadow-sm border border-rose-300/30">
-                Clinical Stewardship
-                Patient Care Guide
+                {t('Patient Care Guide', 'पेशेंट केयर गाइड')}
               </span>
               <div className="w-10 h-0.5 bg-gradient-to-r from-[#0A1128] to-[#BE123C]" />
               <span className="text-xs font-medium tracking-wider text-[#BE123C] uppercase font-mono">
-                The Consultation Pathway
-                Step-by-Step Visit
+                {t('Step-by-Step Visit', 'विज़िट के चरण')}
               </span>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-end">
               <div className="lg:col-span-8">
                 <span className="text-[#0A1128] font-semibold text-xs uppercase tracking-widest block mb-1">
-                  Transparent &amp; Evidence-Based Stewardship
-                  Simple &amp; Honest Heart Care
+                  {t('Simple & Honest Heart Care', 'सरल और ईमानदार हार्ट केयर')}
                 </span>
                 <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0A1128] tracking-tight leading-tight">
-                  The Consultation <span className="font-serif italic font-normal text-[#BE123C]">Pathway</span>
-                  Your Visit <span className="font-serif italic font-normal text-[#BE123C]">Step by Step</span>
+                  {t('Your Visit', 'आपकी विज़िट')} <span className="font-serif italic font-normal text-[#BE123C]">{t('Step by Step', 'कदम दर कदम')}</span>
                 </h2>
               </div>
               <div className="lg:col-span-4 text-slate-600 text-xs sm:text-sm font-normal leading-relaxed">
-                Clear and honest doctor consultation from checking your old reports to your regular follow-up care.
+                {t(
+                  'Clear and honest doctor consultation from checking your old reports to your regular follow-up care.',
+                  'आपकी पुरानी रिपोर्ट्स देखने से लेकर नियमित फॉलो-अप तक, साफ और ईमानदार डॉक्टर सलाह।'
+                )}
               </div>
             </div>
           </div>

@@ -321,38 +321,38 @@ export default function AppointmentExperienceSection({ variant = 'home-appointme
               </div>
 
               {/* Patient Dynamic Ticket Card */}
-              <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-3">
-                <div className="flex justify-between items-center text-xs">
-                  <span className="text-slate-600 font-medium">{t('Patient:', 'पेशेंट:')}</span>
-                  <span className="font-semibold text-[#0A1128] font-mono">
+              <div className="p-3.5 sm:p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2.5 sm:space-y-3">
+                <div className="flex justify-between items-start gap-3 text-xs">
+                  <span className="text-slate-600 font-medium shrink-0">{t('Patient:', 'पेशेंट:')}</span>
+                  <span className="font-semibold text-[#0A1128] font-mono text-right break-words">
                     {patientName || t('Patient Name', 'पेशेंट नेम')}
                   </span>
                 </div>
-                <div className="flex justify-between items-center text-xs">
-                  <span className="text-slate-600 font-medium">{t('Date & Slot:', 'डेट एंड स्लॉट:')}</span>
-                  <span className="font-bold text-[#BE123C] font-mono">
+                <div className="flex justify-between items-center gap-3 text-xs">
+                  <span className="text-slate-600 font-medium shrink-0">{t('Date & Slot:', 'डेट एंड स्लॉट:')}</span>
+                  <span className="font-bold text-[#BE123C] font-mono text-right text-[11px] sm:text-xs whitespace-nowrap">
                     {preferredDate} • {preferredSlot}
                   </span>
                 </div>
-                <div className="flex justify-between items-center text-xs">
-                  <span className="text-slate-600 font-medium">{t('Category:', 'कैटेगरी:')}</span>
-                  <span className="font-bold text-[#0A1128] font-mono uppercase text-[10px]">
+                <div className="flex justify-between items-start gap-3 text-xs">
+                  <span className="text-slate-600 font-medium shrink-0">{t('Category:', 'कैटेगरी:')}</span>
+                  <span className="font-bold text-[#0A1128] font-mono uppercase text-[10px] text-right leading-snug">
                     {triageOptions.find((o) => o.id === triageCategory)?.label || triageCategory.replace('-', ' ')}
                   </span>
                 </div>
-                <div className="flex justify-between items-center text-xs">
-                  <span className="text-slate-600 font-medium">{t('Location:', 'लोकेशन:')}</span>
-                  <span className="font-bold text-slate-800 font-mono text-[10px]">
+                <div className="flex justify-between items-start gap-3 text-xs">
+                  <span className="text-slate-600 font-medium shrink-0">{t('Location:', 'लोकेशन:')}</span>
+                  <span className="font-bold text-slate-800 font-mono text-[10px] text-right leading-snug">
                     {t('Pulse Heart Centre, Betiahata', 'पल्स हार्ट सेंटर, बेतियाहाता')}
                   </span>
                 </div>
               </div>
 
               {/* Verification */}
-              <div className="pt-2 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono">
-                <span className="text-slate-500">{t('PASS-ID: PHC-2026-9812', 'पास-आईडी: पीएचसी-2026-9812')}</span>
-                <span className="text-[#BE123C] font-bold flex items-center gap-1">
-                  <ShieldCheck className="w-3.5 h-3.5" />
+              <div className="pt-2 border-t border-slate-100 flex flex-wrap items-center justify-between gap-2 text-[10px] sm:text-[11px] font-mono">
+                <span className="text-slate-500 whitespace-nowrap">{t('PASS-ID: PHC-2026-9812', 'पास-आईडी: पीएचसी-2026-9812')}</span>
+                <span className="text-[#BE123C] font-bold flex items-center gap-1 whitespace-nowrap">
+                  <ShieldCheck className="w-3.5 h-3.5 shrink-0" />
                   <span>{t('OPD PRIORITY PASS', 'ओपीडी प्रायोरिटी पास')}</span>
                 </span>
               </div>
