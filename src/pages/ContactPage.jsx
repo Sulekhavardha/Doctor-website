@@ -255,7 +255,7 @@ export default function ContactPage() {
                     <span className="w-2 h-2 rounded-full bg-[#E11D48] animate-pulse" />
                     <span>{t('Pulse Heart Centre • Betiahata, Gorakhpur', 'पल्स हार्ट सेंटर • बेतियाहाता, गोरखपुर')}</span>
                   </div>
-                  <h3 className="text-xl sm:text-3xl font-extrabold tracking-tight leading-snug">
+                  <h3 className="text-xl sm:text-3xl font-extrabold !text-white text-white tracking-tight leading-snug">
                     {t('Need Immediate Help or Directions?', 'तुरंत मदद या क्लिनिक का रास्ता चाहिए?')}
                   </h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1 text-xs sm:text-sm text-slate-200">

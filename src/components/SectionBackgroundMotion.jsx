@@ -107,15 +107,15 @@ export default function SectionBackgroundMotion({
           </div>
 
           {/* Subtle Rotating Medical Orbital Rings Behind Right Portrait */}
-          <div className="hidden lg:block absolute top-1/2 right-[8%] -translate-y-1/2 w-[520px] h-[520px] rounded-full border border-rose-200/60 pointer-events-none">
-            <div className="absolute inset-6 rounded-full border-2 border-dashed border-[#BE123C]/30 animate-gentle-cw" />
-            <div className="absolute inset-16 rounded-full border border-dashed border-[#0A1128]/20 animate-hero-ring-ccw" />
+          <div className="absolute top-1/2 right-[-40px] lg:right-[8%] -translate-y-1/2 w-[260px] h-[260px] sm:w-[380px] sm:h-[380px] lg:w-[520px] lg:h-[520px] rounded-full border border-rose-200/60 pointer-events-none opacity-75 lg:opacity-100">
+            <div className="absolute inset-4 sm:inset-6 rounded-full border-2 border-dashed border-[#BE123C]/30 animate-gentle-cw" />
+            <div className="absolute inset-10 sm:inset-16 rounded-full border border-dashed border-[#0A1128]/20 animate-hero-ring-ccw" />
           </div>
 
           {/* Floating Medical Cross (+) Accents in Outer Margins */}
-          <div className="absolute top-32 left-8 text-[#BE123C]/55 font-mono text-xl font-bold animate-float-1 select-none pointer-events-none hidden sm:block">+</div>
-          <div className="absolute bottom-36 left-12 text-[#0A1128]/45 font-mono text-lg font-bold animate-float-2 select-none pointer-events-none hidden md:block">+</div>
-          <div className="absolute top-36 right-10 text-[#BE123C]/50 font-mono text-xl font-bold animate-float-2 select-none pointer-events-none hidden sm:block">+</div>
+          <div className="absolute top-24 sm:top-32 left-4 sm:left-8 text-[#BE123C]/55 font-mono text-lg sm:text-xl font-bold animate-float-1 select-none pointer-events-none">+</div>
+          <div className="absolute bottom-28 sm:bottom-36 left-8 sm:left-12 text-[#0A1128]/45 font-mono text-base sm:text-lg font-bold animate-float-2 select-none pointer-events-none">+</div>
+          <div className="absolute top-28 sm:top-36 right-5 sm:right-10 text-[#BE123C]/50 font-mono text-lg sm:text-xl font-bold animate-float-2 select-none pointer-events-none">+</div>
 
           {/* Bottom ECG Heartbeat Rhythm Line + GPU-Smooth Sweeping Pulse Light */}
           <div className="absolute inset-x-0 bottom-2 sm:bottom-1 h-20 sm:h-24 pointer-events-none overflow-hidden">
@@ -478,14 +478,14 @@ export default function SectionBackgroundMotion({
           </div>
 
           {/* Rotating Biometric Telemetry & Acoustic Stethoscope Radar Rings */}
-          <div className="absolute top-1/2 right-6 -translate-y-1/2 w-[580px] h-[580px] rounded-full border border-orange-300/35 hidden lg:block pointer-events-none">
-            <div className="absolute inset-6 rounded-full border-2 border-dashed border-orange-400/35 animate-radar-sweep" />
-            <div className="absolute inset-20 rounded-full border border-rose-300/35 flex items-center justify-center animate-rotate-reverse">
+          <div className="absolute top-1/2 right-[-50px] lg:right-6 -translate-y-1/2 w-[280px] h-[280px] sm:w-[420px] sm:h-[420px] lg:w-[580px] lg:h-[580px] rounded-full border border-orange-300/35 pointer-events-none opacity-70 lg:opacity-100">
+            <div className="absolute inset-4 sm:inset-6 rounded-full border-2 border-dashed border-orange-400/35 animate-radar-sweep" />
+            <div className="absolute inset-12 sm:inset-20 rounded-full border border-rose-300/35 flex items-center justify-center animate-rotate-reverse">
               <div className="w-full h-px bg-orange-300/40" />
               <div className="h-full w-px bg-orange-300/40 absolute" />
-              <div className="w-4 h-4 rounded-full bg-[#EA580C] animate-ping" />
+              <div className="w-3 sm:w-4 h-3 sm:h-4 rounded-full bg-[#EA580C] animate-ping" />
             </div>
-            <div className="absolute inset-36 rounded-full border-2 border-dashed border-peach-400/40 animate-gentle-cw" />
+            <div className="absolute inset-20 sm:inset-36 rounded-full border-2 border-dashed border-peach-400/40 animate-gentle-cw" />
           </div>
 
           {/* ECG Sinus Wave along bottom */}
@@ -761,15 +761,15 @@ export default function SectionBackgroundMotion({
           <div className="absolute top-1/2 right-10 w-[450px] h-[450px] bg-gradient-to-br from-[#CBD5E1]/30 via-transparent to-transparent rounded-full [mask-image:radial-gradient(closest-side,black_15%,transparent_100%)] will-change-transform animate-pulse-glow" />
 
           {/* 3D Rotating Gyroscopic Stent Axis Ring (Continuous Visual Drama) */}
-          <div className="absolute top-1/2 left-10 -translate-y-1/2 w-[480px] h-[480px] rounded-full border-2 border-slate-300/40 pointer-events-none hidden lg:block">
-            <div className="absolute inset-8 rounded-full border-2 border-dashed border-rose-400/40 animate-radar-sweep" />
-            <div className="absolute inset-20 rounded-full border border-slate-400/30 animate-rotate-reverse">
+          <div className="absolute top-1/2 left-[-40px] lg:left-10 -translate-y-1/2 w-[260px] h-[260px] sm:w-[360px] sm:h-[360px] lg:w-[480px] lg:h-[480px] rounded-full border-2 border-slate-300/40 pointer-events-none opacity-70 lg:opacity-100">
+            <div className="absolute inset-5 sm:inset-8 rounded-full border-2 border-dashed border-rose-400/40 animate-radar-sweep" />
+            <div className="absolute inset-12 sm:inset-20 rounded-full border border-slate-400/30 animate-rotate-reverse">
               <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-0.5 bg-rose-400/40" />
               <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-0.5 bg-rose-400/40" />
             </div>
-            <div className="absolute inset-32 rounded-full border-2 border-slate-300/45 animate-pulse-glow" />
-            <div className="absolute inset-40 rounded-full bg-white/80 border border-slate-200 shadow-lg flex items-center justify-center">
-              <div className="w-5 h-5 rounded-full bg-[#BE123C] animate-ping" />
+            <div className="absolute inset-20 sm:inset-32 rounded-full border-2 border-slate-300/45 animate-pulse-glow" />
+            <div className="absolute inset-24 sm:inset-40 rounded-full bg-white/80 border border-slate-200 shadow-lg flex items-center justify-center">
+              <div className="w-4 sm:w-5 h-4 sm:h-5 rounded-full bg-[#BE123C] animate-ping" />
             </div>
           </div>
 
@@ -933,15 +933,15 @@ export default function SectionBackgroundMotion({
           </svg>
 
           {/* Rotating Biometric Telemetry & Architectural Radar Rings */}
-          <div className="absolute top-1/3 -right-16 -translate-y-1/2 w-[520px] h-[520px] rounded-full border-2 border-slate-300/40 pointer-events-none hidden lg:block">
-            <div className="absolute inset-8 rounded-full border-2 border-dashed border-rose-400/40 animate-radar-sweep" />
-            <div className="absolute inset-20 rounded-full border border-slate-400/30 animate-rotate-reverse">
+          <div className="absolute top-1/3 -right-12 lg:-right-16 -translate-y-1/2 w-[260px] h-[260px] sm:w-[380px] sm:h-[380px] lg:w-[520px] lg:h-[520px] rounded-full border-2 border-slate-300/40 pointer-events-none opacity-70 lg:opacity-100">
+            <div className="absolute inset-5 sm:inset-8 rounded-full border-2 border-dashed border-rose-400/40 animate-radar-sweep" />
+            <div className="absolute inset-12 sm:inset-20 rounded-full border border-slate-400/30 animate-rotate-reverse">
               <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-0.5 bg-rose-400/40" />
               <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-0.5 bg-rose-400/40" />
             </div>
-            <div className="absolute inset-32 rounded-full border-2 border-slate-300/45 animate-pulse-glow" />
-            <div className="absolute inset-44 rounded-full bg-white/90 border border-slate-200 shadow-md flex items-center justify-center">
-              <div className="w-5 h-5 rounded-full bg-[#BE123C] animate-ping" />
+            <div className="absolute inset-20 sm:inset-32 rounded-full border-2 border-slate-300/45 animate-pulse-glow" />
+            <div className="absolute inset-24 sm:inset-44 rounded-full bg-white/90 border border-slate-200 shadow-md flex items-center justify-center">
+              <div className="w-4 sm:w-5 h-4 sm:h-5 rounded-full bg-[#BE123C] animate-ping" />
             </div>
           </div>
 
@@ -1126,9 +1126,9 @@ export default function SectionBackgroundMotion({
           </div>
 
           {/* Concentric Location Beacon Rings Behind Right Portrait */}
-          <div className="hidden lg:block absolute top-1/2 right-[8%] -translate-y-1/2 w-[500px] h-[500px] rounded-full border border-rose-300/40 pointer-events-none">
-            <div className="absolute inset-8 rounded-full border border-dashed border-[#BE123C]/35 animate-gentle-cw" />
-            <div className="absolute inset-20 rounded-full border border-dashed border-[#0A1128]/25 animate-hero-ring-ccw" />
+          <div className="absolute top-1/2 right-[-40px] lg:right-[8%] -translate-y-1/2 w-[260px] h-[260px] sm:w-[380px] sm:h-[380px] lg:w-[500px] lg:h-[500px] rounded-full border border-rose-300/40 pointer-events-none opacity-80 lg:opacity-100">
+            <div className="absolute inset-5 sm:inset-8 rounded-full border border-dashed border-[#BE123C]/35 animate-gentle-cw" />
+            <div className="absolute inset-12 sm:inset-20 rounded-full border border-dashed border-[#0A1128]/25 animate-hero-ring-ccw" />
           </div>
 
           {/* Sweeping Laser Line in Crimson Ruby */}
