@@ -111,7 +111,7 @@ export default function PatientExperienceSection({ onBookClick }) {
                       </span>
                     </div>
 
-                    <div className="p-6 flex-1 flex flex-col justify-between text-left">
+                    <div className="p-6 flex-1 flex flex-col justify-start text-left">
                       <div>
                         <h3 className="font-extrabold text-base text-[#0A1128] leading-snug mb-2 group-hover:text-[#BE123C] transition-colors">
                           {t(step.title, step.titleHi || step.title)}
@@ -119,12 +119,6 @@ export default function PatientExperienceSection({ onBookClick }) {
                         <p className="text-xs text-slate-600 font-normal leading-relaxed">
                           {t(step.description, step.descriptionHi || step.description)}
                         </p>
-                      </div>
-
-                      <div className={`mt-5 pt-3 border-t border-slate-100 flex items-center justify-between`}>
-                        <span className={`text-[10px] font-mono tracking-widest uppercase font-bold ${a.pill} px-2.5 py-1 rounded-full`}>
-                          {t('Dr. Shahi Care', 'डॉ. शाही केयर')}
-                        </span>
                       </div>
                     </div>
                   </div>
