@@ -73,12 +73,11 @@ export default function ContactPage() {
               </h1>
 
               <p className="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto font-normal leading-relaxed">
-                <p className="pt-5 sm:pt-7 text-sm sm:text-base text-slate-600 max-w-2xl mx-auto font-normal leading-relaxed">
-                  {t(
-                    'Have a question, need clinic directions, or want to book an OPD visit with Dr. Prakash Chand Shahi? Call us directly or schedule your visit below.',
-                    'कोई सवाल हो, क्लिनिक का रास्ता जानना हो, या डॉ. प्रकाश चंद शाही से मिलने के लिए ओपीडी बुक करनी हो — सीधे कॉल करें या नीचे अपॉइंटमेंट बुक करें।'
-                  )}
-                </p>
+                {t(
+                  'Have a question, need clinic directions, or want to book an OPD visit with Dr. Prakash Chand Shahi? Call us directly or schedule your visit below.',
+                  'कोई सवाल हो, क्लिनिक का रास्ता जानना हो, या डॉ. प्रकाश चंद शाही से मिलने के लिए ओपीडी बुक करनी हो — सीधे कॉल करें या नीचे अपॉइंटमेंट बुक करें।'
+                )}
+              </p>
             </div>
           </ScrollReveal>
 
