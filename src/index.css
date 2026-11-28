@@ -74,6 +74,29 @@
   }
 }
 
+/* Clean Devanagari rendering in Hindi mode — prevent tracking/letter-spacing gaps */
+html[lang="hi"] body,
+html[lang="hi"] h1,
+html[lang="hi"] h2,
+html[lang="hi"] h3,
+html[lang="hi"] h4,
+html[lang="hi"] h5,
+html[lang="hi"] h6,
+html[lang="hi"] p,
+html[lang="hi"] span,
+html[lang="hi"] a,
+html[lang="hi"] button,
+html[lang="hi"] div,
+html[lang="hi"] .font-mono,
+html[lang="hi"] [class*="tracking-"] {
+  letter-spacing: normal !important;
+  word-spacing: normal !important;
+}
+
+html[lang="hi"] .font-mono {
+  font-family: 'Noto Sans Devanagari', 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif !important;
+}
+
 /* =========================================================================
    DEEP MIDNIGHT NAVY, CRIMSON RUBY & WARM PLATINUM DESIGN SYSTEM
    ========================================================================= */

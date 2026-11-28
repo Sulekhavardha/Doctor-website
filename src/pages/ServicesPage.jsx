@@ -144,7 +144,7 @@ export default function ServicesPage() {
 
               <ScrollReveal animation="fade-up" delay={0.08}>
                 <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#0A1128] tracking-tight leading-[1.06]">
-                  {t('Specialized Heart Care.', 'विशेषज्ञ हृदय सेवाएं।')} <br />
+                  {t('Specialized Heart Care', 'विशेषज्ञ हृदय सेवाएं')} <br />
                   <span className="font-serif italic font-normal text-[#BE123C]">{t('Designed Around Outcomes.', 'बेहतर परिणाम और त्वरित देखभाल।')}</span>
                 </h1>
               </ScrollReveal>

@@ -110,7 +110,7 @@ export default function DoctorMonographSection() {
                   alt="Dr. Prakash Chand Shahi"
                   loading="lazy"
                   decoding="async"
-                  className="w-full h-full object-cover object-center"
+                  className="w-full h-full object-cover object-top"
                 />
               </div>
 

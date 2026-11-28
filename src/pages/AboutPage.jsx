@@ -205,7 +205,7 @@ export default function AboutPage() {
                   <img
                     src="/images/d3.jpeg"
                     alt="Dr. Prakash Chand Shahi — Chief Interventional Cardiologist"
-                    className="w-full h-full object-cover object-center" loading="lazy" decoding="async" />
+                    className="w-full h-full object-cover object-top" loading="lazy" decoding="async" />
                   <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#0A1128] via-[#0A1128]/70 to-transparent" />
                   <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between gap-2">
                     <div>
