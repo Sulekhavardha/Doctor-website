@@ -124,8 +124,8 @@ export default function PatientExperienceSection({ onBookClick }) {
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center relative z-10">
 
-              {/* Left Column (7 Cols): Heading, Description, 2-Column Checklist & CTA */}
-              <div className="lg:col-span-7 space-y-5 text-left">
+              {/* Left Column (7 Cols): Heading, Description, 2-Column Checklist & CTA (Below Image on Mobile) */}
+              <div className="lg:col-span-7 order-2 lg:order-1 space-y-5 text-left">
                 <div className="space-y-3">
                   <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 text-xs font-mono text-rose-200 border border-rose-300/30">
                     <ClipboardList className="w-3.5 h-3.5" />
@@ -170,8 +170,8 @@ export default function PatientExperienceSection({ onBookClick }) {
                 </div>
               </div>
 
-              {/* Right Column (5 Cols): Clean Editorial Card (Image on Top, Text Below) */}
-              <div className="lg:col-span-5">
+              {/* Right Column (5 Cols): Clean Editorial Card (On Top in Mobile View) */}
+              <div className="lg:col-span-5 order-1 lg:order-2">
                 <div className="max-w-sm mx-auto rounded-3xl bg-white p-2.5 shadow-2xl border border-white/20 overflow-hidden">
                   <div className="relative aspect-[4/5] w-full rounded-2xl overflow-hidden bg-slate-100">
                     <img
