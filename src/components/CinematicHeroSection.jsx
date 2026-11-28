@@ -67,7 +67,7 @@ export default function CinematicHeroSection() {
             {/* 2 Visual Proof Thumbnails */}
             <div className="pt-4 border-t border-slate-200/80 grid grid-cols-2 gap-2.5 sm:gap-3 max-w-md">
               {[
-                { img: '/images/ppp.png', stat: t('22+ Yrs', '22+ साल'), label: t('Experience', 'अनुभव') },
+                { img: '/images/ppp.webp', stat: t('22+ Yrs', '22+ साल'), label: t('Experience', 'अनुभव') },
                 { img: '/images/doctor-recovery-discharge.jpg', stat: '99.4%', label: t('Success Rate', 'सफलता दर') },
               ].map((item, idx) => (
                 <div

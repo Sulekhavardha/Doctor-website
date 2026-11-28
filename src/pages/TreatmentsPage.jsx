@@ -74,7 +74,7 @@ export default function TreatmentsPage() {
               <div className="rounded-3xl sm:rounded-[2.5rem] p-2.5 sm:p-4 bg-white/95 border-2 border-slate-200/90 shadow-2xl overflow-hidden">
                 <div className="aspect-[16/9] sm:aspect-[21/9] rounded-2xl sm:rounded-[2rem] overflow-hidden bg-slate-100">
                   <img
-                    src="/images/mm.png"
+                    src="/images/mm.webp"
                     alt={t('Heart Blockage Check & Stent Care', 'हार्ट ब्लॉकेज चेक एंड स्टेंट केयर')}
                     loading="lazy"
                     decoding="async"

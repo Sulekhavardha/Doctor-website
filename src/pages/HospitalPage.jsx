@@ -37,7 +37,7 @@ export default function HospitalPage() {
       title: t('24/7 Cardiac ICU & Telemetry Suite', '24/7 कार्डियक आईसीयू व टेलीमेट्री सुइट'),
       subtitle: t('Continuous Rhythm Monitoring • Central Oxygen & Nursing', 'निरंतर रिदम मॉनिटरिंग • सेंट्रल ऑक्सीजन व नर्सिंग'),
       badge: t('CRITICAL CARE UNIT', 'क्रिटिकल केयर यूनिट'),
-      image: '/images/Aaa.png',
+      image: '/images/Aaa.webp',
       specs: t('Equipped with advanced multi-parameter monitors for round-the-clock emergency care.', '24 घंटे इमरजेंसी केयर के लिए मल्टी-पैरामीटर मॉनिटर्स से सुसज्जित।'),
     },
     cleanroom: {

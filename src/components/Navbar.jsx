@@ -100,7 +100,7 @@ export default function Navbar() {
               </>
             ) : (
               <img
-                src="/images/p.png"
+                src="/images/p.webp"
                 alt="Pulse Heart Centre Logo"
                 className="h-9 sm:h-11 w-auto object-contain rounded-lg" loading="lazy" decoding="async" />
             )}

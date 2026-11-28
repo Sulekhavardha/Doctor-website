@@ -285,7 +285,7 @@ export default function AppointmentExperienceSection({ variant = 'home-appointme
               {/* Pass Header */}
               <div className="flex items-center justify-between pb-4 border-b border-slate-100">
                 <div className="flex items-center gap-2.5">
-                  <img src="/images/p.png" alt="Pulse Logo" className="w-6 h-6 object-contain rounded-md bg-white p-0.5 border border-slate-200" loading="lazy" decoding="async" />
+                  <img src="/images/p.webp" alt="Pulse Logo" className="w-6 h-6 object-contain rounded-md bg-white p-0.5 border border-slate-200" loading="lazy" decoding="async" />
                   <div>
                     <span className="font-bold text-sm tracking-widest uppercase block leading-none text-[#0A1128]">
                       {t('PULSE', 'पल्स')}

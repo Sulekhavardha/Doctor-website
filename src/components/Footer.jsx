@@ -28,7 +28,7 @@ export default function Footer() {
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-xl overflow-hidden bg-white p-1 border border-rose-300/40 shadow-sm flex items-center justify-center shrink-0">
                 <img
-                  src="/images/p.png"
+                  src="/images/p.webp"
                   alt="Pulse Heart Centre Logo"
                   className="w-full h-full object-contain" loading="lazy" decoding="async" />
               </div>

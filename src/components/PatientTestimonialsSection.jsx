@@ -25,7 +25,7 @@ export default function PatientTestimonialsSection() {
         'Smooth stent treatment through the wrist with two stents. I was walking the next morning with no leg pain at all.',
         'कलाई के रास्ते दो स्टेंट्स के साथ बहुत आराम से ट्रीटमेंट हुआ। अगली ही सुबह मैं बिना किसी दर्द के आराम से चल रहा था।'
       ),
-      image: '/images/w.png',
+      image: '/images/w.webp',
       stat: t('99.4% Blood Flow Restored', '99.4% ब्लड फ्लो बहाल'),
       badge: t('Heart Recovery', 'हार्ट रिकवरी')
     },
@@ -109,10 +109,6 @@ export default function PatientTestimonialsSection() {
               src={current.image}
               alt={current.name}
               aspectRatio="aspect-[16/10] sm:aspect-[16/11]"
-              badge={current.badge}
-              stat={current.stat}
-              statSub={`${current.condition} • ${current.recovery}`}
-              title={`${current.name} (${current.age}) — ${current.doctor}`}
             />
           </div>
 

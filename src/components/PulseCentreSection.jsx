@@ -82,7 +82,7 @@ export default function PulseCentreSection({ onBookClick }) {
                 <div className="rounded-3xl overflow-hidden bg-white border border-slate-200 shadow-xl group">
                   <div className="relative aspect-[16/11] w-full overflow-hidden bg-slate-100">
                     <img
-                      src="/images/ppp.png"
+                      src="/images/ppp.webp"
                       alt="Pulse Heart Centre Betiahata Campus"
                       className="w-full h-full object-cover object-[50%_68%] group-hover:scale-105 transition-transform duration-700" loading="lazy" decoding="async" />
                     <div className="absolute top-3 left-3">
@@ -124,7 +124,7 @@ export default function PulseCentreSection({ onBookClick }) {
 
               <div className="h-32 rounded-2xl overflow-hidden border border-slate-200 relative bg-slate-900">
                 <img
-                  src="/images/reception.png"
+                  src="/images/reception.webp"
                   alt="Pulse Heart Centre Reception Lounge"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0A1128]/85 to-transparent flex items-end p-2.5">

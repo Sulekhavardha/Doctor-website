@@ -51,7 +51,7 @@ export default function InteractiveCardiacExplorer() {
         <div className="rounded-3xl sm:rounded-[2.5rem] bg-white border border-slate-200/90 shadow-xl overflow-hidden p-3.5 sm:p-6">
           <div className="relative w-full rounded-2xl overflow-hidden bg-white border border-slate-200/80">
             <img
-              src="/images/ggg.png"
+              src="/images/ggg.webp"
               alt="How Your Heart Works & Heals"
               loading="lazy"
               decoding="async"

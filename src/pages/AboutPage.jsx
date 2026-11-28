@@ -296,8 +296,8 @@ export default function AboutPage() {
 
               <div className="space-y-3">
                 <ThreeDImageCard
-                  src="/images/Hospital-Grade Hygiene Room.png"
-                  image="/images/Hospital-Grade Hygiene Room.png"
+                  src="/images/operation-theatre-laminar.jpg"
+                  image="/images/operation-theatre-laminar.jpg"
                   alt="Clean & Safe Rooms"
                   badge={t('STEP 03', 'स्टेप 03')}
                   title={t('Clean & Safe Rooms', 'क्लीन एंड सेफ रूम्स')}

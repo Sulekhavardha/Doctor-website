@@ -43,7 +43,7 @@ const VIDEO_SOURCE_MAP = {
 };
 
 const POSTER_SOURCE_MAP = {
-  'hero-architecture': '/images/ppp.png',
+  'hero-architecture': '/images/ppp.webp',
   'about-hospital': '/images/hospital-ward-suites.jpg',
   'cardiology-heart': '/images/cardiology-3d-heart-beat.jpg',
   'cardiology-cath': '/images/cardiac-stent-procedure.jpg',
@@ -80,7 +80,7 @@ export default function SectionCinematicVideo({
     videoUrl === false
       ? null
       : videoUrl || VIDEO_SOURCE_MAP[type] || '/videos/hero-architecture.mp4';
-  const resolvedPoster = posterImage || POSTER_SOURCE_MAP[type] || '/images/ppp.png';
+  const resolvedPoster = posterImage || POSTER_SOURCE_MAP[type] || '/images/ppp.webp';
 
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(true);

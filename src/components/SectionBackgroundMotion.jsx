@@ -946,7 +946,7 @@ export default function SectionBackgroundMotion({
           </div>
 
           {/* Floating Hospital Telemetry HUD Chips */}
-          <div className="absolute top-24 left-6 sm:left-12 flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-slate-200 shadow-md animate-float-1 z-10">
+          <div className="absolute top-24 left-6 sm:left-12 hidden md:flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-slate-200 shadow-md animate-float-1 z-10">
             <span className="w-2.5 h-2.5 rounded-full bg-[#E11D48] animate-ping" />
             <span className="text-xs font-mono font-bold text-slate-800">
               Class-100 Laminar Cleanroom • HEPA Filtered

@@ -21,7 +21,7 @@ export default function CredentialsEditorialSection() {
       degree: t('DM — Cardiology', 'डीएम — कार्डियोलॉजी'),
       institute: t('PGIMER, Chandigarh', 'पीजीआईएमईआर, चंडीगढ़'),
       tag: t('Top National Medical Institute', 'देश का शीर्ष मेडिकल संस्थान'),
-      image: '/images/ccc.png',
+      image: '/images/ccc.webp',
       pos: 'object-center',
       summary: t(
         'Advanced training in painless heart checkups, stenting through the wrist, and pacemaker care.',
@@ -33,7 +33,7 @@ export default function CredentialsEditorialSection() {
       degree: t('MD — General Medicine', 'एमडी — जनरल मेडिसिन'),
       institute: t("King George's Medical University (KGMU)", "किंग जॉर्ज मेडिकल यूनिवर्सिटी (केजीएमयू)"),
       tag: t('Lucknow • Est. 1905', 'लखनऊ • स्थापित 1905'),
-      image: '/images/d.png',
+      image: '/images/d.webp',
       pos: 'object-center',
       summary: t(
         'Strong medical foundation in treating blood pressure, chest pain, heart failure, and emergency care.',
@@ -45,7 +45,7 @@ export default function CredentialsEditorialSection() {
       degree: t('22+ Years Practice', '22+ साल का अनुभव'),
       institute: t('Pulse Heart Centre, Betiahata', 'पल्स हार्ट सेंटर, बेतियाहाता'),
       tag: t('15,000+ Heart Procedures', '15,000+ हार्ट प्रोसीजर्स'),
-      image: '/images/ppp.png',
+      image: '/images/ppp.webp',
       pos: 'object-[50%_68%]',
       summary: t(
         'Providing Gorakhpur with gentle heart care through the wrist and 24/7 emergency heart attack support.',

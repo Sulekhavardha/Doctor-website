@@ -208,7 +208,7 @@ export default function TreatmentStorytellingSection() {
               <div className="w-full max-w-5xl mx-auto relative rounded-2xl sm:rounded-[2rem] p-1 sm:p-2 bg-gradient-to-b from-white/95 via-slate-50/70 to-white/95 border-2 border-slate-200/90 shadow-2xl">
                 <div className="overflow-hidden rounded-xl sm:rounded-[1.6rem] bg-[#EAF4FF]">
                   <img
-                    src="/images/hhhh.png"
+                    src="/images/hhhh.webp"
                     alt={currentStory.title}
                     loading="lazy"
                     decoding="async"
@@ -224,10 +224,10 @@ export default function TreatmentStorytellingSection() {
                 styleVariant="floating-3d"
                 posterImage={
                   activeProcedure === 'coronary-angiogram'
-                    ? '/images/precision.png'
+                    ? '/images/precision.webp'
                     : activeProcedure === 'pacemaker-implantation'
                     ? '/images/pace.jpg'
-                    : '/images/heart.png'
+                    : '/images/heart.webp'
                 }
                 title={`${currentStory.title} • ${t('Live Procedural Cine', 'लाइव प्रोसीजरल सिने')}`}
                 subtitle={currentStory.badge}

@@ -48,21 +48,21 @@ export default function ServicesPage() {
       id: 'campus',
       title: t('Pulse Heart Centre Betiahata Campus', 'पल्स हार्ट सेंटर बेतियाहाता कैंपस'),
       specs: t('Central Gorakhpur • 10 Min from Railway Station', 'सेंट्रल गोरखपुर • रेलवे स्टेशन से 10 मिनट'),
-      image: '/images/ppp.png',
+      image: '/images/ppp.webp',
       badge: t('Main Hospital Building', 'मुख्य हॉस्पिटल बिल्डिंग'),
     },
     cathlab: {
       id: 'cathlab',
       title: t('Pulse Modern Cath Lab Suite', 'पल्स मॉडर्न कैथ लैब सूट'),
       specs: t('Sterile Cleanroom • Live Fluoroscopic Imaging', 'स्टराइल क्लीनरूम • लाइव इमेजिंग'),
-      image: '/images/moder.png',
+      image: '/images/moder.webp',
       badge: t('Siemens Flat-Panel', 'सीमेंस फ्लैट-पैनल'),
     },
     reception: {
       id: 'reception',
       title: t('OPD Consultation & Reception Lounge', 'ओपीडी कंसल्टेशन व रिसेप्शन लाउंज'),
       specs: t('Welcoming Lounge • Zero Waiting Queue', 'आरामदायक लाउंज • बिना इंतज़ार सेवा'),
-      image: '/images/reception.png',
+      image: '/images/reception.webp',
       badge: t('Patient Care Wing', 'पेशेंट केयर विंग'),
     },
   };
@@ -72,7 +72,7 @@ export default function ServicesPage() {
   // Real Pulse Heart Centre image mapping for all 6 core services
   const serviceImageMap = {
     'interventional-cardiology': {
-      image: '/images/av.png',
+      image: '/images/av.webp',
       aspect: 'aspect-[16/10]',
       objectPos: 'object-center',
       leadTag: t('Pulse Cath Lab Suite', 'पल्स कैथ लैब सूट'),
@@ -84,25 +84,25 @@ export default function ServicesPage() {
       leadTag: t('Pulse Precision Diagnostics', 'पल्स प्रेसिजन जांच'),
     },
     'hdu-general-ward': {
-      image: '/images/ppp.png',
+      image: '/images/ppp.webp',
       aspect: 'aspect-[16/10]',
       objectPos: 'object-center',
       leadTag: t('Pulse Betiahata Campus & HDU', 'पल्स बेतियाहाता कैंपस व एचडीयू'),
     },
     'electrophysiology': {
-      image: '/images/f.png',
+      image: '/images/f.webp',
       aspect: 'aspect-[16/10]',
       objectPos: 'object-center',
       leadTag: t('Pulse Pacemaker Suite', 'पल्स पेसमेकर सूट'),
     },
     'emergency-services': {
-      image: '/images/E.png',
+      image: '/images/E.webp',
       aspect: 'aspect-[16/10]',
       objectPos: 'object-center',
       leadTag: t('24/7 Pulse Emergency', '24/7 पल्स इमरजेंसी'),
     },
     'preventive-cardiology': {
-      image: '/images/pp.png',
+      image: '/images/pp.webp',
       aspect: 'aspect-[16/10]',
       objectPos: 'object-center',
       leadTag: t('Pulse Wellness & Clinic', 'पल्स वेलनेस व क्लिनिक'),
@@ -113,7 +113,7 @@ export default function ServicesPage() {
   const services = rawServices.map((srv) => ({
     ...srv,
     ...(serviceImageMap[srv.id] || {
-      image: '/images/ppp.png',
+      image: '/images/ppp.webp',
       aspect: 'aspect-[16/10]',
       objectPos: 'object-center',
       leadTag: srv.badge,
@@ -500,7 +500,7 @@ export default function ServicesPage() {
           <div className="group rounded-2xl bg-white border border-slate-200 overflow-hidden shadow-sm hover:shadow-lg transition-all">
             <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-900">
               <img
-                src="/images/ppp.png"
+                src="/images/ppp.webp"
                 alt="Pulse Heart Centre Betiahata Campus"
                 className="w-full h-full object-cover object-[50%_68%] group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0A1128]/85 via-transparent to-transparent" />
@@ -528,7 +528,7 @@ export default function ServicesPage() {
           <div className="group rounded-2xl bg-white border border-slate-200 overflow-hidden shadow-sm hover:shadow-lg transition-all">
             <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-900">
               <img
-                src="/images/fff.png"
+                src="/images/fff.webp"
                 alt="Pulse Heart Centre Cath Lab"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0A1128]/85 via-transparent to-transparent" />
@@ -556,7 +556,7 @@ export default function ServicesPage() {
           <div className="group rounded-2xl bg-white border border-slate-200 overflow-hidden shadow-sm hover:shadow-lg transition-all">
             <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-900">
               <img
-                src="/images/reception.png"
+                src="/images/reception.webp"
                 alt="Pulse Heart Centre OPD Lounge"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0A1128]/85 via-transparent to-transparent" />

@@ -22,7 +22,7 @@ export default function AnatomicalSpecialtyShowcase({ variant = 'home-specialtie
       title: t('Heart Stenting & Blockage Care', 'हार्ट स्टेंटिंग और ब्लॉकेज केयर'),
       category: t('Painless Wrist Procedure', 'बिना दर्द कलाई प्रोसीजर'),
       desc: t('Opening blocked heart arteries gently through the wrist using safe, medicine-coated stents with quick recovery.', 'कलाई के रास्ते सेफ मेडिसिन-कोटेड स्टेंट्स के ज़रिए बंद हार्ट आर्टरीज़ को आराम से खोलना और तेज़ रिकवरी।'),
-      image: '/images/ll.png',
+      image: '/images/ll.webp',
       stat: t('99.4% Success Rate', '99.4% सफलता दर'),
       recovery: t('Walk in 2 Hours', '2 घंटे में चलें'),
       points: [
@@ -37,7 +37,7 @@ export default function AnatomicalSpecialtyShowcase({ variant = 'home-specialtie
       title: t('Heart Blockage Check (Angiogram)', 'हार्ट ब्लॉकेज जांच (एंजियोग्राम)'),
       category: t('15-Minute Heart Test', '15-मिनट हार्ट टेस्ट'),
       desc: t('A quick, painless heart test through the wrist to clearly see if any arteries are blocked.', 'कलाई के रास्ते एक तेज़ और बिना दर्द का हार्ट टेस्ट, जिससे साफ पता चलता है कि कोई आर्टरी बंद तो नहीं है।'),
-      image: '/images/hhh.png',
+      image: '/images/hhh.webp',
       stat: t('15-Min Quick Check', '15-मिनट तेज़ जांच'),
       recovery: t('Same-Day Discharge', 'उसी दिन डिस्चार्ज'),
       points: [
