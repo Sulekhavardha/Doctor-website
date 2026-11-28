@@ -198,8 +198,8 @@ export default function PulseCentreSection({ onBookClick }) {
 
               <div className="h-32 rounded-2xl overflow-hidden border border-slate-200 relative bg-slate-900">
                 <img
-                  src="/images/echo-machine-suite.jpg"
-                  alt="Echo Machine Suite"
+                  src="/images/cardiac-diagnostics-room.webp"
+                  alt="2D Color Echo & Digital ECG Diagnostics Suite"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0A1128]/85 to-transparent flex items-end p-2.5">
                   <span className="text-[11px] font-bold text-white">{t('High-Resolution 2D Echo', 'हाई-रेसोल्यूशन 2डी इको')}</span>
