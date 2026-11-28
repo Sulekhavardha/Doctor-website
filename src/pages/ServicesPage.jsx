@@ -108,7 +108,7 @@ export default function ServicesPage() {
           1. SERVICES PAGE MASTER HERO (100vh Viewport • Visual Split Architecture)
              Strong Pulse Heart Centre Visual Showcase
          ========================================================================= */}
-      <section className="relative min-h-[calc(100vh-4rem)] lg:min-h-[100dvh] lg:h-[100dvh] flex items-center px-4 sm:px-6 lg:px-8 overflow-hidden py-4 sm:py-6">
+      <section className="relative min-h-[calc(100vh-4rem)] lg:min-h-[calc(100dvh-5rem)] flex items-center px-4 sm:px-6 lg:px-8 overflow-hidden py-8 sm:py-10">
         <SectionBackgroundMotion variant="treatments-hero" />
 
         <div className="max-w-7xl mx-auto w-full relative z-10">
@@ -124,7 +124,7 @@ export default function ServicesPage() {
               </ScrollReveal>
 
               <ScrollReveal animation="fade-up" delay={0.08}>
-                <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#0A1128] tracking-tight leading-[1.06]">
+                <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#0A1128] tracking-tight leading-[1.14]">
                   {t('Specialized Heart Care', 'विशेषज्ञ हृदय सेवाएं')} <br />
                   <span className="font-serif italic font-normal text-[#BE123C]">{t('Designed Around Outcomes.', 'बेहतर परिणाम और त्वरित देखभाल।')}</span>
                 </h1>

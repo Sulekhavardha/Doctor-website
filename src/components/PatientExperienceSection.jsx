@@ -81,10 +81,11 @@ export default function PatientExperienceSection({ onBookClick }) {
         <ScrollStagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-14" staggerDelay={0.12}>
           {patientJourney.map((step, index) => {
             const stepMedia = [
-              { img: '/images/doctor-patient-consult.jpg', pos: 'object-center', border: 'border-slate-200', text: 'text-[#0A1128]', pill: 'bg-slate-100 text-[#0A1128]' },
-              { img: '/images/doctor-echo-checkup.jpg', pos: 'object-center', border: 'border-rose-200', text: 'text-[#BE123C]', pill: 'bg-rose-50 text-[#BE123C]' },
-              { img: '/images/doctor-cathlab-procedure.jpg', pos: 'object-center', border: 'border-slate-200', text: 'text-[#0A1128]', pill: 'bg-slate-100 text-[#0A1128]' },
-              { img: '/images/doctor-icu-rounds.jpg', pos: 'object-center', border: 'border-rose-200', text: 'text-[#BE123C]', pill: 'bg-rose-50 text-[#BE123C]' },
+              { img: '/images/hospital-helpdesk.jpg', pos: 'object-center', border: 'border-slate-200', text: 'text-[#0A1128]', pill: 'bg-slate-100 text-[#0A1128]' },
+              { img: '/images/M.png', pos: 'object-center', border: 'border-rose-200', text: 'text-[#BE123C]', pill: 'bg-rose-50 text-[#BE123C]' },
+              { img: '/images/doctor-echo-checkup.jpg', pos: 'object-center', border: 'border-slate-200', text: 'text-[#0A1128]', pill: 'bg-slate-100 text-[#0A1128]' },
+              { img: '/images/indian-wrist-care.jpg', pos: 'object-center', border: 'border-rose-200', text: 'text-[#BE123C]', pill: 'bg-rose-50 text-[#BE123C]' },
+              { img: '/images/patient-story-ramakant.jpg', pos: 'object-center', border: 'border-slate-200', text: 'text-[#0A1128]', pill: 'bg-slate-100 text-[#0A1128]' },
             ];
             const a = stepMedia[index % stepMedia.length];
             return (

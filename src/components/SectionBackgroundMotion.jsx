@@ -733,9 +733,6 @@ export default function SectionBackgroundMotion({
             </svg>
           </div>
 
-          {/* Sweeping Laser Line in Crimson Ruby */}
-          <div className="absolute left-0 right-0 h-[2.5px] top-1/3 bg-gradient-to-r from-transparent via-[#E11D48] to-transparent shadow-[0_0_20px_#BE123C] opacity-80 animate-laser-fast" />
-
           {/* Precision Blueprint Grid */}
           <div className="absolute inset-0 bg-[radial-gradient(#0A112814_1.5px,transparent_1.5px)] bg-[size:28px_28px] opacity-70" />
         </>

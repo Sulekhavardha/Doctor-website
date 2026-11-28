@@ -49,7 +49,7 @@ export default function DoctorMonographSection() {
       tabLabel: t('Wrist Care', 'रिस्ट केयर'),
       title: t('Gentle Care Through the Wrist', 'कलाई के रास्ते आसान और सुरक्षित इलाज'),
       subtitle: t('Safe Wrist Heart Procedure', 'सेफ रिस्ट हार्ट प्रोसीजर'),
-      image: '/images/wrist-heart-care.jpg',
+      image: '/images/radial-wrist-closeup.jpg',
       desc: t(
         'Over 98% of heart checks and stent procedures are done safely through the wrist instead of the leg, avoiding pain and letting you walk the same day.',
         '98% से ज़्यादा हार्ट चेकअप और स्टेंट प्रोसीजर पैर के बजाय कलाई के रास्ते किए जाते हैं, जिससे दर्द नहीं होता और आप उसी दिन चल सकते हैं।'
@@ -63,7 +63,7 @@ export default function DoctorMonographSection() {
       tabLabel: t('Honest Advice', 'ईमानदार सलाह'),
       title: t('Honest Treatment Advice', 'ईमानदार ट्रीटमेंट सलाह'),
       subtitle: t('Trusted Global Heart Guidelines', 'ग्लोबल हार्ट गाइडलाइंस पर आधारित'),
-      image: '/images/doctor-patient-consult.jpg',
+      image: '/images/M.png',
       desc: t(
         'Stents are advised only when truly needed to protect your heart. Every heart scan is checked carefully so you never get unnecessary treatment.',
         'स्टेंट की सलाह तभी दी जाती है जब आपके हार्ट के लिए वास्तव में ज़रूरी हो। हर हार्ट स्कैन को ध्यान से देखा जाता है ताकि कोई गैर-ज़रूरी ट्रीटमेंट न हो।'
@@ -229,13 +229,13 @@ export default function DoctorMonographSection() {
               {/* Pillar Content Card with Visual Doctor Interaction Photo */}
               <div className="p-4 rounded-xl border border-slate-200 bg-slate-50/70 space-y-3 transition-all duration-300">
                 <div className="flex flex-col sm:flex-row gap-4 items-center">
-                  <div className="w-full sm:w-36 aspect-[16/10] sm:aspect-square rounded-xl overflow-hidden border border-slate-200 shrink-0 bg-slate-900">
+                  <div className="w-full sm:w-52 aspect-video rounded-xl overflow-hidden border border-slate-200 shrink-0 bg-slate-50">
                     <img
                       src={pillars[activePillar].image}
                       alt={pillars[activePillar].title}
                       loading="lazy"
                       decoding="async"
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-contain"
                     />
                   </div>
                   <div className="flex-1 space-y-1.5 text-left">

@@ -48,8 +48,8 @@ export default function ThreeDImageCard({
 
         {/* Subtle Category Label */}
         {badge && (
-          <div className="absolute top-3.5 left-3.5 z-10 pointer-events-none">
-            <span className="inline-block px-3 py-1 rounded-full bg-white/95 text-[#0A1128] text-[10px] font-mono font-bold tracking-wider uppercase shadow-sm">
+          <div className="absolute top-3 left-3 z-10 pointer-events-none">
+            <span className="inline-block px-2.5 py-0.5 rounded-full bg-white/95 text-[#0A1128] text-[9px] font-mono font-bold tracking-wider uppercase shadow-sm">
               {badge}
             </span>
           </div>
@@ -57,19 +57,19 @@ export default function ThreeDImageCard({
 
         {/* Clean Bottom Caption & Stat */}
         {(title || stat) && (
-          <div className="absolute bottom-3.5 inset-x-4 z-10 text-left pointer-events-none">
+          <div className="absolute bottom-3 inset-x-3.5 z-10 text-left pointer-events-none">
             {stat && (
-              <span className="text-xs font-mono font-bold text-rose-300 block">
+              <span className="text-[10px] sm:text-[11px] font-mono font-bold text-rose-300 block">
                 {stat}
               </span>
             )}
             {title && (
-              <h4 className="text-sm sm:text-base font-bold text-white leading-snug mt-0.5">
+              <h4 className="text-xs sm:text-sm font-bold text-white leading-snug mt-0.5">
                 {title}
               </h4>
             )}
             {statSub && (
-              <span className="text-[11px] text-slate-300 block mt-0.5">
+              <span className="text-[10px] text-slate-300 block mt-0.5">
                 {statSub}
               </span>
             )}

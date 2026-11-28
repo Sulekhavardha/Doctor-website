@@ -251,7 +251,7 @@ export const PULSE_DATA = {
       title: "Executive Outpatient Consultation Suites",
       category: "Clinical Consultations",
       description: "Calm, private consultation rooms where Dr. Shahi personally explains ECG and heart scan reports with families.",
-      image: "/images/doctor-patient-consult.jpg",
+      image: "/images/M.png",
       featured: false
     },
     {
@@ -267,7 +267,7 @@ export const PULSE_DATA = {
       title: "Post-Procedure Cardiac Recovery & ICU Rounds",
       category: "Bedside Recovery",
       description: "Daily bedside follow-up rounds by Dr. Shahi ensuring rapid ambulation and safe recovery after stenting.",
-      image: "/images/doctor-recovery-discharge.jpg",
+      image: "/images/cardiac-recovery-icu-suite.jpg",
       featured: false
     }
   ],

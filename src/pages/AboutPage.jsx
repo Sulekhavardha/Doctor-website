@@ -271,8 +271,8 @@ export default function AboutPage() {
                   laserBeam={false}
                 />
                 <div className="flex flex-wrap gap-1.5 justify-center">
-                  <span className="text-[10px] font-semibold bg-white border border-slate-200 text-[#0A1128] px-2.5 py-1 rounded-md">{t('Painless Heart Stenting', 'पेनलेस हार्ट स्टेंटिंग')}</span>
-                  <span className="text-[10px] font-semibold bg-rose-50 text-[#BE123C] px-2.5 py-1 rounded-md">{t('Report & CD Check', 'रिपोर्ट एंड सीडी चेक')}</span>
+                  <span className="text-[9px] sm:text-[10px] font-semibold bg-white border border-slate-200 text-[#0A1128] px-2 py-0.5 rounded-md">{t('Painless Heart Stenting', 'पेनलेस हार्ट स्टेंटिंग')}</span>
+                  <span className="text-[9px] sm:text-[10px] font-semibold bg-rose-50 text-[#BE123C] px-2 py-0.5 rounded-md">{t('Report & CD Check', 'रिपोर्ट एंड सीडी चेक')}</span>
                 </div>
               </div>
 
@@ -289,15 +289,15 @@ export default function AboutPage() {
                   laserBeam={false}
                 />
                 <div className="flex flex-wrap gap-1.5 justify-center">
-                  <span className="text-[10px] font-semibold bg-white border border-slate-200 text-[#0A1128] px-2.5 py-1 rounded-md">{t('Talk Directly with Doctor', 'टॉक डायरेक्टली विद डॉक्टर')}</span>
-                  <span className="text-[10px] font-semibold bg-rose-50 text-[#BE123C] px-2.5 py-1 rounded-md">{t('Easy Explanations', 'ईजी एक्सप्लेनेशंस')}</span>
+                  <span className="text-[9px] sm:text-[10px] font-semibold bg-white border border-slate-200 text-[#0A1128] px-2 py-0.5 rounded-md">{t('Talk Directly with Doctor', 'टॉक डायरेक्टली विद डॉक्टर')}</span>
+                  <span className="text-[9px] sm:text-[10px] font-semibold bg-rose-50 text-[#BE123C] px-2 py-0.5 rounded-md">{t('Easy Explanations', 'ईजी एक्सप्लेनेशंस')}</span>
                 </div>
               </div>
 
               <div className="space-y-3">
                 <ThreeDImageCard
-                  src="/images/operation-theatre-laminar.jpg"
-                  image="/images/operation-theatre-laminar.jpg"
+                  src="/images/clean-cardiac-room.jpg"
+                  image="/images/clean-cardiac-room.jpg"
                   alt="Clean & Safe Rooms"
                   badge={t('STEP 03', 'स्टेप 03')}
                   title={t('Clean & Safe Rooms', 'क्लीन एंड सेफ रूम्स')}
@@ -307,8 +307,8 @@ export default function AboutPage() {
                   laserBeam={false}
                 />
                 <div className="flex flex-wrap gap-1.5 justify-center">
-                  <span className="text-[10px] font-semibold bg-white border border-slate-200 text-[#0A1128] px-2.5 py-1 rounded-md">{t('Clean Fresh Air', 'क्लीन फ्रेश एयर')}</span>
-                  <span className="text-[10px] font-semibold bg-rose-50 text-[#BE123C] px-2.5 py-1 rounded-md">{t('Safe Low-Dose Scan', 'सेफ लो-डोज स्कैन')}</span>
+                  <span className="text-[9px] sm:text-[10px] font-semibold bg-white border border-slate-200 text-[#0A1128] px-2 py-0.5 rounded-md">{t('Clean Fresh Air', 'क्लीन फ्रेश एयर')}</span>
+                  <span className="text-[9px] sm:text-[10px] font-semibold bg-rose-50 text-[#BE123C] px-2 py-0.5 rounded-md">{t('Safe Low-Dose Scan', 'सेफ लो-डोज स्कैन')}</span>
                 </div>
               </div>
 
@@ -375,14 +375,14 @@ export default function AboutPage() {
             {/* VIEW MODE 2: ARCHITECTURAL VERTICAL SPINE */}
             {timelineMode === 'expanded' && (
               <div className="relative mt-8">
-                {/* Central Glowing Catheter Guide-Wire Spine (Desktop) */}
-                <div className="hidden md:block absolute left-1/2 top-0 bottom-0 -translate-x-1/2 w-1 bg-gradient-to-b from-[#0A1128] via-[#BE123C] to-[#E11D48] rounded-full shadow-[0_0_16px_#E11D48]">
+                {/* Central Glowing Catheter Guide-Wire Spine (Center on both Mobile & Desktop) */}
+                <div className="block absolute left-1/2 top-0 bottom-0 -translate-x-1/2 w-0.5 md:w-1 bg-gradient-to-b from-[#0A1128] via-[#BE123C] to-[#E11D48] rounded-full shadow-[0_0_16px_#E11D48]">
                   {/* Continuous Traveling Pulse Light Blip */}
-                  <div className="absolute inset-x-0 w-3 h-12 -left-1 bg-white rounded-full blur-xs animate-laser-v" />
+                  <div className="absolute inset-x-0 w-2.5 md:w-3 h-10 md:h-12 -left-1 bg-white rounded-full blur-xs animate-laser-v" />
                 </div>
 
-                {/* Milestones Alternating Grid */}
-                <div className="space-y-12 md:space-y-20">
+                {/* Milestones Alternating Grid (Same Desktop Alternating Layout on Mobile & Desktop) */}
+                <div className="space-y-8 sm:space-y-12 md:space-y-20">
                   {milestones.map((m, idx) => {
                     const isLeft = idx % 2 === 0;
                     const IconComp = m.icon;
@@ -390,54 +390,54 @@ export default function AboutPage() {
                     return (
                       <div
                         key={idx}
-                        className="relative flex flex-col md:flex-row items-center"
+                        className="relative flex flex-row items-center"
                       >
-                        {/* Left Side Content Container */}
-                        <div className={`w-full md:w-1/2 ${isLeft ? 'md:pr-14 md:text-right' : 'md:order-2 md:pl-14 md:text-left'}`}>
+                        {/* Content Card Container */}
+                        <div className={`w-1/2 ${isLeft ? 'pr-4 sm:pr-8 md:pr-14' : 'order-2 pl-4 sm:pl-8 md:pl-14'}`}>
                           <motion.div
-                            initial={{ opacity: 0, x: isLeft ? -40 : 40, y: 20 }}
+                            initial={{ opacity: 0, x: isLeft ? -24 : 24, y: 16 }}
                             whileInView={{ opacity: 1, x: 0, y: 0 }}
-                            viewport={{ once: true, margin: '-60px' }}
-                            transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-                            className="relative p-7 sm:p-9 rounded-[2.5rem] bg-white/95 backdrop-blur-2xl border-2 border-slate-200/90 shadow-[0_20px_50px_-10px_rgba(10,17,40,0.08)] hover:shadow-[0_28px_65px_-10px_rgba(190,18,60,0.15)] transition-all duration-500 hover:-translate-y-1.5 group overflow-hidden text-left"
+                            viewport={{ once: true, margin: '-40px' }}
+                            transition={{ duration: 0.7, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
+                            className="relative p-3 sm:p-6 md:p-9 rounded-2xl sm:rounded-[2.5rem] bg-white/95 backdrop-blur-2xl border md:border-2 border-slate-200/90 shadow-[0_14px_35px_-10px_rgba(10,17,40,0.08)] md:shadow-[0_20px_50px_-10px_rgba(10,17,40,0.08)] hover:shadow-[0_28px_65px_-10px_rgba(190,18,60,0.15)] transition-all duration-500 hover:-translate-y-1.5 group overflow-hidden text-left"
                           >
                             {/* Giant Typographic Watermark Year */}
-                            <div className="absolute -top-3 right-4 font-serif italic text-7xl sm:text-8xl text-slate-950/[0.04] select-none pointer-events-none group-hover:text-[#BE123C]/[0.08] transition-colors">
+                            <div className="absolute -top-2 right-2 sm:-top-3 sm:right-4 font-serif italic text-4xl sm:text-7xl md:text-8xl text-slate-950/[0.04] select-none pointer-events-none group-hover:text-[#BE123C]/[0.08] transition-colors">
                               {m.year}
                             </div>
 
                             {/* Header Ribbon: Phase & Institution */}
-                            <div className="flex items-center justify-between gap-3 mb-4">
-                              <span className="text-[10px] font-mono font-bold uppercase tracking-[0.22em] text-[#BE123C] bg-rose-50/90 px-3.5 py-1.5 rounded-full border border-rose-200 shadow-xs">
+                            <div className="flex flex-wrap items-center justify-between gap-1.5 sm:gap-3 mb-2 sm:mb-4">
+                              <span className="text-[7px] sm:text-[10px] font-mono font-bold uppercase tracking-wider sm:tracking-[0.22em] text-[#BE123C] bg-rose-50/90 px-2 sm:px-3.5 py-0.5 sm:py-1.5 rounded-full border border-rose-200 shadow-xs leading-tight">
                                 {m.phase} • {m.badge}
                               </span>
-                              <span className="text-[11px] font-mono font-bold text-slate-500">
+                              <span className="hidden sm:inline text-[11px] font-mono font-bold text-slate-500">
                                 {m.institution}
                               </span>
                             </div>
 
                             {/* Year and Title */}
-                            <div className="flex items-baseline gap-3 mb-2">
-                              <span className="text-3xl sm:text-4xl font-serif font-extrabold text-[#0A1128] group-hover:scale-105 transition-transform inline-block">
+                            <div className="flex items-baseline gap-2 sm:gap-3 mb-1 sm:mb-2">
+                              <span className="text-xl sm:text-3xl md:text-4xl font-serif font-extrabold text-[#0A1128] group-hover:scale-105 transition-transform inline-block">
                                 {m.year}
                               </span>
-                              <span className="h-2 w-2 rounded-full bg-[#BE123C] animate-ping" />
+                              <span className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-[#BE123C] animate-ping" />
                             </div>
 
-                            <h3 className="text-xl sm:text-2xl font-extrabold text-[#0A1128] group-hover:text-[#BE123C] transition-colors leading-snug tracking-tight">
+                            <h3 className="text-xs sm:text-xl md:text-2xl font-extrabold text-[#0A1128] group-hover:text-[#BE123C] transition-colors leading-snug tracking-tight">
                               {m.title}
                             </h3>
 
-                            <p className="text-sm text-slate-600 mt-2.5 leading-relaxed font-normal">
+                            <p className="text-[10px] sm:text-sm text-slate-600 mt-1.5 sm:mt-2.5 leading-relaxed font-normal">
                               {m.desc}
                             </p>
 
                             {/* Interactive Tags Row */}
-                            <div className="mt-5 pt-4 border-t border-slate-100 flex flex-wrap gap-1.5">
+                            <div className="mt-2.5 sm:mt-5 pt-2 sm:pt-4 border-t border-slate-100 flex flex-wrap gap-1 sm:gap-1.5">
                               {m.tags.map((tag, tIdx) => (
                                 <span
                                   key={tIdx}
-                                  className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-700 bg-slate-50 hover:bg-slate-100 border border-slate-200 px-3 py-1 rounded-lg transition-colors shadow-2xs"
+                                  className="text-[7px] sm:text-[10px] font-mono font-bold uppercase tracking-wide sm:tracking-wider text-slate-700 bg-slate-50 hover:bg-slate-100 border border-slate-200 px-1.5 sm:px-3 py-0.5 sm:py-1 rounded-md sm:rounded-lg transition-colors shadow-2xs"
                                 >
                                   {tag}
                                 </span>
@@ -445,26 +445,25 @@ export default function AboutPage() {
                             </div>
 
                             {/* Kinetic Accent Line in Bottom of Card */}
-                            <div className="absolute bottom-0 inset-x-0 h-1.5 bg-gradient-to-r from-[#0A1128] via-[#BE123C] to-[#E11D48] opacity-0 group-hover:opacity-100 transition-opacity" />
+                            <div className="absolute bottom-0 inset-x-0 h-1 sm:h-1.5 bg-gradient-to-r from-[#0A1128] via-[#BE123C] to-[#E11D48] opacity-0 group-hover:opacity-100 transition-opacity" />
                           </motion.div>
                         </div>
 
                         {/* Center Node on Central Guided Spine */}
-                        <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 z-20 items-center justify-center">
-                          <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#0A1128] via-[#1E293B] to-[#BE123C] border-4 border-white shadow-xl shadow-navy/25 flex items-center justify-center text-white group-hover:scale-110 transition-transform">
-                            <IconComp className="w-6 h-6 animate-pulse" />
+                        <div className="flex absolute left-1/2 -translate-x-1/2 z-20 items-center justify-center">
+                          <div className="w-8 h-8 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-xl md:rounded-2xl bg-gradient-to-br from-[#0A1128] via-[#1E293B] to-[#BE123C] border-2 md:border-4 border-white shadow-lg md:shadow-xl shadow-navy/25 flex items-center justify-center text-white group-hover:scale-110 transition-transform">
+                            <IconComp className="w-3.5 h-3.5 sm:w-5 sm:h-5 md:w-6 md:h-6 animate-pulse" />
                           </div>
                         </div>
 
-                        {/* Right Side Spacer Container (for alternating balance) */}
-                        <div className={`hidden md:block w-1/2 ${isLeft ? 'order-2 pl-14' : 'order-1 pr-14'}`}>
-                          {/* Interactive Holographic Year Chip */}
-                          <div className={`flex items-center gap-3 ${isLeft ? 'justify-start' : 'justify-end'}`}>
-                            <div className="px-5 py-3 rounded-2xl bg-white/90 backdrop-blur-xl border border-slate-200/90 shadow-md text-left">
-                              <span className="text-[10px] font-mono font-bold uppercase tracking-[0.24em] text-[#BE123C] block">
+                        {/* Opposite Side Clinical Record Chip (Desktop + Mobile) */}
+                        <div className={`w-1/2 ${isLeft ? 'order-2 pl-4 sm:pl-8 md:pl-14' : 'order-1 pr-4 sm:pr-8 md:pr-14'}`}>
+                          <div className={`flex items-center ${isLeft ? 'justify-start' : 'justify-end'}`}>
+                            <div className="px-2.5 py-2 sm:px-5 sm:py-3 rounded-xl sm:rounded-2xl bg-white/90 backdrop-blur-xl border border-slate-200/90 shadow-md text-left max-w-full">
+                              <span className="text-[7px] sm:text-[10px] font-mono font-bold uppercase tracking-wider sm:tracking-[0.24em] text-[#BE123C] block leading-tight">
                                 {t('CLINICAL RECORD', 'क्लिनिकल रिकॉर्ड')} #{m.num}
                               </span>
-                              <span className="text-xs font-extrabold text-slate-900 block mt-0.5">
+                              <span className="text-[9px] sm:text-xs font-extrabold text-slate-900 block mt-0.5 leading-snug">
                                 {m.institution}
                               </span>
                             </div>
