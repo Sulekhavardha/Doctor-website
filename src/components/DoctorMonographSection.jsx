@@ -106,7 +106,7 @@ export default function DoctorMonographSection() {
             <div className="relative rounded-3xl overflow-hidden bg-white p-2.5 border border-slate-200 shadow-xl">
               <div className="aspect-[3/4] w-full rounded-2xl overflow-hidden bg-slate-100">
                 <img
-                  src="/images/d3.jpeg"
+                  src="/images/d1.jpeg"
                   alt="Dr. Prakash Chand Shahi"
                   loading="lazy"
                   decoding="async"
