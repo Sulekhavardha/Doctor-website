@@ -31,7 +31,6 @@ import Interactive3DTilt from '../components/Interactive3DTilt';
 export default function ServicesPage() {
   const { t, isHindi } = useLanguage();
   const [selectedService, setSelectedService] = useState(null);
-  const [activeCampusTab, setActiveCampusTab] = useState('campus');
 
   const iconMap = {
     HeartPulse: HeartPulse,
@@ -42,32 +41,14 @@ export default function ServicesPage() {
     Users: Users,
   };
 
-  // Hero Campus Visual Switcher - Real Pulse Heart Centre Photos
-  const campusShowcase = {
-    campus: {
-      id: 'campus',
-      title: t('Pulse Heart Centre Betiahata Campus', 'पल्स हार्ट सेंटर बेतियाहाता कैंपस'),
-      specs: t('Central Gorakhpur • 10 Min from Railway Station', 'सेंट्रल गोरखपुर • रेलवे स्टेशन से 10 मिनट'),
-      image: '/images/ppp.webp',
-      badge: t('Main Hospital Building', 'मुख्य हॉस्पिटल बिल्डिंग'),
-    },
-    cathlab: {
-      id: 'cathlab',
-      title: t('Pulse Modern Cath Lab Suite', 'पल्स मॉडर्न कैथ लैब सूट'),
-      specs: t('Sterile Cleanroom • Live Fluoroscopic Imaging', 'स्टराइल क्लीनरूम • लाइव इमेजिंग'),
-      image: '/images/moder.webp',
-      badge: t('Siemens Flat-Panel', 'सीमेंस फ्लैट-पैनल'),
-    },
-    reception: {
-      id: 'reception',
-      title: t('OPD Consultation & Reception Lounge', 'ओपीडी कंसल्टेशन व रिसेप्शन लाउंज'),
-      specs: t('Welcoming Lounge • Zero Waiting Queue', 'आरामदायक लाउंज • बिना इंतज़ार सेवा'),
-      image: '/images/reception.webp',
-      badge: t('Patient Care Wing', 'पेशेंट केयर विंग'),
-    },
+  // Hero Campus Visual - Real Pulse Heart Centre Photo
+  const activeStage = {
+    id: 'campus',
+    title: t('Pulse Heart Centre Betiahata Campus', 'पल्स हार्ट सेंटर बेतियाहाता कैंपस'),
+    specs: t('Central Gorakhpur • 10 Min from Railway Station', 'सेंट्रल गोरखपुर • रेलवे स्टेशन से 10 मिनट'),
+    image: '/images/ppp.webp',
+    badge: t('Main Hospital Building', 'मुख्य हॉस्पिटल बिल्डिंग'),
   };
-
-  const activeStage = campusShowcase[activeCampusTab] || campusShowcase.campus;
 
   // Real Pulse Heart Centre image mapping for all 6 core services
   const serviceImageMap = {
@@ -216,47 +197,19 @@ export default function ServicesPage() {
               <ScrollReveal animation="fade-up" delay={0.15}>
                 <Interactive3DTilt maxTilt={5} scale={1.01}>
                   <div className="rounded-3xl bg-white border border-slate-200 shadow-xl overflow-hidden text-left">
-                    {/* Top Switcher Tabs: Real Pulse Centre Perspectives */}
-                    <div className="p-2 bg-slate-100/80 border-b border-slate-200 flex items-center justify-between gap-1 text-[11px] font-mono font-bold">
-                      <button
-                        type="button"
-                        onClick={() => setActiveCampusTab('campus')}
-                        className={`flex-1 py-1.5 px-2 rounded-xl transition-all cursor-pointer ${activeCampusTab === 'campus'
-                          ? 'bg-[#0A1128] text-white shadow-xs'
-                          : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
-                          }`}
-                      >
+                    {/* Top Label: Campus Only */}
+                    <div className="p-2 bg-slate-100/80 border-b border-slate-200 flex items-center text-[11px] font-mono font-bold">
+                      <span className="w-full text-center py-1.5 px-3 rounded-xl bg-[#0A1128] text-white shadow-xs">
                         {t('Campus', 'कैंपस')}
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => setActiveCampusTab('cathlab')}
-                        className={`flex-1 py-1.5 px-2 rounded-xl transition-all cursor-pointer ${activeCampusTab === 'cathlab'
-                          ? 'bg-[#0A1128] text-white shadow-xs'
-                          : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
-                          }`}
-                      >
-                        {t('Cath Lab', 'कैथ लैब')}
-                      </button>
-                      <button
-                        type="button"
-                        onClick={() => setActiveCampusTab('reception')}
-                        className={`flex-1 py-1.5 px-2 rounded-xl transition-all cursor-pointer ${activeCampusTab === 'reception'
-                          ? 'bg-[#0A1128] text-white shadow-xs'
-                          : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
-                          }`}
-                      >
-                        {t('OPD Lounge', 'ओपीडी लाउंज')}
-                      </button>
+                      </span>
                     </div>
 
                     {/* Featured Stage Photo (Real Pulse Heart Centre Asset) */}
                     <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-100">
                       <img
-                        key={activeStage.image}
                         src={activeStage.image}
                         alt={activeStage.title}
-                        className={`w-full h-full object-cover ${activeCampusTab === 'campus' ? 'object-[50%_68%]' : 'object-center'} transition-all duration-500`} loading="lazy" decoding="async" />
+                        className="w-full h-full object-cover object-[50%_68%] transition-all duration-500" loading="lazy" decoding="async" />
 
                       {/* Overlaid Top Badges */}
                       <div className="absolute top-3 left-3 flex items-center gap-2">
