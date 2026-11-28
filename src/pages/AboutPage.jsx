@@ -325,10 +325,6 @@ export default function AboutPage() {
 
             {/* Section Header */}
             <div className="text-center max-w-2xl mx-auto mb-6 sm:mb-8 space-y-2">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-rose-50 text-[#BE123C] border border-rose-200/90 text-xs font-bold uppercase tracking-[0.24em] shadow-xs">
-                <Sparkles className="w-3.5 h-3.5 text-[#BE123C]" />
-                <span>{t('Two Decades of Clinical Leadership', 'टू डिकेड्स ऑफ क्लिनिकल लीडरशिप')}</span>
-              </div>
               <h2 className="text-3xl sm:text-5xl font-extrabold text-[#0A1128] tracking-tight leading-tight">
                 {t('22-Year Journey of', '22 साल का सफर')} <br />
                 <span className="font-serif italic font-normal text-[#BE123C]">{t('Trusted Heart Care', 'भरोसेमंद हार्ट केयर का')}</span>
