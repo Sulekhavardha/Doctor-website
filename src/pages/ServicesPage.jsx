@@ -588,7 +588,7 @@ export default function ServicesPage() {
       <AnimatePresence>
         {selectedService && (
           <div
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#0A1128]/70 backdrop-blur-sm"
+            className="fixed inset-0 z-[120] flex items-center justify-center p-3 sm:p-4 bg-[#0A1128]/75 backdrop-blur-sm overflow-y-auto"
             onClick={() => setSelectedService(null)}
           >
             <motion.div
@@ -597,15 +597,15 @@ export default function ServicesPage() {
               exit={{ opacity: 0, scale: 0.95, y: 10 }}
               transition={{ duration: 0.2 }}
               onClick={(e) => e.stopPropagation()}
-              className="relative w-full max-w-lg rounded-3xl bg-white shadow-2xl border border-slate-200 overflow-hidden text-left space-y-4"
+              className="relative w-full max-w-xl rounded-3xl bg-white shadow-2xl border border-slate-200 overflow-hidden text-left my-auto"
             >
-              {/* Modal Visual Header Image */}
-              <div className="relative aspect-[16/9] w-full overflow-hidden bg-slate-900">
+              {/* Modal Visual Header Image (Larger Image Area) */}
+              <div className="relative h-60 sm:h-72 w-full overflow-hidden bg-slate-900">
                 <img
                   src={selectedService.image}
                   alt={isHindi ? selectedService.titleHi : selectedService.title}
-                  className="w-full h-full object-cover" loading="lazy" decoding="async" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0A1128] via-[#0A1128]/30 to-transparent" />
+                  className="w-full h-full object-cover object-center" loading="lazy" decoding="async" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A1128]/90 via-[#0A1128]/20 to-transparent" />
 
                 <button
                   type="button"
@@ -620,55 +620,55 @@ export default function ServicesPage() {
                   <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-rose-300 block">
                     {isHindi ? selectedService.badgeHi : selectedService.badge}
                   </span>
-                  <h3 className="text-xl font-extrabold text-white tracking-tight">
+                  <h3 className="text-lg sm:text-xl font-extrabold !text-white text-white tracking-tight">
                     {isHindi ? selectedService.titleHi : selectedService.title}
                   </h3>
                 </div>
               </div>
 
-              {/* Modal Body */}
-              <div className="p-5 sm:p-6 pt-0 space-y-4">
-                <p className="text-xs sm:text-sm text-slate-600 font-normal leading-relaxed">
+              {/* Compact Modal Body */}
+              <div className="p-4 sm:p-5 space-y-3">
+                <p className="text-xs text-slate-600 font-normal leading-snug">
                   {isHindi ? selectedService.descriptionHi : selectedService.description}
                 </p>
 
                 {selectedService.highlights && (
-                  <div className="space-y-2 pt-2 border-t border-slate-100">
-                    <span className="text-[11px] font-mono font-bold text-slate-800 uppercase tracking-wider block">
+                  <div className="space-y-1.5 pt-2 border-t border-slate-100">
+                    <span className="text-[10px] font-mono font-bold text-slate-800 uppercase tracking-wider block">
                       {t('Key Clinical Capabilities:', 'प्रमुख क्लिनिकल सुविधाएं:')}
                     </span>
-                    <div className="space-y-1.5">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
                       {selectedService.highlights.map((h, i) => (
-                        <div key={i} className="flex items-center gap-2 text-xs text-slate-700 font-medium">
+                        <div key={i} className="flex items-center gap-1.5 text-[11px] text-slate-700 font-medium">
                           <CheckCircle2 className="w-3.5 h-3.5 text-[#0284C7] shrink-0" />
-                          <span>{h}</span>
+                          <span className="truncate">{h}</span>
                         </div>
                       ))}
                     </div>
                   </div>
                 )}
 
-                <div className="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between text-xs">
-                  <div className="flex items-center gap-2.5">
+                <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-between text-[11px]">
+                  <div className="flex items-center gap-2">
                     <img
                       src="/images/d1.jpeg"
                       alt="Dr. Prakash Chand Shahi"
-                      className="w-9 h-9 rounded-lg object-cover object-top border border-slate-300" loading="lazy" decoding="async" />
+                      className="w-8 h-8 rounded-lg object-cover object-top border border-slate-300 shrink-0" loading="lazy" decoding="async" />
                     <div>
-                      <span className="font-bold text-[#0A1128] block">{t('Dr. Prakash Chand Shahi', 'डॉ. प्रकाश चंद शाही')}</span>
-                      <span className="text-[10px] text-slate-500">{t('Director & Chief Interventional Cardiologist', 'डायरेक्टर एंड चीफ कार्डियोलॉजिस्ट')}</span>
+                      <span className="font-bold text-[#0A1128] block leading-tight">{t('Dr. Prakash Chand Shahi', 'डॉ. प्रकाश चंद शाही')}</span>
+                      <span className="text-[10px] text-slate-500">{t('Director & Cardiologist', 'डायरेक्टर एंड कार्डियोलॉजिस्ट')}</span>
                     </div>
                   </div>
-                  <span className="text-[10px] font-mono font-bold text-[#BE123C]">
+                  <span className="text-[10px] font-mono font-bold text-[#BE123C] shrink-0">
                     {t('Betiahata Campus', 'बेतियाहाता कैंपस')}
                   </span>
                 </div>
 
-                <div className="pt-2 flex items-center justify-end gap-3">
+                <div className="pt-1 flex items-center justify-end gap-2.5">
                   <Link
                     to="/treatments"
                     onClick={() => setSelectedService(null)}
-                    className="luxury-btn-secondary !text-xs !py-2.5 !px-4"
+                    className="luxury-btn-secondary !text-[11px] !py-2 !px-3.5"
                   >
                     <span>{t('View Treatments', 'ट्रीटमेंट्स देखें')}</span>
                     <ArrowRight className="w-3.5 h-3.5 text-[#BE123C]" />
@@ -676,7 +676,7 @@ export default function ServicesPage() {
                   <Link
                     to="/contact"
                     onClick={() => setSelectedService(null)}
-                    className="luxury-btn-primary !text-xs !py-2.5 !px-4"
+                    className="luxury-btn-primary !text-[11px] !py-2 !px-3.5"
                   >
                     <Calendar className="w-3.5 h-3.5 text-white" />
                     <span>{t('Book OPD Pass', 'ओपीडी पास बुक करें')}</span>
